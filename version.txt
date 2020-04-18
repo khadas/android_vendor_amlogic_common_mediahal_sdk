@@ -5,33 +5,34 @@ Version: v2.0
 ========================================
 
 Git commit:
-commit b0f9f13f550d7c95aec8a7adcec9aee32ca26415
-Author: Lifeng Cao <lifeng.cao@amlogic.com>
-Date:   Wed Apr 8 15:53:23 2020 +0800
+commit 58e18ee73c6a97b0110d9c1f666765da4e45fbe5
+Author: rongrong zhou <rongrong.zhou@amlogic.com>
+Date:   Wed Apr 15 17:39:46 2020 +0800
 
-    tsplayer: Add ad support in tsplayer [1/1]
+    tsplayer: report scramble event [1/1]
     
-    PD#SWPL-23678
+    PD#SWPL-23433
     
     Problem:
-    TsPlayer not support ad
+    when switch between normal & scramble stream,
+     can not report scramble event correctly
     
     Solution:
-    realize ad interface in tsplayer
+    report scramble event
     
     Verify:
-    newton
+    AC214
     
-    Change-Id: I9b621ba362ab58b80ea9d05a921dd74422206c6d
-    Signed-off-by: Lifeng Cao <lifeng.cao@amlogic.com>
+    Change-Id: Id10c97ff5fe592c2d74be12c4b8a0d5c3bdd6e90
+    Signed-off-by: rongrong zhou <rongrong.zhou@amlogic.com>
 
 ========================================
 
-Release time: 2020-04-13-11-38
+Release time: 2020-04-18-13-46
 
 ========================================
 
-Builder: alex.cao
+Builder: rongrong.zhou
 
 ========================================
 Release file:
