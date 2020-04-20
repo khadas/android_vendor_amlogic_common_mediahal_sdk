@@ -5,30 +5,29 @@ Version: v2.0
 ========================================
 
 Git commit:
-commit 58e18ee73c6a97b0110d9c1f666765da4e45fbe5
+commit 37e74216f5e90eb73e2e6b903e0985f60d470e9c
 Author: rongrong zhou <rongrong.zhou@amlogic.com>
-Date:   Wed Apr 15 17:39:46 2020 +0800
+Date:   Mon Apr 20 10:11:29 2020 +0800
 
-    tsplayer: report scramble event [1/1]
+    tsplayer: release TsPlayer time-comsumig optimization [1/1]
     
-    PD#SWPL-23433
+    PD#SWPL-24259
     
     Problem:
-    when switch between normal & scramble stream,
-     can not report scramble event correctly
+    release Tsplayer  cost about 150ms
     
     Solution:
-    report scramble event
+    optimize
     
     Verify:
     AC214
     
-    Change-Id: Id10c97ff5fe592c2d74be12c4b8a0d5c3bdd6e90
+    Change-Id: I61d1026f41c85a3b46183c4ddd76ac7951e01b52
     Signed-off-by: rongrong zhou <rongrong.zhou@amlogic.com>
 
 ========================================
 
-Release time: 2020-04-18-13-46
+Release time: 2020-04-20-13-46
 
 ========================================
 
