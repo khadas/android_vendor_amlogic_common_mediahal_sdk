@@ -5,33 +5,33 @@ Version: v2.0
 ========================================
 
 Git commit:
-commit 37e74216f5e90eb73e2e6b903e0985f60d470e9c
-Author: rongrong zhou <rongrong.zhou@amlogic.com>
-Date:   Mon Apr 20 10:11:29 2020 +0800
+commit 622c8e32cb6c233cc5e0703149e22481c6735428
+Author: joy.rao <joy.rao@amlogic.com>
+Date:   Thu Apr 23 19:37:42 2020 +0800
 
-    tsplayer: release TsPlayer time-comsumig optimization [1/1]
+    tsplayer: remove demuxX_source setup in TsPlayer [1/1]
     
-    PD#SWPL-24259
+    PD#SWPL-24538
     
     Problem:
-    release Tsplayer  cost about 150ms
+    TsPlayer don't need to setup demuxX_source
     
     Solution:
-    optimize
+    remove demuxX_source setup in TsPlayer
     
     Verify:
     AC214
     
-    Change-Id: I61d1026f41c85a3b46183c4ddd76ac7951e01b52
-    Signed-off-by: rongrong zhou <rongrong.zhou@amlogic.com>
+    Change-Id: Ief5ca43377c8688026c7a83add177dd25e37cfe0
+    Signed-off-by: joy.rao <joy.rao@amlogic.com>
 
 ========================================
 
-Release time: 2020-04-20-13-46
+Release time: 2020-04-23-22-04
 
 ========================================
 
-Builder: rongrong.zhou
+Builder: alex.cao
 
 ========================================
 Release file:
