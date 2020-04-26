@@ -5,33 +5,33 @@ Version: v2.0
 ========================================
 
 Git commit:
-commit 622c8e32cb6c233cc5e0703149e22481c6735428
-Author: joy.rao <joy.rao@amlogic.com>
-Date:   Thu Apr 23 19:37:42 2020 +0800
+commit d5f6cb0a65440cb71dcda014c0c2e60c89346696
+Author: rongrong zhou <rongrong.zhou@amlogic.com>
+Date:   Thu Apr 23 13:54:38 2020 +0800
 
-    tsplayer: remove demuxX_source setup in TsPlayer [1/1]
+    tsplayer: TsPlayer create fail return fail [1/1]
     
-    PD#SWPL-24538
+    PD#SWPL-24749
     
     Problem:
-    TsPlayer don't need to setup demuxX_source
+    TsPlayer create fail return ok
     
     Solution:
-    remove demuxX_source setup in TsPlayer
+    add initcheck
     
     Verify:
     AC214
     
-    Change-Id: Ief5ca43377c8688026c7a83add177dd25e37cfe0
-    Signed-off-by: joy.rao <joy.rao@amlogic.com>
+    Change-Id: I08ed881e7971cc16144430f0ef41f955cfc3fa1e
+    Signed-off-by: rongrong zhou <rongrong.zhou@amlogic.com>
 
 ========================================
 
-Release time: 2020-04-23-22-04
+Release time: 2020-04-26-19-50
 
 ========================================
 
-Builder: alex.cao
+Builder: baoguo.chen
 
 ========================================
 Release file:
