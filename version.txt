@@ -5,33 +5,33 @@ Version: v2.0
 ========================================
 
 Git commit:
-commit d5f6cb0a65440cb71dcda014c0c2e60c89346696
+commit 7daf99654a91f71052333c74a27cc0d39b7f6aba
 Author: rongrong zhou <rongrong.zhou@amlogic.com>
-Date:   Thu Apr 23 13:54:38 2020 +0800
+Date:   Wed Apr 29 10:59:34 2020 +0800
 
-    tsplayer: TsPlayer create fail return fail [1/1]
+    tsplayer: memset codecparam [1/1]
     
-    PD#SWPL-24749
+    PD#SWPL-24925
     
     Problem:
-    TsPlayer create fail return ok
+    codecparam may not init
     
     Solution:
-    add initcheck
+    memset
     
     Verify:
     AC214
     
-    Change-Id: I08ed881e7971cc16144430f0ef41f955cfc3fa1e
+    Change-Id: I85830a85df8761baf03afa84a4de1331f36ee5d0
     Signed-off-by: rongrong zhou <rongrong.zhou@amlogic.com>
 
 ========================================
 
-Release time: 2020-04-26-19-50
+Release time: 2020-04-29-14-29
 
 ========================================
 
-Builder: baoguo.chen
+Builder: rongrong.zhou
 
 ========================================
 Release file:
