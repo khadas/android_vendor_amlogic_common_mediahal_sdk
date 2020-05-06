@@ -5,29 +5,29 @@ Version: v2.0
 ========================================
 
 Git commit:
-commit 7daf99654a91f71052333c74a27cc0d39b7f6aba
+commit 66f746d1b036f5616b024bccbad6430f30e94015
 Author: rongrong zhou <rongrong.zhou@amlogic.com>
-Date:   Wed Apr 29 10:59:34 2020 +0800
+Date:   Wed May 6 14:26:30 2020 +0800
 
-    tsplayer: memset codecparam [1/1]
+    tsplayer: test playback fail [1/1]
     
-    PD#SWPL-24925
+    PD#SWPL-25429
     
     Problem:
-    codecparam may not init
+    do not set dmx source
     
     Solution:
-    memset
+    set dmxsource
     
     Verify:
     AC214
     
-    Change-Id: I85830a85df8761baf03afa84a4de1331f36ee5d0
+    Change-Id: I34c8046f7ed08600680d2f007781b7dd9d9ad988
     Signed-off-by: rongrong zhou <rongrong.zhou@amlogic.com>
 
 ========================================
 
-Release time: 2020-04-29-14-29
+Release time: 2020-05-06-19-19
 
 ========================================
 

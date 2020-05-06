@@ -68,7 +68,6 @@ void video_callback(void *user_data, am_tsplayer_event *event)
 static int set_osd_blank(int blank)
 {
     const char *path1 = "/sys/class/graphics/fb0/blank";
-    const char *path2 = "/sys/class/graphics/fb1/blank";
     const char *path3 = "/sys/class/graphics/fb0/osd_display_debug";
     int fd;
 	char cmd[128] = {0};
@@ -87,13 +86,25 @@ static int set_osd_blank(int blank)
 	   write (fd,cmd,strlen(cmd));
 	   close(fd);
 	}
-	fd = open(path2,O_CREAT | O_RDWR | O_TRUNC, 0644);
-	if (fd >= 0)
-	{
-       sprintf(cmd,"%d",blank);
-	   write (fd,cmd,strlen(cmd));
-	   close(fd);
-	}
+    return 0;
+}
+
+static int amsysfs_set_sysfs_str(const char *path, const char *val) {
+    int fd;
+    int bytes;
+    fd = open(path, O_CREAT | O_RDWR | O_TRUNC, 0644);
+    if (fd >= 0) {
+        bytes = write(fd, val, strlen(val));
+        close(fd);
+        return 0;
+    }
+    return -1;
+}
+
+static int set_dmx_source()
+{
+    amsysfs_set_sysfs_str("/sys/class/stb/source", "dmx0");
+    amsysfs_set_sysfs_str("/sys/class/stb/demux0_source", "hiu");
     return 0;
 }
 
@@ -192,6 +203,7 @@ int main(int argc, char **argv)
 	uint64_t fsize = 0;
     ifstream file(inputTsName.c_str(), ifstream::binary);
 	if (tsType)	{
+        set_dmx_source();
         file.seekg(0, file.end);
         fsize = file.tellg();
         if (fsize <= 0) {
