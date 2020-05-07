@@ -5,25 +5,26 @@ Version: v2.0
 ========================================
 
 Git commit:
-commit 9c20ce367e269091de4a7c51e551c4c440682865
-Author: Lifeng Cao <lifeng.cao@amlogic.com>
-Date:   Wed May 6 21:02:54 2020 +0800
+commit d4e652fafa938d2672905aa2f4b850109c5c8dff
+Author: Zhizhong Zhang <zhizhong.zhang@amlogic.com>
+Date:   Sat May 2 18:24:39 2020 +0800
 
-    tsplayer: Avsync mode setting before tsdemux init [1/1]
+    tsplayer: add prop to contorl syncmode and show_first_frame_nosync [1/1]
     
-    PD#SWPL-25331
+    PD#SWPL-24354
     
     Problem:
-    Avsync mode setting invalid
+    content_g_live starts playback stutter for 2s+
     
     Solution:
-    Avsync mode setting before tsdemux init
+    add prop to contorl syncmode default pcrmaster
+    add prop to contorl how_first_frame_nosync default disable
     
     Verify:
-    905X2
+    U215 patch build
     
-    Change-Id: Ie6c16c80a54377080f369bddf32de4bb0d2a49c5
-    Signed-off-by: Lifeng Cao <lifeng.cao@amlogic.com>
+    Change-Id: I6a5559a0797b6bbdac61db73537fe4a90cb06ae4
+    Signed-off-by: Zhizhong Zhang <zhizhong.zhang@amlogic.com>
 
 ========================================
 
