@@ -5,33 +5,33 @@ Version: v2.0
 ========================================
 
 Git commit:
-commit 66f746d1b036f5616b024bccbad6430f30e94015
-Author: rongrong zhou <rongrong.zhou@amlogic.com>
-Date:   Wed May 6 14:26:30 2020 +0800
+commit 9c20ce367e269091de4a7c51e551c4c440682865
+Author: Lifeng Cao <lifeng.cao@amlogic.com>
+Date:   Wed May 6 21:02:54 2020 +0800
 
-    tsplayer: test playback fail [1/1]
+    tsplayer: Avsync mode setting before tsdemux init [1/1]
     
-    PD#SWPL-25429
+    PD#SWPL-25331
     
     Problem:
-    do not set dmx source
+    Avsync mode setting invalid
     
     Solution:
-    set dmxsource
+    Avsync mode setting before tsdemux init
     
     Verify:
-    AC214
+    905X2
     
-    Change-Id: I34c8046f7ed08600680d2f007781b7dd9d9ad988
-    Signed-off-by: rongrong zhou <rongrong.zhou@amlogic.com>
+    Change-Id: Ie6c16c80a54377080f369bddf32de4bb0d2a49c5
+    Signed-off-by: Lifeng Cao <lifeng.cao@amlogic.com>
 
 ========================================
 
-Release time: 2020-05-06-19-19
+Release time: 2020-05-07-10-38
 
 ========================================
 
-Builder: rongrong.zhou
+Builder: alex.cao
 
 ========================================
 Release file:
