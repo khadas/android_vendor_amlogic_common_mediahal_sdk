@@ -5,30 +5,30 @@ Version: v2.0
 ========================================
 
 Git commit:
-commit d4e652fafa938d2672905aa2f4b850109c5c8dff
-Author: Zhizhong Zhang <zhizhong.zhang@amlogic.com>
-Date:   Sat May 2 18:24:39 2020 +0800
+commit 91b69042c64b8a06f5db5c2c92402ba5bdf59dea
+Author: Lifeng Cao <lifeng.cao@amlogic.com>
+Date:   Fri May 8 22:37:21 2020 +0800
 
-    tsplayer: add prop to contorl syncmode and show_first_frame_nosync [1/1]
+    tsplayer: video stop and start lose efficacy after initiated [1/1]
     
-    PD#SWPL-24354
+    PD#SWPL-25598
     
     Problem:
-    content_g_live starts playback stutter for 2s+
+    video stop and start lose efficacy after initiated
     
     Solution:
-    add prop to contorl syncmode default pcrmaster
-    add prop to contorl how_first_frame_nosync default disable
+    When stop video we set the mstate to initiated
+    In this case we will call codec_init again when video start
     
     Verify:
-    U215 patch build
+    905X2
     
-    Change-Id: I6a5559a0797b6bbdac61db73537fe4a90cb06ae4
-    Signed-off-by: Zhizhong Zhang <zhizhong.zhang@amlogic.com>
+    Change-Id: I1715101e8704ef50dc35fc7060cca557a2fbdb96
+    Signed-off-by: Lifeng Cao <lifeng.cao@amlogic.com>
 
 ========================================
 
-Release time: 2020-05-07-10-38
+Release time: 2020-05-09-10-31
 
 ========================================
 
