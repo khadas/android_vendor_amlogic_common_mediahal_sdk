@@ -5,30 +5,30 @@ Version: v2.0
 ========================================
 
 Git commit:
-commit 91b69042c64b8a06f5db5c2c92402ba5bdf59dea
+commit 1a529d4d5d92c65bea445cacca4fb60399ee49a7
 Author: Lifeng Cao <lifeng.cao@amlogic.com>
-Date:   Fri May 8 22:37:21 2020 +0800
+Date:   Thu May 7 20:13:47 2020 +0800
 
-    tsplayer: video stop and start lose efficacy after initiated [1/1]
+    tsplayer: Write data check audio and video delay time  [1/1]
     
-    PD#SWPL-25598
+    PD#SWPL-25357
     
     Problem:
-    video stop and start lose efficacy after initiated
+    When pts drop and buffer level 120K data is not enough a frame
+    Video will block
     
     Solution:
-    When stop video we set the mstate to initiated
-    In this case we will call codec_init again when video start
+    Write data check audio and video delay time and buffer level
     
     Verify:
     905X2
     
-    Change-Id: I1715101e8704ef50dc35fc7060cca557a2fbdb96
+    Change-Id: I33eb160c65235cb893f6f5d819922f8d4570fd4e
     Signed-off-by: Lifeng Cao <lifeng.cao@amlogic.com>
 
 ========================================
 
-Release time: 2020-05-09-10-31
+Release time: 2020-05-09-18-00
 
 ========================================
 
