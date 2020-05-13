@@ -5,30 +5,30 @@ Version: v2.0
 ========================================
 
 Git commit:
-commit 1a529d4d5d92c65bea445cacca4fb60399ee49a7
+commit 7d2b44d32516feaf58bc41d5d355377e1c6af55b
 Author: Lifeng Cao <lifeng.cao@amlogic.com>
-Date:   Thu May 7 20:13:47 2020 +0800
+Date:   Wed May 13 21:23:44 2020 +0800
 
-    tsplayer: Write data check audio and video delay time  [1/1]
+    tsplayer: write data need audio & video delay time less than 3s [1/1]
     
-    PD#SWPL-25357
+    PD#SWPL-25930
     
     Problem:
-    When pts drop and buffer level 120K data is not enough a frame
-    Video will block
+    write data need audio or video delay time less than 3s
+    video dely time will 10s more than audio delay time
     
     Solution:
-    Write data check audio and video delay time and buffer level
+    write data need audio & video delay time less than 3s
     
     Verify:
-    905X2
+    verify 905x2
     
-    Change-Id: I33eb160c65235cb893f6f5d819922f8d4570fd4e
+    Change-Id: I21a88cbfc5ebcc94e0d5c0de39cb48391dab47b1
     Signed-off-by: Lifeng Cao <lifeng.cao@amlogic.com>
 
 ========================================
 
-Release time: 2020-05-09-18-00
+Release time: 2020-05-14-21-20
 
 ========================================
 
