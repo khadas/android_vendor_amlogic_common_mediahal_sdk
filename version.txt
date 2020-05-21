@@ -5,34 +5,33 @@ Version: v2.0
 ========================================
 
 Git commit:
-commit a27542caf4b4e5d36dc5b6bde4f1d8bb303ad43c
-Author: shuanglong.wang <shuanglong.wang@amlogic.com>
-Date:   Thu May 14 12:48:16 2020 +0800
+commit 53ed331e4f2c8f35da34ab435bfc92878a2695bd
+Author: yunmin.chen <yunmin.chen@amlogic.com>
+Date:   Fri May 8 15:47:32 2020 +0800
 
-    tsplayer: reset vsync_slow_factor after tsplayer exit [1/1]
+    tsplayer: Set static frame. [1/1]
     
-    PD#SWPL-25714
+    PD#OTT-10161
     
     Problem:
-    when dvb playback, vsync_slow_factor set to 1000000,
-    then lead netflix playback pcr increase is not match vsync
+    The static frame cannot be cleared.
     
     Solution:
-    reset vsync_slow_factor after tsplayer exit
+    Modify the static frame interface.
     
     Verify:
-    verify by U215
+    AC214
     
-    Change-Id: I9cce9a03c6e16ba581565c2d0d0c42cb6bac5b51
-    Signed-off-by: shuanglong.wang <shuanglong.wang@amlogic.com>
+    Change-Id: Iaaa7def7952966b3a3ab93176836a15cd8f02e85
+    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
 
 ========================================
 
-Release time: 2020-05-15-20-52
+Release time: 2020-05-21-16-18
 
 ========================================
 
-Builder: shuanglong.wang
+Builder: yunmin.chen
 
 ========================================
 Release file:
