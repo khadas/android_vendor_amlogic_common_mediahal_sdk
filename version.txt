@@ -5,33 +5,33 @@ Version: v2.0
 ========================================
 
 Git commit:
-commit 53ed331e4f2c8f35da34ab435bfc92878a2695bd
-Author: yunmin.chen <yunmin.chen@amlogic.com>
-Date:   Fri May 8 15:47:32 2020 +0800
+commit 05537ce8c7e97db0572a5c58361761a2c010cce7
+Author: Joy Rao <joy.rao@amlogic.com>
+Date:   Fri May 22 15:17:47 2020 +0800
 
-    tsplayer: Set static frame. [1/1]
+    Tsplayer : remove unused files [1/1]
     
-    PD#OTT-10161
+    PD#SWPL-26582
     
     Problem:
-    The static frame cannot be cleared.
+    Need remove unused files
     
     Solution:
-    Modify the static frame interface.
+    Remove unused files
     
     Verify:
-    AC214
+    U215
     
-    Change-Id: Iaaa7def7952966b3a3ab93176836a15cd8f02e85
-    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
+    Change-Id: I9b17ad983067c86501f24ad22731279bf49d3dab
+    Signed-off-by: Joy Rao <joy.rao@amlogic.com>
 
 ========================================
 
-Release time: 2020-05-21-16-18
+Release time: 2020-05-22-16-41
 
 ========================================
 
-Builder: yunmin.chen
+Builder: joy.rao
 
 ========================================
 Release file:
