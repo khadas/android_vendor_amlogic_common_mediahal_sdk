@@ -5,33 +5,37 @@ Version: v2.0
 ========================================
 
 Git commit:
-commit 05537ce8c7e97db0572a5c58361761a2c010cce7
-Author: Joy Rao <joy.rao@amlogic.com>
-Date:   Fri May 22 15:17:47 2020 +0800
+commit 24c57e4f44070f6884abc9de135db248897a2574
+Author: Lifeng Cao <lifeng.cao@amlogic.com>
+Date:   Tue May 26 15:08:55 2020 +0800
 
-    Tsplayer : remove unused files [1/1]
+    tsplayer: Use buffer level restrict write for audio only [1/1]
     
-    PD#SWPL-26582
+    PD#SWPL-26658
     
     Problem:
-    Need remove unused files
+    We use delay time to restrict data writing, we set delay
+    time more than 10s is discontinue mode. For radio program
+    dvr write a package more than 7S. So write a package delay
+    time will more than 10s .In this mode we will not restrict
+    data writing. So will cause audio buffer overflow.
     
     Solution:
-    Remove unused files
+    In this mode we use buffer level to restrict data writing.
     
     Verify:
-    U215
+    AC214
     
-    Change-Id: I9b17ad983067c86501f24ad22731279bf49d3dab
-    Signed-off-by: Joy Rao <joy.rao@amlogic.com>
+    Change-Id: I6d558de12593cd0a2415cb238ced23cf3c369e9b
+    Signed-off-by: Lifeng Cao <lifeng.cao@amlogic.com>
 
 ========================================
 
-Release time: 2020-05-22-16-41
+Release time: 2020-05-28-15-37
 
 ========================================
 
-Builder: joy.rao
+Builder: alex.cao
 
 ========================================
 Release file:
