@@ -5,33 +5,31 @@ Version: v2.0
 ========================================
 
 Git commit:
-commit 24c57e4f44070f6884abc9de135db248897a2574
+commit e553be3d5a5b6cc93ff374226510444d1659949b
 Author: Lifeng Cao <lifeng.cao@amlogic.com>
-Date:   Tue May 26 15:08:55 2020 +0800
+Date:   Mon Jun 1 17:54:46 2020 +0800
 
-    tsplayer: Use buffer level restrict write for audio only [1/1]
+    AmTsPlayer: vbuf space need more than 10 percent vbuf size [1/1]
     
-    PD#SWPL-26658
+    PD#SWPL-27134
     
     Problem:
-    We use delay time to restrict data writing, we set delay
-    time more than 10s is discontinue mode. For radio program
-    dvr write a package more than 7S. So write a package delay
-    time will more than 10s .In this mode we will not restrict
-    data writing. So will cause audio buffer overflow.
+    We set 90 percent vbuf size as threshold for checking
+    vbuf space threshold
     
     Solution:
-    In this mode we use buffer level to restrict data writing.
+    vbuf space need more than 10 percent vbuf size not 90
+    percent.
     
     Verify:
     AC214
     
-    Change-Id: I6d558de12593cd0a2415cb238ced23cf3c369e9b
+    Change-Id: I7797b428f972e805d9afd533bebe3d8da5e1ec2b
     Signed-off-by: Lifeng Cao <lifeng.cao@amlogic.com>
 
 ========================================
 
-Release time: 2020-05-28-15-37
+Release time: 2020-06-01-18-08
 
 ========================================
 
