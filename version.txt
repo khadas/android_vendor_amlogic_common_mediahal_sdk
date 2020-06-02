@@ -5,35 +5,33 @@ Version: v2.0
 ========================================
 
 Git commit:
-commit e553be3d5a5b6cc93ff374226510444d1659949b
-Author: Lifeng Cao <lifeng.cao@amlogic.com>
-Date:   Mon Jun 1 17:54:46 2020 +0800
+commit 934c6cdd089fa71c0aab9f0952c6ba5c6d6533e4
+Author: yunmin.chen <yunmin.chen@amlogic.com>
+Date:   Tue May 12 13:46:39 2020 +0800
 
-    AmTsPlayer: vbuf space need more than 10 percent vbuf size [1/1]
+    tsplayer: Add video format. [1/1]
     
-    PD#SWPL-27134
+    PD#OTT-10155
     
     Problem:
-    We set 90 percent vbuf size as threshold for checking
-    vbuf space threshold
+    Need to support AVS and mpeg4.
     
     Solution:
-    vbuf space need more than 10 percent vbuf size not 90
-    percent.
+    Add AVS and mpeg4.
     
     Verify:
     AC214
     
-    Change-Id: I7797b428f972e805d9afd533bebe3d8da5e1ec2b
-    Signed-off-by: Lifeng Cao <lifeng.cao@amlogic.com>
+    Change-Id: I8020f66e8a5528d559a535dcff5535c7b0a96c76
+    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
 
 ========================================
 
-Release time: 2020-06-01-18-08
+Release time: 2020-06-03-16-59
 
 ========================================
 
-Builder: alex.cao
+Builder: yunmin.chen
 
 ========================================
 Release file:
