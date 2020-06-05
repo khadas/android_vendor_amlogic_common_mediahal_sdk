@@ -5,33 +5,35 @@ Version: v2.0
 ========================================
 
 Git commit:
-commit 934c6cdd089fa71c0aab9f0952c6ba5c6d6533e4
-Author: yunmin.chen <yunmin.chen@amlogic.com>
-Date:   Tue May 12 13:46:39 2020 +0800
+commit b180714f5f83dce18f23c037ef51338eccd4b230
+Author: shuanglong.wang <shuanglong.wang@amlogic.com>
+Date:   Mon Jun 8 13:10:27 2020 +0800
 
-    tsplayer: Add video format. [1/1]
+    videodec: sample esplayer based on videodec [2/2]
     
-    PD#OTT-10155
+    PD#SWPL-26640
     
     Problem:
-    Need to support AVS and mpeg4.
+    Sample Esplayer based on videodec
+    Usage:
+         vesplayer -i filepath -f format
     
     Solution:
-    Add AVS and mpeg4.
+    add Sample Esplayer based on videodec
     
     Verify:
-    AC214
+    verify by U212
     
-    Change-Id: I8020f66e8a5528d559a535dcff5535c7b0a96c76
-    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
+    Change-Id: Ibe15e257c8c67706ebfb00e16ed7ebd0433c5e9d
+    Signed-off-by: shuanglong.wang <shuanglong.wang@amlogic.com>
 
 ========================================
 
-Release time: 2020-06-03-16-59
+Release time: 2020-06-08-14-04
 
 ========================================
 
-Builder: yunmin.chen
+Builder: shuanglong.wang
 
 ========================================
 Release file:
@@ -53,6 +55,7 @@ Android.mk
 Binary  file:
 AmTsPlayerExample
 AmTsPlayerTest
+vesplayer
 videodecplayer
 
 ========================================
