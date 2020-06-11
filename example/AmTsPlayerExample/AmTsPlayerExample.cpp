@@ -60,6 +60,21 @@ void video_callback(void *user_data, am_tsplayer_event *event)
             printf("[evt] AM_TSPLAYER_EVENT_TYPE_FIRST_FRAME\n");
             break;
         }
+        case AM_TSPLAYER_EVENT_TYPE_DECODE_FIRST_FRAME_VIDEO:
+        {
+            printf("[evt] AM_TSPLAYER_EVENT_TYPE_DECODE_FIRST_FRAME_VIDEO\n");
+            break;
+        }
+        case AM_TSPLAYER_EVENT_TYPE_DECODE_FIRST_FRAME_AUDIO:
+        {
+            printf("[evt] AM_TSPLAYER_EVENT_TYPE_DECODE_FIRST_FRAME_AUDIO\n");
+            break;
+        }
+        case AM_TSPLAYER_EVENT_TYPE_AV_SYNC_DONE:
+        {
+            printf("[evt] AM_TSPLAYER_EVENT_TYPE_AV_SYNC_DONE\n");
+            break;
+        }
         default:
             break;
 	}
@@ -108,10 +123,16 @@ static int set_dmx_source()
     return 0;
 }
 
+am_tsplayer_handle session;
+
 void signHandler(int iSignNo)
 {
     UNUSED(iSignNo);
+    AmTsPlayer_stopVideoDecoding(session);
+    AmTsPlayer_stopAudioDecoding(session);
+    AmTsPlayer_release(session);
     set_osd_blank(0);
+    printf("signHandler:%d\n",iSignNo);
     signal(SIGINT, SIG_DFL);
     raise(SIGINT);
 }
@@ -215,7 +236,7 @@ int main(int argc, char **argv)
     printf("file name = %s, is_open %d, size %lld, tsType %d\n",
                 inputTsName.c_str(), file.is_open(), fsize, tsType);
 
-    am_tsplayer_handle session;
+    //am_tsplayer_handle session;
     am_tsplayer_init_params parm = {tsType, drmmode, 0, 0};
     AmTsPlayer_create(parm, &session);
     uint32_t versionM, versionL;
@@ -271,6 +292,9 @@ int main(int argc, char **argv)
         file.close();
 
     set_osd_blank(0);
+    AmTsPlayer_stopVideoDecoding(session);
+    AmTsPlayer_stopAudioDecoding(session);
+    AmTsPlayer_release(session);
     printf("exit\n");
     return 0;
 }

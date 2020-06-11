@@ -5,35 +5,37 @@ Version: v2.0
 ========================================
 
 Git commit:
-commit b180714f5f83dce18f23c037ef51338eccd4b230
-Author: shuanglong.wang <shuanglong.wang@amlogic.com>
-Date:   Mon Jun 8 13:10:27 2020 +0800
+commit 0e9d5b2f2b7e1ed2758a31977aaac50034d45fc2
+Author: yunmin.chen <yunmin.chen@amlogic.com>
+Date:   Wed Jun 10 17:04:06 2020 +0800
 
-    videodec: sample esplayer based on videodec [2/2]
+    tsplayer: Add callback events. [1/1]
     
-    PD#SWPL-26640
+    PD#SWPL-25998
     
     Problem:
-    Sample Esplayer based on videodec
-    Usage:
-         vesplayer -i filepath -f format
+    1.Decoding the first frame video completion event
+    2.Decode the first frame audio completion event.
+    3.Audio and video synchronization completed event.
     
     Solution:
-    add Sample Esplayer based on videodec
+    1.Get the video decoding status through GET_MVDECINFO.
+    2.Obtain the first frame of audio PTS.
+    3.The timestamp of audio and video is within 100ms.
     
     Verify:
-    verify by U212
+    verify by AC214
     
-    Change-Id: Ibe15e257c8c67706ebfb00e16ed7ebd0433c5e9d
-    Signed-off-by: shuanglong.wang <shuanglong.wang@amlogic.com>
+    Change-Id: Ie24633fc32c15f30ba0e3a1a669b1fa4627931ad
+    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
 
 ========================================
 
-Release time: 2020-06-08-14-04
+Release time: 2020-06-11-13-54
 
 ========================================
 
-Builder: shuanglong.wang
+Builder: yunmin.chen
 
 ========================================
 Release file:

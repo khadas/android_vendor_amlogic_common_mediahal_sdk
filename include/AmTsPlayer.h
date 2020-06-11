@@ -21,7 +21,11 @@ typedef enum {
     AM_TSPLAYER_EVENT_TYPE_DATA_LOSS,      // demod data loss
     AM_TSPLAYER_EVENT_TYPE_DATA_RESUME,    // demod data resume
     AM_TSPLAYER_EVENT_TYPE_SCRAMBLING,     // scrambling status changed
-    AM_TSPLAYER_EVENT_TYPE_FIRST_FRAME     // first video frame showed
+    AM_TSPLAYER_EVENT_TYPE_FIRST_FRAME,     // first video frame showed
+    AM_TSPLAYER_EVENT_TYPE_STREAM_MODE_EOF, //endof stream mode
+    AM_TSPLAYER_EVENT_TYPE_DECODE_FIRST_FRAME_VIDEO, //Decode the first frame output
+    AM_TSPLAYER_EVENT_TYPE_DECODE_FIRST_FRAME_AUDIO, //Decode the first frame output
+    AM_TSPLAYER_EVENT_TYPE_AV_SYNC_DONE //av sync done
 } am_tsplayer_event_type;
 
 /*Call back event mask*/
