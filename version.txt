@@ -5,37 +5,35 @@ Version: v2.0
 ========================================
 
 Git commit:
-commit 0e9d5b2f2b7e1ed2758a31977aaac50034d45fc2
-Author: yunmin.chen <yunmin.chen@amlogic.com>
-Date:   Wed Jun 10 17:04:06 2020 +0800
+commit 529107cd1c1ff665cd34e3006a25383231292a10
+Author: Lifeng Cao <lifeng.cao@amlogic.com>
+Date:   Fri Jun 19 22:01:49 2020 +0800
 
-    tsplayer: Add callback events. [1/1]
+    AmTsPlayer: Tsplayer need set blackout_policy 0 [1/1]
     
-    PD#SWPL-25998
+    PD#SWPL-28129
     
     Problem:
-    1.Decoding the first frame video completion event
-    2.Decode the first frame audio completion event.
-    3.Audio and video synchronization completed event.
+    Changes in SWPL-25998 set bool type mSetVideoBlackout
+    to -1 cause mSetVideoBlackout = 0xFFFF. So set default
+    value 1 to blackout_policy
     
     Solution:
-    1.Get the video decoding status through GET_MVDECINFO.
-    2.Obtain the first frame of audio PTS.
-    3.The timestamp of audio and video is within 100ms.
+    mSetVideoBlackout set default value 0
     
     Verify:
-    verify by AC214
+    verify by U215
     
-    Change-Id: Ie24633fc32c15f30ba0e3a1a669b1fa4627931ad
-    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
+    Change-Id: I39c36e1b8e334c68055e6acb84c8a85a42139d1f
+    Signed-off-by: Lifeng Cao <lifeng.cao@amlogic.com>
 
 ========================================
 
-Release time: 2020-06-11-13-54
+Release time: 2020-06-19-22-12
 
 ========================================
 
-Builder: yunmin.chen
+Builder: alex.cao
 
 ========================================
 Release file:
