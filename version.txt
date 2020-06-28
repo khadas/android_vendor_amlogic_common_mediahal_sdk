@@ -5,35 +5,33 @@ Version: v2.0
 ========================================
 
 Git commit:
-commit 529107cd1c1ff665cd34e3006a25383231292a10
-Author: Lifeng Cao <lifeng.cao@amlogic.com>
-Date:   Fri Jun 19 22:01:49 2020 +0800
+commit 0af0bf799d7e199f20aeeb730be212ca06f6259e
+Author: shuanglong.wang <shuanglong.wang@amlogic.com>
+Date:   Fri Jun 19 09:38:13 2020 +0800
 
-    AmTsPlayer: Tsplayer need set blackout_policy 0 [1/1]
+    videodec: adapt to kernel5.4 [1/1]
     
-    PD#SWPL-28129
+    PD#SWPL-26741
     
     Problem:
-    Changes in SWPL-25998 set bool type mSetVideoBlackout
-    to -1 cause mSetVideoBlackout = 0xFFFF. So set default
-    value 1 to blackout_policy
+    adapt to kernel5.4
     
     Solution:
-    mSetVideoBlackout set default value 0
+    adapt to kernel5.4
     
     Verify:
-    verify by U215
+    verify by newton
     
-    Change-Id: I39c36e1b8e334c68055e6acb84c8a85a42139d1f
-    Signed-off-by: Lifeng Cao <lifeng.cao@amlogic.com>
+    Change-Id: Idebeb66046bc77b5b710d47d38d180c6aae85934
+    Signed-off-by: shuanglong.wang <shuanglong.wang@amlogic.com>
 
 ========================================
 
-Release time: 2020-06-19-22-12
+Release time: 2020-06-28-14-35
 
 ========================================
 
-Builder: alex.cao
+Builder: shuanglong.wang
 
 ========================================
 Release file:
@@ -45,7 +43,6 @@ resourcemanage.h
 
 Library file:
 libmediahal_resman.so
-libmediahal_tsplayer.so
 libmediahal_videodec.so
 
 Example file:
@@ -53,9 +50,6 @@ AmTsPlayerExample.cpp
 Android.mk
 
 Binary  file:
-AmTsPlayerExample
-AmTsPlayerTest
 vesplayer
-videodecplayer
 
 ========================================
