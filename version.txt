@@ -5,29 +5,30 @@ Version: v2.0
 ========================================
 
 Git commit:
-commit 37c0d5e0c23978e6f64f1b1a8afce0f0b46f7235
-Author: shuanglong.wang <shuanglong.wang@amlogic.com>
-Date:   Thu Jul 9 23:10:54 2020 +0800
+commit 1867739b905bc5391af787dce0127c38a81fa346
+Author: Hang Huang <hang.huang@amlogic.com>
+Date:   Thu Aug 13 18:07:44 2020 +0800
 
-    mediahal: add codec2 support [4/4]
+    tsplayer: fix sync mode setting fail. [1/1]
     
-    PD#SWPL-22160
+    PD#SWPL-31643
     
     Problem:
-    need add codec2 support
+    1.The synchronization mode setting interface is invalid.
     
     Solution:
-    add codec2 support with mediahal
+    1.If the middleware sets a valid value, it is allowed
+      to change sync mode.
     
     Verify:
-    verify by newton
+    S905X2
     
-    Change-Id: Ifdcae9abb6abce5cbc211ef0f7b7554b81cd7803
-    Signed-off-by: shuanglong.wang <shuanglong.wang@amlogic.com>
+    Change-Id: Ia1dd8b811cbc5e4f83fd3975bbcc17e68c598d9c
+    Signed-off-by: Hang Huang <hang.huang@amlogic.com>
 
 ========================================
 
-Release time: 2020-07-22-16-55
+Release time: 2020-08-26-20-20
 
 ========================================
 
