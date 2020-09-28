@@ -5,34 +5,33 @@ Version: v2.0
 ========================================
 
 Git commit:
-commit 1867739b905bc5391af787dce0127c38a81fa346
-Author: Hang Huang <hang.huang@amlogic.com>
-Date:   Thu Aug 13 18:07:44 2020 +0800
+commit f53a0b933d0cb7fb534c15ea335abd24e24b4b28
+Author: Jian Wang <jian.wang@amlogic.com>
+Date:   Thu Sep 24 19:56:32 2020 +0800
 
-    tsplayer: fix sync mode setting fail. [1/1]
+    TunnelRenderer: add TunnelRenderer [1/1]
     
-    PD#SWPL-31643
+    PD#SWPL-35032
     
     Problem:
-    1.The synchronization mode setting interface is invalid.
+    new feature for tunnel mode use videotunnel and mediasync
     
     Solution:
-    1.If the middleware sets a valid value, it is allowed
-      to change sync mode.
+    add TunnelRenderer use video tunnel and medisync
     
     Verify:
-    S905X2
+    newton-ac214
     
-    Change-Id: Ia1dd8b811cbc5e4f83fd3975bbcc17e68c598d9c
-    Signed-off-by: Hang Huang <hang.huang@amlogic.com>
+    Change-Id: Ia07a1c23f86838eb5642416f8b74058a6a329109
+    Signed-off-by: Jian Wang <jian.wang@amlogic.com>
 
 ========================================
 
-Release time: 2020-08-26-20-20
+Release time: 2020-10-29-15-07
 
 ========================================
 
-Builder: shuanglong.wang
+Builder: jian.wang
 
 ========================================
 Release file:
@@ -40,10 +39,14 @@ Release file:
 Header file:
 AmTsPlayer.h
 AmVideoDecBase.h
+MediaSyncInterface.h
 resourcemanage.h
+VideoTunnelRendererBase.h
 
 Library file:
+libmediahal_mediasync.so
 libmediahal_resman.so
+libmediahal_tunnelrenderer.so
 libmediahal_videodec.so
 
 Example file:
