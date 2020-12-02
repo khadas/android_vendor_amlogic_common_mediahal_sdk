@@ -5,35 +5,33 @@ Version: v2.0
 ========================================
 
 Git commit:
-commit 774c448f7ad301225e37ec072e98e5585a44aa51
-Author: shuanglong.wang <shuanglong.wang@amlogic.com>
-Date:   Mon Dec 7 15:01:37 2020 +0800
+commit c66e51e7443a60e403737ed185ab45c74195a35b
+Author: Jian Wang <jian.wang@amlogic.com>
+Date:   Wed Dec 2 17:29:39 2020 +0800
 
-    mediahal: v4l2 set input buffer from 8 to 3 [1/1]
+    videoTunnel: add timestamp support for videotunnel [1/1]
     
-    PD#SWPL-38201
+    PD#SWPL-38027
     
     Problem:
-    1.cannot allocte enought memory when run 9 instance in cts
-    2.notify error when only queue eos
+    video tunnel have add timestamp support when queue buf.
     
     Solution:
-    1.v4l2 set input buffer from 8 to 3
-    2.not notify error when only queue eos
+    add timestamp when queue buf to video tunnel
     
     Verify:
-    ohm
+    Ohm
     
-    Change-Id: I214846b5bea9ba5e21af8808bf09d27ac35fedca
-    Signed-off-by: shuanglong.wang <shuanglong.wang@amlogic.com>
+    Change-Id: Id6811713015a43826d1dc3f46c82e2c1a9fa3018
+    Signed-off-by: Jian Wang <jian.wang@amlogic.com>
 
 ========================================
 
-Release time: 2020-12-08-19-43
+Release time: 2020-12-08-21-08
 
 ========================================
 
-Builder: shuanglong.wang
+Builder: jian.wang
 
 ========================================
 Release file:
