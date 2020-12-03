@@ -5,33 +5,33 @@ Version: v2.0
 ========================================
 
 Git commit:
-commit f53a0b933d0cb7fb534c15ea335abd24e24b4b28
-Author: Jian Wang <jian.wang@amlogic.com>
-Date:   Thu Sep 24 19:56:32 2020 +0800
+commit 098b57f6f546feae814e610db849059a7b7e6016
+Author: shuanglong.wang <shuanglong.wang@amlogic.com>
+Date:   Tue Dec 1 17:58:58 2020 +0800
 
-    TunnelRenderer: add TunnelRenderer [1/1]
+    mediahal: use visible size instead of coded size
     
-    PD#SWPL-35032
+    PD#SWPL-36398
     
     Problem:
-    new feature for tunnel mode use videotunnel and mediasync
+    omx need real size, not aligined size
     
-    Solution:
-    add TunnelRenderer use video tunnel and medisync
+    Soltion:
+    feedback real size to omx2
     
     Verify:
-    newton-ac214
+    ohm
     
-    Change-Id: Ia07a1c23f86838eb5642416f8b74058a6a329109
-    Signed-off-by: Jian Wang <jian.wang@amlogic.com>
+    Change-Id: I9956b4c9067da20e1218298891e8ebe847a28538
+    Signed-off-by: shuanglong.wang <shuanglong.wang@amlogic.com>
 
 ========================================
 
-Release time: 2020-10-29-15-07
+Release time: 2020-12-03-10-13
 
 ========================================
 
-Builder: jian.wang
+Builder: shuanglong.wang
 
 ========================================
 Release file:
