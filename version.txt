@@ -5,29 +5,28 @@ Version: v2.0
 ========================================
 
 Git commit:
-commit 098b57f6f546feae814e610db849059a7b7e6016
+commit e4e8d84fefeed172b7f54704f901cf0ee5f34c08
 Author: shuanglong.wang <shuanglong.wang@amlogic.com>
-Date:   Tue Dec 1 17:58:58 2020 +0800
+Date:   Fri Dec 4 22:28:44 2020 +0800
 
-    mediahal: use visible size instead of coded size
+    mediahal: decoder do not use seperate thread [2/2]
     
-    PD#SWPL-36398
+    PD#SWPL-38235
     
     Problem:
-    omx need real size, not aligined size
+    bitstream id is not in order after trasmit to omx2
     
-    Soltion:
-    feedback real size to omx2
+    Solution:
+    decoder do not use seperate thread
     
     Verify:
     ohm
     
-    Change-Id: I9956b4c9067da20e1218298891e8ebe847a28538
-    Signed-off-by: shuanglong.wang <shuanglong.wang@amlogic.com>
+    Change-Id: I07f070c534c930e7af74e012c13dfa8a7f35d971
 
 ========================================
 
-Release time: 2020-12-03-10-13
+Release time: 2020-12-05-11-40
 
 ========================================
 
