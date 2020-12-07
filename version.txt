@@ -5,28 +5,31 @@ Version: v2.0
 ========================================
 
 Git commit:
-commit e4e8d84fefeed172b7f54704f901cf0ee5f34c08
+commit 774c448f7ad301225e37ec072e98e5585a44aa51
 Author: shuanglong.wang <shuanglong.wang@amlogic.com>
-Date:   Fri Dec 4 22:28:44 2020 +0800
+Date:   Mon Dec 7 15:01:37 2020 +0800
 
-    mediahal: decoder do not use seperate thread [2/2]
+    mediahal: v4l2 set input buffer from 8 to 3 [1/1]
     
-    PD#SWPL-38235
+    PD#SWPL-38201
     
     Problem:
-    bitstream id is not in order after trasmit to omx2
+    1.cannot allocte enought memory when run 9 instance in cts
+    2.notify error when only queue eos
     
     Solution:
-    decoder do not use seperate thread
+    1.v4l2 set input buffer from 8 to 3
+    2.not notify error when only queue eos
     
     Verify:
     ohm
     
-    Change-Id: I07f070c534c930e7af74e012c13dfa8a7f35d971
+    Change-Id: I214846b5bea9ba5e21af8808bf09d27ac35fedca
+    Signed-off-by: shuanglong.wang <shuanglong.wang@amlogic.com>
 
 ========================================
 
-Release time: 2020-12-05-11-40
+Release time: 2020-12-08-19-43
 
 ========================================
 
