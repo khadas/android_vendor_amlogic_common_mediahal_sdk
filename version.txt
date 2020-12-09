@@ -5,33 +5,36 @@ Version: v2.0
 ========================================
 
 Git commit:
-commit c66e51e7443a60e403737ed185ab45c74195a35b
-Author: Jian Wang <jian.wang@amlogic.com>
-Date:   Wed Dec 2 17:29:39 2020 +0800
+commit 700b10c31111fff73441816c73ec2ae26f241922
+Author: shipeng.sun <shipeng.sun@amlogic.com>
+Date:   Wed Dec 9 14:59:44 2020 +0800
 
-    videoTunnel: add timestamp support for videotunnel [1/1]
+    media_hal: add a mutex sync flush call [2/2]
     
-    PD#SWPL-38027
+    PD#SWPL-38050
     
     Problem:
-    video tunnel have add timestamp support when queue buf.
+    v4l2 add wait last frame when resoluction change
+    or call flush
     
     Solution:
-    add timestamp when queue buf to video tunnel
+    1.v4l2 add wait last frame when resoluction change
+    or call flush
+    2. add dump clear es data
     
     Verify:
-    Ohm
+    ohm
     
-    Change-Id: Id6811713015a43826d1dc3f46c82e2c1a9fa3018
-    Signed-off-by: Jian Wang <jian.wang@amlogic.com>
+    Change-Id: I37baee85879f4d224ad490cf2504977e14cffb54
+    Signed-off-by: shipeng.sun <shipeng.sun@amlogic.com>
 
 ========================================
 
-Release time: 2020-12-08-21-08
+Release time: 2020-12-10-19-46
 
 ========================================
 
-Builder: jian.wang
+Builder: shuanglong.wang
 
 ========================================
 Release file:
