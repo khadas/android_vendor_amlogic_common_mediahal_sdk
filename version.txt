@@ -5,36 +5,36 @@ Version: v2.0
 ========================================
 
 Git commit:
-commit 700b10c31111fff73441816c73ec2ae26f241922
-Author: shipeng.sun <shipeng.sun@amlogic.com>
-Date:   Wed Dec 9 14:59:44 2020 +0800
+commit 726def010f5db6ee2ad534a9c87432ff300d7345
+Author: Jian Wang <jian.wang@amlogic.com>
+Date:   Mon Dec 7 12:42:29 2020 +0800
 
-    media_hal: add a mutex sync flush call [2/2]
+    tunnelRender: add av start together [1/3]
     
-    PD#SWPL-38050
+    PD#SWPL-38308
     
     Problem:
-    v4l2 add wait last frame when resoluction change
-    or call flush
+    netflix start will audio earliy video
     
     Solution:
-    1.v4l2 add wait last frame when resoluction change
-    or call flush
-    2. add dump clear es data
+    1. add function audio and video start at
+    some time
+    2. videotunel need have 4 buf when dequeue
+    to aviod dequeue buf fence to be -1
     
     Verify:
-    ohm
+    Ohm
     
-    Change-Id: I37baee85879f4d224ad490cf2504977e14cffb54
-    Signed-off-by: shipeng.sun <shipeng.sun@amlogic.com>
+    Change-Id: I08dd3fbb0ad36bf41507b4ed70ad9139951d5ca0
+    Signed-off-by: Jian Wang <jian.wang@amlogic.com>
 
 ========================================
 
-Release time: 2020-12-10-19-46
+Release time: 2020-12-11-15-31
 
 ========================================
 
-Builder: shuanglong.wang
+Builder: jian.wang
 
 ========================================
 Release file:
