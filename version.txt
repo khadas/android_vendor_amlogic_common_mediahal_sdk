@@ -5,36 +5,34 @@ Version: v2.0
 ========================================
 
 Git commit:
-commit 726def010f5db6ee2ad534a9c87432ff300d7345
-Author: Jian Wang <jian.wang@amlogic.com>
-Date:   Mon Dec 7 12:42:29 2020 +0800
+commit f5443c8c17e7347b2b047a67bf2818b54c7fc878
+Author: shipeng.sun <shipeng.sun@amlogic.com>
+Date:   Fri Dec 11 20:39:57 2020 +0800
 
-    tunnelRender: add av start together [1/3]
+    media_hal: testOnlyEosNative v4l2 and decoder not exit [1/1]
     
-    PD#SWPL-38308
+    PD#SWPL-38201
     
     Problem:
-    netflix start will audio earliy video
+    testOnlyEosNative v4l2 and decoder not exit block test
     
     Solution:
-    1. add function audio and video start at
-    some time
-    2. videotunel need have 4 buf when dequeue
-    to aviod dequeue buf fence to be -1
+    1. add totalInutFrameCount to record decode real frame number
+    to avoid flush blocked.
     
     Verify:
-    Ohm
+    ohm
     
-    Change-Id: I08dd3fbb0ad36bf41507b4ed70ad9139951d5ca0
-    Signed-off-by: Jian Wang <jian.wang@amlogic.com>
+    Change-Id: I3c44f208d1fb81d45ab522e07c393905128bab84
+    Signed-off-by: shipeng.sun <shipeng.sun@amlogic.com>
 
 ========================================
 
-Release time: 2020-12-11-15-31
+Release time: 2020-12-11-22-13
 
 ========================================
 
-Builder: jian.wang
+Builder: shuanglong.wang
 
 ========================================
 Release file:
