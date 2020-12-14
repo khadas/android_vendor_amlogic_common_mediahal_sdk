@@ -5,31 +5,29 @@ Version: v2.0
 ========================================
 
 Git commit:
-commit 8a16089c6364772a6aa445f614d2eba685a51915
-Author: peter wang <peter.wang@amlogic.com>
-Date:   Fri Dec 18 22:28:29 2020 +0800
+commit 5bcad51984b5b1d462f42bbfeb69bb390b3cf229 (HEAD)
+Author: Minliang Lu <minliang.lu@amlogic.com>
+Date:   Fri Dec 11 16:44:15 2020 +0800
 
-    MediaHal: fix DecoderTest#testH265HDR10StaticMetadata case [1/2]
-    
-    PD#SWPL-34209
-    
+    mediahal: v4l2 support HDR10+ [1/1]
+
+    PD#SWPL-37520
+
     Problem:
-    bellow cts case failed in CtsMediaTestCases module:
-    android.media.cts.DecoderTest#testH265HDR10StaticMetadata
-    because VDA get hdr info late
-    
+    V4l2 has not support HDR10+
+
     Solution:
-    get hdr info again after got first picture
-    
+    Add support for HDR10+ for v4l2 decoder.
+
     Verify:
-    test on ohm
-    
-    Change-Id: I6e484dc4b46d9fde08d55c4137278533a976b973
-    Signed-off-by: peter wang <peter.wang@amlogic.com>
+    ohm
+
+    Change-Id: I3df1bfc8d87dacd971cf570ccc56520c17086f5a
+    Signed-off-by: Minliang Lu <minliang.lu@amlogic.com>
 
 ========================================
 
-Release time: 2020-12-21-10-21
+Release time: 2020-12-22-10-54
 
 ========================================
 
