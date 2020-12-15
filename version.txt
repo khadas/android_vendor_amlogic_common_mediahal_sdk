@@ -5,30 +5,29 @@ Version: v2.0
 ========================================
 
 Git commit:
-commit f5443c8c17e7347b2b047a67bf2818b54c7fc878
-Author: shipeng.sun <shipeng.sun@amlogic.com>
-Date:   Fri Dec 11 20:39:57 2020 +0800
+commit 8947e0d5a97e447ff8c14141e11e5c882769258a
+Author: shuanglong.wang <shuanglong.wang@amlogic.com>
+Date:   Tue Dec 15 11:04:13 2020 +0800
 
-    media_hal: testOnlyEosNative v4l2 and decoder not exit [1/1]
+    mediahal: poll v4l2 device always [1/1]
     
-    PD#SWPL-38201
+    PD#SWPL-38991
     
     Problem:
-    testOnlyEosNative v4l2 and decoder not exit block test
+    medhal cannnot poll resolution change event
     
     Solution:
-    1. add totalInutFrameCount to record decode real frame number
-    to avoid flush blocked.
+    poll v4l2 device always
     
     Verify:
     ohm
     
-    Change-Id: I3c44f208d1fb81d45ab522e07c393905128bab84
-    Signed-off-by: shipeng.sun <shipeng.sun@amlogic.com>
+    Change-Id: If21c0cffa014f4086a2dd1b54fefee695baed286
+    Signed-off-by: shuanglong.wang <shuanglong.wang@amlogic.com>
 
 ========================================
 
-Release time: 2020-12-11-22-13
+Release time: 2020-12-15-16-47
 
 ========================================
 
