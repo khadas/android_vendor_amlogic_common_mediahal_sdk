@@ -40,28 +40,6 @@
 #define UNUSED(x) (void)(x)
 #endif
 
-typedef struct {
-     /* video */
-     uint32_t    vpid;
-     uint32_t    nVideoWidth;
-     uint32_t    nVideoHeight;
-     uint32_t    nFrameRate;
-     uint32_t   vFmt;
-     uint32_t    drmMode;
-     /* audio */
-     uint32_t    apid;
-     uint32_t    nChannels;
-     uint32_t    nSampleRate;
-     uint32_t   aFmt;
-     /* pcrid */
-     uint32_t    pcrid;
-     /* display */
-     uint32_t dispMode;
-     uint32_t    nSidebandType;
-     uint32_t    nSidebandId;
-     uint32_t    nAvsyncMode;
-} init_param_t;
-
 
 class vesplayer {
 public:
@@ -436,16 +414,16 @@ static void usage(void)
     printf("mediahal_esplayer\n");
     printf("Usage: mediahal_esplayer -i <file> -f <format> [-r <framerate>] [-a <addhead>] [-w <width>] [-h <height>] [-y <help>]\n");
     printf("\n");
-    printf(" -i, --ifile		input es file\n");
-    printf(" -f, --format		video format\n");
-    printf ("			(0:mpeg12\t1:mpeg4\t\t2:h264\t\t3:mjpeg\n\
-			5:jpeg\t\t6:vcl\t\t7:avs\t\t11:hevc\n\
-			14:vp9\t\t15:avs2)\n");
-    printf(" -r, --framerate	framerate\n");
-    printf(" -a, --addhead		add es header \n");
-    printf(" -w, --width		video width\n");
-    printf(" -h, --height		video height\n");
-    printf(" -y, --help		usage\n");
+  printf(" -i, --ifileinput es file\n");
+  printf(" -f, --formatvideo format\n");
+  printf ("(0:mpeg12\t1:mpeg4\t\t2:h264\t\t3:mjpeg\n\
+            5:jpeg\t\t6:vcl\t\t7:avs\t\t11:hevc\n\
+            14:vp9\t\t15:avs2)\n");
+    printf(" -r, --framerate framerate\n");
+    printf(" -a, --addhead add es header \n");
+    printf(" -w, --width video width\n");
+    printf(" -h, --height video height\n");
+    printf(" -y, --help usage\n");
 }
 
 int main(int argc, char** argv) {
@@ -505,7 +483,7 @@ int main(int argc, char** argv) {
     }
 
     if (iname == nullptr ||
-        vFmt == -1) {
+        vFmt == (uint32_t)-1) {
         usage();
         exit(-1);
     }
@@ -521,7 +499,9 @@ int main(int argc, char** argv) {
     /* video */     256, videowidth, videoheight, framerate, vFmt, 0,
     /* audio */     0, 2, 44100, 2,
     /*pcrid */		0,
-    /* display */   1, 0, 0, 0};
+    /* display */   1, 0, 0, 0,
+                    2, 0, 0, 0, 0, 0, 0};
+
 
     gEsplayer = new vesplayer(&config);
     gEsplayer->play(iname);

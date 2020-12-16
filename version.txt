@@ -5,33 +5,33 @@ Version: v2.0
 ========================================
 
 Git commit:
-commit 8947e0d5a97e447ff8c14141e11e5c882769258a
-Author: shuanglong.wang <shuanglong.wang@amlogic.com>
-Date:   Tue Dec 15 11:04:13 2020 +0800
+commit 2b7fbe219117f84428451c8313d731aba3783aa5
+Author: shilong.yang <shilong.yang@amlogic.com>
+Date:   Wed Dec 2 15:59:46 2020 +0800
 
-    mediahal: poll v4l2 device always [1/1]
+    tsplayer: bring up tsplayer for R. [1/1]
     
-    PD#SWPL-38991
+    PD#SWPL-26614
     
     Problem:
-    medhal cannnot poll resolution change event
+    need porting tsplayer for R.
     
     Solution:
-    poll v4l2 device always
+    porting code compatible with R.
     
     Verify:
-    ohm
+    AH212
     
-    Change-Id: If21c0cffa014f4086a2dd1b54fefee695baed286
-    Signed-off-by: shuanglong.wang <shuanglong.wang@amlogic.com>
+    Change-Id: I0caa9a7c3ead315b73c2023e65683cad84da428a
+    Signed-off-by: shilong.yang <shilong.yang@amlogic.com>
 
 ========================================
 
-Release time: 2020-12-15-16-47
+Release time: 2020-12-16-20-10
 
 ========================================
 
-Builder: shuanglong.wang
+Builder: shilong.yang
 
 ========================================
 Release file:
@@ -46,6 +46,7 @@ VideoTunnelRendererBase.h
 Library file:
 libmediahal_mediasync.so
 libmediahal_resman.so
+libmediahal_tsplayer.so
 libmediahal_tunnelrenderer.so
 libmediahal_videodec.so
 
@@ -54,6 +55,8 @@ AmTsPlayerExample.cpp
 Android.mk
 
 Binary  file:
+AmTsPlayerExample
+AmTsPlayerTest
 vesplayer
 
 ========================================
