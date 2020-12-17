@@ -5,33 +5,37 @@ Version: v2.0
 ========================================
 
 Git commit:
-commit 2b7fbe219117f84428451c8313d731aba3783aa5
-Author: shilong.yang <shilong.yang@amlogic.com>
-Date:   Wed Dec 2 15:59:46 2020 +0800
+commit 5a60e1a881cae2fa6a7f263a4895f6557dce00ee
+Author: shipeng.sun <shipeng.sun@amlogic.com>
+Date:   Wed Dec 16 23:05:23 2020 +0800
 
-    tsplayer: bring up tsplayer for R. [1/1]
+    v4l2: android r enqueue input error report to omx [1/1]
     
-    PD#SWPL-26614
+    PD#SWPL-39032
     
     Problem:
-    need porting tsplayer for R.
+    when enqueue secure input data failed, omx don't handle
+    errno = 4, we change report error=1 make sure component
+    can be destory
     
     Solution:
-    porting code compatible with R.
+    when enqueue secure input data failed, omx don't handle
+    errno = 4, we change report error=1 make sure component
+    can be destory
     
     Verify:
-    AH212
+    ohm
     
-    Change-Id: I0caa9a7c3ead315b73c2023e65683cad84da428a
-    Signed-off-by: shilong.yang <shilong.yang@amlogic.com>
+    Change-Id: Ief70ce181dbfebf972599deb79e19b1ce0db6d27
+    Signed-off-by: shipeng.sun <shipeng.sun@amlogic.com>
 
 ========================================
 
-Release time: 2020-12-16-20-10
+Release time: 2020-12-17-22-41
 
 ========================================
 
-Builder: shilong.yang
+Builder: shipeng.sun
 
 ========================================
 Release file:
@@ -55,8 +59,6 @@ AmTsPlayerExample.cpp
 Android.mk
 
 Binary  file:
-AmTsPlayerExample
-AmTsPlayerTest
 vesplayer
 
 ========================================
