@@ -5,37 +5,35 @@ Version: v2.0
 ========================================
 
 Git commit:
-commit 5a60e1a881cae2fa6a7f263a4895f6557dce00ee
-Author: shipeng.sun <shipeng.sun@amlogic.com>
-Date:   Wed Dec 16 23:05:23 2020 +0800
+commit 8a16089c6364772a6aa445f614d2eba685a51915
+Author: peter wang <peter.wang@amlogic.com>
+Date:   Fri Dec 18 22:28:29 2020 +0800
 
-    v4l2: android r enqueue input error report to omx [1/1]
+    MediaHal: fix DecoderTest#testH265HDR10StaticMetadata case [1/2]
     
-    PD#SWPL-39032
+    PD#SWPL-34209
     
     Problem:
-    when enqueue secure input data failed, omx don't handle
-    errno = 4, we change report error=1 make sure component
-    can be destory
+    bellow cts case failed in CtsMediaTestCases module:
+    android.media.cts.DecoderTest#testH265HDR10StaticMetadata
+    because VDA get hdr info late
     
     Solution:
-    when enqueue secure input data failed, omx don't handle
-    errno = 4, we change report error=1 make sure component
-    can be destory
+    get hdr info again after got first picture
     
     Verify:
-    ohm
+    test on ohm
     
-    Change-Id: Ief70ce181dbfebf972599deb79e19b1ce0db6d27
-    Signed-off-by: shipeng.sun <shipeng.sun@amlogic.com>
+    Change-Id: I6e484dc4b46d9fde08d55c4137278533a976b973
+    Signed-off-by: peter wang <peter.wang@amlogic.com>
 
 ========================================
 
-Release time: 2020-12-17-22-41
+Release time: 2020-12-21-10-21
 
 ========================================
 
-Builder: shipeng.sun
+Builder: peter.wang
 
 ========================================
 Release file:
@@ -44,8 +42,8 @@ Header file:
 AmTsPlayer.h
 AmVideoDecBase.h
 MediaSyncInterface.h
-resourcemanage.h
 VideoTunnelRendererBase.h
+resourcemanage.h
 
 Library file:
 libmediahal_mediasync.so
@@ -59,6 +57,7 @@ AmTsPlayerExample.cpp
 Android.mk
 
 Binary  file:
+AmTsPlayerExample
 vesplayer
 
 ========================================
