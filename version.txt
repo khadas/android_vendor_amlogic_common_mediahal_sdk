@@ -28,11 +28,11 @@ Date:   Wed Dec 23 19:58:28 2020 +0800
 
 ========================================
 
-Release time: 2020-12-23-20-04
+Release time: 2020-12-25-11-44
 
 ========================================
 
-Builder: peter.wang
+Builder: shilong.yang
 
 ========================================
 Release file:
@@ -41,8 +41,8 @@ Header file:
 AmTsPlayer.h
 AmVideoDecBase.h
 MediaSyncInterface.h
-VideoTunnelRendererBase.h
 resourcemanage.h
+VideoTunnelRendererBase.h
 
 Library file:
 libmediahal_mediasync.so
@@ -57,6 +57,7 @@ Android.mk
 
 Binary  file:
 AmTsPlayerExample
+AmTsPlayerTest
 vesplayer
 
 ========================================
