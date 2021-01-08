@@ -5,34 +5,35 @@ Version: v2.0
 ========================================
 
 Git commit:
-commit c82535fdc08a7c5cea2ad004d461358e42d9a237
-Author: shuanglong.wang <shuanglong.wang@amlogic.com>
-Date:   Wed Dec 30 18:11:04 2020 +0800
+commit 064540fdb2693b9408e6385a801fa42fd9b3e602
+Author: shipeng.sun <shipeng.sun@amlogic.com>
+Date:   Fri Jan 8 12:58:48 2021 +0800
 
-    mediahal: ignore resolution event in reset process [2/2]
+    media_hal: prevent output buffer early queue to decorder [1/1]
     
-    PD#SWPL-39951
+    PD#
     
     Problem:
-    android.mediav2.cts.CodecDecoderSurfaceTest#testFlushNative[2(video/av01)] fails
+    after call outputbuffer stream off prevent output buffer early
+    queue to decoder
     
     Solution:
-    1.ignore resolution event in reset process
-    2.ignore resolution event if size and dpb not change
+    after call outputbuffer stream off prevent output buffer early
+    queue to decoder, prevent frame out before omx reuse this buffer.
     
     Verify:
-    ohm
+    test on ohm
     
-    Change-Id: Id20aad43e5af3e6f70f12014e84de95674991d11
-    Signed-off-by: shuanglong.wang <shuanglong.wang@amlogic.com>
+    Change-Id: I79e94a5cb35ab8eecaad0ab1062fced6b4058a6c
+    Signed-off-by: shipeng.sun <shipeng.sun@amlogic.com>
 
 ========================================
 
-Release time: 2020-12-31-15-19
+Release time: 2021-01-11-10-59
 
 ========================================
 
-Builder: shuanglong.wang
+Builder: shipeng.sun
 
 ========================================
 Release file:
@@ -45,10 +46,6 @@ resourcemanage.h
 VideoTunnelRendererBase.h
 
 Library file:
-libmediahal_mediasync.so
-libmediahal_resman.so
-libmediahal_tsplayer.so
-libmediahal_tunnelrenderer.so
 libmediahal_videodec.so
 
 Example file:
@@ -56,8 +53,6 @@ AmTsPlayerExample.cpp
 Android.mk
 
 Binary  file:
-AmTsPlayerExample
-AmTsPlayerTest
 vesplayer
 
 ========================================
