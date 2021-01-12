@@ -5,33 +5,33 @@ Version: v2.0
 ========================================
 
 Git commit:
-commit a6e2f72efb88d9f099073fd491f33b87fba078fb
-Author: shuanglong.wang <shuanglong.wang@amlogic.com>
-Date:   Tue Jan 19 22:07:40 2021 +0800
+commit 44b9ea225ba2781893131d30282fca6f724e826b
+Author: Jian Wang <jian.wang@amlogic.com>
+Date:   Mon Jan 11 20:23:43 2021 +0800
 
-    mediahal: adjust decoder_frames_at_client_ when flush [2/2]
+    amvideodec: add flag key frames [2/4]
     
-    PD#SWPL-41407
+    PD#SWPL-39084
     
     Problem:
-    decoder_frames_at_client_ error when flush
+    V4l2 need support unstable pts
     
     Solution:
-    adjust decoder_frames_at_client_ when flush
+    Add flags for key frame from v4l2 to omx2.
     
     Verify:
-    ohm
+    S905X2
     
-    Change-Id: Ice140d0d4250b2f6011f716bc70e5b77288706f3
-    Signed-off-by: shuanglong.wang <shuanglong.wang@amlogic.com>
+    Change-Id: I37e93a550b7e89922ee75d350b247d8c5742789d
+    Signed-off-by: Jian Wang <jian.wang@amlogic.com>
 
 ========================================
 
-Release time: 2021-01-19-22-14
+Release time: 2021-01-21-17-41
 
 ========================================
 
-Builder: shuanglong.wang
+Builder: jian.wang
 
 ========================================
 Release file:
