@@ -5,35 +5,33 @@ Version: v2.0
 ========================================
 
 Git commit:
-commit 064540fdb2693b9408e6385a801fa42fd9b3e602
-Author: shipeng.sun <shipeng.sun@amlogic.com>
-Date:   Fri Jan 8 12:58:48 2021 +0800
+commit d34ed86b4fd4d2f99f0d79f698cbd6d1a52d792e
+Author: shuanglong.wang <shuanglong.wang@amlogic.com>
+Date:   Fri Jan 15 12:43:32 2021 +0800
 
-    media_hal: prevent output buffer early queue to decorder [1/1]
+    tunnelRender: alloc mediasync instance in video when audio not create it [1/1]
     
-    PD#
+    PD#SWPL-40652
     
     Problem:
-    after call outputbuffer stream off prevent output buffer early
-    queue to decoder
+    audio adev_get_parameters not called due audio same sessionid in two playback
     
     Solution:
-    after call outputbuffer stream off prevent output buffer early
-    queue to decoder, prevent frame out before omx reuse this buffer.
+    alloc mediasync instance in video when audio not create it
     
     Verify:
-    test on ohm
+    ohm
     
-    Change-Id: I79e94a5cb35ab8eecaad0ab1062fced6b4058a6c
-    Signed-off-by: shipeng.sun <shipeng.sun@amlogic.com>
+    Change-Id: I936160447bfc525af6380a97f20c77c3919c2ccc
+    Signed-off-by: shuanglong.wang <shuanglong.wang@amlogic.com>
 
 ========================================
 
-Release time: 2021-01-11-10-59
+Release time: 2021-01-15-12-59
 
 ========================================
 
-Builder: shipeng.sun
+Builder: shuanglong.wang
 
 ========================================
 Release file:
@@ -46,6 +44,10 @@ resourcemanage.h
 VideoTunnelRendererBase.h
 
 Library file:
+libmediahal_mediasync.so
+libmediahal_resman.so
+libmediahal_tsplayer.so
+libmediahal_tunnelrenderer.so
 libmediahal_videodec.so
 
 Example file:
@@ -53,6 +55,8 @@ AmTsPlayerExample.cpp
 Android.mk
 
 Binary  file:
+AmTsPlayerExample
+AmTsPlayerTest
 vesplayer
 
 ========================================
