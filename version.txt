@@ -5,29 +5,29 @@ Version: v2.0
 ========================================
 
 Git commit:
-commit d34ed86b4fd4d2f99f0d79f698cbd6d1a52d792e
+commit a6e2f72efb88d9f099073fd491f33b87fba078fb
 Author: shuanglong.wang <shuanglong.wang@amlogic.com>
-Date:   Fri Jan 15 12:43:32 2021 +0800
+Date:   Tue Jan 19 22:07:40 2021 +0800
 
-    tunnelRender: alloc mediasync instance in video when audio not create it [1/1]
+    mediahal: adjust decoder_frames_at_client_ when flush [2/2]
     
-    PD#SWPL-40652
+    PD#SWPL-41407
     
     Problem:
-    audio adev_get_parameters not called due audio same sessionid in two playback
+    decoder_frames_at_client_ error when flush
     
     Solution:
-    alloc mediasync instance in video when audio not create it
+    adjust decoder_frames_at_client_ when flush
     
     Verify:
     ohm
     
-    Change-Id: I936160447bfc525af6380a97f20c77c3919c2ccc
+    Change-Id: Ice140d0d4250b2f6011f716bc70e5b77288706f3
     Signed-off-by: shuanglong.wang <shuanglong.wang@amlogic.com>
 
 ========================================
 
-Release time: 2021-01-15-12-59
+Release time: 2021-01-19-22-14
 
 ========================================
 
