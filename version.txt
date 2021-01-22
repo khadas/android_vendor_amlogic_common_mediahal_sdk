@@ -5,33 +5,33 @@ Version: v2.0
 ========================================
 
 Git commit:
-commit 44b9ea225ba2781893131d30282fca6f724e826b
-Author: Jian Wang <jian.wang@amlogic.com>
-Date:   Mon Jan 11 20:23:43 2021 +0800
+commit 96cdf14d6bc30730fd381d08f17db0ca9326719d
+Author: wenbiao zhang <wenbiao.zhang@amlogic.com>
+Date:   Thu Jan 21 14:02:40 2021 +0800
 
-    amvideodec: add flag key frames [2/4]
+    AmTsplayer: use SystemControlClient::getInstance to get instance [1/1]
     
-    PD#SWPL-39084
+    PD#SWPL-40640
     
     Problem:
-    V4l2 need support unstable pts
+    SystemControlClient leak when switch channel with dtvkit
     
     Solution:
-    Add flags for key frame from v4l2 to omx2.
+    use SystemControlClient::getInstance instead new SystemControlClient()
     
     Verify:
-    S905X2
+    T5D
     
-    Change-Id: I37e93a550b7e89922ee75d350b247d8c5742789d
-    Signed-off-by: Jian Wang <jian.wang@amlogic.com>
+    Change-Id: Iad478a03495bbedeeb9e6865d42430d1634a3316
+    Signed-off-by: wenbiao zhang <wenbiao.zhang@amlogic.com>
 
 ========================================
 
-Release time: 2021-01-21-17-41
+Release time: 2021-01-22-17-39
 
 ========================================
 
-Builder: jian.wang
+Builder: wenbiao.zhang
 
 ========================================
 Release file:
