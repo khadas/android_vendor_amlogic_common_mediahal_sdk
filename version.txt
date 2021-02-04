@@ -5,29 +5,29 @@ Version: v2.0
 ========================================
 
 Git commit:
-commit ecda169d5c3712209b5c9905fca0bef0f2d3ff5f
+commit bc2a93c70158934ea4a360604909c7b77c36590c
 Author: shuanglong.wang <shuanglong.wang@amlogic.com>
-Date:   Wed Jan 20 21:14:12 2021 +0800
+Date:   Sun Jan 31 12:18:02 2021 +0800
 
-    mediahal: adjust mediahal default log level [1/1]
+    mediahal: tunnel mode frac control [2/2]
     
-    PD#SWPL-40761
+    PD#SWPL-41540
     
     Problem:
-    adjust mediahal default log level
+    nts eyepatch drop frame issue
     
     Solution:
-    adjust mediahal default log level
+    tunnel mode add frac control
     
     Verify:
     ohm
     
-    Change-Id: I3ba85a6138e4a0cb1522afe4a3475440dd71f56b
+    Change-Id: Icb3b7c1f80e87b4bd1ab4a98f7c381663226012c
     Signed-off-by: shuanglong.wang <shuanglong.wang@amlogic.com>
 
 ========================================
 
-Release time: 2021-01-28-10-46
+Release time: 2021-02-08-14-39
 
 ========================================
 
@@ -46,6 +46,7 @@ VideoTunnelRendererBase.h
 Library file:
 libmediahal_mediasync.so
 libmediahal_resman.so
+libmediahal_tsplayer.so
 libmediahal_tunnelrenderer.so
 libmediahal_videodec.so
 
