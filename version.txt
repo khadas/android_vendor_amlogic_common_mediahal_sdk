@@ -5,33 +5,33 @@ Version: v2.0
 ========================================
 
 Git commit:
-commit bc2a93c70158934ea4a360604909c7b77c36590c
-Author: shuanglong.wang <shuanglong.wang@amlogic.com>
-Date:   Sun Jan 31 12:18:02 2021 +0800
+commit 4f06f2dcf40a0aac71a8700f2e5249232149d721
+Author: shanshan.li <shanshan.li@amlogic.com>
+Date:   Tue Feb 9 13:49:57 2021 +0800
 
-    mediahal: tunnel mode frac control [2/2]
+    videoTunnelRenderer: videoTunnelRenderer force updateAnchor. [1/2]
     
-    PD#SWPL-41540
+    PD#SWPL-43020
     
     Problem:
-    nts eyepatch drop frame issue
+    pause-resume, video pts is smaller than, causing the stuck.
     
     Solution:
-    tunnel mode add frac control
+    video force updateAnchor after pause.
     
     Verify:
-    ohm
+    SC2_AH212
     
-    Change-Id: Icb3b7c1f80e87b4bd1ab4a98f7c381663226012c
-    Signed-off-by: shuanglong.wang <shuanglong.wang@amlogic.com>
+    Change-Id: Id0940e1e5e3cb2f03d8cd731c536790e3c7b23c1
+    Signed-off-by: shanshan.li <shanshan.li@amlogic.com>
 
 ========================================
 
-Release time: 2021-02-08-14-39
+Release time: 2021-02-10-18-17
 
 ========================================
 
-Builder: shuanglong.wang
+Builder: shanshan.li
 
 ========================================
 Release file:
