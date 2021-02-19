@@ -5,33 +5,33 @@ Version: v2.0
 ========================================
 
 Git commit:
-commit 4f06f2dcf40a0aac71a8700f2e5249232149d721
-Author: shanshan.li <shanshan.li@amlogic.com>
-Date:   Tue Feb 9 13:49:57 2021 +0800
+commit f3a5d825dd9bde91b20bfb2a08549c6335119d36
+Author: shuanglong.wang <shuanglong.wang@amlogic.com>
+Date:   Thu Feb 18 16:45:15 2021 +0800
 
-    videoTunnelRenderer: videoTunnelRenderer force updateAnchor. [1/2]
+    mediahal: add pattern for 60fps [1/1]
     
-    PD#SWPL-43020
+    PD#SWPL-41540
     
     Problem:
-    pause-resume, video pts is smaller than, causing the stuck.
+    60fps frame drop/freeze
     
     Solution:
-    video force updateAnchor after pause.
+    add pattern for 60fps
     
     Verify:
-    SC2_AH212
+    ohm
     
-    Change-Id: Id0940e1e5e3cb2f03d8cd731c536790e3c7b23c1
-    Signed-off-by: shanshan.li <shanshan.li@amlogic.com>
+    Change-Id: Ia8323ef9059aecc98287e173d5e171e925135d50
+    Signed-off-by: shuanglong.wang <shuanglong.wang@amlogic.com>
 
 ========================================
 
-Release time: 2021-02-10-18-17
+Release time: 2021-02-19-16-02
 
 ========================================
 
-Builder: shanshan.li
+Builder: shuanglong.wang
 
 ========================================
 Release file:
