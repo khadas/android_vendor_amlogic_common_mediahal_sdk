@@ -5,33 +5,34 @@ Version: v2.0
 ========================================
 
 Git commit:
-commit f3a5d825dd9bde91b20bfb2a08549c6335119d36
-Author: shuanglong.wang <shuanglong.wang@amlogic.com>
-Date:   Thu Feb 18 16:45:15 2021 +0800
+commit 9aabfbd2385bd8ff72557c0ae102787545c8af5e
+Author: Jian Wang <jian.wang@amlogic.com>
+Date:   Mon Feb 22 19:19:32 2021 +0800
 
-    mediahal: add pattern for 60fps [1/1]
+    tunnelmode: fixed video do not can start [1/1]
     
-    PD#SWPL-41540
+    PD#SWPL-43422
     
     Problem:
-    60fps frame drop/freeze
+    some time audio start too early after seek, and
+    get video time is before week, duo to audio do
+    not wait video, and video can not get audio start
     
     Solution:
-    add pattern for 60fps
+    clear Anchor use set video time 0 when flush video
     
     Verify:
     ohm
     
-    Change-Id: Ia8323ef9059aecc98287e173d5e171e925135d50
-    Signed-off-by: shuanglong.wang <shuanglong.wang@amlogic.com>
+    Change-Id: Ifa9477513dc1675158f4c785deab7bce7f4a3155
 
 ========================================
 
-Release time: 2021-02-19-16-02
+Release time: 2021-02-22-19-37
 
 ========================================
 
-Builder: shuanglong.wang
+Builder: jian.wang
 
 ========================================
 Release file:
