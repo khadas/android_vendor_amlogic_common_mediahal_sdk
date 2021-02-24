@@ -5,34 +5,36 @@ Version: v2.0
 ========================================
 
 Git commit:
-commit 9aabfbd2385bd8ff72557c0ae102787545c8af5e
-Author: Jian Wang <jian.wang@amlogic.com>
-Date:   Mon Feb 22 19:19:32 2021 +0800
+commit c8a5b77a1d53f4e88f8a3181922fadaba1684347
+Author: shuanglong.wang <shuanglong.wang@amlogic.com>
+Date:   Wed Feb 24 20:46:16 2021 +0800
 
-    tunnelmode: fixed video do not can start [1/1]
+    mediahal: hold frame for 60fps [1/1]
     
-    PD#SWPL-43422
+    PD#SWPL-41540
     
     Problem:
-    some time audio start too early after seek, and
-    get video time is before week, duo to audio do
-    not wait video, and video can not get audio start
+    after drop 1 every 1000 frame occur pattern broken
     
     Solution:
-    clear Anchor use set video time 0 when flush video
+    1.hold frame for 60fps
+    2.50fps not check pattern
+    3.cache 2 frame then play
+    4.secure input modify 8->16
     
     Verify:
     ohm
     
-    Change-Id: Ifa9477513dc1675158f4c785deab7bce7f4a3155
+    Change-Id: I09359bd15311b3fdba8b944359e94175eefb4ca6
+    Signed-off-by: shuanglong.wang <shuanglong.wang@amlogic.com>
 
 ========================================
 
-Release time: 2021-02-22-19-37
+Release time: 2021-02-26-17-49
 
 ========================================
 
-Builder: jian.wang
+Builder: shuanglong.wang
 
 ========================================
 Release file:
