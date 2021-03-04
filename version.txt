@@ -5,33 +5,34 @@ Version: v2.0
 ========================================
 
 Git commit:
-commit e46fa9abd509c4f01a3135d25661169196d22b80
-Author: wanghao.li <wanghao.li@amlogic.com>
-Date:   Thu Feb 18 17:44:24 2021 +0800
+commit 13fb9346b80a85f2760b5e9265e10c08cd9d2ba4
+Author: Jian Wang <jian.wang@amlogic.com>
+Date:   Tue Mar 2 17:14:01 2021 +0800
 
-    tsplay: add sideband when set surface in tunnel mode [1/1]
+    tunnel mode: modify tunnel mode notify render use mediahal [1/2]
     
-    PD#OTT-17172
+    PD#SWPL-42455
     
     Problem:
-    [ZTE/Italy][Bug#3450][S905X2][10.0][Feedback][System]:setSurface interface does not take effect
+    Omx2 Tunnel mode return render time use picture ready time
+    do not accurate
     
     Solution:
-    add setSurface
+    Omx2 use tunnelrender calculate realtime for render time.
     
     Verify:
-    SC2
+    Ohm
     
-    Change-Id: I1a26a0c847c65b57f78ae4c06f649f797e2285f4
-    Signed-off-by: wanghao.li<wanghao.li@amlogic.com>
+    Change-Id: Ia0db71337ac3a9678dc4b8ec744a2710a0c32beb
+    Signed-off-by: Jian Wang <jian.wang@amlogic.com>
 
 ========================================
 
-Release time: 2021-03-04-11-08
+Release time: 2021-03-04-21-30
 
 ========================================
 
-Builder: wanghao.li
+Builder: jian.wang
 
 ========================================
 Release file:
