@@ -5,33 +5,33 @@ Version: v2.0
 ========================================
 
 Git commit:
-commit f7911363fc4682b981e97bc63b42a5242e307424
-Author: shuanglong.wang <shuanglong.wang@amlogic.com>
-Date:   Mon Mar 8 10:43:34 2021 +0800
+commit a95ed8f462622c35c3da886a57756a1dc26d2d0e
+Author: nengwen.chen <nengwen.chen@amlogic.com>
+Date:   Tue Feb 23 11:39:31 2021 +0800
 
-    mediahal:fix nts vpeek failed issue [2/2]
+    media_hal: add ADC_PLL resource manage [1/1]
     
-    PD#SWPL-44417
+    PD#SWPL-41808
     
     Problem:
-    nts vpeek failed issue
+    add ADC_PLL resource manage.
     
     Solution:
-    fix vpeek fail issue
+    1.add ADC_PLL resource manage.
     
     Verify:
-    ohm
+    Verified by t5d.
     
-    Change-Id: I1187d274842fb6c6645e9a2faea739c89696ca80
-    Signed-off-by: shuanglong.wang <shuanglong.wang@amlogic.com>
+    Change-Id: Ib0d1d614f8aa7db10f644f9536285e7514901917
+    Signed-off-by: nengwen.chen <nengwen.chen@amlogic.com>
 
 ========================================
 
-Release time: 2021-03-08-14-10
+Release time: 2021-03-08-18-24
 
 ========================================
 
-Builder: shuanglong.wang
+Builder: nengwen.chen
 
 ========================================
 Release file:
