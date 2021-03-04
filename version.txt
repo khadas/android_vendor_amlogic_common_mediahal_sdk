@@ -5,36 +5,33 @@ Version: v2.0
 ========================================
 
 Git commit:
-commit c8a5b77a1d53f4e88f8a3181922fadaba1684347
-Author: shuanglong.wang <shuanglong.wang@amlogic.com>
-Date:   Wed Feb 24 20:46:16 2021 +0800
+commit e46fa9abd509c4f01a3135d25661169196d22b80
+Author: wanghao.li <wanghao.li@amlogic.com>
+Date:   Thu Feb 18 17:44:24 2021 +0800
 
-    mediahal: hold frame for 60fps [1/1]
+    tsplay: add sideband when set surface in tunnel mode [1/1]
     
-    PD#SWPL-41540
+    PD#OTT-17172
     
     Problem:
-    after drop 1 every 1000 frame occur pattern broken
+    [ZTE/Italy][Bug#3450][S905X2][10.0][Feedback][System]:setSurface interface does not take effect
     
     Solution:
-    1.hold frame for 60fps
-    2.50fps not check pattern
-    3.cache 2 frame then play
-    4.secure input modify 8->16
+    add setSurface
     
     Verify:
-    ohm
+    SC2
     
-    Change-Id: I09359bd15311b3fdba8b944359e94175eefb4ca6
-    Signed-off-by: shuanglong.wang <shuanglong.wang@amlogic.com>
+    Change-Id: I1a26a0c847c65b57f78ae4c06f649f797e2285f4
+    Signed-off-by: wanghao.li<wanghao.li@amlogic.com>
 
 ========================================
 
-Release time: 2021-02-26-17-49
+Release time: 2021-03-04-11-08
 
 ========================================
 
-Builder: shuanglong.wang
+Builder: wanghao.li
 
 ========================================
 Release file:
