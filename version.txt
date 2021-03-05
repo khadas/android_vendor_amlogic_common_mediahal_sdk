@@ -5,33 +5,33 @@ Version: v2.0
 ========================================
 
 Git commit:
-commit a95ed8f462622c35c3da886a57756a1dc26d2d0e
-Author: nengwen.chen <nengwen.chen@amlogic.com>
-Date:   Tue Feb 23 11:39:31 2021 +0800
+commit 959103ccb5228559a1e41188a6ecf757eccfa22a
+Author: wanghao.li <wanghao.li@amlogic.com>
+Date:   Fri Mar 5 15:41:01 2021 +0800
 
-    media_hal: add ADC_PLL resource manage [1/1]
+    tsplayer: video display with video tunnel [1/1]
     
-    PD#SWPL-41808
+    PD#SWPL-39046
     
     Problem:
-    add ADC_PLL resource manage.
+    delete some SUPPORT_ANDROID
     
     Solution:
-    1.add ADC_PLL resource manage.
+    delete some SUPPORT_ANDROID
     
     Verify:
-    Verified by t5d.
+    SC2
     
-    Change-Id: Ib0d1d614f8aa7db10f644f9536285e7514901917
-    Signed-off-by: nengwen.chen <nengwen.chen@amlogic.com>
+    Change-Id: Ie9a0003864d687e177843dd2b14c7491e5b5c01e
+    Signed-off-by: wanghao.li<wanghao.li@amlogic.com>
 
 ========================================
 
-Release time: 2021-03-08-18-24
+Release time: 2021-03-08-20-28
 
 ========================================
 
-Builder: nengwen.chen
+Builder: wanghao.li
 
 ========================================
 Release file:

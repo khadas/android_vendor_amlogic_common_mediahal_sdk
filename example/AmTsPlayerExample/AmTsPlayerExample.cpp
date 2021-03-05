@@ -328,7 +328,7 @@ int main(int argc, char **argv)
         #else
         SurfaceComposerClient::getDisplayInfo(SurfaceComposerClient::getBuiltInDisplay(ISurfaceComposer::eDisplayIdMain), &info);
         #endif
-        if (setOutputToSurface(0, 0, info.w, info.h) == 1)
+        if (setOutputToSurface(0, 0, 960, 540) == 1)
             AmTsPlayer_setSurface(session,mSurface.get());
     }
     #endif
