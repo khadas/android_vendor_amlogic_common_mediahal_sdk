@@ -5,34 +5,33 @@ Version: v2.0
 ========================================
 
 Git commit:
-commit 13fb9346b80a85f2760b5e9265e10c08cd9d2ba4
-Author: Jian Wang <jian.wang@amlogic.com>
-Date:   Tue Mar 2 17:14:01 2021 +0800
+commit f7911363fc4682b981e97bc63b42a5242e307424
+Author: shuanglong.wang <shuanglong.wang@amlogic.com>
+Date:   Mon Mar 8 10:43:34 2021 +0800
 
-    tunnel mode: modify tunnel mode notify render use mediahal [1/2]
+    mediahal:fix nts vpeek failed issue [2/2]
     
-    PD#SWPL-42455
+    PD#SWPL-44417
     
     Problem:
-    Omx2 Tunnel mode return render time use picture ready time
-    do not accurate
+    nts vpeek failed issue
     
     Solution:
-    Omx2 use tunnelrender calculate realtime for render time.
+    fix vpeek fail issue
     
     Verify:
-    Ohm
+    ohm
     
-    Change-Id: Ia0db71337ac3a9678dc4b8ec744a2710a0c32beb
-    Signed-off-by: Jian Wang <jian.wang@amlogic.com>
+    Change-Id: I1187d274842fb6c6645e9a2faea739c89696ca80
+    Signed-off-by: shuanglong.wang <shuanglong.wang@amlogic.com>
 
 ========================================
 
-Release time: 2021-03-04-21-30
+Release time: 2021-03-08-14-10
 
 ========================================
 
-Builder: jian.wang
+Builder: shuanglong.wang
 
 ========================================
 Release file:
