@@ -5,33 +5,33 @@ Version: v2.0
 ========================================
 
 Git commit:
-commit 959103ccb5228559a1e41188a6ecf757eccfa22a
-Author: wanghao.li <wanghao.li@amlogic.com>
-Date:   Fri Mar 5 15:41:01 2021 +0800
+commit b902eee1210cacaf6a380c484b3565932b8cf42b
+Author: zhipeng.he <zhipeng.he@amlogic.com>
+Date:   Mon Mar 8 20:55:25 2021 +0800
 
-    tsplayer: video display with video tunnel [1/1]
+    tsplayer: Use AndroiBP file when it bigger than AndroidQ version. [1/1]
     
-    PD#SWPL-39046
+    PD#SWPL-28418
     
     Problem:
-    delete some SUPPORT_ANDROID
+    Android R need android.bp and make media_hal error.
     
     Solution:
-    delete some SUPPORT_ANDROID
+    Use AndroiBP file when it bigger than AndroidQ version.
     
     Verify:
-    SC2
+    Common
     
-    Change-Id: Ie9a0003864d687e177843dd2b14c7491e5b5c01e
-    Signed-off-by: wanghao.li<wanghao.li@amlogic.com>
+    Change-Id: Ia23dcce10a7052e4f3c830f011d342b1f7ed5910
+    Signed-off-by: zhipeng.he <zhipeng.he@amlogic.com>
 
 ========================================
 
-Release time: 2021-03-08-20-28
+Release time: 2021-03-09-14-00
 
 ========================================
 
-Builder: wanghao.li
+Builder: zhipeng.he
 
 ========================================
 Release file:
