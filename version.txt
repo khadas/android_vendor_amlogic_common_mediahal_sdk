@@ -5,11 +5,11 @@ Version: v2.0
 ========================================
 
 Git commit:
-commit 89cf8ebb6b07d232d13169ad75dcce968f1b384f
+commit 151a73a428d5dac111170d8b2d64e3105c9859e7
 Author: wanghao.li <wanghao.li@amlogic.com>
 Date:   Tue Mar 2 19:47:54 2021 +0800
 
-    tsplay: Android-R SC2 TsPlayer need support 4 channels clear stream playback [1/1]
+    tsplay: TsPlayer need support 4 channels clear stream playback [1/1]
     
     PD#SWPL-43959
     
@@ -27,7 +27,7 @@ Date:   Tue Mar 2 19:47:54 2021 +0800
 
 ========================================
 
-Release time: 2021-03-20-17-29
+Release time: 2021-03-22-17-36
 
 ========================================
 
