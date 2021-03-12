@@ -5,33 +5,33 @@ Version: v2.0
 ========================================
 
 Git commit:
-commit dd6c3bc20c618857713b1224f30b176ad902ba88
-Author: zhipeng.he <zhipeng.he@amlogic.com>
-Date:   Tue Mar 16 11:31:34 2021 +0800
+commit 068e77de1391f5406ffb172742b4b29b91dac163
+Author: yunmin.chen <yunmin.chen@amlogic.com>
+Date:   Sat Feb 27 18:26:43 2021 +0800
 
-    tsplayer: fast_show_firstframe default to enbale. [1/1]
+    tsplayer: buttjoint multi audio patch interface [1/1]
     
-    PD#SWPL-44539
+    PD#SWPL-43229
     
     Problem:
-    show firstframe slowly in Android R.
+    Add tsplayer to support multi audio patch.
     
     Solution:
-    fast_show_firstframe default to enbale.
+    Add tsplayer to support multi audio patch.
     
     Verify:
-    S905X4_AH212
+    SC2_AH212
     
-    Change-Id: I10ac8f3206aadec3e1560878922f0dd0882e6b73
-    Signed-off-by: zhipeng.he <zhipeng.he@amlogic.com>
+    Change-Id: I125daf5fdd824cd5e722f797227d3f5796d470a1
+    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
 
 ========================================
 
-Release time: 2021-03-16-12-11
+Release time: 2021-03-17-15-29
 
 ========================================
 
-Builder: zhipeng.he
+Builder: yunmin.chen
 
 ========================================
 Release file:
