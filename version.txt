@@ -5,33 +5,33 @@ Version: v2.0
 ========================================
 
 Git commit:
-commit 068e77de1391f5406ffb172742b4b29b91dac163
-Author: yunmin.chen <yunmin.chen@amlogic.com>
-Date:   Sat Feb 27 18:26:43 2021 +0800
+commit 7eba11d11051da77f409e0645037fb03d1f17ef5
+Author: wanghao.li <wanghao.li@amlogic.com>
+Date:   Tue Mar 9 17:49:18 2021 +0800
 
-    tsplayer: buttjoint multi audio patch interface [1/1]
+    tsplayer: tsplayer so need to copy to system ext [1/1]
     
-    PD#SWPL-43229
+    PD#SWPL-39046
     
     Problem:
-    Add tsplayer to support multi audio patch.
+    videotunnel replace surface
     
     Solution:
-    Add tsplayer to support multi audio patch.
+    videotunnel replace surface
     
     Verify:
-    SC2_AH212
+    SC2
     
-    Change-Id: I125daf5fdd824cd5e722f797227d3f5796d470a1
-    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
+    Change-Id: Iea73833e4428512e076733be2410081c5d8874a0
+    Signed-off-by: wanghao.li<wanghao.li@amlogic.com>
 
 ========================================
 
-Release time: 2021-03-17-15-29
+Release time: 2021-03-17-19-44
 
 ========================================
 
-Builder: yunmin.chen
+Builder: wanghao.li
 
 ========================================
 Release file:
