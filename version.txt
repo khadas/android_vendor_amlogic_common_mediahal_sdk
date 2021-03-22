@@ -5,29 +5,29 @@ Version: v2.0
 ========================================
 
 Git commit:
-commit 7eba11d11051da77f409e0645037fb03d1f17ef5
+commit 89cf8ebb6b07d232d13169ad75dcce968f1b384f
 Author: wanghao.li <wanghao.li@amlogic.com>
-Date:   Tue Mar 9 17:49:18 2021 +0800
+Date:   Tue Mar 2 19:47:54 2021 +0800
 
-    tsplayer: tsplayer so need to copy to system ext [1/1]
+    tsplay: Android-R SC2 TsPlayer need support 4 channels clear stream playback [1/1]
     
-    PD#SWPL-39046
+    PD#SWPL-43959
     
     Problem:
-    videotunnel replace surface
+    need support 4 channels playback
     
     Solution:
-    videotunnel replace surface
+    support 4 channels playback
     
     Verify:
     SC2
     
-    Change-Id: Iea73833e4428512e076733be2410081c5d8874a0
+    Change-Id: I3897b30cd401150f21fb965d4fc281449d2bcc6e
     Signed-off-by: wanghao.li<wanghao.li@amlogic.com>
 
 ========================================
 
-Release time: 2021-03-17-19-44
+Release time: 2021-03-20-17-29
 
 ========================================
 
