@@ -259,7 +259,7 @@ int main(int argc, char **argv)
     am_tsplayer_avsync_mode avsyncMode= TS_SYNC_AMASTER;
     am_tsplayer_video_trick_mode vTrickMode = AV_VIDEO_TRICK_MODE_NONE;
     am_tsplayer_video_codec vCodec = AV_VIDEO_CODEC_H264;
-    am_tsplayer_audio_codec aCodec = AV_AUDIO_CODEC_MP3;
+    am_tsplayer_audio_codec aCodec = AV_AUDIO_CODEC_AAC;
     int32_t vPid = 0x100;
     int32_t aPid = 0x101;
 

@@ -5,33 +5,33 @@ Version: v2.0
 ========================================
 
 Git commit:
-commit 151a73a428d5dac111170d8b2d64e3105c9859e7
-Author: wanghao.li <wanghao.li@amlogic.com>
-Date:   Tue Mar 2 19:47:54 2021 +0800
+commit eaaf9c2825322de2017d5738bc336c7f782a9eb9
+Author: zhipeng.he <zhipeng.he@amlogic.com>
+Date:   Tue Mar 23 17:29:53 2021 +0800
 
-    tsplay: TsPlayer need support 4 channels clear stream playback [1/1]
+    tsplayer: can not post scramed msg when play scramed service. [1/1]
     
-    PD#SWPL-43959
+    PD#SWPL-45402
     
     Problem:
-    need support 4 channels playback
+    can not post scramed msg when play scramed service.
     
     Solution:
-    support 4 channels playback
+    post scramed msg when play scramed service.
     
     Verify:
-    SC2
+    S905X4-AH212
     
-    Change-Id: I3897b30cd401150f21fb965d4fc281449d2bcc6e
-    Signed-off-by: wanghao.li<wanghao.li@amlogic.com>
+    Change-Id: I7f9914f241493f02f96c6093e2dfdbffd0429304
+    Signed-off-by: zhipeng.he <zhipeng.he@amlogic.com>
 
 ========================================
 
-Release time: 2021-03-22-17-36
+Release time: 2021-03-23-21-24
 
 ========================================
 
-Builder: wanghao.li
+Builder: zhipeng.he
 
 ========================================
 Release file:
