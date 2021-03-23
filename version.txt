@@ -5,33 +5,33 @@ Version: v2.0
 ========================================
 
 Git commit:
-commit eaaf9c2825322de2017d5738bc336c7f782a9eb9
-Author: zhipeng.he <zhipeng.he@amlogic.com>
-Date:   Tue Mar 23 17:29:53 2021 +0800
+commit 03e36764ddd77891969ff3e08cf51c2c3ec48394
+Author: yunmin.chen <yunmin.chen@amlogic.com>
+Date:   Tue Mar 23 20:46:11 2021 +0800
 
-    tsplayer: can not post scramed msg when play scramed service. [1/1]
+    tsplayer: audio demux channle keeps increasing [1/1]
     
-    PD#SWPL-45402
+    PD#SWPL-45476
     
     Problem:
-    can not post scramed msg when play scramed service.
+    do timeshift,audio demux channle keeps increasing
     
     Solution:
-    post scramed msg when play scramed service.
+    The SC2 platform changes the audio start process.
     
     Verify:
-    S905X4-AH212
+    SC2_AH212
     
-    Change-Id: I7f9914f241493f02f96c6093e2dfdbffd0429304
-    Signed-off-by: zhipeng.he <zhipeng.he@amlogic.com>
+    Change-Id: Iab6a57d961e9d4562ee17d56640b22a95d2a912c
+    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
 
 ========================================
 
-Release time: 2021-03-23-21-24
+Release time: 2021-03-26-21-08
 
 ========================================
 
-Builder: zhipeng.he
+Builder: yunmin.chen
 
 ========================================
 Release file:
