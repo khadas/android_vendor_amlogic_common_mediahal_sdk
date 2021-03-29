@@ -5,33 +5,33 @@ Version: v2.0
 ========================================
 
 Git commit:
-commit 03e36764ddd77891969ff3e08cf51c2c3ec48394
-Author: yunmin.chen <yunmin.chen@amlogic.com>
-Date:   Tue Mar 23 20:46:11 2021 +0800
+commit 23c46c7542f3f3485d47bcbb26e07555353b105b
+Author: shuanglong.wang <shuanglong.wang@amlogic.com>
+Date:   Wed Mar 24 17:34:56 2021 +0800
 
-    tsplayer: audio demux channle keeps increasing [1/1]
+    mediahal: notify waitShowTime cond quit when stop [1/1]
     
-    PD#SWPL-45476
+    PD#SWPL-43376
     
     Problem:
-    do timeshift,audio demux channle keeps increasing
+    ion memory not free when sync test case exit sometimes
     
     Solution:
-    The SC2 platform changes the audio start process.
+    notify waitShowTime cond quit when stop
     
     Verify:
-    SC2_AH212
+    ohm
     
-    Change-Id: Iab6a57d961e9d4562ee17d56640b22a95d2a912c
-    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
+    Change-Id: Ia5db3b2229ba9a19ffa29496509632c735b463ac
+    Signed-off-by: shuanglong.wang <shuanglong.wang@amlogic.com>
 
 ========================================
 
-Release time: 2021-03-26-21-08
+Release time: 2021-03-29-14-10
 
 ========================================
 
-Builder: yunmin.chen
+Builder: shuanglong.wang
 
 ========================================
 Release file:
