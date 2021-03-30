@@ -5,29 +5,28 @@ Version: v2.0
 ========================================
 
 Git commit:
-commit 23c46c7542f3f3485d47bcbb26e07555353b105b
+commit 195f94a9b7e02597e558ad03fd3491cbd2aa0071
 Author: shuanglong.wang <shuanglong.wang@amlogic.com>
-Date:   Wed Mar 24 17:34:56 2021 +0800
+Date:   Tue Mar 30 20:03:39 2021 +0800
 
-    mediahal: notify waitShowTime cond quit when stop [1/1]
+    mediahal: use coded size when video crop a lot [1/1]
     
-    PD#SWPL-43376
+    PD#SWPL-41072
     
     Problem:
-    ion memory not free when sync test case exit sometimes
+    video crop to many lead buffer alloction size less when use crop size(visble size)
     
     Solution:
-    notify waitShowTime cond quit when stop
+    use coded size when video crop a lot
     
     Verify:
     ohm
     
-    Change-Id: Ia5db3b2229ba9a19ffa29496509632c735b463ac
-    Signed-off-by: shuanglong.wang <shuanglong.wang@amlogic.com>
+    Change-Id: I57ba028a72f64d2069eafd96a41dcdc54e00051e
 
 ========================================
 
-Release time: 2021-03-29-14-10
+Release time: 2021-03-30-20-12
 
 ========================================
 
