@@ -5,32 +5,33 @@ Version: v2.0
 ========================================
 
 Git commit:
-commit 195f94a9b7e02597e558ad03fd3491cbd2aa0071
-Author: shuanglong.wang <shuanglong.wang@amlogic.com>
-Date:   Tue Mar 30 20:03:39 2021 +0800
+commit 4006b3e5e9116289558f352d7bb4f290148140ef
+Author: shanshan.li <shanshan.li@amlogic.com>
+Date:   Wed Mar 31 11:25:38 2021 +0800
 
-    mediahal: use coded size when video crop a lot [1/1]
+    mediahal: if create buffer failed reset callback cannot be executed. [1/1]
     
-    PD#SWPL-41072
+    PD#SWPL-43284
     
     Problem:
-    video crop to many lead buffer alloction size less when use crop size(visble size)
+    if create buffer failed reset callback cannot be executed.
     
     Solution:
-    use coded size when video crop a lot
+    if create buffer failed notify resetdone when reset is called.
     
     Verify:
-    ohm
+    redi
     
-    Change-Id: I57ba028a72f64d2069eafd96a41dcdc54e00051e
+    Change-Id: Id881689e1bfd5e199ed23acb0e6e1253b44e7be9
+    Signed-off-by: shanshan.li <shanshan.li@amlogic.com>
 
 ========================================
 
-Release time: 2021-03-30-20-12
+Release time: 2021-03-31-17-02
 
 ========================================
 
-Builder: shuanglong.wang
+Builder: shanshan.li
 
 ========================================
 Release file:
