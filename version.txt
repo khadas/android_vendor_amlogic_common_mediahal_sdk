@@ -5,20 +5,33 @@ Version: v2.0
 ========================================
 
 Git commit:
-commit c4e4b5f4f7353dcb318afe34b85656a01338aa5f
-Merge: 01f2872 d3d08ad
-Author: Zhi Zhou <zhi.zhou@amlogic.com>
-Date:   Fri Apr 2 06:43:21 2021 -0700
+commit ae11fd72e7098bf3ce49ed89b6358ebc6bf05fe0
+Author: wanghao.li <wanghao.li@amlogic.com>
+Date:   Fri Apr 2 13:37:36 2021 +0800
 
-    Merge "MediaHal: fix CTS stuck fail [2/2]"
+    tsplayer: Stress test switch channel，tsplay library crash,once [1/1]
+    
+    PD#OTT-17980
+    
+    Problem:
+    read data after stop lead to crash
+    
+    Solution:
+    not to read data after stop
+    
+    Verify:
+    SC2
+    
+    Change-Id: If325ee16221a542985e3c445b285f29f0be5b6fb
+    Signed-off-by: wanghao.li<wanghao.li@amlogic.com>
 
 ========================================
 
-Release time: 2021-04-05-17-26
+Release time: 2021-04-06-13-39
 
 ========================================
 
-Builder: peter.wang
+Builder: wanghao.li
 
 ========================================
 Release file:
@@ -27,8 +40,8 @@ Header file:
 AmTsPlayer.h
 AmVideoDecBase.h
 MediaSyncInterface.h
-VideoTunnelRendererBase.h
 resourcemanage.h
+VideoTunnelRendererBase.h
 
 Library file:
 libmediahal_mediasync.so
