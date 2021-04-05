@@ -5,36 +5,16 @@ Version: v2.0
 ========================================
 
 Git commit:
-commit 6611950f68326134a849e55fd6a12e82b6f6dcc8
-Author: peter wang <peter.wang@amlogic.com>
-Date:   Tue Mar 23 20:10:34 2021 +0800
+commit c4e4b5f4f7353dcb318afe34b85656a01338aa5f
+Merge: 01f2872 d3d08ad
+Author: Zhi Zhou <zhi.zhou@amlogic.com>
+Date:   Fri Apr 2 06:43:21 2021 -0700
 
-    MediaHal: fix CTS stuck fail [2/2]
-    
-    PD#SWPL-45044
-    
-    Problem:
-    bellow cts case failed in CtsMediaV2TestCases module:
-    android.mediav2.cts.CodecDecoderSurfaceTest#testFlushNative[10(video/mpeg2)]
-    android.mediav2.cts.CodecDecoderSurfaceTest#testFlushNative[11(video/mp4v-es)]
-    bellow cts cases failed in CtsSecurityTestCases module:
-    android.security.cts.StagefrightTest#testStagefright_bug_65717533
-    android.security.cts.StagefrightTest#testStagefright_bug_37237396
-    
-    Solution:
-    reset encoder_flushing_ flag after reset done to avoid blocking
-    following input
-    send a flush notify if last output received
-    
-    Verify:
-    test on ohm
-    
-    Change-Id: I180c85d35fe4ba76699afdc8b03a60e5c878166e
-    Signed-off-by: peter wang <peter.wang@amlogic.com>
+    Merge "MediaHal: fix CTS stuck fail [2/2]"
 
 ========================================
 
-Release time: 2021-03-31-20-49
+Release time: 2021-04-05-17-26
 
 ========================================
 
