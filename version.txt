@@ -5,33 +5,33 @@ Version: v2.0
 ========================================
 
 Git commit:
-commit 246c92c485a1e8807cfa2101283f2934b35de564
-Author: yunmin.chen <yunmin.chen@amlogic.com>
-Date:   Tue Apr 6 13:58:47 2021 +0800
+commit 7d8322f27ec6325bb2a94e552436ae0a6ba08013
+Author: wanghao.li <wanghao.li@amlogic.com>
+Date:   Fri Apr 9 13:47:43 2021 +0800
 
-    tsplayer: switch to audio only channel,no audio output [1/1]
+    tsplayer: change return type for DequeueBuffer [1/1]
     
-    PD#SWPL-46094
+    PD#SWPL-46990
     
     Problem:
-    tunnelmode,switch to audio only channel,no audio output.
+    if dequeue buffer from video tunnel fail, will dequeue error buffer fd to decoder
     
     Solution:
-    tunnelmode,Only audio needs to start VDA to set information to tsync.
+    change return value to make sure not to queue if dequeue buffer error
     
     Verify:
-    SC2_AH212
+    SC2
     
-    Change-Id: I28113ee9dde49529267c5a91e4552d82fc6d3a05
-    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
+    Change-Id: I8e9554aa6036ded2450f68ff655eb94d644cdb75
+    Signed-off-by: wanghao.li<wanghao.li@amlogic.com>
 
 ========================================
 
-Release time: 2021-04-07-17-45
+Release time: 2021-04-09-13-58
 
 ========================================
 
-Builder: yunmin.chen
+Builder: wanghao.li
 
 ========================================
 Release file:
