@@ -5,34 +5,33 @@ Version: v2.0
 ========================================
 
 Git commit:
-commit 34d9c523f372643954cb9a01c451dbd2affcf3b8
-Author: peter wang <peter.wang@amlogic.com>
-Date:   Fri Apr 9 20:03:11 2021 +0800
+commit 10a39a42175794502f28ab60be3c7bc5fe11a182
+Author: joy.rao <joy.rao@amlogic.com>
+Date:   Sat Apr 3 16:31:16 2021 +0800
 
-    MediaHal: fix StagefrightTest#testStagefright_cve_2017_0728 case [1/1]
+    TsPlayer: R need use libamgralloc_ext [1/1]
     
-    PD#SWPL-45049
+    PD#RSP-1517
     
     Problem:
-    bellow cts case failed in CtsSecurityTestCases module:
-    android.security.cts.StagefrightTest#testStagefright_cve_2017_0728
+    R need use libamgralloc_ext
     
     Solution:
-    report an error while the stream resolution too small
+    use libamgralloc_ext for R
     
     Verify:
-    test on ohm
+    Y4
     
-    Change-Id: I766091f17754f5edf997516dc40562acca4c134b
-    Signed-off-by: peter wang <peter.wang@amlogic.com>
+    Change-Id: I438519d514e89ebb586d235758d8d240db5bcb32
+    Signed-off-by: joy.rao <joy.rao@amlogic.com>
 
 ========================================
 
-Release time: 2021-04-12-17-44
+Release time: 2021-04-13-08-09
 
 ========================================
 
-Builder: peter.wang
+Builder: joy.rao
 
 ========================================
 Release file:
@@ -41,12 +40,13 @@ Header file:
 AmTsPlayer.h
 AmVideoDecBase.h
 MediaSyncInterface.h
-VideoTunnelRendererBase.h
 resourcemanage.h
+VideoTunnelRendererBase.h
 
 Library file:
 libmediahal_mediasync.so
 libmediahal_resman.so
+libmediahal_tsplayer.so
 libmediahal_tunnelrenderer.so
 libmediahal_videodec.so
 
