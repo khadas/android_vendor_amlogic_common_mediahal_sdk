@@ -5,6 +5,26 @@ Version: v2.0
 ========================================
 
 Git commit:
+commit 55276cdeca7309f2b07f115066b8f8485e4ed93c
+Author: wanghao.li <wanghao.li@amlogic.com>
+Date:   Wed Apr 7 13:48:59 2021 +0800
+
+    tsplayer: video tunnel dequeue buffer fail [1/1]
+    
+    PD#RSP-1670
+    
+    Problem:
+    dequeue buffer fail with videotunnel has not data
+    
+    Solution:
+    retry until dequeue buffer success
+    
+    Verify:
+    SC2
+    
+    Change-Id: Icbd50e9127ce152874b29030243bed850bd6d598
+    Signed-off-by: wanghao.li<wanghao.li@amlogic.com>
+
 commit c43b0ce089f54189e542d150b54759124994308d
 Author: shuanglong.wang <shuanglong.wang@amlogic.com>
 Date:   Mon Apr 12 15:07:21 2021 +0800
@@ -192,34 +212,13 @@ Date:   Tue Apr 6 13:58:47 2021 +0800
     Change-Id: I28113ee9dde49529267c5a91e4552d82fc6d3a05
     Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
 
-commit 949df0e950bd5b4ce1508bb461a3bce87981c9ed
-Author: yunmin.chen <yunmin.chen@amlogic.com>
-Date:   Thu Mar 25 16:23:54 2021 +0800
+========================================
 
-    tsplayer: Added debug method to SC2 platform. [1/1]
-    
-    PD#SWPL-45058
-    
-    Problem:
-    Added debug method to SC2 platform
-    
-    Solution:
-    1.add the printing of buffer level status.
-    2.add the corresponding player ID to print.
-    
-    Verify:
-    SC2_AH212
-    
-    Change-Id: I57c239843533f74ce6ded05fdc252b3496a29b7e
-    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
+Release time: 2021-04-15-20-41
 
 ========================================
 
-Release time: 2021-04-15-19-57
-
-========================================
-
-Builder: shuanglong.wang
+Builder: wanghao.li
 
 ========================================
 Release file:
