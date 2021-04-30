@@ -5,6 +5,26 @@ Version: v2.0
 ========================================
 
 Git commit:
+commit c2714f7de70437feda72068126b54ea706187ea5
+Author: zhipeng.he <zhipeng.he@amlogic.com>
+Date:   Fri Apr 30 11:36:54 2021 +0800
+
+    tsplayer: add prop to control setblackout in tunnelmode. [1/1]
+    
+    PD#SWPL-49003
+    
+    Problem:
+    no prop to control setblackout in tunnelmode.
+    
+    Solution:
+    add prop to control setblackout in tunnelmode.
+    
+    Verify:
+    T950D4_AM301
+    
+    Change-Id: I066cb5340637f1d49aeae39e4343b48e3276b2f8
+    Signed-off-by: zhipeng.he <zhipeng.he@amlogic.com>
+
 commit 55a33af270e113216254a9c5c5aae7f1a22fbb14
 Author: yunmin.chen <yunmin.chen@amlogic.com>
 Date:   Thu May 13 13:47:33 2021 +0800
@@ -176,35 +196,13 @@ Date:   Mon Apr 26 21:32:20 2021 +0800
     Change-Id: I398e14c0d0ba4bf3d53afe1d9154a0f46fd3767a
     Signed-off-by: zhipeng.he <zhipeng.he@amlogic.com>
 
-commit 1ed32c1a3ae4ad53b833c2a4ef7da8375ad64619
-Author: yunmin.chen <yunmin.chen@amlogic.com>
-Date:   Mon Apr 26 16:38:46 2021 +0800
+========================================
 
-    tsplayer:  switch channel dispaly last frame [1/1]
-    
-    PD#SWPL-45058
-    
-    Problem:
-    When exiting,VideoTunnelDisplay DequeueBuffer is blocked.
-    
-    Solution:
-    1.Increase the playback state,
-    and stop dequeue_buffer when exiting.
-    2.add debug info.
-    
-    Verify:
-    SC2_AH212
-    
-    Change-Id: Ie3ab91633ac1b70b9c72fb56258421e740a573c3
-    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
+Release time: 2021-05-14-21-37
 
 ========================================
 
-Release time: 2021-05-14-19-38
-
-========================================
-
-Builder: yunmin.chen
+Builder: zhipeng.he
 
 ========================================
 Release file:
