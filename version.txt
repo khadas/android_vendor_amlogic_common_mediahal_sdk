@@ -5,6 +5,26 @@ Version: v2.0
 ========================================
 
 Git commit:
+commit 3c5fbf0ce8b4c713e1c0ebad53c1a69d9aa610f9
+Author: zhipeng.he <zhipeng.he@amlogic.com>
+Date:   Fri May 7 14:04:46 2021 +0800
+
+    tsplayer: AmTsPlayerExample playback after playing tsfile eof. [1/1]
+    
+    PD#OTT-19087
+    
+    Problem:
+    AmTsPlayerExample not playback after playing tsfile eof.
+    
+    Solution:
+    AmTsPlayerExample playback after playing tsfile eof.
+    
+    Verify:
+    AH212
+    
+    Change-Id: I96aafa36f78090ead2ea29041cd859fc3d32f6af
+    Signed-off-by: zhipeng.he <zhipeng.he@amlogic.com>
+
 commit 50b044ecda8447cfe78fbe4e4212744dd7f76238
 Author: wanghao.li <wanghao.li@amlogic.com>
 Date:   Thu Apr 29 16:41:13 2021 +0800
@@ -189,38 +209,13 @@ Date:   Thu Apr 8 20:57:03 2021 +0800
     Change-Id: I277362978336ada1c4d8c6462ed534def44ad841
     Signed-off-by: zhipeng.he <zhipeng.he@amlogic.com>
 
-commit e8feb96ba68bcfb0d4177821c6cf846402a5e66c
-Author: “sining.huang” <sining.huang@amlogic.com>
-Date:   Fri Apr 9 20:50:24 2021 +0800
+========================================
 
-    amtsplayer: change getcurrenttime return [1/1]
-    
-    PD#SWPL-47040
-    
-    Problem:
-    getcurrenttime method return invalid value
-     when stopvideodecoding.
-    
-    Solution:
-    When stopvideocoding, VPTs does not perform
-    the VPTs / 90 operation.It directly assigns
-    CTime to - 1 and returns up.
-    After ZTE gets - 1, it does not need to
-    multiply 90 to calculate VPTs
-    
-    Verify:
-    S905X4
-    
-    Change-Id: Ib9c29281fbb6f74da5e42d65349f6a6de34ffeab
-    Signed-off-by: “sining.huang” <sining.huang@amlogic.com>
+Release time: 2021-05-07-14-28
 
 ========================================
 
-Release time: 2021-04-30-15-19
-
-========================================
-
-Builder: wanghao.li
+Builder: zhipeng.he
 
 ========================================
 Release file:
