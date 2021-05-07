@@ -5,6 +5,26 @@ Version: v2.0
 ========================================
 
 Git commit:
+commit ec66c04e02b45f7bcfadee55d4c0c164cd861a9f
+Author: yunmin.chen <yunmin.chen@amlogic.com>
+Date:   Fri May 7 16:23:24 2021 +0800
+
+    tsplayer:  Modification of androidR tunnelMode AudioHalWrapper. [1/1]
+    
+    PD#SWPL-45674
+    
+    Problem:
+    tunnelMode:Audio decoding was stopped when MUTE was set.
+    
+    Solution:
+    In tunnelMode, audio decoding is not stopped when MUTE is set.
+    
+    Verify:
+    SC2_AH212
+    
+    Change-Id: I3674765d011498ab957032f76334ed79127a417a
+    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
+
 commit fe203b816f38349b2df0fe4743c616dd65191dca
 Author: yunmin.chen <yunmin.chen@amlogic.com>
 Date:   Fri Mar 19 17:28:12 2021 +0800
@@ -178,29 +198,9 @@ Date:   Tue Apr 13 11:11:14 2021 +0800
     Change-Id: I0ecc10e7f1bef7beec4cb5ec2172c04007d67152
     Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
 
-commit c53b1645b1c78ed120c98bd6c81cfbcafd19edd6
-Author: wenlong.yuan <wenlong.yuan@amlogic.com>
-Date:   Wed Apr 21 21:27:40 2021 +0800
-
-    tsplayer: trickmode need set to decoder [1/1]
-    
-    PD#SWPL-47175
-    
-    Problem:
-    set trickmode to decoder not right.
-    
-    Solution:
-    trickmode need set to decoder
-    
-    Verify:
-    S905X2-U212
-    
-    Change-Id: I38c58cda615c8a77c72792d3bcac44046deb4381
-    Signed-off-by: wenlong.yuan <wenlong.yuan@amlogic.com>
-
 ========================================
 
-Release time: 2021-05-11-21-06
+Release time: 2021-05-12-15-56
 
 ========================================
 
