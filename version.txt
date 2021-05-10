@@ -5,7 +5,57 @@ Version: v2.0
 ========================================
 
 Git commit:
-commit 3c5fbf0ce8b4c713e1c0ebad53c1a69d9aa610f9
+commit a3c44f107aa4f16c2f1daaef4442c9a87d4efbac
+Merge: c188dfc d3b48d1
+Author: Zhi Zhou <zhi.zhou@amlogic.com>
+Date:   Mon May 10 05:16:38 2021 -0700
+
+    Merge "mediahal: not start video before audio update tracktime when underflow recovery [1/1]"
+
+commit c188dfc869ee491d17b5ef76013fea9f73fda700
+Author: chen.chen1 <chen.chen1@amlogic.com>
+Date:   Wed Feb 3 21:23:26 2021 +0800
+
+    MediaSync: AudioPatch use MediaSync to support multi instance avsync. [1/1]
+    
+    PD#SWPL-39283
+    
+    Problem:
+    N/G.
+    
+    Solution:
+    develop MediaSync function.
+    
+    Verify:
+    verified on S905X4-AH212.
+    
+    Change-Id: If814621827ab48cf500aef43d3d2ac849650e990
+    Signed-off-by: Chen Chen <chen.chen1@amlogic.com>
+
+commit d3b48d137711627d7c40b8dd80e53685d9ce993d
+Author: shuanglong.wang <shuanglong.wang@amlogic.com>
+Date:   Fri May 7 15:35:59 2021 +0800
+
+    mediahal: not start video before audio update tracktime when underflow recovery [1/1]
+    
+    PD#SWPL-49149
+    
+    Problem:
+    For nts underflow recovery case, when recovery first
+    video frame sometimes fast output before audio update
+    new tracktime, will get large realtime than
+    nowtime, lead stuck
+    
+    Solution:
+    not start video before audio update tracktime for pause-resume case
+    
+    Solution:
+    ohm
+    
+    Change-Id: Ieb094a6c5a498c1eb054ea11c4eeaa9f8a1428ee
+    Signed-off-by: shuanglong.wang <shuanglong.wang@amlogic.com>
+
+commit c01be912c521e30f761f1fc213c3300de6df6595
 Author: zhipeng.he <zhipeng.he@amlogic.com>
 Date:   Fri May 7 14:04:46 2021 +0800
 
@@ -148,74 +198,13 @@ Date:   Wed Apr 7 13:48:59 2021 +0800
     Change-Id: Icbd50e9127ce152874b29030243bed850bd6d598
     Signed-off-by: wanghao.li<wanghao.li@amlogic.com>
 
-commit c43b0ce089f54189e542d150b54759124994308d
-Author: shuanglong.wang <shuanglong.wang@amlogic.com>
-Date:   Mon Apr 12 15:07:21 2021 +0800
+========================================
 
-    mediahal: not start video before audio set first pts for beginning playback [1/1]
-    
-    PD#SWPL-47036
-    
-    Problem:
-    video start bofore audio set first pts, then anchor time will
-    update again after audio set first pts
-    
-    Solution:
-    not start video before audio set first pts for beginning playback
-    
-    Verify:
-    ohm
-    
-    Change-Id: I05a8a8a65de1af0a2f16763ff1b34d1de3d06d1a
-    Signed-off-by: shuanglong.wang <shuanglong.wang@amlogic.com>
-
-commit 942316bbbe9d334643a154fc9dbc3e11a0e2cd6f
-Author: yunmin.chen <yunmin.chen@amlogic.com>
-Date:   Thu Apr 15 18:05:32 2021 +0800
-
-    mediahal: mediahal_sdk/version.txt adds 10 commit messages. [1/1]
-    
-    PD#SWPL-45058
-    
-    Problem:
-    mediahal_sdk/version.txt adds 10 commit messages.
-    
-    Solution:
-    mediahal_sdk/version.txt adds 10 commit messages.
-    
-    Verify:
-    SC2_AH212
-    
-    Change-Id: I2ea3f1d421564348209f7b99191b6e4f32207e49
-    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
-
-commit 4eff4e9d610047d563e74a31b0e066c0505bef76
-Author: zhipeng.he <zhipeng.he@amlogic.com>
-Date:   Thu Apr 8 20:57:03 2021 +0800
-
-    tsplayer: tunnelmode support ac4 audio format. [1/1]
-    
-    PD#SWPL-46119
-    
-    Problem:
-    tunnelmode not support ac4 audio format.
-    
-    Solution:
-    tunnelmode support ac4 audio format.
-    
-    Verify:
-    S905X4-AH212
-    
-    Change-Id: I277362978336ada1c4d8c6462ed534def44ad841
-    Signed-off-by: zhipeng.he <zhipeng.he@amlogic.com>
+Release time: 2021-05-10-20-39
 
 ========================================
 
-Release time: 2021-05-07-14-28
-
-========================================
-
-Builder: zhipeng.he
+Builder: shuanglong.wang
 
 ========================================
 Release file:
