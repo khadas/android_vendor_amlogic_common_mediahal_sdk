@@ -5,7 +5,73 @@ Version: v2.0
 ========================================
 
 Git commit:
-commit f90675f632e8bb73b5da12a288fa0c038603bf11
+commit f952785bd8a866228d0b6d711e0f0c3b0acd26e6
+Author: yunmin.chen <yunmin.chen@amlogic.com>
+Date:   Mon May 17 14:24:57 2021 +0800
+
+    tsplayer: open PIP,switch to audio only channel,automated exit [1/1]
+    
+    PD#SWPL-50328
+    
+    Problem:
+    ~MediaSync() crash.
+    
+    Solution:
+    After TsPlayerRender delete mVideoSync,
+    set mVideoSync to NULL.
+    
+    Verify:
+    SC2_AH212
+    
+    Change-Id: Ibd919dbd57b0bac771b0195eef8643e161a9908f
+    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
+
+commit 9632fb2ae7cce82d179c71fe3b94cb8329c1b4c0
+Author: chen.chen1 <chen.chen1@amlogic.com>
+Date:   Thu May 13 14:49:23 2021 +0800
+
+    MediaSync: av is not synced in new Mediasync flow. [1/1]
+    
+    PD#SWPL-49840
+    
+    Problem:
+    av is not synced.
+    
+    Solution:
+    solve video freezed when change video
+    optimization debug info
+    solve video freeze when sourceclock lost
+    solve timeout is wrong triggered
+    video freerun when pv diff is large
+    reset mediasync when multi-channel switching
+    
+    Verify:
+    verified on S905X4-AH212
+    
+    Change-Id: I2a0c35ec8f3bc89e051447a15dac36de2bba67b5
+    Signed-off-by: Chen Chen <chen.chen1@amlogic.com>
+
+commit 99a56d455333454bc70b882269c3857c8f16a204
+Author: xinguang.jiang <xinguang.jiang@amlogic.com>
+Date:   Wed May 12 11:18:21 2021 +0800
+
+    playerdemo: Fix the screen problem of the playback stream. [1/1]
+    
+    PD#GH-1039
+    
+    Problem:
+    The displayed buffer is smaller than the allocated buffer.
+    
+    Solution:
+    Set the aligned buffer
+    
+    Verify:
+    U212
+    
+    Change-Id: Idde32cf629b4decf55da3ff5d5728d4a7ec16c7d
+    Signed-off-by: xinguang.jiang <xinguang.jiang@amlogic.com>
+
+commit 1bf19e792e87ae92d2be32dc29b51868f274b46c
 Author: chen.chen1 <chen.chen1@amlogic.com>
 Date:   Sat May 8 20:27:20 2021 +0800
 
@@ -17,7 +83,7 @@ Date:   Sat May 8 20:27:20 2021 +0800
     refclock is not synced between audio and video.
     
     Solution:
-    sync refclock
+    sync refclock.
     
     Verify:
     verified on S905X4-AH212
@@ -133,76 +199,13 @@ Date:   Mon May 10 05:16:38 2021 -0700
 
     Merge "mediahal: not start video before audio update tracktime when underflow recovery [1/1]"
 
-commit c188dfc869ee491d17b5ef76013fea9f73fda700
-Author: chen.chen1 <chen.chen1@amlogic.com>
-Date:   Wed Feb 3 21:23:26 2021 +0800
+========================================
 
-    MediaSync: AudioPatch use MediaSync to support multi instance avsync. [1/1]
-    
-    PD#SWPL-39283
-    
-    Problem:
-    N/G.
-    
-    Solution:
-    develop MediaSync function.
-    
-    Verify:
-    verified on S905X4-AH212.
-    
-    Change-Id: If814621827ab48cf500aef43d3d2ac849650e990
-    Signed-off-by: Chen Chen <chen.chen1@amlogic.com>
-
-commit d3b48d137711627d7c40b8dd80e53685d9ce993d
-Author: shuanglong.wang <shuanglong.wang@amlogic.com>
-Date:   Fri May 7 15:35:59 2021 +0800
-
-    mediahal: not start video before audio update tracktime when underflow recovery [1/1]
-    
-    PD#SWPL-49149
-    
-    Problem:
-    For nts underflow recovery case, when recovery first
-    video frame sometimes fast output before audio update
-    new tracktime, will get large realtime than
-    nowtime, lead stuck
-    
-    Solution:
-    not start video before audio update tracktime for pause-resume case
-    
-    Solution:
-    ohm
-    
-    Change-Id: Ieb094a6c5a498c1eb054ea11c4eeaa9f8a1428ee
-    Signed-off-by: shuanglong.wang <shuanglong.wang@amlogic.com>
-
-commit c01be912c521e30f761f1fc213c3300de6df6595
-Author: zhipeng.he <zhipeng.he@amlogic.com>
-Date:   Fri May 7 14:04:46 2021 +0800
-
-    tsplayer: AmTsPlayerExample playback after playing tsfile eof. [1/1]
-    
-    PD#OTT-19087
-    
-    Problem:
-    AmTsPlayerExample not playback after playing tsfile eof.
-    
-    Solution:
-    AmTsPlayerExample playback after playing tsfile eof.
-    
-    Verify:
-    AH212
-    
-    Change-Id: I96aafa36f78090ead2ea29041cd859fc3d32f6af
-    Signed-off-by: zhipeng.he <zhipeng.he@amlogic.com>
+Release time: 2021-05-17-20-23
 
 ========================================
 
-Release time: 2021-05-17-11-32
-
-========================================
-
-Builder: chen.chen1
+Builder: yunmin.chen
 
 ========================================
 Release file:
