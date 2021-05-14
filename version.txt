@@ -5,6 +5,27 @@ Version: v2.0
 ========================================
 
 Git commit:
+commit 55a33af270e113216254a9c5c5aae7f1a22fbb14
+Author: yunmin.chen <yunmin.chen@amlogic.com>
+Date:   Thu May 13 13:47:33 2021 +0800
+
+    tsplayer: do timeshift, video freeze [1/1]
+    
+    PD#SWPL-49118
+    
+    Problem:
+    NonTunnelMode:do timeshift, video freeze.
+    
+    Solution:
+    When TRICKMODE is PAUSE_NEXT,
+    queueVideoFrame() is also required.
+    
+    Verify:
+    SC2_AH212
+    
+    Change-Id: I83e5beae2584a5b3dffd6e3b5376f11e3ca94618
+    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
+
 commit ec66c04e02b45f7bcfadee55d4c0c164cd861a9f
 Author: yunmin.chen <yunmin.chen@amlogic.com>
 Date:   Fri May 7 16:23:24 2021 +0800
@@ -177,30 +198,9 @@ Date:   Mon Apr 26 16:38:46 2021 +0800
     Change-Id: Ie3ab91633ac1b70b9c72fb56258421e740a573c3
     Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
 
-commit 55f150c66b6cab3c3bc99deadaa4d30fa7eb60d7
-Author: yunmin.chen <yunmin.chen@amlogic.com>
-Date:   Tue Apr 13 11:11:14 2021 +0800
-
-    tsplayer: DASH cannot play [1/1]
-    
-    PD#RSP-1690
-    
-    Problem:
-    framemode: GetBufferStat() crash
-    
-    Solution:
-    According to the platform,
-    the method of obtaining the buffer status is distinguished.
-    
-    Verify:
-    SC2_AH212
-    
-    Change-Id: I0ecc10e7f1bef7beec4cb5ec2172c04007d67152
-    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
-
 ========================================
 
-Release time: 2021-05-12-15-56
+Release time: 2021-05-14-19-38
 
 ========================================
 
