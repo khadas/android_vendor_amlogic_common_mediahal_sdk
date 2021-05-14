@@ -40,6 +40,7 @@ static uint32_t kDefaultQueueCount = 32;
 using namespace std::chrono_literals;
 #define MAX_INSTANCE_MUN  9
 #define InputBufferMaxSize (1024 * 1024)
+#define ALIGN(x, align) ((x) + (align -1) & (~(align -1)))
 
 #ifndef UNUSED
 #define UNUSED(x) (void)(x)
@@ -229,6 +230,8 @@ private:
 	uint32_t mDumpNum;
 	uint64_t mStartTime;
 	uint32_t mbitstreamId;
+	uint32_t mBufferWidth;
+	uint32_t mBufferHeight;
 };
 
 uint64_t VideoDecPlayerExample::getTimeUs(void) {
@@ -290,25 +293,32 @@ int VideoDecPlayerExample::inputBuffer(uint8_t* buf, uint32_t size, uint64_t tim
 
 void VideoDecPlayerExample::dumpData(char* buf, uint32_t width, uint32_t height, int32_t bitstreamId) {
 	std::lock_guard<std::mutex> lock(mDumpLock);
-	uint32_t y_size = (width* height);
-	uint32_t uv_size = (width* height) / 2;
+	uint32_t y_size = (mBufferHeight* mBufferWidth);
+	int i = 0;
 
 	if (moFp) {
 		/* save output yuv data */
-		fwrite(buf, y_size, 1, moFp);
-		fwrite(buf + (mDqWidth* mDqHeight), uv_size, 1, moFp);
+		for (i = 0 ; i < height; i++)
+			fwrite(buf + i * mBufferWidth, width, 1, moFp);
+
+		for (i = 0 ; i < height / 2; i++)
+			fwrite(buf + y_size + i * mBufferWidth, width, 1, moFp);
+
 		fflush(moFp);
 		fsync(fileno(moFp));
 
-		printf("Dump YUV y_size %d,uv_size %d bitstreamId %d\n",
-			y_size, uv_size, bitstreamId);
+		printf("Dump YUV y_size %d, bitstreamId %d\n",
+			y_size, bitstreamId);
 	}
 	if (mcFp) {
 		/* save output crc data */
 		int crc_y = 0,crc_uv = 0;
 
-		crc_y = crc32_le(crc_y, (unsigned char const *)buf, y_size);
-		crc_uv = crc32_le(crc_uv, (unsigned char const *)(buf + mDqWidth* mDqHeight), uv_size);
+		for (i = 0 ; i < height; i++)
+			crc_y = crc32_le(crc_y, (unsigned char const *)(buf + i * mBufferWidth), width);
+
+		for (i = 0 ; i < height / 2; i++)
+			crc_uv = crc32_le(crc_uv, (unsigned char const *)(buf + y_size + i * mBufferWidth), width);
 
 		fprintf(mcFp, "%08d: %08x %08x\n", mDumpNum, crc_y, crc_uv);
 		fflush(mcFp);
@@ -569,12 +579,14 @@ void VideoDecPlayerExample::onOutputFormatChanged(uint32_t requestedNumOfBuffers
 	mOutputBufferNum = requestedNumOfBuffers;
 	mDqWidth = width;
 	mDqHeight = height;
-	uint32_t imagesize = (width * height * 3) / 2;
+	mBufferWidth = ALIGN(width, 64);
+	mBufferHeight = ALIGN(height, 64);
+	uint32_t imagesize = (mBufferHeight * mBufferWidth * 3) / 2;
 	mAmVideoDec->setupOutputBufferNum(mOutputBufferNum);
 	for (uint32_t i = 0; i < mOutputBufferNum; i++) {
 		uint8_t* vaddr;
 		int fd;
-		mAmVideoDec->allocUvmBuffer(width, height, (void**)&vaddr, i, &fd);
+		mAmVideoDec->allocUvmBuffer(mBufferWidth, mBufferHeight, (void**)&vaddr, i, &fd);
 		mMmapAddr.push_back((void*)vaddr);
 		printf("allocUvmBuffer fd %d, size = %d\n", fd, imagesize);
 		mAmVideoDec->createOutputBuffer(i, fd);
