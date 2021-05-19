@@ -5,6 +5,47 @@ Version: v2.0
 ========================================
 
 Git commit:
+commit cca4d1bc81a1fcf954663e18e730fdea6ef0b39b
+Author: shuanglong.wang <shuanglong.wang@amlogic.com>
+Date:   Mon May 17 15:00:06 2021 +0800
+
+    mediahal: invoke getrealtime after gettracktime for begining playback [1/1]
+    
+    PD#SWPL-50312
+    
+    Problem:
+    drop 1 when audio switch
+    The first video start before audio update first mediatime
+    
+    Solution:
+    invoke getrealtime after gettracktime for begining playback
+    
+    Verify:
+    ohm
+    
+    Change-Id: I868bfd3cc5a2e62ee6221c56684d81ebac954110
+    Signed-off-by: shuanglong.wang <shuanglong.wang@amlogic.com>
+
+commit 90ea777a2cf390656a49374b6d00952bee50c8a9
+Author: wanghao.li <wanghao.li@amlogic.com>
+Date:   Sat May 8 14:59:35 2021 +0800
+
+    tsplayer: DVB needs to set Letter box 16:9 ratio [1/1]
+    
+    PD#OTT-18927
+    
+    Problem:
+    DVB needs to set Letter box 16:9
+    
+    Solution:
+    add item to set Letter box 16:9
+    
+    Verify:
+    S905X2-U212
+    
+    Change-Id: I3b02d1ce1415a4a00c4f44902a249fe446b6aca1
+    Signed-off-by: wanghao.li<wanghao.li@amlogic.com>
+
 commit f952785bd8a866228d0b6d711e0f0c3b0acd26e6
 Author: yunmin.chen <yunmin.chen@amlogic.com>
 Date:   Mon May 17 14:24:57 2021 +0800
@@ -172,40 +213,13 @@ Date:   Fri May 7 16:23:24 2021 +0800
     Change-Id: I3674765d011498ab957032f76334ed79127a417a
     Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
 
-commit fe203b816f38349b2df0fe4743c616dd65191dca
-Author: yunmin.chen <yunmin.chen@amlogic.com>
-Date:   Fri Mar 19 17:28:12 2021 +0800
+========================================
 
-    tsplayer: Tsplayer add mode with video tunnel and mediasync [1/1]
-    
-    PD#SWPL-45058
-    
-    Problem:
-    Tsplayer add mode with video tunnel and mediasync.
-    
-    Solution:
-    Tsplayer add mode with video tunnel and mediasync.
-    
-    Verify:
-    SC2_AH212
-    
-    Change-Id: I2aa61c8b1686c24c2092b3229ee7fdf8fdf6bbb2
-    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
-
-commit a3c44f107aa4f16c2f1daaef4442c9a87d4efbac
-Merge: c188dfc d3b48d1
-Author: Zhi Zhou <zhi.zhou@amlogic.com>
-Date:   Mon May 10 05:16:38 2021 -0700
-
-    Merge "mediahal: not start video before audio update tracktime when underflow recovery [1/1]"
+Release time: 2021-05-19-10-32
 
 ========================================
 
-Release time: 2021-05-17-20-23
-
-========================================
-
-Builder: yunmin.chen
+Builder: shuanglong.wang
 
 ========================================
 Release file:
