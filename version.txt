@@ -1,10 +1,30 @@
 =========RELEALSE NOTE=================
 
-Version: V3.0.2-Id93b4-a19790
+Version: V3.0.3-Ica28a-a2faf6
 
 ========================================
 
 Git commit:
+commit a2faf6b6449b13e0de5cc6eaff7def5e3e79f66e
+Author: chen.chen1 <chen.chen1@amlogic.com>
+Date:   Tue May 18 20:20:55 2021 +0800
+
+    MediaSync: pip playback, no audio output. [1/1]
+    
+    PD#SWPL-50211
+    
+    Problem:
+    AudioFrameListManage crash;
+    
+    Solution:
+    iterator no need to getNext after erase.
+    
+    Verify:
+    verified on S905X4-AH212
+    
+    Change-Id: Ica28acd5c4e8ec012ccb4cbb2be65a36c0bc565b
+    Signed-off-by: chen.chen1 <chen.chen1@amlogic.com>
+
 commit a197906d232e489efe8aa0ff3e90868ff30f6c39
 Author: wanghao.li <wanghao.li@amlogic.com>
 Date:   Tue May 18 11:39:39 2021 +0800
@@ -179,33 +199,13 @@ Date:   Mon May 17 15:00:06 2021 +0800
     Change-Id: I868bfd3cc5a2e62ee6221c56684d81ebac954110
     Signed-off-by: shuanglong.wang <shuanglong.wang@amlogic.com>
 
-commit 1bf19e792e87ae92d2be32dc29b51868f274b46c
-Author: chen.chen1 <chen.chen1@amlogic.com>
-Date:   Sat May 8 20:27:20 2021 +0800
+========================================
 
-    MediaSync: AV is not sync when switch micro speed. [1/1]
-    
-    PD#SWPL-49630
-    
-    Problem:
-    refclock is not synced between audio and video.
-    
-    Solution:
-    sync refclock.
-    
-    Verify:
-    verified on S905X4-AH212
-    
-    Change-Id: I62b04de9b72ebcb3233657a5215600d1b4292e7c
-    Signed-off-by: Chen Chen <chen.chen1@amlogic.com>
+Release time: 2021-05-20-17-42
 
 ========================================
 
-Release time: 2021-05-20-14-59
-
-========================================
-
-Builder: wanghao.li
+Builder: chen.chen1
 
 ========================================
 Release file:
