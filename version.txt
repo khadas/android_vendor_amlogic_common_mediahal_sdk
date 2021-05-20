@@ -1,10 +1,30 @@
 =========RELEALSE NOTE=================
 
-Version: V3.0.6-Icf134-c35966
+Version: V3.0.7-I5461e-31ac83
 
 ========================================
 
 Git commit:
+commit 31ac83552527dfc539a7540b89d4ba6a26d897d2
+Author: chen.chen1 <chen.chen1@amlogic.com>
+Date:   Thu May 20 19:57:28 2021 +0800
+
+    MediaSync: switch audio track,AV out of sync. [1/1]
+    
+    PD#SWPL-50516
+    
+    Problem:
+    apts/vpts maybe 32bit and differ large witch demux pcr;
+    
+    Solution:
+    use 33bit for apts/vpts;
+    
+    Verify:
+    verified on S905X4-AH212
+    
+    Change-Id: I5461e55c3d9d50ddded16b6fbbd53f8f8ac64514
+    Signed-off-by: Chen Chen <chen.chen1@amlogic.com>
+
 commit c35966afa19d528db647212da6b2f377be071bb4
 Author: yunmin.chen <yunmin.chen@amlogic.com>
 Date:   Wed May 12 22:10:33 2021 +0800
@@ -174,34 +194,13 @@ Date:   Sat May 8 14:59:35 2021 +0800
     Change-Id: I3b02d1ce1415a4a00c4f44902a249fe446b6aca1
     Signed-off-by: wanghao.li<wanghao.li@amlogic.com>
 
-commit f952785bd8a866228d0b6d711e0f0c3b0acd26e6
-Author: yunmin.chen <yunmin.chen@amlogic.com>
-Date:   Mon May 17 14:24:57 2021 +0800
+========================================
 
-    tsplayer: open PIP,switch to audio only channel,automated exit [1/1]
-    
-    PD#SWPL-50328
-    
-    Problem:
-    ~MediaSync() crash.
-    
-    Solution:
-    After TsPlayerRender delete mVideoSync,
-    set mVideoSync to NULL.
-    
-    Verify:
-    SC2_AH212
-    
-    Change-Id: Ibd919dbd57b0bac771b0195eef8643e161a9908f
-    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
+Release time: 2021-05-25-15-06
 
 ========================================
 
-Release time: 2021-05-21-14-38
-
-========================================
-
-Builder: yunmin.chen
+Builder: chen.chen1
 
 ========================================
 Release file:
