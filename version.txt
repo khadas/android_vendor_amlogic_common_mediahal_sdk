@@ -1,30 +1,76 @@
 =========RELEALSE NOTE=================
 
-Version: v2.0
+Version: V3.0.2-Id93b4-a19790
 
 ========================================
 
 Git commit:
-commit cca4d1bc81a1fcf954663e18e730fdea6ef0b39b
-Author: shuanglong.wang <shuanglong.wang@amlogic.com>
-Date:   Mon May 17 15:00:06 2021 +0800
+commit a197906d232e489efe8aa0ff3e90868ff30f6c39
+Author: wanghao.li <wanghao.li@amlogic.com>
+Date:   Tue May 18 11:39:39 2021 +0800
 
-    mediahal: invoke getrealtime after gettracktime for begining playback [1/1]
+    tsplayer: send videotunnel command to clear the last frame [1/1]
     
-    PD#SWPL-50312
+    PD#SWPL-49835
     
     Problem:
-    drop 1 when audio switch
-    The first video start before audio update first mediatime
+    videotunnel can not clear last frame
     
     Solution:
-    invoke getrealtime after gettracktime for begining playback
+    set flag to tell videotunnel to clear last frame
     
     Verify:
-    ohm
+    SC2
     
-    Change-Id: I868bfd3cc5a2e62ee6221c56684d81ebac954110
-    Signed-off-by: shuanglong.wang <shuanglong.wang@amlogic.com>
+    Change-Id: Id93b46b5dfee7fa778ab36ba1eaa5ddc62961542
+    Signed-off-by: wanghao.li<wanghao.li@amlogic.com>
+
+commit dda7e61d20f5fc18b4ff599d9ef4b2d52c18c47f
+Author: yunmin.chen <yunmin.chen@amlogic.com>
+Date:   Wed May 19 17:35:49 2021 +0800
+
+    tsplayer: android R nontunelmode no AD output [1/1]
+    
+    PD#SWPL-50408
+    
+    Problem:
+    AD pid should be set before the open audio decoder.
+    
+    Solution:
+    Set the AD pid before the open audio decoder.
+    
+    Verify:
+    SC2_AH212
+    
+    Change-Id: Ie0553b4c487de3f87f17887f4005100fdc2b840c
+    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
+
+commit 0f73c1a7f7b33551309f817460e76037add85283
+Author: yunmin.chen <yunmin.chen@amlogic.com>
+Date:   Mon Apr 19 10:49:37 2021 +0800
+
+    mediahal: Version management. [1/1]
+    
+    PD#SWPL-48769
+    
+    Problem:
+    Version management.
+    
+    Solution:
+    Version management.
+    
+    Verify:
+    SC2_AH212
+    
+    Change-Id: Ib8a0b4b99372702e6e5a8b888b4c84593512a0f3
+    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
+
+commit 28f76fa2cc3994f52560582b1f48077c3b338709
+Merge: 90ea777 a90b6c0
+Author: Zhi Zhou <zhi.zhou@amlogic.com>
+Date:   Tue May 18 19:48:21 2021 -0700
+
+    Merge "mediahal: invoke getrealtime after gettracktime for begining playback [1/1]"
 
 commit 90ea777a2cf390656a49374b6d00952bee50c8a9
 Author: wanghao.li <wanghao.li@amlogic.com>
@@ -112,6 +158,27 @@ Date:   Wed May 12 11:18:21 2021 +0800
     Change-Id: Idde32cf629b4decf55da3ff5d5728d4a7ec16c7d
     Signed-off-by: xinguang.jiang <xinguang.jiang@amlogic.com>
 
+commit a90b6c0dd524bc6d89d69f9f3025e73baed69d06
+Author: shuanglong.wang <shuanglong.wang@amlogic.com>
+Date:   Mon May 17 15:00:06 2021 +0800
+
+    mediahal: invoke getrealtime after gettracktime for begining playback [1/1]
+    
+    PD#SWPL-50312
+    
+    Problem:
+    drop 1 when audio switch
+    The first video start before audio update first mediatime
+    
+    Solution:
+    invoke getrealtime after gettracktime for begining playback
+    
+    Verify:
+    ohm
+    
+    Change-Id: I868bfd3cc5a2e62ee6221c56684d81ebac954110
+    Signed-off-by: shuanglong.wang <shuanglong.wang@amlogic.com>
+
 commit 1bf19e792e87ae92d2be32dc29b51868f274b46c
 Author: chen.chen1 <chen.chen1@amlogic.com>
 Date:   Sat May 8 20:27:20 2021 +0800
@@ -132,94 +199,13 @@ Date:   Sat May 8 20:27:20 2021 +0800
     Change-Id: I62b04de9b72ebcb3233657a5215600d1b4292e7c
     Signed-off-by: Chen Chen <chen.chen1@amlogic.com>
 
-commit 02f8103d82ff9eea5d443991f11b900ba65e97d7
-Author: houren.wang <houren.wang@amlogic.com>
-Date:   Thu May 13 22:08:22 2021 +0800
+========================================
 
-    mediasync: fix video frozen issue when switch AD [1/1]
-    
-    PD#SWPL-48250
-    
-    Problem:
-    MediaSync set state to MEDIASYNC_EXIT state in destructor function.
-    
-    Solution:
-    don't need modify sync state in MediaSync dtor.
-    
-    Verify:
-    AH212
-    
-    Change-Id: I7917ceefe9972e15a5a95cc15837a7c7024c1d5f
-    Signed-off-by: houren.wang <houren.wang@amlogic.com>
-
-commit 16fa7672a71a25f37528e6254ae56065380a8de1
-Author: zhipeng.he <zhipeng.he@amlogic.com>
-Date:   Fri Apr 30 11:36:54 2021 +0800
-
-    tsplayer: add prop to control setblackout in tunnelmode. [1/1]
-    
-    PD#SWPL-49003
-    
-    Problem:
-    no prop to control setblackout in tunnelmode.
-    
-    Solution:
-    add prop to control setblackout in tunnelmode.
-    
-    Verify:
-    T950D4_AM301
-    
-    Change-Id: I066cb5340637f1d49aeae39e4343b48e3276b2f8
-    Signed-off-by: zhipeng.he <zhipeng.he@amlogic.com>
-
-commit 55a33af270e113216254a9c5c5aae7f1a22fbb14
-Author: yunmin.chen <yunmin.chen@amlogic.com>
-Date:   Thu May 13 13:47:33 2021 +0800
-
-    tsplayer: do timeshift, video freeze [1/1]
-    
-    PD#SWPL-49118
-    
-    Problem:
-    NonTunnelMode:do timeshift, video freeze.
-    
-    Solution:
-    When TRICKMODE is PAUSE_NEXT,
-    queueVideoFrame() is also required.
-    
-    Verify:
-    SC2_AH212
-    
-    Change-Id: I83e5beae2584a5b3dffd6e3b5376f11e3ca94618
-    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
-
-commit ec66c04e02b45f7bcfadee55d4c0c164cd861a9f
-Author: yunmin.chen <yunmin.chen@amlogic.com>
-Date:   Fri May 7 16:23:24 2021 +0800
-
-    tsplayer:  Modification of androidR tunnelMode AudioHalWrapper. [1/1]
-    
-    PD#SWPL-45674
-    
-    Problem:
-    tunnelMode:Audio decoding was stopped when MUTE was set.
-    
-    Solution:
-    In tunnelMode, audio decoding is not stopped when MUTE is set.
-    
-    Verify:
-    SC2_AH212
-    
-    Change-Id: I3674765d011498ab957032f76334ed79127a417a
-    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
+Release time: 2021-05-20-14-59
 
 ========================================
 
-Release time: 2021-05-19-10-32
-
-========================================
-
-Builder: shuanglong.wang
+Builder: wanghao.li
 
 ========================================
 Release file:
