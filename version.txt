@@ -1,10 +1,72 @@
 =========RELEALSE NOTE=================
 
-Version: V3.0.3-Ica28a-a2faf6
+Version: V3.0.6-Icf134-c35966
 
 ========================================
 
 Git commit:
+commit c35966afa19d528db647212da6b2f377be071bb4
+Author: yunmin.chen <yunmin.chen@amlogic.com>
+Date:   Wed May 12 22:10:33 2021 +0800
+
+    tsplayer:  get audiopatch decodec status [1/1]
+    
+    PD#SWPL-49745
+    
+    Problem:
+    The speed control of writing ts is not accurate enough.
+    
+    Solution:
+    Need to get audio decoding status,
+    Used for writing speed control.
+    
+    Verify:
+    AM301
+    
+    Change-Id: Icf134c6bba5a337cbcbc8b9d7b1cbbb9ab001d90
+    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
+
+commit 701b068d45c2877e82333d12f78f0b79562ec9d0
+Author: xiaoming sui <xiaoming.sui@amlogic.com>
+Date:   Tue May 18 13:39:38 2021 +0800
+
+    tsplayer: add dra audio format [1/1]
+    
+    PD#SWPL-49722
+    
+    Problem:
+    has no audio output for dra format
+    
+    Solution:
+    add dra audio format
+    
+    Verify:
+    T3-P
+    
+    Signed-off-by: xiaoming sui <xiaoming.sui@amlogic.com>
+    Change-Id: I0432183212ac818ca6109d2fc874efcb92fd7f7d
+
+commit a40dfedbc3dc05145110eac72889f6cf4de02f1b
+Author: yunmin.chen <yunmin.chen@amlogic.com>
+Date:   Thu May 20 21:47:06 2021 +0800
+
+    mediahal: Version management. [1/1]
+    
+    PD#SWPL-48769
+    
+    Problem:
+    If each line of commit Commit Message exceeds 80 bytes,
+    gerrit will report an error.
+    
+    Solution:
+    Limit git log --oneline to 80 bytes per line.
+    
+    Verify:
+    SC2_AH212
+    
+    Change-Id: If4305ad88498a7b882e1c204006e524fe0af99b3
+    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
+
 commit a2faf6b6449b13e0de5cc6eaff7def5e3e79f66e
 Author: chen.chen1 <chen.chen1@amlogic.com>
 Date:   Tue May 18 20:20:55 2021 +0800
@@ -133,79 +195,13 @@ Date:   Mon May 17 14:24:57 2021 +0800
     Change-Id: Ibd919dbd57b0bac771b0195eef8643e161a9908f
     Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
 
-commit 9632fb2ae7cce82d179c71fe3b94cb8329c1b4c0
-Author: chen.chen1 <chen.chen1@amlogic.com>
-Date:   Thu May 13 14:49:23 2021 +0800
+========================================
 
-    MediaSync: av is not synced in new Mediasync flow. [1/1]
-    
-    PD#SWPL-49840
-    
-    Problem:
-    av is not synced.
-    
-    Solution:
-    solve video freezed when change video
-    optimization debug info
-    solve video freeze when sourceclock lost
-    solve timeout is wrong triggered
-    video freerun when pv diff is large
-    reset mediasync when multi-channel switching
-    
-    Verify:
-    verified on S905X4-AH212
-    
-    Change-Id: I2a0c35ec8f3bc89e051447a15dac36de2bba67b5
-    Signed-off-by: Chen Chen <chen.chen1@amlogic.com>
-
-commit 99a56d455333454bc70b882269c3857c8f16a204
-Author: xinguang.jiang <xinguang.jiang@amlogic.com>
-Date:   Wed May 12 11:18:21 2021 +0800
-
-    playerdemo: Fix the screen problem of the playback stream. [1/1]
-    
-    PD#GH-1039
-    
-    Problem:
-    The displayed buffer is smaller than the allocated buffer.
-    
-    Solution:
-    Set the aligned buffer
-    
-    Verify:
-    U212
-    
-    Change-Id: Idde32cf629b4decf55da3ff5d5728d4a7ec16c7d
-    Signed-off-by: xinguang.jiang <xinguang.jiang@amlogic.com>
-
-commit a90b6c0dd524bc6d89d69f9f3025e73baed69d06
-Author: shuanglong.wang <shuanglong.wang@amlogic.com>
-Date:   Mon May 17 15:00:06 2021 +0800
-
-    mediahal: invoke getrealtime after gettracktime for begining playback [1/1]
-    
-    PD#SWPL-50312
-    
-    Problem:
-    drop 1 when audio switch
-    The first video start before audio update first mediatime
-    
-    Solution:
-    invoke getrealtime after gettracktime for begining playback
-    
-    Verify:
-    ohm
-    
-    Change-Id: I868bfd3cc5a2e62ee6221c56684d81ebac954110
-    Signed-off-by: shuanglong.wang <shuanglong.wang@amlogic.com>
+Release time: 2021-05-21-14-38
 
 ========================================
 
-Release time: 2021-05-20-17-42
-
-========================================
-
-Builder: chen.chen1
+Builder: yunmin.chen
 
 ========================================
 Release file:
