@@ -1,10 +1,33 @@
 =========RELEALSE NOTE=================
 
-Version: V3.0.7-I5461e-31ac83
+Version: V3.0.8-I5076a-18f49b
 
 ========================================
 
 Git commit:
+commit 18f49b8a656665eb61c7608eff612435d978c773
+Author: chen.chen1 <chen.chen1@amlogic.com>
+Date:   Fri May 21 16:18:35 2021 +0800
+
+    MediaSync: open PIP last 1H,no audio output. [1/1]
+    
+    PD#SWPL-50901
+    
+    Problem:
+    1. AudioFrameListManage and queueAudioFrame may change
+    mAudioFrameInfo at the same time ;
+    2. video stuck;
+    
+    Solution:
+    1. add a mutex;
+    2. video use normal output policy instead of dropping policy;
+    
+    Verify:
+    verified on S905X4-AH212
+    
+    Change-Id: I5076a5c3ef399b5262f206c4a5524c79447f788a
+    Signed-off-by: Chen Chen <chen.chen1@amlogic.com>
+
 commit 31ac83552527dfc539a7540b89d4ba6a26d897d2
 Author: chen.chen1 <chen.chen1@amlogic.com>
 Date:   Thu May 20 19:57:28 2021 +0800
@@ -174,29 +197,9 @@ Date:   Tue May 18 19:48:21 2021 -0700
 
     Merge "mediahal: invoke getrealtime after gettracktime for begining playback [1/1]"
 
-commit 90ea777a2cf390656a49374b6d00952bee50c8a9
-Author: wanghao.li <wanghao.li@amlogic.com>
-Date:   Sat May 8 14:59:35 2021 +0800
-
-    tsplayer: DVB needs to set Letter box 16:9 ratio [1/1]
-    
-    PD#OTT-18927
-    
-    Problem:
-    DVB needs to set Letter box 16:9
-    
-    Solution:
-    add item to set Letter box 16:9
-    
-    Verify:
-    S905X2-U212
-    
-    Change-Id: I3b02d1ce1415a4a00c4f44902a249fe446b6aca1
-    Signed-off-by: wanghao.li<wanghao.li@amlogic.com>
-
 ========================================
 
-Release time: 2021-05-25-15-06
+Release time: 2021-05-25-16-40
 
 ========================================
 
