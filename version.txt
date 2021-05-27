@@ -1,10 +1,74 @@
 =========RELEALSE NOTE=================
 
-Version: V3.0.8-I5076a-18f49b
+Version: V3.0.11-Iea3fa-dc6a46
 
 ========================================
 
 Git commit:
+commit dc6a46b38421fdeb9b7d9b6a833e1b8985e2e26d
+Author: yunmin.chen <yunmin.chen@amlogic.com>
+Date:   Mon May 24 14:16:14 2021 +0800
+
+    tsplayer: do time shift,TV black screen [1/1]
+    
+    PD#SWPL-50969
+    
+    Problem:
+    When TrickMode is PAUSE_NEXT mode,
+    the first frame after decoding is not displayed.
+    
+    Solution:
+    When TrickMode is in PAUSE_NEXT mode,
+    the first frame of video after decoding is sent directly to the display module
+    without audio and video synchronization.
+    
+    Verify:
+    SC2_AH212
+    
+    Change-Id: Iea3fa4cae6d22d1fdd80a6a2c14a24265b1ef768
+    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
+
+commit 05f9c61b00bfb8ae6a12a1ab24fd08169d5d47a6
+Author: wanghao.li <wanghao.li@amlogic.com>
+Date:   Thu May 20 20:43:37 2021 +0800
+
+    tsplayer: open PIP stress test,video freeze [1/1]
+    
+    PD#SWPL-50784
+    
+    Problem:
+    change size error
+    
+    Solution:
+    ignore this error size
+    
+    Verify:
+    SC2
+    
+    Change-Id: Ia093e8a5fafe9673fcf60c56cc8572e34c748ccf
+    Signed-off-by: wanghao.li<wanghao.li@amlogic.com>
+
+commit 36e9e8fc43e04ae00c3e00e16b7151053904a87b
+Author: wenlong.yuan <wenlong.yuan@amlogic.com>
+Date:   Mon May 10 17:58:17 2021 +0800
+
+    tsplayer: getCurrentPts abnormal when pts is 33bit [1/1]
+    
+    PD#SWPL-49209
+    
+    Problem:
+    getCurrentPts abnormal which is bigger than 33bit
+    
+    Solution:
+    1.amtsplayer need use u32 to get vpts and apts
+    2.when pts is 33bit,just add 0x100000000L
+    
+    Verify:
+    S905X2-U212
+    
+    Change-Id: If1e2809fb8531a318132ee8a669517788f05fcce
+    Signed-off-by: wenlong.yuan <wenlong.yuan@amlogic.com>
+
 commit 18f49b8a656665eb61c7608eff612435d978c773
 Author: chen.chen1 <chen.chen1@amlogic.com>
 Date:   Fri May 21 16:18:35 2021 +0800
@@ -150,60 +214,13 @@ Date:   Tue May 18 11:39:39 2021 +0800
     Change-Id: Id93b46b5dfee7fa778ab36ba1eaa5ddc62961542
     Signed-off-by: wanghao.li<wanghao.li@amlogic.com>
 
-commit dda7e61d20f5fc18b4ff599d9ef4b2d52c18c47f
-Author: yunmin.chen <yunmin.chen@amlogic.com>
-Date:   Wed May 19 17:35:49 2021 +0800
+========================================
 
-    tsplayer: android R nontunelmode no AD output [1/1]
-    
-    PD#SWPL-50408
-    
-    Problem:
-    AD pid should be set before the open audio decoder.
-    
-    Solution:
-    Set the AD pid before the open audio decoder.
-    
-    Verify:
-    SC2_AH212
-    
-    Change-Id: Ie0553b4c487de3f87f17887f4005100fdc2b840c
-    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
-
-commit 0f73c1a7f7b33551309f817460e76037add85283
-Author: yunmin.chen <yunmin.chen@amlogic.com>
-Date:   Mon Apr 19 10:49:37 2021 +0800
-
-    mediahal: Version management. [1/1]
-    
-    PD#SWPL-48769
-    
-    Problem:
-    Version management.
-    
-    Solution:
-    Version management.
-    
-    Verify:
-    SC2_AH212
-    
-    Change-Id: Ib8a0b4b99372702e6e5a8b888b4c84593512a0f3
-    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
-
-commit 28f76fa2cc3994f52560582b1f48077c3b338709
-Merge: 90ea777 a90b6c0
-Author: Zhi Zhou <zhi.zhou@amlogic.com>
-Date:   Tue May 18 19:48:21 2021 -0700
-
-    Merge "mediahal: invoke getrealtime after gettracktime for begining playback [1/1]"
+Release time: 2021-05-27-14-48
 
 ========================================
 
-Release time: 2021-05-25-16-40
-
-========================================
-
-Builder: chen.chen1
+Builder: yunmin.chen
 
 ========================================
 Release file:
