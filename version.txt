@@ -1,10 +1,30 @@
 =========RELEALSE NOTE=================
 
-Version: V3.0.11-Iea3fa-dc6a46
+Version: V3.0.12-I3be49-d6ddfc
 
 ========================================
 
 Git commit:
+commit d6ddfc362a308ac5b12e93900bfa7a5ae07d0db7
+Author: shuanglong.wang <shuanglong.wang@amlogic.com>
+Date:   Thu May 27 16:27:19 2021 +0800
+
+    mediahal: need exit wait audio update first pts when stop [1/1]
+    
+    PD#SWPL-35248
+    
+    Problem:
+    sometime occur always wait audio update first pts, loop not exit when stop
+    
+    Solution:
+    need exit wait audio update first pts when stop
+    
+    Verify:
+    ohm
+    
+    Change-Id: I3be490c762f99e14445bc18e9388d40bf3b8e5ec
+    Signed-off-by: shuanglong.wang <shuanglong.wang@amlogic.com>
+
 commit dc6a46b38421fdeb9b7d9b6a833e1b8985e2e26d
 Author: yunmin.chen <yunmin.chen@amlogic.com>
 Date:   Mon May 24 14:16:14 2021 +0800
@@ -194,33 +214,13 @@ Date:   Tue May 18 20:20:55 2021 +0800
     Change-Id: Ica28acd5c4e8ec012ccb4cbb2be65a36c0bc565b
     Signed-off-by: chen.chen1 <chen.chen1@amlogic.com>
 
-commit a197906d232e489efe8aa0ff3e90868ff30f6c39
-Author: wanghao.li <wanghao.li@amlogic.com>
-Date:   Tue May 18 11:39:39 2021 +0800
+========================================
 
-    tsplayer: send videotunnel command to clear the last frame [1/1]
-    
-    PD#SWPL-49835
-    
-    Problem:
-    videotunnel can not clear last frame
-    
-    Solution:
-    set flag to tell videotunnel to clear last frame
-    
-    Verify:
-    SC2
-    
-    Change-Id: Id93b46b5dfee7fa778ab36ba1eaa5ddc62961542
-    Signed-off-by: wanghao.li<wanghao.li@amlogic.com>
+Release time: 2021-05-28-13-12
 
 ========================================
 
-Release time: 2021-05-27-14-48
-
-========================================
-
-Builder: yunmin.chen
+Builder: shuanglong.wang
 
 ========================================
 Release file:
