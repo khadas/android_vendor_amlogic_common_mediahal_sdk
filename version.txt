@@ -1,17 +1,43 @@
 =========RELEALSE NOTE=================
 
-Version: V3.0.12-I3be49-d6ddfc
+Version: V3.0.13-Ie2cea-5b2c16
 
 ========================================
 
 Git commit:
-commit d6ddfc362a308ac5b12e93900bfa7a5ae07d0db7
+commit 5b2c16538615675bfa28147388565b6c4ee91b85
+Author: yunmin.chen <yunmin.chen@amlogic.com>
+Date:   Sun May 30 01:11:53 2021 +0800
+
+    tsplayer: do time shift,subtitle display after 10 seconds [1/1]
+    
+    PD#SWPL-51350
+    
+    Problem:
+    1.The amount of data buffered is not controlled.
+    2.mediasync id alloc fail.
+    
+    Solution:
+    1.1 Because mediasync pts is forcibly changed to 33bit,
+    the audio cache calculates incorrectly.
+    Audio pts need to be unified into 33bit.
+    1.2 When the data exceeds the threshold,
+    ts data can be written only when the video decoding data is not available.
+    2.Add the lock when new MediaSync and allocInstance.
+    
+    Verify:
+    SC2_AH212
+    
+    Change-Id: Ie2cea3e704ab99426b46bbd979f1e48220665580
+    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
+
+commit 4ff815f743452f37253f7a275aed000fb1fea029
 Author: shuanglong.wang <shuanglong.wang@amlogic.com>
 Date:   Thu May 27 16:27:19 2021 +0800
 
     mediahal: need exit wait audio update first pts when stop [1/1]
     
-    PD#SWPL-35248
+    PD#SWPL-50312
     
     Problem:
     sometime occur always wait audio update first pts, loop not exit when stop
@@ -194,33 +220,13 @@ Date:   Thu May 20 21:47:06 2021 +0800
     Change-Id: If4305ad88498a7b882e1c204006e524fe0af99b3
     Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
 
-commit a2faf6b6449b13e0de5cc6eaff7def5e3e79f66e
-Author: chen.chen1 <chen.chen1@amlogic.com>
-Date:   Tue May 18 20:20:55 2021 +0800
+========================================
 
-    MediaSync: pip playback, no audio output. [1/1]
-    
-    PD#SWPL-50211
-    
-    Problem:
-    AudioFrameListManage crash;
-    
-    Solution:
-    iterator no need to getNext after erase.
-    
-    Verify:
-    verified on S905X4-AH212
-    
-    Change-Id: Ica28acd5c4e8ec012ccb4cbb2be65a36c0bc565b
-    Signed-off-by: chen.chen1 <chen.chen1@amlogic.com>
+Release time: 2021-06-01-14-47
 
 ========================================
 
-Release time: 2021-05-28-13-12
-
-========================================
-
-Builder: shuanglong.wang
+Builder: yunmin.chen
 
 ========================================
 Release file:
