@@ -1,10 +1,76 @@
 =========RELEALSE NOTE=================
 
-Version: V3.0.13-Ie2cea-5b2c16
+Version: V3.0.16-I9d461-1ad7cb
 
 ========================================
 
 Git commit:
+commit 1ad7cb0a32932433444fc99f63595da559ce8903
+Author: yunmin.chen <yunmin.chen@amlogic.com>
+Date:   Thu Jun 3 16:06:13 2021 +0800
+
+    playerdemo: Add enhancement scheme in EsVideoDecPlayer. [1/1]
+    
+    PD#SWPL-35245
+    
+    Problem:
+    Mediahal_sdk compilation error.
+    
+    Solution:
+    Modify release_tool.sh and copy EsVideoDecPlayer to the bin directory.
+    
+    usage:
+    EsVideoDecPlayer -i h264.es -f 2 -s h264.fsz
+    
+    Verify:
+    U212
+    
+    Change-Id: I9d461f62bccae41536a93d9a9fd945d4a92d7a11
+    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
+
+commit 047a608ebfc191a9cd5894e9fdfadb75e0a86974
+Author: yunmin.chen <yunmin.chen@amlogic.com>
+Date:   Tue Jun 1 18:04:21 2021 +0800
+
+    tsplayer: pip swap bwteen ad and nonad stream ,ad info not mapped [1/1]
+    
+    PD#SWPL-51779
+    
+    Problem:
+    The set AD information does not correspond to the demux id.
+    
+    Solution:
+    Set the demux id in the constructor of Am_AudioHalWrapper.
+    
+    Verify:
+    SC2_AH212
+    
+    Change-Id: I606302d77a6ba795561291abb302d3cbda497c09
+    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
+
+commit 1b3c5506f03551cfa912d99da8413c9bdecd160c
+Author: xinguang.jiang <xinguang.jiang@amlogic.com>
+Date:   Wed Mar 10 16:43:57 2021 +0800
+
+    playerdemo: Add enhancement scheme in EsVideoDecPlayer. [1/1]
+    
+    PD#SWPL-35245
+    
+    Problem:
+    Add enhancement scheme in EsVideoDecPlayer.
+    
+    Solution:
+    Add enhancement scheme in EsVideoDecPlayer.
+    
+    usage:
+    EsVideoDecPlayer -i h264.es -f 2 -s h264.fsz
+    
+    Verify:
+    U212
+    
+    Change-Id: I4bba225bf796f36ef4348ca74c178010173baec6
+    Signed-off-by: xinguang.jiang <xinguang.jiang@amlogic.com>
+
 commit 5b2c16538615675bfa28147388565b6c4ee91b85
 Author: yunmin.chen <yunmin.chen@amlogic.com>
 Date:   Sun May 30 01:11:53 2021 +0800
@@ -158,71 +224,9 @@ Date:   Thu May 20 19:57:28 2021 +0800
     Change-Id: I5461e55c3d9d50ddded16b6fbbd53f8f8ac64514
     Signed-off-by: Chen Chen <chen.chen1@amlogic.com>
 
-commit c35966afa19d528db647212da6b2f377be071bb4
-Author: yunmin.chen <yunmin.chen@amlogic.com>
-Date:   Wed May 12 22:10:33 2021 +0800
-
-    tsplayer:  get audiopatch decodec status [1/1]
-    
-    PD#SWPL-49745
-    
-    Problem:
-    The speed control of writing ts is not accurate enough.
-    
-    Solution:
-    Need to get audio decoding status,
-    Used for writing speed control.
-    
-    Verify:
-    AM301
-    
-    Change-Id: Icf134c6bba5a337cbcbc8b9d7b1cbbb9ab001d90
-    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
-
-commit 701b068d45c2877e82333d12f78f0b79562ec9d0
-Author: xiaoming sui <xiaoming.sui@amlogic.com>
-Date:   Tue May 18 13:39:38 2021 +0800
-
-    tsplayer: add dra audio format [1/1]
-    
-    PD#SWPL-49722
-    
-    Problem:
-    has no audio output for dra format
-    
-    Solution:
-    add dra audio format
-    
-    Verify:
-    T3-P
-    
-    Signed-off-by: xiaoming sui <xiaoming.sui@amlogic.com>
-    Change-Id: I0432183212ac818ca6109d2fc874efcb92fd7f7d
-
-commit a40dfedbc3dc05145110eac72889f6cf4de02f1b
-Author: yunmin.chen <yunmin.chen@amlogic.com>
-Date:   Thu May 20 21:47:06 2021 +0800
-
-    mediahal: Version management. [1/1]
-    
-    PD#SWPL-48769
-    
-    Problem:
-    If each line of commit Commit Message exceeds 80 bytes,
-    gerrit will report an error.
-    
-    Solution:
-    Limit git log --oneline to 80 bytes per line.
-    
-    Verify:
-    SC2_AH212
-    
-    Change-Id: If4305ad88498a7b882e1c204006e524fe0af99b3
-    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
-
 ========================================
 
-Release time: 2021-06-01-14-47
+Release time: 2021-06-03-17-16
 
 ========================================
 
@@ -252,6 +256,8 @@ Android.mk
 Binary  file:
 AmTsPlayerExample
 AmTsPlayerTest
+EsVideoDecPlayer
+EsVideoDecPlayerTest
 vesplayer
 
 ========================================
