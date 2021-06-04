@@ -1,10 +1,30 @@
 =========RELEALSE NOTE=================
 
-Version: V3.0.16-I9d461-1ad7cb
+Version: V3.0.17-I0b795-29e25c
 
 ========================================
 
 Git commit:
+commit 29e25cb4e1dc00311eff6a7bcc57a033c5e80d5b
+Author: shuanglong.wang <shuanglong.wang@amlogic.com>
+Date:   Tue Jun 1 10:57:28 2021 +0800
+
+    mediahal: reset frac when pause-resume [1/1]
+    
+    PD#SWPL-51767
+    
+    Problem:
+    pattern cannot detect after pause
+    
+    Solution:
+    reset frac when pause-resume
+    
+    Verify:
+    ohm
+    
+    Change-Id: I0b795df79fab1bac970aabb2eb6fedc2d2463ca6
+    Signed-off-by: shuanglong.wang <shuanglong.wang@amlogic.com>
+
 commit 1ad7cb0a32932433444fc99f63595da559ce8903
 Author: yunmin.chen <yunmin.chen@amlogic.com>
 Date:   Thu Jun 3 16:06:13 2021 +0800
@@ -204,33 +224,13 @@ Date:   Fri May 21 16:18:35 2021 +0800
     Change-Id: I5076a5c3ef399b5262f206c4a5524c79447f788a
     Signed-off-by: Chen Chen <chen.chen1@amlogic.com>
 
-commit 31ac83552527dfc539a7540b89d4ba6a26d897d2
-Author: chen.chen1 <chen.chen1@amlogic.com>
-Date:   Thu May 20 19:57:28 2021 +0800
+========================================
 
-    MediaSync: switch audio track,AV out of sync. [1/1]
-    
-    PD#SWPL-50516
-    
-    Problem:
-    apts/vpts maybe 32bit and differ large witch demux pcr;
-    
-    Solution:
-    use 33bit for apts/vpts;
-    
-    Verify:
-    verified on S905X4-AH212
-    
-    Change-Id: I5461e55c3d9d50ddded16b6fbbd53f8f8ac64514
-    Signed-off-by: Chen Chen <chen.chen1@amlogic.com>
+Release time: 2021-06-04-11-16
 
 ========================================
 
-Release time: 2021-06-03-17-16
-
-========================================
-
-Builder: yunmin.chen
+Builder: shuanglong.wang
 
 ========================================
 Release file:
