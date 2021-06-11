@@ -1,10 +1,82 @@
 =========RELEALSE NOTE=================
 
-Version: V3.0.17-I0b795-29e25c
+Version: V3.0.20-Ibc2e4-6019fc
 
 ========================================
 
 Git commit:
+commit 6019fc722cba67edff207ab73c55d687f372512a
+Author: yunmin.chen <yunmin.chen@amlogic.com>
+Date:   Mon Jun 7 19:54:32 2021 +0800
+
+    tsplayer: TsPlayer in android use android.bp to compile [1/1]
+    
+    PD#SWPL-52276
+    
+    Problem:
+    TsPlayer in android use android.bp to compile
+    
+    Solution:
+    TsPlayer in android use android.bp to compile
+    
+    Verify:
+    SC2_AH212
+    
+    Change-Id: Ibc2e488dcbaa3590f186e622a247a86d29d44877
+    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
+
+commit c20ea306e0ff6e24d1f047edabcbdffe078bc4da
+Author: yunmin.chen <yunmin.chen@amlogic.com>
+Date:   Fri Jun 4 21:17:46 2021 +0800
+
+    tsplayer: switch channel to lock channel the audio can ouput [1/1]
+    
+    PD#SWPL-50494
+    
+    Problem:
+    The mute command was not sent to audiohal.
+    
+    Solution:
+    tunnelmode: Before there is an open audio decoder,
+    it is allowed to send mute commands to audiohal.
+    
+    Verify:
+    SC2_AH212
+    
+    Change-Id: I91f3339ba5b0d4670367729c8325f55bb4adce50
+    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
+
+commit b0a3709d96ece11e7b396d3b43308e5deb56398d
+Author: chen.chen2 <chen.chen2@amlogic.com>
+Date:   Wed Jun 9 12:34:26 2021 +0800
+
+    mediahal: Fix VOD IONLY trickmode issue [1/1]
+    
+    PD#SWPL-52399
+    
+    Problem:
+    1. Tsplayer kWhatStartVideo case always set the default value
+       for trickmode
+    2. TsPlayerRender syncQueuesDone_l() not include IONLY process,
+       this will lead IONLY mode no output to render.
+    3. VideoTunnelDisplay clearlastframe default value is true,
+       this will lead switch to IONLY trickmode the MesonHwc be released,
+       then dqbuf always report failed.
+    
+    Solution:
+    1. Recover the trickmode in kWhatStartVideo case.
+    2. AV_VIDEO_TRICK_MODE_IONLY need send frame to render all the time,
+       so we add the case that when in AV_VIDEO_TRICK_MODE_IONLY always
+       call postDrainVideoQueue().
+    3. Change the clearlastframe value from true to fale in
+       VideodecNonTunnelWrapper and VideoTunnelDisplay.
+    
+    Verify:
+    AH212
+    
+    Change-Id: I614e38e75e08b7cd0ec764028fba7405824481be
+    Signed-off-by: chen.chen2 <chen.chen2@amlogic.com>
+
 commit 29e25cb4e1dc00311eff6a7bcc57a033c5e80d5b
 Author: shuanglong.wang <shuanglong.wang@amlogic.com>
 Date:   Tue Jun 1 10:57:28 2021 +0800
@@ -160,77 +232,13 @@ Date:   Mon May 24 14:16:14 2021 +0800
     Change-Id: Iea3fa4cae6d22d1fdd80a6a2c14a24265b1ef768
     Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
 
-commit 05f9c61b00bfb8ae6a12a1ab24fd08169d5d47a6
-Author: wanghao.li <wanghao.li@amlogic.com>
-Date:   Thu May 20 20:43:37 2021 +0800
+========================================
 
-    tsplayer: open PIP stress test,video freeze [1/1]
-    
-    PD#SWPL-50784
-    
-    Problem:
-    change size error
-    
-    Solution:
-    ignore this error size
-    
-    Verify:
-    SC2
-    
-    Change-Id: Ia093e8a5fafe9673fcf60c56cc8572e34c748ccf
-    Signed-off-by: wanghao.li<wanghao.li@amlogic.com>
-
-commit 36e9e8fc43e04ae00c3e00e16b7151053904a87b
-Author: wenlong.yuan <wenlong.yuan@amlogic.com>
-Date:   Mon May 10 17:58:17 2021 +0800
-
-    tsplayer: getCurrentPts abnormal when pts is 33bit [1/1]
-    
-    PD#SWPL-49209
-    
-    Problem:
-    getCurrentPts abnormal which is bigger than 33bit
-    
-    Solution:
-    1.amtsplayer need use u32 to get vpts and apts
-    2.when pts is 33bit,just add 0x100000000L
-    
-    Verify:
-    S905X2-U212
-    
-    Change-Id: If1e2809fb8531a318132ee8a669517788f05fcce
-    Signed-off-by: wenlong.yuan <wenlong.yuan@amlogic.com>
-
-commit 18f49b8a656665eb61c7608eff612435d978c773
-Author: chen.chen1 <chen.chen1@amlogic.com>
-Date:   Fri May 21 16:18:35 2021 +0800
-
-    MediaSync: open PIP last 1H,no audio output. [1/1]
-    
-    PD#SWPL-50901
-    
-    Problem:
-    1. AudioFrameListManage and queueAudioFrame may change
-    mAudioFrameInfo at the same time ;
-    2. video stuck;
-    
-    Solution:
-    1. add a mutex;
-    2. video use normal output policy instead of dropping policy;
-    
-    Verify:
-    verified on S905X4-AH212
-    
-    Change-Id: I5076a5c3ef399b5262f206c4a5524c79447f788a
-    Signed-off-by: Chen Chen <chen.chen1@amlogic.com>
+Release time: 2021-06-11-11-13
 
 ========================================
 
-Release time: 2021-06-04-11-16
-
-========================================
-
-Builder: shuanglong.wang
+Builder: yunmin.chen
 
 ========================================
 Release file:
@@ -251,10 +259,11 @@ libmediahal_videodec.so
 
 Example file:
 AmTsPlayerExample.cpp
-Android.mk
+Android.bp
 
 Binary  file:
 AmTsPlayerExample
+AmTsPlayerExampleSystem
 AmTsPlayerTest
 EsVideoDecPlayer
 EsVideoDecPlayerTest
