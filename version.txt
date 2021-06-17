@@ -1,10 +1,30 @@
 =========RELEALSE NOTE=================
 
-Version: V3.0.25-Ia3b4f-c05345
+Version: V3.0.26-I0c7bf-b85095
 
 ========================================
 
 Git commit:
+commit b8509542c7da2ad4be30f3a527dc020b18d13936
+Author: chen.chen1 <chen.chen1@amlogic.com>
+Date:   Mon Jun 14 19:24:33 2021 +0800
+
+    MediaSync: Pcr need to adjust refclock in some case. [1/1]
+    
+    PD#SWPL-52679
+    
+    Problem:
+    when diff between demux pcr and refclock is large, need to adjust refclock
+    
+    Solution:
+    use demux pcr adjust refclock
+    
+    Verify:
+    verified on S905X4-AH212
+    
+    Change-Id: I0c7bfec0ac440640c06b548a3798d87298290f57
+    Signed-off-by: chen.chen1 <chen.chen1@amlogic.com>
+
 commit c053458fdc13f5fb9fa875a53675a78439e91a9b
 Author: yunmin.chen <yunmin.chen@amlogic.com>
 Date:   Tue Jun 15 17:43:14 2021 +0800
@@ -207,36 +227,13 @@ Date:   Tue Jun 1 10:57:28 2021 +0800
     Change-Id: I0b795df79fab1bac970aabb2eb6fedc2d2463ca6
     Signed-off-by: shuanglong.wang <shuanglong.wang@amlogic.com>
 
-commit 1ad7cb0a32932433444fc99f63595da559ce8903
-Author: yunmin.chen <yunmin.chen@amlogic.com>
-Date:   Thu Jun 3 16:06:13 2021 +0800
+========================================
 
-    playerdemo: Add enhancement scheme in EsVideoDecPlayer. [1/1]
-    
-    PD#SWPL-35245
-    
-    Problem:
-    Mediahal_sdk compilation error.
-    
-    Solution:
-    Modify release_tool.sh and copy EsVideoDecPlayer to the bin directory.
-    
-    usage:
-    EsVideoDecPlayer -i h264.es -f 2 -s h264.fsz
-    
-    Verify:
-    U212
-    
-    Change-Id: I9d461f62bccae41536a93d9a9fd945d4a92d7a11
-    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
+Release time: 2021-06-17-17-50
 
 ========================================
 
-Release time: 2021-06-16-21-11
-
-========================================
-
-Builder: yunmin.chen
+Builder: chen.chen1
 
 ========================================
 Release file:
