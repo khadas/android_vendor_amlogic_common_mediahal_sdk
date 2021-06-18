@@ -1,10 +1,30 @@
 =========RELEALSE NOTE=================
 
-Version: V3.0.26-I0c7bf-b85095
+Version: V3.0.27-I42576-d89d06
 
 ========================================
 
 Git commit:
+commit d89d06a2f1ec9885459a9ecb757375428a7ae1fa
+Author: jianchuan.ping <jianchuan.ping@amlogic.com>
+Date:   Fri Jun 18 11:15:00 2021 +0800
+
+    MediaSync: Clock state not inited. [1/2]
+    
+    PD#SWPL-52876
+    
+    Problem:
+    Clock state not init lead to sync not work correctly.
+    
+    Solution:
+    Init clock state
+    
+    Verify:
+    AH212
+    
+    Change-Id: I4257639ffc19b006e2804885e6f1653b65a976f4
+    Signed-off-by: jianchuan.ping <jianchuan.ping@amlogic.com>
+
 commit b8509542c7da2ad4be30f3a527dc020b18d13936
 Author: chen.chen1 <chen.chen1@amlogic.com>
 Date:   Mon Jun 14 19:24:33 2021 +0800
@@ -207,33 +227,13 @@ Date:   Wed Jun 9 12:34:26 2021 +0800
     Change-Id: I614e38e75e08b7cd0ec764028fba7405824481be
     Signed-off-by: chen.chen2 <chen.chen2@amlogic.com>
 
-commit 29e25cb4e1dc00311eff6a7bcc57a033c5e80d5b
-Author: shuanglong.wang <shuanglong.wang@amlogic.com>
-Date:   Tue Jun 1 10:57:28 2021 +0800
+========================================
 
-    mediahal: reset frac when pause-resume [1/1]
-    
-    PD#SWPL-51767
-    
-    Problem:
-    pattern cannot detect after pause
-    
-    Solution:
-    reset frac when pause-resume
-    
-    Verify:
-    ohm
-    
-    Change-Id: I0b795df79fab1bac970aabb2eb6fedc2d2463ca6
-    Signed-off-by: shuanglong.wang <shuanglong.wang@amlogic.com>
+Release time: 2021-06-18-16-21
 
 ========================================
 
-Release time: 2021-06-17-17-50
-
-========================================
-
-Builder: chen.chen1
+Builder: jianchuan.ping
 
 ========================================
 Release file:
