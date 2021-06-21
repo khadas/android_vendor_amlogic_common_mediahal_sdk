@@ -1,10 +1,30 @@
 =========RELEALSE NOTE=================
 
-Version: V3.0.28-Ifbd07-b8313c
+Version: V3.0.29-I5f0e1-10263d
 
 ========================================
 
 Git commit:
+commit 10263d9a2ca3755f56636b76fab900c3d3d98f31
+Author: shanshan.li <shanshan.li@amlogic.com>
+Date:   Thu Jun 17 09:54:30 2021 +0800
+
+    mediahal: transfer private parms to vda [2/2]
+    
+    PD#SWPL-51828
+    
+    Problem:
+    need transfer private prams to vda
+    
+    Solution:
+    transfer private parms to vda
+    
+    Verify:
+    ohm
+    
+    Change-Id: I5f0e105a9b9424f9ee68dd5c3dda1ee4d67e46a6
+    Signed-off-by: shanshan.li <shanshan.li@amlogic.com>
+
 commit b8313ce5b3fb6a27097e14de70d388acd4550b83
 Author: Jian Wang <jian.wang@amlogic.com>
 Date:   Fri May 21 13:43:00 2021 +0800
@@ -200,34 +220,13 @@ Date:   Mon Jun 7 19:54:32 2021 +0800
     Change-Id: Ibc2e488dcbaa3590f186e622a247a86d29d44877
     Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
 
-commit c20ea306e0ff6e24d1f047edabcbdffe078bc4da
-Author: yunmin.chen <yunmin.chen@amlogic.com>
-Date:   Fri Jun 4 21:17:46 2021 +0800
+========================================
 
-    tsplayer: switch channel to lock channel the audio can ouput [1/1]
-    
-    PD#SWPL-50494
-    
-    Problem:
-    The mute command was not sent to audiohal.
-    
-    Solution:
-    tunnelmode: Before there is an open audio decoder,
-    it is allowed to send mute commands to audiohal.
-    
-    Verify:
-    SC2_AH212
-    
-    Change-Id: I91f3339ba5b0d4670367729c8325f55bb4adce50
-    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
+Release time: 2021-06-21-21-20
 
 ========================================
 
-Release time: 2021-06-18-20-54
-
-========================================
-
-Builder: kai.song
+Builder: shanshan.li
 
 ========================================
 Release file:
@@ -251,7 +250,11 @@ AmTsPlayerExample.cpp
 Android.bp
 
 Binary  file:
+AmTsPlayerExample
+AmTsPlayerExampleSystem
 AmTsPlayerTest
+EsVideoDecPlayer
+EsVideoDecPlayerTest
 vesplayer
 
 ========================================
