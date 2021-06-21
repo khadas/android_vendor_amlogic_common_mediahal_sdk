@@ -1,10 +1,35 @@
 =========RELEALSE NOTE=================
 
-Version: V3.0.27-I42576-d89d06
+Version: V3.0.28-Ifbd07-b8313c
 
 ========================================
 
 Git commit:
+commit b8313ce5b3fb6a27097e14de70d388acd4550b83
+Author: Jian Wang <jian.wang@amlogic.com>
+Date:   Fri May 21 13:43:00 2021 +0800
+
+    videopassthrough: Add tuner passthough support [1/1]
+    
+    PD#SWPL-37579
+    PD#SWPL-50967
+    PD#SWPL-45881
+    
+    Problem:
+    Mediahal need to support tuner framework passthough mode
+    
+    Solution:
+    1. add TunerPassthoughVideo for main contorl
+    2. add TunerVideoDecWrapper for use videodec
+    3. add TunerPassthroughRenderer for use tunnelrenderer
+    4. Use tsputil & dmxwrap in AmTsplayer
+    
+    Verify:
+    Android-R & OHM
+    
+    Change-Id: Ifbd0728451ada65648f198d8d244531874a04f9c
+    Signed-off-by: Jian Wang <jian.wang@amlogic.com>
+
 commit d89d06a2f1ec9885459a9ecb757375428a7ae1fa
 Author: jianchuan.ping <jianchuan.ping@amlogic.com>
 Date:   Fri Jun 18 11:15:00 2021 +0800
@@ -196,44 +221,13 @@ Date:   Fri Jun 4 21:17:46 2021 +0800
     Change-Id: I91f3339ba5b0d4670367729c8325f55bb4adce50
     Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
 
-commit b0a3709d96ece11e7b396d3b43308e5deb56398d
-Author: chen.chen2 <chen.chen2@amlogic.com>
-Date:   Wed Jun 9 12:34:26 2021 +0800
+========================================
 
-    mediahal: Fix VOD IONLY trickmode issue [1/1]
-    
-    PD#SWPL-52399
-    
-    Problem:
-    1. Tsplayer kWhatStartVideo case always set the default value
-       for trickmode
-    2. TsPlayerRender syncQueuesDone_l() not include IONLY process,
-       this will lead IONLY mode no output to render.
-    3. VideoTunnelDisplay clearlastframe default value is true,
-       this will lead switch to IONLY trickmode the MesonHwc be released,
-       then dqbuf always report failed.
-    
-    Solution:
-    1. Recover the trickmode in kWhatStartVideo case.
-    2. AV_VIDEO_TRICK_MODE_IONLY need send frame to render all the time,
-       so we add the case that when in AV_VIDEO_TRICK_MODE_IONLY always
-       call postDrainVideoQueue().
-    3. Change the clearlastframe value from true to fale in
-       VideodecNonTunnelWrapper and VideoTunnelDisplay.
-    
-    Verify:
-    AH212
-    
-    Change-Id: I614e38e75e08b7cd0ec764028fba7405824481be
-    Signed-off-by: chen.chen2 <chen.chen2@amlogic.com>
+Release time: 2021-06-18-20-54
 
 ========================================
 
-Release time: 2021-06-18-16-21
-
-========================================
-
-Builder: jianchuan.ping
+Builder: kai.song
 
 ========================================
 Release file:
@@ -257,11 +251,7 @@ AmTsPlayerExample.cpp
 Android.bp
 
 Binary  file:
-AmTsPlayerExample
-AmTsPlayerExampleSystem
 AmTsPlayerTest
-EsVideoDecPlayer
-EsVideoDecPlayerTest
 vesplayer
 
 ========================================
