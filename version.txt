@@ -1,11 +1,31 @@
 =========RELEALSE NOTE=================
 
-Version: V3.0.29-I5f0e1-10263d
+Version: V3.1.30-Ic7ec7-25a6ea
 
 ========================================
 
 Git commit:
-commit 10263d9a2ca3755f56636b76fab900c3d3d98f31
+commit 25a6ea521cd1619629404baa734fe58097d42d8a
+Author: zhipeng.he <zhipeng.he@amlogic.com>
+Date:   Fri Jun 18 21:05:02 2021 +0800
+
+    tsplayer: open dv on h264/h265 videoconfig. [1/1]
+    
+    PD#SWPL-52051
+    
+    Problem:
+    dv is closed on h264/h265 videoconfig.
+    
+    Solution:
+    open dv on h264/h265 videoconfig.
+    
+    Verify:
+    AH212
+    
+    Change-Id: Ic7ec7731d22d257815efd0a479da827eb2d8c38a
+    Signed-off-by: zhipeng.he <zhipeng.he@amlogic.com>
+
+commit 9b7f97a73262285b27105946478b5832b8ea0393
 Author: shanshan.li <shanshan.li@amlogic.com>
 Date:   Thu Jun 17 09:54:30 2021 +0800
 
@@ -200,33 +220,13 @@ Date:   Tue Jun 8 17:56:08 2021 +0800
     Change-Id: Icd596c9768297eee4b7f533103c06cd8b9098ed1
     Signed-off-by: Rui Wang <rui.wang@amlogic.com>
 
-commit 6019fc722cba67edff207ab73c55d687f372512a
-Author: yunmin.chen <yunmin.chen@amlogic.com>
-Date:   Mon Jun 7 19:54:32 2021 +0800
+========================================
 
-    tsplayer: TsPlayer in android use android.bp to compile [1/1]
-    
-    PD#SWPL-52276
-    
-    Problem:
-    TsPlayer in android use android.bp to compile
-    
-    Solution:
-    TsPlayer in android use android.bp to compile
-    
-    Verify:
-    SC2_AH212
-    
-    Change-Id: Ibc2e488dcbaa3590f186e622a247a86d29d44877
-    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
+Release time: 2021-06-23-17-34
 
 ========================================
 
-Release time: 2021-06-21-21-20
-
-========================================
-
-Builder: shanshan.li
+Builder: zhipeng.he
 
 ========================================
 Release file:
