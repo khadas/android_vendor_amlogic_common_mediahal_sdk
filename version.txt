@@ -1,10 +1,50 @@
 =========RELEALSE NOTE=================
 
-Version: V3.1.30-Ic7ec7-25a6ea
+Version: V3.1.32-I3406b-e8a439
 
 ========================================
 
 Git commit:
+commit e8a439df79e56c39971316bf47a249c8386ffb81
+Author: yunmin.chen <yunmin.chen@amlogic.com>
+Date:   Tue Jun 22 17:37:11 2021 +0800
+
+    mediahal: tunnelmode, tsplayer blocks when exiting. [1/1]
+    
+    PD#SWPL-52878
+    
+    Problem:
+    After the video is stopped, the mPlayerCallbackFn() function is blocked.
+    
+    Solution:
+    After the stop video, no message will be thrown.
+    
+    Verify:
+    SC2_AH212
+    
+    Change-Id: I3406b7207e2ea4bb04446b49ecbc3772b42dadcb
+    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
+
+commit 59c728e9e7274d7eae81a957a9cb785e5bd35f65
+Author: Kai Song <kai.song@amlogic.com>
+Date:   Tue Jun 22 18:13:55 2021 +0800
+
+    mediahal: mediahal release add libmediahal_passthrough [1/1]
+    
+    PD#SWPL-53347
+    
+    Problem:
+    mediahal release tool need add libmediahal_passthrough
+    
+    Solution:
+    mediahal release add libmediahal_passthrough
+    
+    Verify:
+    Android-R
+    
+    Change-Id: Id01799a0296906c2efad45656b4b9d7008cb917e
+    Signed-off-by: Kai Song <kai.song@amlogic.com>
+
 commit 25a6ea521cd1619629404baa734fe58097d42d8a
 Author: zhipeng.he <zhipeng.he@amlogic.com>
 Date:   Fri Jun 18 21:05:02 2021 +0800
@@ -173,60 +213,13 @@ Date:   Wed Jun 16 11:03:15 2021 +0800
     Change-Id: I687eeabf1d8152c804027f86629d346ca123c3a3
     Signed-off-by: Yinli Xia <yinli.xia@amlogic.com>
 
-commit 906f4af22006d67ce0ccab5699b0974a519b0ddd
-Author: chen.chen1 <chen.chen1@amlogic.com>
-Date:   Tue Jun 1 21:12:38 2021 +0800
+========================================
 
-    MediaSync: first video frame shows too late. [1/2]
-    
-    PD#SWPL-51838
-    
-    Problem:
-    first video frame need to do av sync firstly, then show;
-    
-    Solution:
-    show first frame no sync in pip case;
-    don't do av align in fcc case;
-    recovery video drop strategy;
-    optimize audio drop strategy;
-    move calling CheckSourceClockDiscontinue to processThreadLoop;
-    enlarge DTV_PTS_CORRECTION_THRESHOLD;
-    optimize doHandleInitState;
-    optimize code structure;
-    
-    Verify:
-    verified on S905X4-AH212
-    
-    Change-Id: Ifa1bbce33d8d3e87a650cc04ec478204d0b84ec8
-    Signed-off-by: chen.chen1 <chen.chen1@amlogic.com>
-
-commit 9ea661e88ff79f3e76c2b57c8a85cae299ef3729
-Author: Rui Wang <rui.wang@amlogic.com>
-Date:   Tue Jun 8 17:56:08 2021 +0800
-
-    videodec: Set the value to videodec [1/2]
-    
-    PD#SWPL-49717
-    
-    Problem:
-    Always print abnormal info in SecureCRT
-    
-    Solution:
-    set pcrid to invalid when stop play
-    
-    Verify:
-    smith
-    
-    Change-Id: Icd596c9768297eee4b7f533103c06cd8b9098ed1
-    Signed-off-by: Rui Wang <rui.wang@amlogic.com>
+Release time: 2021-06-24-11-28
 
 ========================================
 
-Release time: 2021-06-23-17-34
-
-========================================
-
-Builder: zhipeng.he
+Builder: yunmin.chen
 
 ========================================
 Release file:
@@ -236,10 +229,12 @@ AmTsPlayer.h
 AmVideoDecBase.h
 MediaSyncInterface.h
 resourcemanage.h
+TunerPassthroughBase.h
 VideoTunnelRendererBase.h
 
 Library file:
 libmediahal_mediasync.so
+libmediahal_passthrough.so
 libmediahal_resman.so
 libmediahal_tsplayer.so
 libmediahal_tunnelrenderer.so
