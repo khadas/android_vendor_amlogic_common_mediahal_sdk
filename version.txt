@@ -1,10 +1,32 @@
 =========RELEALSE NOTE=================
 
-Version: V3.1.32-I3406b-e8a439
+Version: V3.1.33-I05f22-acac26
 
 ========================================
 
 Git commit:
+commit acac262e053e3c2fe20be3b0dbeee8b6ccc2d042
+Author: Kai Song <kai.song@amlogic.com>
+Date:   Fri Jun 25 17:13:54 2021 +0800
+
+    videopassthrough: Dvr device will be opened in mediahal [1/1]
+    
+    PD#SWPL-53650
+    
+    Problem:
+    Dvr device will be opened in mediahal for passthrough mode
+    videopassthrough module compile error on android-q
+    
+    Solution:
+    Do not open dvr device in mediahal for passthrough mode
+    No need compile videopassthrough module on android-q
+    
+    Verify:
+    Android-Q & Android-R & OHM
+    
+    Change-Id: I05f2288655b4cd869cc26ade41ca9550ca74df9d
+    Signed-off-by: Kai Song <kai.song@amlogic.com>
+
 commit e8a439df79e56c39971316bf47a249c8386ffb81
 Author: yunmin.chen <yunmin.chen@amlogic.com>
 Date:   Tue Jun 22 17:37:11 2021 +0800
@@ -192,34 +214,13 @@ Date:   Fri Jun 11 20:39:49 2021 +0800
     Change-Id: I0cbaa34fe112c605b5efaa6892e675637aa4e9c3
     Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
 
-commit 8d7a81faa899895b7cf153d9e3757a46391b7524
-Author: Yinli Xia <yinli.xia@amlogic.com>
-Date:   Wed Jun 16 11:03:15 2021 +0800
+========================================
 
-    Mediasync: switch channel,audio is not smooth. [1/2]
-    
-    PD#SWPL-51497
-    
-    Problem:
-    switch channel,audio is not smooth
-    
-    Solution:
-    1.reduce adjust clock step
-    2.reduce adjust clock times
-    
-    Verify:
-    S905X4-AH212
-    
-    Change-Id: I687eeabf1d8152c804027f86629d346ca123c3a3
-    Signed-off-by: Yinli Xia <yinli.xia@amlogic.com>
+Release time: 2021-06-28-11-46
 
 ========================================
 
-Release time: 2021-06-24-11-28
-
-========================================
-
-Builder: yunmin.chen
+Builder: kai.song
 
 ========================================
 Release file:
