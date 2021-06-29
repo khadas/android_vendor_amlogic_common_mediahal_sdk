@@ -1,78 +1,10 @@
 =========RELEALSE NOTE=================
 
-Version: V3.1.36-I8eb47-424c14
+Version: V3.1.33-I05f22-acac26
 
 ========================================
 
 Git commit:
-commit 424c1492787c165eeb6006b8f912c1f1670f6ece
-Author: yunmin.chen <yunmin.chen@amlogic.com>
-Date:   Mon Jun 14 10:21:43 2021 +0800
-
-    tsplayer: Obtain the latency of audio data from audiohal. [1/1]
-    
-    PD#SWPL-52368
-    PD#SWPL-51392
-    
-    Problem:
-    Obtain the latency of audio data from audiohal.
-    
-    Solution:
-    Obtain the latency of audio data from audiohal.
-    Audiohal related modification:
-    164674
-    162647
-    
-    Verify:
-    SC2_AH212
-    
-    Change-Id: I8eb4789929d5c9a87251efa251f004620bb191f6
-    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
-
-commit 447768e19a755ed5670bac19a496e80ff43c8efb
-Author: chen.chen1 <chen.chen1@amlogic.com>
-Date:   Thu Jun 24 17:51:26 2021 +0800
-
-    MediaSync: MediaSync optimization. [1/1]
-    
-    PD#SWPL-53240
-    
-    Problem:
-    MediaSync optimization;
-    
-    Solution:
-    Support start strategy: don't do av align before start play;
-    Consider audio cache and video cache before start;
-    Handle the case:audio data underflow when dropping;
-    Optimize the log printing mechanism;
-    
-    Verify:
-    verified on S905X4-AH212
-    
-    Change-Id: I8839abb040d3b6511656135ac02552f32e07a448
-    Signed-off-by: Chen Chen <chen.chen1@amlogic.com>
-
-commit 43d6676ecbcea989c6dec74b87bb9b2745380558
-Author: yunmin.chen <yunmin.chen@amlogic.com>
-Date:   Wed Jun 23 21:47:42 2021 +0800
-
-    tsplayer: FCC,switch channel,video freeze with audio output [1/1]
-    
-    PD#SWPL-51212
-    
-    Problem:
-    Send invalid metafd to the videotunnel module.
-    
-    Solution:
-    When the FCC switches the cache mode,
-    the data in the video queue of tsRender is cleared.
-    
-    Verify:
-    SC2_AH212
-    
-    Change-Id: I2a19de6e0571f188f1f07ec8f0beee66a7a91c73
-    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
-
 commit acac262e053e3c2fe20be3b0dbeee8b6ccc2d042
 Author: Kai Song <kai.song@amlogic.com>
 Date:   Fri Jun 25 17:13:54 2021 +0800
@@ -220,13 +152,75 @@ Date:   Fri Jun 18 11:15:00 2021 +0800
     Change-Id: I4257639ffc19b006e2804885e6f1653b65a976f4
     Signed-off-by: jianchuan.ping <jianchuan.ping@amlogic.com>
 
+commit b8509542c7da2ad4be30f3a527dc020b18d13936
+Author: chen.chen1 <chen.chen1@amlogic.com>
+Date:   Mon Jun 14 19:24:33 2021 +0800
+
+    MediaSync: Pcr need to adjust refclock in some case. [1/1]
+    
+    PD#SWPL-52679
+    
+    Problem:
+    when diff between demux pcr and refclock is large, need to adjust refclock
+    
+    Solution:
+    use demux pcr adjust refclock
+    
+    Verify:
+    verified on S905X4-AH212
+    
+    Change-Id: I0c7bfec0ac440640c06b548a3798d87298290f57
+    Signed-off-by: chen.chen1 <chen.chen1@amlogic.com>
+
+commit c053458fdc13f5fb9fa875a53675a78439e91a9b
+Author: yunmin.chen <yunmin.chen@amlogic.com>
+Date:   Tue Jun 15 17:43:14 2021 +0800
+
+    tsplayer: Modification of switch channel and do timeshift. [1/1]
+    
+    PD#SWPL-52728
+    
+    Problem:
+    1.switch channel,TV shows the frame of the previous channel
+    2.do timeshift,video stutter.
+    
+    Solution:
+    1.Turn on the function of clearing the last frame.
+    2.Resume TRICKMODE when stop video.
+    
+    Verify:
+    SC2_AH212
+    
+    Change-Id: Ia3b4f5b4a409f78c4684b8bc41af7e9077713ea7
+    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
+
+commit fbbc4ab642bc0696acbe0b3228a4840dcaae218b
+Author: yunmin.chen <yunmin.chen@amlogic.com>
+Date:   Fri Jun 11 20:39:49 2021 +0800
+
+    tsplayer: open FCC switch channel，DUTblank screen [1/1]
+    
+    PD#SWPL-52642
+    
+    Problem:
+    SetSurface() crash.
+    
+    Solution:
+    void* pSurface needs to determine whether -1 is valid.
+    
+    Verify:
+    SC2_AH212
+    
+    Change-Id: I0cbaa34fe112c605b5efaa6892e675637aa4e9c3
+    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
+
 ========================================
 
-Release time: 2021-06-28-20-52
+Release time: 2021-06-28-11-46
 
 ========================================
 
-Builder: yunmin.chen
+Builder: kai.song
 
 ========================================
 Release file:
