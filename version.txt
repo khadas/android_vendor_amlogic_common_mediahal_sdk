@@ -1,10 +1,50 @@
 =========RELEALSE NOTE=================
 
-Version: V3.2.1-I8b152-73d1b0
+Version: V3.2.3-Iea156-c31208
 
 ========================================
 
 Git commit:
+commit c3120895d10050b1f14ff2c2630716d1d683ab7b
+Author: yunmin.chen <yunmin.chen@amlogic.com>
+Date:   Mon Jun 28 21:15:53 2021 +0800
+
+    tsplayer: CB1 FCC switch channel,crash [1/1]
+    
+    PD#SWPL-53644
+    
+    Problem:
+    TsPlayerRender::onDrainTunnelVideoQueue() crash.
+    
+    Solution:
+    Determine whether mVideoQueue is empty.
+    
+    Verify:
+    SC2_AH212
+    
+    Change-Id: Iea1564e9e47fdda66cd67a2457536ef3cfec3ae0
+    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
+
+commit af0849983d6ff1a44a60f9a83e43cf8709df2e0b
+Author: shuanglong.wang <shuanglong.wang@amlogic.com>
+Date:   Fri Jun 4 16:34:55 2021 +0800
+
+    mediahal: CB1 not drain frame before video catch up with audio for video underflow [1/1]
+    
+    PD#SWPL-52087
+    
+    Problem:
+    drop frame after notify app for video underflow recovery
+    
+    Soltion:
+    not drain frame before video catch up with audio for video underflow
+    
+    Verify:
+    ohm
+    
+    Change-Id: I1f7b70ad55e0a6b19d6b287358e4a78d6463e4f8
+    Signed-off-by: shuanglong.wang <shuanglong.wang@amlogic.com>
+
 commit 73d1b05420237a8857ee876b3ad8568a81056455
 Author: chen.chen1 <chen.chen1@amlogic.com>
 Date:   Wed Jun 30 11:15:23 2021 +0800
@@ -175,53 +215,13 @@ Date:   Tue Jun 22 18:13:55 2021 +0800
     Change-Id: Id01799a0296906c2efad45656b4b9d7008cb917e
     Signed-off-by: Kai Song <kai.song@amlogic.com>
 
-commit 25a6ea521cd1619629404baa734fe58097d42d8a
-Author: zhipeng.he <zhipeng.he@amlogic.com>
-Date:   Fri Jun 18 21:05:02 2021 +0800
+========================================
 
-    tsplayer: open dv on h264/h265 videoconfig. [1/1]
-    
-    PD#SWPL-52051
-    
-    Problem:
-    dv is closed on h264/h265 videoconfig.
-    
-    Solution:
-    open dv on h264/h265 videoconfig.
-    
-    Verify:
-    AH212
-    
-    Change-Id: Ic7ec7731d22d257815efd0a479da827eb2d8c38a
-    Signed-off-by: zhipeng.he <zhipeng.he@amlogic.com>
-
-commit 9b7f97a73262285b27105946478b5832b8ea0393
-Author: shanshan.li <shanshan.li@amlogic.com>
-Date:   Thu Jun 17 09:54:30 2021 +0800
-
-    mediahal: transfer private parms to vda [2/2]
-    
-    PD#SWPL-51828
-    
-    Problem:
-    need transfer private prams to vda
-    
-    Solution:
-    transfer private parms to vda
-    
-    Verify:
-    ohm
-    
-    Change-Id: I5f0e105a9b9424f9ee68dd5c3dda1ee4d67e46a6
-    Signed-off-by: shanshan.li <shanshan.li@amlogic.com>
+Release time: 2021-07-01-15-53
 
 ========================================
 
-Release time: 2021-07-01-10-57
-
-========================================
-
-Builder: chen.chen1
+Builder: yunmin.chen
 
 ========================================
 Release file:
