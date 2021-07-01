@@ -1,10 +1,50 @@
 =========RELEALSE NOTE=================
 
-Version: V3.1.36-I8eb47-424c14
+Version: V3.2.1-I8b152-73d1b0
 
 ========================================
 
 Git commit:
+commit 73d1b05420237a8857ee876b3ad8568a81056455
+Author: chen.chen1 <chen.chen1@amlogic.com>
+Date:   Wed Jun 30 11:15:23 2021 +0800
+
+    MediaSync: CF1 state maching status not correct after reset. [1/2]
+    
+    PD#SWPL-53392
+    
+    Problem:
+    state maching status not correct after reset.
+    
+    Solution:
+    change state when audio reset
+    
+    Verify:
+    verified on S905X4-AH212
+    
+    Change-Id: I8b152c756efcc779b231521ca171071e5d183c66
+    Signed-off-by: chen.chen1 <chen.chen1@amlogic.com>
+
+commit 7ff14bea448c8ee671840ce306aa268ae7de1b5b
+Author: yunmin.chen <yunmin.chen@amlogic.com>
+Date:   Mon Jun 14 15:07:05 2021 +0800
+
+    mediahal: Version management. [1/1]
+    
+    PD#SWPL-48769
+    
+    Problem:
+    Version management.
+    
+    Solution:
+    Release V3.1
+    
+    Verify:
+    SC2_AH212
+    
+    Change-Id: I6f540517ea0213db6dedcaf63c69ef48b19c7766
+    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
+
 commit 424c1492787c165eeb6006b8f912c1f1670f6ece
 Author: yunmin.chen <yunmin.chen@amlogic.com>
 Date:   Mon Jun 14 10:21:43 2021 +0800
@@ -175,58 +215,13 @@ Date:   Thu Jun 17 09:54:30 2021 +0800
     Change-Id: I5f0e105a9b9424f9ee68dd5c3dda1ee4d67e46a6
     Signed-off-by: shanshan.li <shanshan.li@amlogic.com>
 
-commit b8313ce5b3fb6a27097e14de70d388acd4550b83
-Author: Jian Wang <jian.wang@amlogic.com>
-Date:   Fri May 21 13:43:00 2021 +0800
+========================================
 
-    videopassthrough: Add tuner passthough support [1/1]
-    
-    PD#SWPL-37579
-    PD#SWPL-50967
-    PD#SWPL-45881
-    
-    Problem:
-    Mediahal need to support tuner framework passthough mode
-    
-    Solution:
-    1. add TunerPassthoughVideo for main contorl
-    2. add TunerVideoDecWrapper for use videodec
-    3. add TunerPassthroughRenderer for use tunnelrenderer
-    4. Use tsputil & dmxwrap in AmTsplayer
-    
-    Verify:
-    Android-R & OHM
-    
-    Change-Id: Ifbd0728451ada65648f198d8d244531874a04f9c
-    Signed-off-by: Jian Wang <jian.wang@amlogic.com>
-
-commit d89d06a2f1ec9885459a9ecb757375428a7ae1fa
-Author: jianchuan.ping <jianchuan.ping@amlogic.com>
-Date:   Fri Jun 18 11:15:00 2021 +0800
-
-    MediaSync: Clock state not inited. [1/2]
-    
-    PD#SWPL-52876
-    
-    Problem:
-    Clock state not init lead to sync not work correctly.
-    
-    Solution:
-    Init clock state
-    
-    Verify:
-    AH212
-    
-    Change-Id: I4257639ffc19b006e2804885e6f1653b65a976f4
-    Signed-off-by: jianchuan.ping <jianchuan.ping@amlogic.com>
+Release time: 2021-07-01-10-57
 
 ========================================
 
-Release time: 2021-06-28-20-52
-
-========================================
-
-Builder: yunmin.chen
+Builder: chen.chen1
 
 ========================================
 Release file:
