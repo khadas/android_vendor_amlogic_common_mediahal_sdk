@@ -1,10 +1,30 @@
 =========RELEALSE NOTE=================
 
-Version: V3.2.3-Iea156-c31208
+Version: V3.2.4-I3a876-a2c054
 
 ========================================
 
 Git commit:
+commit a2c05452e183bccd203d456c0405fad18c3dc47e
+Author: shuanglong.wang <shuanglong.wang@amlogic.com>
+Date:   Thu Jul 1 09:55:39 2021 +0800
+
+    mediahal: CF1 tunnel mode pattern support 60hz vsync [1/1]
+    
+    PD#SWPL-54117
+    
+    Problem:
+    59fps drop frame for 60hz vsync
+    
+    Solution:
+    tunnel mode pattern support 60hz vsync
+    
+    Verify:
+    T5D
+    
+    Change-Id: I3a8762dc3c03940ee36da7d823447e1c4e698000
+    Signed-off-by: shuanglong.wang <shuanglong.wang@amlogic.com>
+
 commit c3120895d10050b1f14ff2c2630716d1d683ab7b
 Author: yunmin.chen <yunmin.chen@amlogic.com>
 Date:   Mon Jun 28 21:15:53 2021 +0800
@@ -195,33 +215,13 @@ Date:   Tue Jun 22 17:37:11 2021 +0800
     Change-Id: I3406b7207e2ea4bb04446b49ecbc3772b42dadcb
     Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
 
-commit 59c728e9e7274d7eae81a957a9cb785e5bd35f65
-Author: Kai Song <kai.song@amlogic.com>
-Date:   Tue Jun 22 18:13:55 2021 +0800
+========================================
 
-    mediahal: mediahal release add libmediahal_passthrough [1/1]
-    
-    PD#SWPL-53347
-    
-    Problem:
-    mediahal release tool need add libmediahal_passthrough
-    
-    Solution:
-    mediahal release add libmediahal_passthrough
-    
-    Verify:
-    Android-R
-    
-    Change-Id: Id01799a0296906c2efad45656b4b9d7008cb917e
-    Signed-off-by: Kai Song <kai.song@amlogic.com>
+Release time: 2021-07-02-13-27
 
 ========================================
 
-Release time: 2021-07-01-15-53
-
-========================================
-
-Builder: yunmin.chen
+Builder: shuanglong.wang
 
 ========================================
 Release file:
