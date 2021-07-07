@@ -1,11 +1,82 @@
 =========RELEALSE NOTE=================
 
-Version: V3.2.4-I3a876-a2c054
+Version: V3.2.7-I7f7be-dde452
 
 ========================================
 
 Git commit:
-commit a2c05452e183bccd203d456c0405fad18c3dc47e
+commit dde4527d501c342577c1a62edb1ea2869f452ed8
+Author: yunmin.chen <yunmin.chen@amlogic.com>
+Date:   Mon Jul 5 14:02:04 2021 +0800
+
+    tsplayer:  do timeshift,drag time progress bar,no AV output [1/1]
+    
+    PD#SWPL-54151
+    
+    Problem:
+    4K H265 requires more data decoding to decode the first frame.
+    
+    Solution:
+    When the video cache is 0, write more data.
+    
+    Verify:
+    SC2_AH212
+    
+    Change-Id: I7f7be93d586a6b91e9a50940c744e756b237b32f
+    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
+
+commit da81a5500871de0ef27dc2a975e266db8df79fcb
+Author: Chengshun Wang <chengshun.wang@amlogic.com>
+Date:   Mon Jun 14 20:48:35 2021 +0800
+
+    videotunnel: fix av not sync [1/1]
+    
+    PD#SWPL-52705
+    
+    Problem:
+    1) video no drop, lead some frame late also output
+    2) VT dequeue happen wait over one vsync time, lead output late
+    
+    Solution:
+    increase queue buffer from 3+1 to 4+1 before first dequeue
+    
+    Verify:
+    AH212
+    
+    Change-Id: I9a0ae04644da031b4efd1822c37d9039ac830530
+    Signed-off-by: Chengshun Wang <chengshun.wang@amlogic.com>
+
+commit a2cbe993a5dc0709f085fdf1a232c5453c7ec550
+Author: Chengshun Wang <chengshun.wang@amlogic.com>
+Date:   Thu Jul 1 13:35:24 2021 +0800
+
+    mediasync: CF1 fix pip play stutter [1/2]
+    
+    PD#SWPL-53127
+    
+    Problem:
+    Pip no sound come, not wait audio, play video directly,
+    some streams video data gap over 500ms, lead video stutter
+    
+    Solution:
+    now start play threshold have increase to 300ms,
+    if audio is mute, and is inject data, just wait 50ms,
+    else wait 800ms
+    
+    Verify:
+    AH212
+    
+    Change-Id: I09787aaba428256132e2994447776c3f40ab70ab
+    Signed-off-by: Chengshun Wang <chengshun.wang@amlogic.com>
+
+commit 1f7e25af8aafe8fb6a69af879e51644c7ed6e588
+Merge: c312089 de51bb1
+Author: Lifeng Cao <lifeng.cao@amlogic.com>
+Date:   Fri Jul 2 01:35:02 2021 -0700
+
+    Merge "mediahal: CF1 tunnel mode pattern support 60hz vsync [1/1]"
+
+commit de51bb1e28c1deba518eeae1db536e0768760778
 Author: shuanglong.wang <shuanglong.wang@amlogic.com>
 Date:   Thu Jul 1 09:55:39 2021 +0800
 
@@ -129,99 +200,13 @@ Date:   Mon Jun 14 10:21:43 2021 +0800
     Change-Id: I8eb4789929d5c9a87251efa251f004620bb191f6
     Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
 
-commit 447768e19a755ed5670bac19a496e80ff43c8efb
-Author: chen.chen1 <chen.chen1@amlogic.com>
-Date:   Thu Jun 24 17:51:26 2021 +0800
+========================================
 
-    MediaSync: MediaSync optimization. [1/1]
-    
-    PD#SWPL-53240
-    
-    Problem:
-    MediaSync optimization;
-    
-    Solution:
-    Support start strategy: don't do av align before start play;
-    Consider audio cache and video cache before start;
-    Handle the case:audio data underflow when dropping;
-    Optimize the log printing mechanism;
-    
-    Verify:
-    verified on S905X4-AH212
-    
-    Change-Id: I8839abb040d3b6511656135ac02552f32e07a448
-    Signed-off-by: Chen Chen <chen.chen1@amlogic.com>
-
-commit 43d6676ecbcea989c6dec74b87bb9b2745380558
-Author: yunmin.chen <yunmin.chen@amlogic.com>
-Date:   Wed Jun 23 21:47:42 2021 +0800
-
-    tsplayer: FCC,switch channel,video freeze with audio output [1/1]
-    
-    PD#SWPL-51212
-    
-    Problem:
-    Send invalid metafd to the videotunnel module.
-    
-    Solution:
-    When the FCC switches the cache mode,
-    the data in the video queue of tsRender is cleared.
-    
-    Verify:
-    SC2_AH212
-    
-    Change-Id: I2a19de6e0571f188f1f07ec8f0beee66a7a91c73
-    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
-
-commit acac262e053e3c2fe20be3b0dbeee8b6ccc2d042
-Author: Kai Song <kai.song@amlogic.com>
-Date:   Fri Jun 25 17:13:54 2021 +0800
-
-    videopassthrough: Dvr device will be opened in mediahal [1/1]
-    
-    PD#SWPL-53650
-    
-    Problem:
-    Dvr device will be opened in mediahal for passthrough mode
-    videopassthrough module compile error on android-q
-    
-    Solution:
-    Do not open dvr device in mediahal for passthrough mode
-    No need compile videopassthrough module on android-q
-    
-    Verify:
-    Android-Q & Android-R & OHM
-    
-    Change-Id: I05f2288655b4cd869cc26ade41ca9550ca74df9d
-    Signed-off-by: Kai Song <kai.song@amlogic.com>
-
-commit e8a439df79e56c39971316bf47a249c8386ffb81
-Author: yunmin.chen <yunmin.chen@amlogic.com>
-Date:   Tue Jun 22 17:37:11 2021 +0800
-
-    mediahal: tunnelmode, tsplayer blocks when exiting. [1/1]
-    
-    PD#SWPL-52878
-    
-    Problem:
-    After the video is stopped, the mPlayerCallbackFn() function is blocked.
-    
-    Solution:
-    After the stop video, no message will be thrown.
-    
-    Verify:
-    SC2_AH212
-    
-    Change-Id: I3406b7207e2ea4bb04446b49ecbc3772b42dadcb
-    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
+Release time: 2021-07-07-20-12
 
 ========================================
 
-Release time: 2021-07-02-13-27
-
-========================================
-
-Builder: shuanglong.wang
+Builder: yunmin.chen
 
 ========================================
 Release file:
