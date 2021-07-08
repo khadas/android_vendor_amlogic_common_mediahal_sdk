@@ -1,10 +1,73 @@
 =========RELEALSE NOTE=================
 
-Version: V3.2.7-I7f7be-dde452
+Version: V3.2.10-Ib4ba5-92773a
 
 ========================================
 
 Git commit:
+commit 92773aa7f5cc79d386da00778f823e9523e74022
+Author: chen.chen2 <chen.chen2@amlogic.com>
+Date:   Thu Jun 24 20:06:57 2021 +0800
+
+    MediaSync: CB1 Micro speed no effect issue [1/1]
+    
+    PD#SWPL-53550
+    
+    Problem:
+    When in micro speed case, audio resample policy not return
+    back to audio hal
+    
+    Solution:
+    Add return logic in audio resample policy
+    
+    Verify:
+    AH212
+    
+    Change-Id: Ib4ba56942d11fe8580aeb07546dcdc87bc7459b9
+    Signed-off-by: chen.chen2 <chen.chen2@amlogic.com>
+
+commit cd4f06f1310552aa6a4e68c6fa01ffee30cc2518
+Author: chen.chen2 <chen.chen2@amlogic.com>
+Date:   Mon Jun 28 21:55:08 2021 +0800
+
+    MediaSync: CF2 complete pause and resume function [1/2]
+    
+    PD#SWPL-51207
+    
+    Problem:
+    When uplayer call MediaSync_setPause, need setPlaybackRate()
+    
+    Solution:
+    Add setPlaybackRate() in setPause()
+    pause case: add setPlaybackRate(0)
+    resume case: add setPlaybackRate(LastPlaybackRate)
+    
+    Verify:
+    AH212
+    
+    Change-Id: I640ad25c1c5751e163de56e7926da3cc26e0f30a
+    Signed-off-by: chen.chen2 <chen.chen2@amlogic.com>
+
+commit 60a232a3ea0926e6d89f4936958a28cc5af0b4d4
+Author: jianchuan.ping <jianchuan.ping@amlogic.com>
+Date:   Tue Jun 22 10:16:28 2021 +0800
+
+    MediaSync: Video and audio test have 100ms diff. [1/1]
+    
+    PD#SWPL-53109
+    
+    Problem:
+    Adjust audio clock not work.
+    
+    Solution:
+    Fix adjust clock work.
+    
+    Verify:
+    AH212
+    
+    Change-Id: I0dcca031bcbab0432a2c35008fed5c13ce4cfcd1
+    Signed-off-by: jianchuan.ping <jianchuan.ping@amlogic.com>
+
 commit dde4527d501c342577c1a62edb1ea2869f452ed8
 Author: yunmin.chen <yunmin.chen@amlogic.com>
 Date:   Mon Jul 5 14:02:04 2021 +0800
@@ -136,77 +199,13 @@ Date:   Fri Jun 4 16:34:55 2021 +0800
     Change-Id: I1f7b70ad55e0a6b19d6b287358e4a78d6463e4f8
     Signed-off-by: shuanglong.wang <shuanglong.wang@amlogic.com>
 
-commit 73d1b05420237a8857ee876b3ad8568a81056455
-Author: chen.chen1 <chen.chen1@amlogic.com>
-Date:   Wed Jun 30 11:15:23 2021 +0800
+========================================
 
-    MediaSync: CF1 state maching status not correct after reset. [1/2]
-    
-    PD#SWPL-53392
-    
-    Problem:
-    state maching status not correct after reset.
-    
-    Solution:
-    change state when audio reset
-    
-    Verify:
-    verified on S905X4-AH212
-    
-    Change-Id: I8b152c756efcc779b231521ca171071e5d183c66
-    Signed-off-by: chen.chen1 <chen.chen1@amlogic.com>
-
-commit 7ff14bea448c8ee671840ce306aa268ae7de1b5b
-Author: yunmin.chen <yunmin.chen@amlogic.com>
-Date:   Mon Jun 14 15:07:05 2021 +0800
-
-    mediahal: Version management. [1/1]
-    
-    PD#SWPL-48769
-    
-    Problem:
-    Version management.
-    
-    Solution:
-    Release V3.1
-    
-    Verify:
-    SC2_AH212
-    
-    Change-Id: I6f540517ea0213db6dedcaf63c69ef48b19c7766
-    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
-
-commit 424c1492787c165eeb6006b8f912c1f1670f6ece
-Author: yunmin.chen <yunmin.chen@amlogic.com>
-Date:   Mon Jun 14 10:21:43 2021 +0800
-
-    tsplayer: Obtain the latency of audio data from audiohal. [1/1]
-    
-    PD#SWPL-52368
-    PD#SWPL-51392
-    
-    Problem:
-    Obtain the latency of audio data from audiohal.
-    
-    Solution:
-    Obtain the latency of audio data from audiohal.
-    Audiohal related modification:
-    164674
-    162647
-    
-    Verify:
-    SC2_AH212
-    
-    Change-Id: I8eb4789929d5c9a87251efa251f004620bb191f6
-    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
+Release time: 2021-07-08-15-15
 
 ========================================
 
-Release time: 2021-07-07-20-12
-
-========================================
-
-Builder: yunmin.chen
+Builder: chen.chen2
 
 ========================================
 Release file:
