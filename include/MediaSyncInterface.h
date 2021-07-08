@@ -93,6 +93,7 @@ struct mediasync_audio_format{
     float samplerate;
     int datawidth;
     int channels;
+    int format;
 };
 
 typedef struct audioinfo{
