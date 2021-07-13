@@ -1,10 +1,73 @@
 =========RELEALSE NOTE=================
 
-Version: V3.2.10-Ib4ba5-92773a
+Version: V3.2.13-Iad97b-873587
 
 ========================================
 
 Git commit:
+commit 8735871b83eb0a02e30582eef8ab46337a055477
+Author: yunmin.chen <yunmin.chen@amlogic.com>
+Date:   Tue Jul 6 15:45:48 2021 +0800
+
+    tsplayer: CF1 set setParams [1/1]
+    
+    PD#SWPL-52871
+    
+    Problem:
+    1.MS12 need add support for set Presentation ID
+    2.need setParams for video seclevel
+    
+    Solution:
+    1.support set Presentation ID
+    2.add AM_TSPLAYER_KEY_VIDEO_SECLEVEL for video seclevel
+    
+    Verify:
+    SC2_AH212
+    
+    Change-Id: Iad97bb2faf00db609489560ee88833646b7c17e7
+    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
+
+commit d0b542bff3955f40b14010965e8ee5f1627c1533
+Author: yunmin.chen <yunmin.chen@amlogic.com>
+Date:   Mon Jun 21 20:19:40 2021 +0800
+
+    tsplayer: CF1 android P T3 chip, DTV use video_tunnel to display [1/1]
+    
+    PD#SWPL-51812
+    
+    Problem:
+    use video_tunnel to display
+    
+    Solution:
+    use video_tunnel to display
+    
+    Verify:
+    smith_T3_AR321
+    
+    Change-Id: Ic587ee6b8a27c3319cba82e1a3f9a438ddc1e23a
+    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
+
+commit 5352e15f454655e464be1d91c36043401c90a787
+Author: yunmin.chen <yunmin.chen@amlogic.com>
+Date:   Wed Jun 30 14:57:06 2021 +0800
+
+    tsplayer: CB1 audio and video are out of sync after seek. [1/1]
+    
+    PD#SWPL-46427
+    
+    Problem:
+    timeshif,PVR, audio and video are out of sync after seek.
+    
+    Solution:
+    According to the number of video decoding changes,
+    determine whether more ts data needs to be sent to demux.
+    
+    Verify:
+    T950D4_AM301
+    
+    Change-Id: Id010016ad7fcc34a8e76986d3a5e487e8c8f5d48
+    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
+
 commit 92773aa7f5cc79d386da00778f823e9523e74022
 Author: chen.chen2 <chen.chen2@amlogic.com>
 Date:   Thu Jun 24 20:06:57 2021 +0800
@@ -139,73 +202,13 @@ Date:   Fri Jul 2 01:35:02 2021 -0700
 
     Merge "mediahal: CF1 tunnel mode pattern support 60hz vsync [1/1]"
 
-commit de51bb1e28c1deba518eeae1db536e0768760778
-Author: shuanglong.wang <shuanglong.wang@amlogic.com>
-Date:   Thu Jul 1 09:55:39 2021 +0800
+========================================
 
-    mediahal: CF1 tunnel mode pattern support 60hz vsync [1/1]
-    
-    PD#SWPL-54117
-    
-    Problem:
-    59fps drop frame for 60hz vsync
-    
-    Solution:
-    tunnel mode pattern support 60hz vsync
-    
-    Verify:
-    T5D
-    
-    Change-Id: I3a8762dc3c03940ee36da7d823447e1c4e698000
-    Signed-off-by: shuanglong.wang <shuanglong.wang@amlogic.com>
-
-commit c3120895d10050b1f14ff2c2630716d1d683ab7b
-Author: yunmin.chen <yunmin.chen@amlogic.com>
-Date:   Mon Jun 28 21:15:53 2021 +0800
-
-    tsplayer: CB1 FCC switch channel,crash [1/1]
-    
-    PD#SWPL-53644
-    
-    Problem:
-    TsPlayerRender::onDrainTunnelVideoQueue() crash.
-    
-    Solution:
-    Determine whether mVideoQueue is empty.
-    
-    Verify:
-    SC2_AH212
-    
-    Change-Id: Iea1564e9e47fdda66cd67a2457536ef3cfec3ae0
-    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
-
-commit af0849983d6ff1a44a60f9a83e43cf8709df2e0b
-Author: shuanglong.wang <shuanglong.wang@amlogic.com>
-Date:   Fri Jun 4 16:34:55 2021 +0800
-
-    mediahal: CB1 not drain frame before video catch up with audio for video underflow [1/1]
-    
-    PD#SWPL-52087
-    
-    Problem:
-    drop frame after notify app for video underflow recovery
-    
-    Soltion:
-    not drain frame before video catch up with audio for video underflow
-    
-    Verify:
-    ohm
-    
-    Change-Id: I1f7b70ad55e0a6b19d6b287358e4a78d6463e4f8
-    Signed-off-by: shuanglong.wang <shuanglong.wang@amlogic.com>
+Release time: 2021-07-13-11-35
 
 ========================================
 
-Release time: 2021-07-08-15-15
-
-========================================
-
-Builder: chen.chen2
+Builder: yunmin.chen
 
 ========================================
 Release file:
