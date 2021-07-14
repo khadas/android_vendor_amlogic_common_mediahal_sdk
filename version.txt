@@ -1,10 +1,30 @@
 =========RELEALSE NOTE=================
 
-Version: V3.2.16-If5007-1202a9
+Version: V3.2.17-I18ffd-e0054d
 
 ========================================
 
 Git commit:
+commit e0054d312f6f277f08911c180f00e03f509ff949
+Author: Yani Shi <yani.shi@amlogic.com>
+Date:   Mon Jul 5 19:28:28 2021 +0800
+
+    MediaSync: CF1 av is not sync when switch channel in multi-channel play. [2/2]
+    
+    PD#SWPL-50302
+    
+    Problem:
+    audio cache is too large.
+    
+    Solution:
+    clear audio cache
+    
+    Verify:
+    verified on S905X4-AH212
+    
+    Change-Id: I18ffd0446fa24018a7b6046ab49aeca056fb3652
+    Signed-off-by: Yani Shi <yani.shi@amlogic.com>
+
 commit 1202a90d8933c92b116b2a3980b978da31bd54fe
 Author: houren.wang <houren.wang@amlogic.com>
 Date:   Mon Jul 12 10:15:49 2021 +0800
@@ -193,33 +213,13 @@ Date:   Tue Jun 22 10:16:28 2021 +0800
     Change-Id: I0dcca031bcbab0432a2c35008fed5c13ce4cfcd1
     Signed-off-by: jianchuan.ping <jianchuan.ping@amlogic.com>
 
-commit dde4527d501c342577c1a62edb1ea2869f452ed8
-Author: yunmin.chen <yunmin.chen@amlogic.com>
-Date:   Mon Jul 5 14:02:04 2021 +0800
+========================================
 
-    tsplayer:  do timeshift,drag time progress bar,no AV output [1/1]
-    
-    PD#SWPL-54151
-    
-    Problem:
-    4K H265 requires more data decoding to decode the first frame.
-    
-    Solution:
-    When the video cache is 0, write more data.
-    
-    Verify:
-    SC2_AH212
-    
-    Change-Id: I7f7be93d586a6b91e9a50940c744e756b237b32f
-    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
+Release time: 2021-07-14-20-08
 
 ========================================
 
-Release time: 2021-07-14-13-48
-
-========================================
-
-Builder: houren.wang
+Builder: yani.shi
 
 ========================================
 Release file:
