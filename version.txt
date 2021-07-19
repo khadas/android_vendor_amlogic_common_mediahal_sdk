@@ -1,10 +1,54 @@
 =========RELEALSE NOTE=================
 
-Version: V3.2.17-I18ffd-e0054d
+Version: V3.2.19-I30933-7932fe
 
 ========================================
 
 Git commit:
+commit 7932fe0047492719092f1a01bd61441181b6a489
+Author: Kai Song <kai.song@amlogic.com>
+Date:   Thu Jul 15 16:11:40 2021 +0800
+
+    videopassthrough: CF2 Support get video decoder buffer status [3/3]
+    
+    PD#SWPL-54846
+    
+    Problem:
+    Play local files incompletely with tuner framework passthrough mode
+    There is no video flow control for passthrough mode, we need feedback
+    the decoder buffer level to the apk layer to control dvr data write speed.
+    
+    Solution:
+    Support get video decoder buffer status and callback to omx component.
+    
+    Verify:
+    Android-R & OHM
+    
+    Change-Id: I30933c80572d13dede98c41be8d6d67c878e1a50
+    Signed-off-by: Kai Song <kai.song@amlogic.com>
+
+commit a54fed2033069055117eb1fcc99e52b8517bb7d0
+Author: yunmin.chen <yunmin.chen@amlogic.com>
+Date:   Thu Jul 15 14:22:46 2021 +0800
+
+    mediahal_sdk: CB0 Android Q failed to compile the firmware [1/1]
+    
+    PD#SWPL-55276
+    
+    Problem:
+    Android Q mediahal_sdk does not have libmediahal_passthrough.so,
+    causing firmware compilation failure.
+    
+    Solution:
+    Android Q mediahal_sdk does not need libmediahal_passthrough.so,
+    turn off libmediahal_passthrough module compilation.
+    
+    Verify:
+    AH212
+    
+    Change-Id: Ia57edf9a3a445f969a4114456dd9a95ef829be95
+    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
+
 commit e0054d312f6f277f08911c180f00e03f509ff949
 Author: Yani Shi <yani.shi@amlogic.com>
 Date:   Mon Jul 5 19:28:28 2021 +0800
@@ -171,55 +215,13 @@ Date:   Thu Jun 24 20:06:57 2021 +0800
     Change-Id: Ib4ba56942d11fe8580aeb07546dcdc87bc7459b9
     Signed-off-by: chen.chen2 <chen.chen2@amlogic.com>
 
-commit cd4f06f1310552aa6a4e68c6fa01ffee30cc2518
-Author: chen.chen2 <chen.chen2@amlogic.com>
-Date:   Mon Jun 28 21:55:08 2021 +0800
+========================================
 
-    MediaSync: CF2 complete pause and resume function [1/2]
-    
-    PD#SWPL-51207
-    
-    Problem:
-    When uplayer call MediaSync_setPause, need setPlaybackRate()
-    
-    Solution:
-    Add setPlaybackRate() in setPause()
-    pause case: add setPlaybackRate(0)
-    resume case: add setPlaybackRate(LastPlaybackRate)
-    
-    Verify:
-    AH212
-    
-    Change-Id: I640ad25c1c5751e163de56e7926da3cc26e0f30a
-    Signed-off-by: chen.chen2 <chen.chen2@amlogic.com>
-
-commit 60a232a3ea0926e6d89f4936958a28cc5af0b4d4
-Author: jianchuan.ping <jianchuan.ping@amlogic.com>
-Date:   Tue Jun 22 10:16:28 2021 +0800
-
-    MediaSync: Video and audio test have 100ms diff. [1/1]
-    
-    PD#SWPL-53109
-    
-    Problem:
-    Adjust audio clock not work.
-    
-    Solution:
-    Fix adjust clock work.
-    
-    Verify:
-    AH212
-    
-    Change-Id: I0dcca031bcbab0432a2c35008fed5c13ce4cfcd1
-    Signed-off-by: jianchuan.ping <jianchuan.ping@amlogic.com>
+Release time: 2021-07-19-20-25
 
 ========================================
 
-Release time: 2021-07-14-20-08
-
-========================================
-
-Builder: yani.shi
+Builder: kai.song
 
 ========================================
 Release file:
