@@ -1,10 +1,30 @@
 =========RELEALSE NOTE=================
 
-Version: V3.2.19-I30933-7932fe
+Version: V3.2.20-Ia6cc1-69f879
 
 ========================================
 
 Git commit:
+commit 69f879ccc740842509479df4d259715bc1a35785
+Author: yang liu1 <yang.liu1@amlogic.com>
+Date:   Tue Jul 20 14:43:47 2021 +0800
+
+    MediaHal: CF2 transfer decoder frame to omx. [2/2]
+    
+    PD#SWPL-54804
+    
+    Problem:
+    omx control flow error.
+    
+    Solution:
+    transfer decoder frame to omx.
+    
+    Verify:
+    T950X4
+    
+    Change-Id: Ia6cc1807fc90934794d84c50441ac9749aaabf2a
+    Signed-off-by: yang liu1 <yang.liu1@amlogic.com>
+
 commit 7932fe0047492719092f1a01bd61441181b6a489
 Author: Kai Song <kai.song@amlogic.com>
 Date:   Thu Jul 15 16:11:40 2021 +0800
@@ -194,34 +214,13 @@ Date:   Wed Jun 30 14:57:06 2021 +0800
     Change-Id: Id010016ad7fcc34a8e76986d3a5e487e8c8f5d48
     Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
 
-commit 92773aa7f5cc79d386da00778f823e9523e74022
-Author: chen.chen2 <chen.chen2@amlogic.com>
-Date:   Thu Jun 24 20:06:57 2021 +0800
+========================================
 
-    MediaSync: CB1 Micro speed no effect issue [1/1]
-    
-    PD#SWPL-53550
-    
-    Problem:
-    When in micro speed case, audio resample policy not return
-    back to audio hal
-    
-    Solution:
-    Add return logic in audio resample policy
-    
-    Verify:
-    AH212
-    
-    Change-Id: Ib4ba56942d11fe8580aeb07546dcdc87bc7459b9
-    Signed-off-by: chen.chen2 <chen.chen2@amlogic.com>
+Release time: 2021-07-20-14-59
 
 ========================================
 
-Release time: 2021-07-19-20-25
-
-========================================
-
-Builder: kai.song
+Builder: yang.liu1
 
 ========================================
 Release file:
