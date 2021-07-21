@@ -1,15 +1,36 @@
 =========RELEALSE NOTE=================
 
-Version: V3.2.20-Ia6cc1-69f879
+Version: V3.2.21-I478c3-a5f2f8
 
 ========================================
 
 Git commit:
-commit 69f879ccc740842509479df4d259715bc1a35785
+commit a5f2f8cb1965f2b9d16f7b67c1ab5ec180592204
+Author: jiaming.huang <jiaming.huang@amlogic.com>
+Date:   Tue Jul 20 20:34:38 2021 +0800
+
+    TsPlayer: DTV Mosaic Notification [1/1]
+    
+    PD#TV-37020
+    
+    Problem:
+    Add a mosaic notification interface in tsplayer
+    
+    Solution:
+    Add error count detection in amcodecvda.cpp&
+    add callback message notification dtvkit in tsplayer.cp
+    
+    Verify:
+    AM30A2
+    
+    Change-Id: I478c3e6c396a8a7885ab9e0ee196d6463ac18978
+    Signed-off-by: jiaming.huang <jiaming.huang@amlogic.com>
+
+commit 96309b3781c5d51de15c4f81d0b26afa460c1781
 Author: yang liu1 <yang.liu1@amlogic.com>
 Date:   Tue Jul 20 14:43:47 2021 +0800
 
-    MediaHal: CF2 transfer decoder frame to omx. [2/2]
+    MediaHal: CF1 transfer decoder frame to omx. [2/2]
     
     PD#SWPL-54804
     
@@ -193,34 +214,13 @@ Date:   Mon Jun 21 20:19:40 2021 +0800
     Change-Id: Ic587ee6b8a27c3319cba82e1a3f9a438ddc1e23a
     Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
 
-commit 5352e15f454655e464be1d91c36043401c90a787
-Author: yunmin.chen <yunmin.chen@amlogic.com>
-Date:   Wed Jun 30 14:57:06 2021 +0800
+========================================
 
-    tsplayer: CB1 audio and video are out of sync after seek. [1/1]
-    
-    PD#SWPL-46427
-    
-    Problem:
-    timeshif,PVR, audio and video are out of sync after seek.
-    
-    Solution:
-    According to the number of video decoding changes,
-    determine whether more ts data needs to be sent to demux.
-    
-    Verify:
-    T950D4_AM301
-    
-    Change-Id: Id010016ad7fcc34a8e76986d3a5e487e8c8f5d48
-    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
+Release time: 2021-07-21-19-22
 
 ========================================
 
-Release time: 2021-07-20-14-59
-
-========================================
-
-Builder: yang.liu1
+Builder: jiaming.huang
 
 ========================================
 Release file:
