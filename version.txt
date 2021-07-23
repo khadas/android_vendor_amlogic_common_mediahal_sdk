@@ -1,10 +1,54 @@
 =========RELEALSE NOTE=================
 
-Version: V3.2.21-I478c3-a5f2f8
+Version: V3.2.23-Iac79c-9809ec
 
 ========================================
 
 Git commit:
+commit 9809ec3a97cd132bc08beb444e6a7048dd2e2f1b
+Author: jianchuan.ping <jianchuan.ping@amlogic.com>
+Date:   Thu Jul 15 21:30:19 2021 +0800
+
+    Media_sync: CF1 audio-video diff is keep increasing. [1/1]
+    
+    PD#SWPL-54486
+    
+    Problem:
+    After set adjust clock fast/slow, not set it back to normal.
+    
+    Solution:
+    Set adjust clock normal after adjust clock finish
+    
+    Verify:
+    AH212
+    
+    Change-Id: Iac79c485d70588fc119f1cc026a1d129d1be1d8d
+    Signed-off-by: jianchuan.ping <jianchuan.ping@amlogic.com>
+
+commit d092addcce94789de6d6e9011958792a43fdb562
+Author: chen.chen2 <chen.chen2@amlogic.com>
+Date:   Sun Jun 20 21:28:27 2021 +0800
+
+    mediahal: CF2 Optimize channel switching speed [1/1]
+    
+    PD#SWPL-53863
+    
+    Problem:
+    1. Dmx poll timeout will block dmx thread release
+    2. In flush process vcodec_init which in vcodec_reset cost more time
+    3. In decodeThreadLoop usleep will block thread release a while
+    
+    Solution:
+    1. Add audio dmx patch from PD#SWPL-37372
+    2. Change codec reset function to codec stop when in stopvideo case
+    3. Add threadloop running flag in decodeThreadLoop usleep process
+    
+    Verify:
+    AH212
+    
+    Change-Id: Ifd1e99513cfa0e1dfb5132bb9215eaf1b1c01a92
+    Signed-off-by: chen.chen2 <chen.chen2@amlogic.com>
+
 commit a5f2f8cb1965f2b9d16f7b67c1ab5ec180592204
 Author: jiaming.huang <jiaming.huang@amlogic.com>
 Date:   Tue Jul 20 20:34:38 2021 +0800
@@ -172,55 +216,13 @@ Date:   Fri Jul 9 15:20:17 2021 +0800
     Change-Id: Ib55f99514837b86d0f315cfe044889c3f3b1fb1b
     Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
 
-commit 8735871b83eb0a02e30582eef8ab46337a055477
-Author: yunmin.chen <yunmin.chen@amlogic.com>
-Date:   Tue Jul 6 15:45:48 2021 +0800
+========================================
 
-    tsplayer: CF1 set setParams [1/1]
-    
-    PD#SWPL-52871
-    
-    Problem:
-    1.MS12 need add support for set Presentation ID
-    2.need setParams for video seclevel
-    
-    Solution:
-    1.support set Presentation ID
-    2.add AM_TSPLAYER_KEY_VIDEO_SECLEVEL for video seclevel
-    
-    Verify:
-    SC2_AH212
-    
-    Change-Id: Iad97bb2faf00db609489560ee88833646b7c17e7
-    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
-
-commit d0b542bff3955f40b14010965e8ee5f1627c1533
-Author: yunmin.chen <yunmin.chen@amlogic.com>
-Date:   Mon Jun 21 20:19:40 2021 +0800
-
-    tsplayer: CF1 android P T3 chip, DTV use video_tunnel to display [1/1]
-    
-    PD#SWPL-51812
-    
-    Problem:
-    use video_tunnel to display
-    
-    Solution:
-    use video_tunnel to display
-    
-    Verify:
-    smith_T3_AR321
-    
-    Change-Id: Ic587ee6b8a27c3319cba82e1a3f9a438ddc1e23a
-    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
+Release time: 2021-07-23-19-19
 
 ========================================
 
-Release time: 2021-07-21-19-22
-
-========================================
-
-Builder: jiaming.huang
+Builder: jianchuan.ping
 
 ========================================
 Release file:
