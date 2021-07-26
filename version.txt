@@ -1,10 +1,30 @@
 =========RELEALSE NOTE=================
 
-Version: V3.2.23-Iac79c-9809ec
+Version: V3.2.24-I5344b-902e97
 
 ========================================
 
 Git commit:
+commit 902e973e99a3297f4cf3ea22756f0507140efd49
+Author: yibo.wu <yibo.wu@amlogic.com>
+Date:   Mon Jul 12 20:07:40 2021 +0800
+
+    mediahal: CB2 optimize channel switching speed-Flush msg recv too late [1/1]
+    
+    PD#SWPL-55001
+    
+    Problem:
+    Channel switching and Flush msg recv too late.
+    
+    Solution:
+    Don't dequeue video buffer when flush.
+    
+    Verify:
+    AH212
+    
+    Change-Id: I5344be23ae713348fd8e8dfe64a0b3b6947d5894
+    Signed-off-by: yibo.wu <yibo.wu@amlogic.com>
+
 commit 9809ec3a97cd132bc08beb444e6a7048dd2e2f1b
 Author: jianchuan.ping <jianchuan.ping@amlogic.com>
 Date:   Thu Jul 15 21:30:19 2021 +0800
@@ -196,33 +216,13 @@ Date:   Tue Jul 6 16:55:47 2021 +0800
     Change-Id: Ibd2ca14a06cde4fac4f697a545da60b8567c1432
     Signed-off-by: chen.chen1 <chen.chen1@amlogic.com>
 
-commit 785ff145a0af07f3945c22663ff3d6fb78be086e
-Author: yunmin.chen <yunmin.chen@amlogic.com>
-Date:   Fri Jul 9 15:20:17 2021 +0800
+========================================
 
-    TsPlayer: CB2 open PIP,press "Swap", amvideodec crash [1/1]
-    
-    PD#SWPL-53453
-    
-    Problem:
-    AmVideoDec::queueInputBuffer() crash.
-    
-    Solution:
-    Determine whether mVDAAdaptor is NULL.
-    
-    Verify:
-    AH212
-    
-    Change-Id: Ib55f99514837b86d0f315cfe044889c3f3b1fb1b
-    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
+Release time: 2021-07-26-14-52
 
 ========================================
 
-Release time: 2021-07-23-19-19
-
-========================================
-
-Builder: jianchuan.ping
+Builder: yibo.wu
 
 ========================================
 Release file:
