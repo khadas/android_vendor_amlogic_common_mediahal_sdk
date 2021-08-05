@@ -1,10 +1,32 @@
 =========RELEALSE NOTE=================
 
-Version: V3.2.26-I139e5-08f82c
+Version: V3.2.27-Ibd740-5123fa
 
 ========================================
 
 Git commit:
+commit 5123face0e10c1dc29acb03cf62172494d96dd13
+Author: yunmin.chen <yunmin.chen@amlogic.com>
+Date:   Sat Jul 31 18:38:48 2021 +0800
+
+    TsPlayer: CB1 vts_vndk_dependency_test 1 fail [1/1]
+    
+    PD#SWPL-55454
+    
+    Problem:
+    audiohal has no dvb_audio_get_latencyms() function.
+    
+    Solution:
+    Get the dvb_audio_get_latencyms() function
+    through dlopen libAmlAudioOutPort.so.
+    Do not link directly.
+    
+    Verify:
+    AH212
+    
+    Change-Id: Ibd740fd39460c6b67517310fac2318bf451f1cf9
+    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
+
 commit 08f82cfc9a8602ef94487ba2b2b2bb0ac15b6fb8
 Author: chen.chen1 <chen.chen1@amlogic.com>
 Date:   Tue Jul 27 17:58:53 2021 +0800
@@ -201,33 +223,13 @@ Date:   Thu Jul 15 14:22:46 2021 +0800
     Change-Id: Ia57edf9a3a445f969a4114456dd9a95ef829be95
     Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
 
-commit e0054d312f6f277f08911c180f00e03f509ff949
-Author: Yani Shi <yani.shi@amlogic.com>
-Date:   Mon Jul 5 19:28:28 2021 +0800
+========================================
 
-    MediaSync: CF1 av is not sync when switch channel in multi-channel play. [2/2]
-    
-    PD#SWPL-50302
-    
-    Problem:
-    audio cache is too large.
-    
-    Solution:
-    clear audio cache
-    
-    Verify:
-    verified on S905X4-AH212
-    
-    Change-Id: I18ffd0446fa24018a7b6046ab49aeca056fb3652
-    Signed-off-by: Yani Shi <yani.shi@amlogic.com>
+Release time: 2021-08-05-13-45
 
 ========================================
 
-Release time: 2021-08-04-11-02
-
-========================================
-
-Builder: chen.chen1
+Builder: yunmin.chen
 
 ========================================
 Release file:
