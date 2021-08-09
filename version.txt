@@ -1,10 +1,31 @@
 =========RELEALSE NOTE=================
 
-Version: V3.2.31-I55d09-654157
+Version: V3.2.32-I95ab0-f43371
 
 ========================================
 
 Git commit:
+commit f4337117ae26cd0e8496e43def5af550bcb48821
+Author: Mingshan Cheng <mingshan.cheng@amlogic.com>
+Date:   Thu Aug 5 18:46:18 2021 +0800
+
+    tsplayer: CB0 fix no audio output on androidR. [1/1]
+    
+    PD#SWPL-56965
+    
+    Problem:
+    vendor.media.dtv.force.manage.patch can not apply
+    all the playback case, we need the solution for this prop.
+    
+    Solution:
+    media_hal knows playback is dvb or iptv, pass it to audiocmdservices
+    
+    Verify:
+    s4-s905y4-androidR
+    
+    Change-Id: I95ab0edcaac637e41b7578f1d097871bf96b6e60
+    Signed-off-by: Mingshan Cheng <mingshan.cheng@amlogic.com>
+
 commit 654157ef74ae9ff3ea50b0ac32d36eebd2dafa8f
 Author: yunmin.chen <yunmin.chen@amlogic.com>
 Date:   Wed Aug 4 14:40:59 2021 +0800
@@ -196,37 +217,13 @@ Date:   Thu Jul 15 21:30:19 2021 +0800
     Change-Id: Iac79c485d70588fc119f1cc026a1d129d1be1d8d
     Signed-off-by: jianchuan.ping <jianchuan.ping@amlogic.com>
 
-commit d092addcce94789de6d6e9011958792a43fdb562
-Author: chen.chen2 <chen.chen2@amlogic.com>
-Date:   Sun Jun 20 21:28:27 2021 +0800
+========================================
 
-    mediahal: CF2 Optimize channel switching speed [1/1]
-    
-    PD#SWPL-53863
-    
-    Problem:
-    1. Dmx poll timeout will block dmx thread release
-    2. In flush process vcodec_init which in vcodec_reset cost more time
-    3. In decodeThreadLoop usleep will block thread release a while
-    
-    Solution:
-    1. Add audio dmx patch from PD#SWPL-37372
-    2. Change codec reset function to codec stop when in stopvideo case
-    3. Add threadloop running flag in decodeThreadLoop usleep process
-    
-    Verify:
-    AH212
-    
-    Change-Id: Ifd1e99513cfa0e1dfb5132bb9215eaf1b1c01a92
-    Signed-off-by: chen.chen2 <chen.chen2@amlogic.com>
+Release time: 2021-08-09-21-11
 
 ========================================
 
-Release time: 2021-08-09-11-28
-
-========================================
-
-Builder: yunmin.chen
+Builder: mingshan.cheng
 
 ========================================
 Release file:
