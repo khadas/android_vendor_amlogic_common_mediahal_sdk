@@ -46,8 +46,15 @@ typedef enum {
 typedef enum {
     AM_TSPLAYER_KEY_AUDIO_PRESENTATION_ID = 0,
     AM_TSPLAYER_KEY_VIDEO_SECLEVEL,
+    AM_TSPLAYER_KEY_SET_AUDIO_PATCH_MANAGE_MODE,
 } am_tsplayer_parameter;
 
+typedef enum
+{
+    AUDIO_PATCH_MANAGE_AUTO = -1,
+    AUDIO_PATCH_MANAGE_FORCE_ENABLE,
+    AUDIO_PATCH_MANAGE_FORCE_DISABLE,
+} am_tsplayer_audio_patch_manage_mode;
 
 typedef enum {
     AM_TSPLAYER_KEY_VIDEO_STATE = 0,
