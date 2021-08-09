@@ -1,11 +1,71 @@
 =========RELEALSE NOTE=================
 
-Version: V3.2.28-I4c278-3a1f65
+Version: V3.2.31-I55d09-654157
 
 ========================================
 
 Git commit:
-commit 3a1f65f2672bc0851ca2aaa65e6fee12aee2944f
+commit 654157ef74ae9ff3ea50b0ac32d36eebd2dafa8f
+Author: yunmin.chen <yunmin.chen@amlogic.com>
+Date:   Wed Aug 4 14:40:59 2021 +0800
+
+    TsPlayer: CB2 Android R +S905Y4/X4 requires multi-instance playback. [3/4]
+    
+    PD#SWPL-56818
+    
+    Problem:
+    Need to switch to nontunelmode.
+    
+    Solution:
+    android R MultiDemux default nontunelmode.
+    
+    Verify:
+    AH212
+    
+    Change-Id: I55d090e18b64da77274647d3e82166e710fdab4b
+    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
+
+commit d263fe58d4bfeaf241a1ad6d1eaf9313710f852b
+Author: yunmin.chen <yunmin.chen@amlogic.com>
+Date:   Thu Aug 5 20:13:00 2021 +0800
+
+    mediahal_sdk: CB1 Android P Change android.mk to android.bp [1/1]
+    
+    PD#SWPL-56902
+    
+    Problem:
+    Android P Change android.mk to android.bp
+    
+    Solution:
+    Android P Change android.mk to android.bp
+    
+    Verify:
+    T3_T982-X9
+    
+    Change-Id: I082a5203250978cd8cc8d01ac8a00e38f1d070a3
+    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
+
+commit eea34ce9c3b4870f01a1a9994d18bfb591d09acf
+Author: yunmin.chen <yunmin.chen@amlogic.com>
+Date:   Wed Aug 4 22:06:38 2021 +0800
+
+    tsplayer: CB1 static-frame lost when switch channel [1/1]
+    
+    PD#SWPL-56622
+    
+    Problem:
+    android p nontunelmode，'static-frame' lost when switch channel
+    
+    Solution:
+    Set mSetVideoBlackout to the display module.
+    
+    Verify:
+    T3_T982-X9
+    
+    Change-Id: Idce0a9523eb280a1a16c4700922974e91560f520
+    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
+
+commit 193efd45efef31cbd6c9d162f55e8b29c4a1b20a
 Author: shanshan.li <shanshan.li@amlogic.com>
 Date:   Fri Jul 30 15:41:03 2021 +0800
 
@@ -160,76 +220,13 @@ Date:   Sun Jun 20 21:28:27 2021 +0800
     Change-Id: Ifd1e99513cfa0e1dfb5132bb9215eaf1b1c01a92
     Signed-off-by: chen.chen2 <chen.chen2@amlogic.com>
 
-commit a5f2f8cb1965f2b9d16f7b67c1ab5ec180592204
-Author: jiaming.huang <jiaming.huang@amlogic.com>
-Date:   Tue Jul 20 20:34:38 2021 +0800
+========================================
 
-    TsPlayer: DTV Mosaic Notification [1/1]
-    
-    PD#TV-37020
-    
-    Problem:
-    Add a mosaic notification interface in tsplayer
-    
-    Solution:
-    Add error count detection in amcodecvda.cpp&
-    add callback message notification dtvkit in tsplayer.cp
-    
-    Verify:
-    AM30A2
-    
-    Change-Id: I478c3e6c396a8a7885ab9e0ee196d6463ac18978
-    Signed-off-by: jiaming.huang <jiaming.huang@amlogic.com>
-
-commit 96309b3781c5d51de15c4f81d0b26afa460c1781
-Author: yang liu1 <yang.liu1@amlogic.com>
-Date:   Tue Jul 20 14:43:47 2021 +0800
-
-    MediaHal: CF1 transfer decoder frame to omx. [2/2]
-    
-    PD#SWPL-54804
-    
-    Problem:
-    omx control flow error.
-    
-    Solution:
-    transfer decoder frame to omx.
-    
-    Verify:
-    T950X4
-    
-    Change-Id: Ia6cc1807fc90934794d84c50441ac9749aaabf2a
-    Signed-off-by: yang liu1 <yang.liu1@amlogic.com>
-
-commit 7932fe0047492719092f1a01bd61441181b6a489
-Author: Kai Song <kai.song@amlogic.com>
-Date:   Thu Jul 15 16:11:40 2021 +0800
-
-    videopassthrough: CF2 Support get video decoder buffer status [3/3]
-    
-    PD#SWPL-54846
-    
-    Problem:
-    Play local files incompletely with tuner framework passthrough mode
-    There is no video flow control for passthrough mode, we need feedback
-    the decoder buffer level to the apk layer to control dvr data write speed.
-    
-    Solution:
-    Support get video decoder buffer status and callback to omx component.
-    
-    Verify:
-    Android-R & OHM
-    
-    Change-Id: I30933c80572d13dede98c41be8d6d67c878e1a50
-    Signed-off-by: Kai Song <kai.song@amlogic.com>
+Release time: 2021-08-09-11-28
 
 ========================================
 
-Release time: 2021-08-06-09-59
-
-========================================
-
-Builder: shanshan.li
+Builder: yunmin.chen
 
 ========================================
 Release file:
