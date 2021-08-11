@@ -136,6 +136,8 @@ extern mediasync_result MediaSync_getMediaTime(void* handle, int64_t realUs,
 extern mediasync_result MediaSync_getRealTimeFor(void* handle, int64_t targetMediaUs, int64_t *outRealUs);
 extern mediasync_result MediaSync_getRealTimeForNextVsync(void* handle, int64_t *outRealUs);
 extern mediasync_result MediaSync_getTrackMediaTime(void* handle, int64_t *outMediaUs);
+extern mediasync_result MediaSync_setUpdateTimeThreshold(void* handle, int64_t updateTimeThreshold);
+extern mediasync_result MediaSync_getUpdateTimeThreshold(void* handle, int64_t* updateTimeThreshold);
 
 extern mediasync_result mediasync_setParameter(void* handle, mediasync_parameter type, void* arg);
 extern mediasync_result mediasync_getParameter(void* handle, mediasync_parameter type, void* arg);
