@@ -1,10 +1,57 @@
 =========RELEALSE NOTE=================
 
-Version: V3.2.32-I95ab0-f43371
+Version: V3.2.34--c4500b
 
 ========================================
 
 Git commit:
+commit c4500b2d857ba121070c39611818baeedc8ee7cd
+Merge: a4f494f e7349be
+Author: Lifeng Cao <lifeng.cao@amlogic.com>
+Date:   Wed Aug 11 02:26:13 2021 -0700
+
+    Merge "mediahal: CF1 add set/getUpdateTimeThreshold interface [2/2]"
+
+commit a4f494fe2d4079fac8a264f947c1d1c4012a1654
+Author: jianchuan.ping <jianchuan.ping@amlogic.com>
+Date:   Mon Aug 9 17:14:42 2021 +0800
+
+    MediaSync: CF1 Play some stream will have audio underrun. [1/1]
+    
+    PD#SWPL-55820
+    
+    Problem:
+    Some stream will underrun.
+    
+    Solution:
+    If pcr is smaller than av first, use pcr init clock
+    
+    Verify:
+    AH212
+    
+    Change-Id: Iad2e103f158711e59969cae1019b2265c12ff903
+    Signed-off-by: jianchuan.ping <jianchuan.ping@amlogic.com>
+
+commit e7349be4f403972a6c9c7774dc8ffe5e55d15622
+Author: shuanglong.wang <shuanglong.wang@amlogic.com>
+Date:   Tue Aug 10 11:20:23 2021 +0800
+
+    mediahal: CF1 add set/getUpdateTimeThreshold interface [2/2]
+    
+    PD#OTT-22257
+    
+    Problem:
+    add set/getUpdateTimeThreshold interface
+    
+    Solution:
+    add set/getUpdateTimeThreshold interface
+    
+    Verify:
+    S4D
+    
+    Change-Id: I40ce814597a34b2b8eac128490cb339d653a4aeb
+    Signed-off-by: shuanglong.wang <shuanglong.wang@amlogic.com>
+
 commit f4337117ae26cd0e8496e43def5af550bcb48821
 Author: Mingshan Cheng <mingshan.cheng@amlogic.com>
 Date:   Thu Aug 5 18:46:18 2021 +0800
@@ -157,73 +204,13 @@ Date:   Tue Jul 27 17:58:53 2021 +0800
     Change-Id: I139e5ee0777d8f403adfa9c1c2fe1ab58b34439b
     Signed-off-by: Chen Chen <chen.chen1@amlogic.com>
 
-commit b2e5274945a2019090bf8b43a09ac3d4b3a6e201
-Author: yunmin.chen <yunmin.chen@amlogic.com>
-Date:   Mon Aug 2 19:33:23 2021 +0800
+========================================
 
-    tsplayer: CB1 static-frame lost when switch channel [1/1]
-    
-    PD#SWPL-56622
-    
-    Problem:
-    android p nontunelmode，'static-frame' lost when switch channel
-    
-    Solution:
-    Configure the initial value of VideoBlackout through prop.
-    
-    Verify:
-    T3_T982-X9
-    
-    Change-Id: I30824fcfbc84b8a31d3ce178aa2e79267eefd2d9
-    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
-
-commit 902e973e99a3297f4cf3ea22756f0507140efd49
-Author: yibo.wu <yibo.wu@amlogic.com>
-Date:   Mon Jul 12 20:07:40 2021 +0800
-
-    mediahal: CB2 optimize channel switching speed-Flush msg recv too late [1/1]
-    
-    PD#SWPL-55001
-    
-    Problem:
-    Channel switching and Flush msg recv too late.
-    
-    Solution:
-    Don't dequeue video buffer when flush.
-    
-    Verify:
-    AH212
-    
-    Change-Id: I5344be23ae713348fd8e8dfe64a0b3b6947d5894
-    Signed-off-by: yibo.wu <yibo.wu@amlogic.com>
-
-commit 9809ec3a97cd132bc08beb444e6a7048dd2e2f1b
-Author: jianchuan.ping <jianchuan.ping@amlogic.com>
-Date:   Thu Jul 15 21:30:19 2021 +0800
-
-    Media_sync: CF1 audio-video diff is keep increasing. [1/1]
-    
-    PD#SWPL-54486
-    
-    Problem:
-    After set adjust clock fast/slow, not set it back to normal.
-    
-    Solution:
-    Set adjust clock normal after adjust clock finish
-    
-    Verify:
-    AH212
-    
-    Change-Id: Iac79c485d70588fc119f1cc026a1d129d1be1d8d
-    Signed-off-by: jianchuan.ping <jianchuan.ping@amlogic.com>
+Release time: 2021-08-11-17-57
 
 ========================================
 
-Release time: 2021-08-09-21-11
-
-========================================
-
-Builder: mingshan.cheng
+Builder: shuanglong.wang
 
 ========================================
 Release file:
