@@ -52,8 +52,8 @@ typedef enum {
 typedef enum
 {
     AUDIO_PATCH_MANAGE_AUTO = -1,
-    AUDIO_PATCH_MANAGE_FORCE_ENABLE,
     AUDIO_PATCH_MANAGE_FORCE_DISABLE,
+    AUDIO_PATCH_MANAGE_FORCE_ENABLE,
 } am_tsplayer_audio_patch_manage_mode;
 
 typedef enum {
