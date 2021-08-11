@@ -1,10 +1,30 @@
 =========RELEALSE NOTE=================
 
-Version: V3.2.34--c4500b
+Version: V3.2.35-Ia293d-e4fc94
 
 ========================================
 
 Git commit:
+commit e4fc949eeb7b4f8649a4c0df9c5c62c5dc7e8019
+Author: Mingshan Cheng <mingshan.cheng@amlogic.com>
+Date:   Wed Aug 11 19:29:42 2021 +0800
+
+    tsplayer: CB1 value of enum is incorrect. [1/1]
+    
+    PD#SWPL-57450
+    
+    Problem:
+    value of enum audio_patch_manage_mode is incorrect.
+    
+    Solution:
+    correct value of enum audio_patch_manage_mode.
+    
+    Verify:
+    Y4-androidR
+    
+    Change-Id: Ia293d1534f2eb4a087273287da5a7e1b36cc4c71
+    Signed-off-by: Mingshan Cheng <mingshan.cheng@amlogic.com>
+
 commit c4500b2d857ba121070c39611818baeedc8ee7cd
 Merge: a4f494f e7349be
 Author: Lifeng Cao <lifeng.cao@amlogic.com>
@@ -177,40 +197,13 @@ Date:   Sat Jul 31 18:38:48 2021 +0800
     Change-Id: Ibd740fd39460c6b67517310fac2318bf451f1cf9
     Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
 
-commit 08f82cfc9a8602ef94487ba2b2b2bb0ac15b6fb8
-Author: chen.chen1 <chen.chen1@amlogic.com>
-Date:   Tue Jul 27 17:58:53 2021 +0800
+========================================
 
-    Mediasync: audio maybe mute a moment when stream loop. [1/1]
-    
-    PD#SWPL-54821
-    
-    Problem:
-    audio maybe mute a moment when stream loop.
-    
-    Solution:
-    1.use apts to update refclock when remove discontinue in dolby case.
-    2.solve FirstFramePts wrongly set in setStartFreerunPts.
-    3.no need to wait in VideoProcess when output video hold strategy, because
-      tsplayer render had waited.
-    4.adjust start threshold in dolby format.
-    5.use demuxpcr instead of vpts to compare apts in queueAudioFrame when clock
-      type is PCR_CLOCK.
-    6.remove useless code.
-    
-    Verify:
-    verified on S905X4-AH212
-    
-    Change-Id: I139e5ee0777d8f403adfa9c1c2fe1ab58b34439b
-    Signed-off-by: Chen Chen <chen.chen1@amlogic.com>
+Release time: 2021-08-11-22-32
 
 ========================================
 
-Release time: 2021-08-11-17-57
-
-========================================
-
-Builder: shuanglong.wang
+Builder: mingshan.cheng
 
 ========================================
 Release file:
