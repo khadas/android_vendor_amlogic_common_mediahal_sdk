@@ -1,10 +1,30 @@
 =========RELEALSE NOTE=================
 
-Version: V3.2.38-I3d750-344aed
+Version: V3.2.39-Ifea13-84e7e9
 
 ========================================
 
 Git commit:
+commit 84e7e9842d53ed3432589b2460cbc01dbf8fcffc
+Author: Mingshan Cheng <mingshan.cheng@amlogic.com>
+Date:   Thu Aug 12 15:33:26 2021 +0800
+
+    tsplayer: CB1 setparams force manage audio-patch not work. [1/1]
+    
+    PD#SWPL-57450
+    
+    Problem:
+    setparams force manage audio-patch not working.
+    
+    Solution:
+    save the value of setparams.
+    
+    Verify:
+    Y4-androidR
+    
+    Change-Id: Ifea13927e84d375a0ad9e5a8358fdd4e76e6ead0
+    Signed-off-by: Mingshan Cheng <mingshan.cheng@amlogic.com>
+
 commit 344aedf9061ad6fd3e5c706c1686f6d4e1c5041f
 Author: yunmin.chen <yunmin.chen@amlogic.com>
 Date:   Thu Jul 29 15:04:35 2021 +0800
@@ -177,33 +197,13 @@ Date:   Wed Aug 4 14:40:59 2021 +0800
     Change-Id: I55d090e18b64da77274647d3e82166e710fdab4b
     Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
 
-commit d263fe58d4bfeaf241a1ad6d1eaf9313710f852b
-Author: yunmin.chen <yunmin.chen@amlogic.com>
-Date:   Thu Aug 5 20:13:00 2021 +0800
+========================================
 
-    mediahal_sdk: CB1 Android P Change android.mk to android.bp [1/1]
-    
-    PD#SWPL-56902
-    
-    Problem:
-    Android P Change android.mk to android.bp
-    
-    Solution:
-    Android P Change android.mk to android.bp
-    
-    Verify:
-    T3_T982-X9
-    
-    Change-Id: I082a5203250978cd8cc8d01ac8a00e38f1d070a3
-    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
+Release time: 2021-08-12-21-53
 
 ========================================
 
-Release time: 2021-08-12-16-55
-
-========================================
-
-Builder: yunmin.chen
+Builder: mingshan.cheng
 
 ========================================
 Release file:
