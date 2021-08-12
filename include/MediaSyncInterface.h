@@ -85,7 +85,7 @@ struct mediasync_audio_policy {
 
 struct mediasync_video_policy {
     video_policy videopolicy;
-    int32_t  param1;
+    int64_t  param1;
     int32_t  param2;
 };
 
