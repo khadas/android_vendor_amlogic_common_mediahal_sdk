@@ -1,10 +1,74 @@
 =========RELEALSE NOTE=================
 
-Version: V3.2.35-Ia293d-e4fc94
+Version: V3.2.38-I3d750-344aed
 
 ========================================
 
 Git commit:
+commit 344aedf9061ad6fd3e5c706c1686f6d4e1c5041f
+Author: yunmin.chen <yunmin.chen@amlogic.com>
+Date:   Thu Jul 29 15:04:35 2021 +0800
+
+    tsplayer: CF1 TsPlayer need support framecontrl func [1/2]
+    
+    PD#SWPL-56017
+    
+    Problem:
+    TsPlayer need support framecontrl func.
+    
+    Solution:
+    TsPlayer need support framecontrl func.
+    
+    Verify:
+    SC2_AH212
+    
+    Change-Id: I3d75012611a1d17fe3a07c9e41c17a2dbf3db5ca
+    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
+
+commit df4e882fc9f77398b0a16588ad05dc97fe906b2b
+Author: chen.chen1 <chen.chen1@amlogic.com>
+Date:   Fri Aug 6 16:53:44 2021 +0800
+
+    Mediasync: CF1 support return video realtimeus to vendor. [1/1]
+    
+    PD#SWPL-54239
+    
+    Problem:
+    video framecontrol func need video realtimeus.
+    
+    Solution:
+    1.support return video realtimeus to vendor.
+    2.audio mute when stream loop and underrun.
+    
+    Verify:
+    verified on S905X4-AH212
+    
+    Change-Id: Iba3e6f0373d9224622630eeaa14c491997a14bd6
+    Signed-off-by: chen.chen1 <chen.chen1@amlogic.com>
+
+commit 1585d74fc108949c8ad3f753625679d98140e259
+Author: yang liu1 <yang.liu1@amlogic.com>
+Date:   Thu Aug 5 19:30:31 2021 +0800
+
+    MediaHal: CB2 When the driver outputs only one field, send flags to omx. [2/2]
+    
+    PD#SWPL-56360
+    
+    Problem:
+    When playing 3-channel interlaced streams, only two channels
+    can pass through the vpp module due to the decoder driver limitation,
+    which will cause the third channel to be stuck without vpp module.
+    
+    Solution:
+    1.force output only one filed.
+    2.send flag(PICTURE_FLAG_FIELD_INTERLACED) to omx.
+    
+    Verify:
+    AH212
+    
+    Change-Id: I611964df1815950ae742bb27149ea6eab77c5f59
+    Signed-off-by: yang liu1 <yang.liu1@amlogic.com>
+
 commit e4fc949eeb7b4f8649a4c0df9c5c62c5dc7e8019
 Author: Mingshan Cheng <mingshan.cheng@amlogic.com>
 Date:   Wed Aug 11 19:29:42 2021 +0800
@@ -133,77 +197,13 @@ Date:   Thu Aug 5 20:13:00 2021 +0800
     Change-Id: I082a5203250978cd8cc8d01ac8a00e38f1d070a3
     Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
 
-commit eea34ce9c3b4870f01a1a9994d18bfb591d09acf
-Author: yunmin.chen <yunmin.chen@amlogic.com>
-Date:   Wed Aug 4 22:06:38 2021 +0800
+========================================
 
-    tsplayer: CB1 static-frame lost when switch channel [1/1]
-    
-    PD#SWPL-56622
-    
-    Problem:
-    android p nontunelmode，'static-frame' lost when switch channel
-    
-    Solution:
-    Set mSetVideoBlackout to the display module.
-    
-    Verify:
-    T3_T982-X9
-    
-    Change-Id: Idce0a9523eb280a1a16c4700922974e91560f520
-    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
-
-commit 193efd45efef31cbd6c9d162f55e8b29c4a1b20a
-Author: shanshan.li <shanshan.li@amlogic.com>
-Date:   Fri Jul 30 15:41:03 2021 +0800
-
-    mediahal: CB1 YouTube play "LXB3EKWSINQ" video is abnormal. [1/1]
-    
-    PD#SWPL-55833
-    
-    Problem:
-    Mediahal allocates the input buffer according to the resolution at the start of
-    playback. After switching the resolution, an error occurs because the buffer
-    is not enough
-    
-    Solution:
-    Inputbuffer is allocated according to 4K resolution by default
-    
-    Verify:
-    oppen
-    
-    Change-Id: I4c278e55a8c8b4f4ca18ba3beaf238017ed5556a
-    Signed-off-by: shanshan.li <shanshan.li@amlogic.com>
-
-commit 5123face0e10c1dc29acb03cf62172494d96dd13
-Author: yunmin.chen <yunmin.chen@amlogic.com>
-Date:   Sat Jul 31 18:38:48 2021 +0800
-
-    TsPlayer: CB1 vts_vndk_dependency_test 1 fail [1/1]
-    
-    PD#SWPL-55454
-    
-    Problem:
-    audiohal has no dvb_audio_get_latencyms() function.
-    
-    Solution:
-    Get the dvb_audio_get_latencyms() function
-    through dlopen libAmlAudioOutPort.so.
-    Do not link directly.
-    
-    Verify:
-    AH212
-    
-    Change-Id: Ibd740fd39460c6b67517310fac2318bf451f1cf9
-    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
+Release time: 2021-08-12-16-55
 
 ========================================
 
-Release time: 2021-08-11-22-32
-
-========================================
-
-Builder: mingshan.cheng
+Builder: yunmin.chen
 
 ========================================
 Release file:
