@@ -1,10 +1,30 @@
 =========RELEALSE NOTE=================
 
-Version: V3.2.39-Ifea13-84e7e9
+Version: V3.2.40-If6fe0-f32408
 
 ========================================
 
 Git commit:
+commit f3240894a0ed68e9f70061cc83aa30ff81111b85
+Author: yunmin.chen <yunmin.chen@amlogic.com>
+Date:   Thu Aug 12 21:01:28 2021 +0800
+
+    tsplayer: CB1 Switch chanel,DUT can dispaly last frame of the last show [1/1]
+    
+    PD#SWPL-57115
+    
+    Problem:
+    Switch channel, the last frame is cleared by default.
+    
+    Solution:
+    Modify the initial value.
+    
+    Verify:
+    SC2_AH212
+    
+    Change-Id: If6fe0d5eca3f0cf25ca190cf3f665dcd4f99f234
+    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
+
 commit 84e7e9842d53ed3432589b2460cbc01dbf8fcffc
 Author: Mingshan Cheng <mingshan.cheng@amlogic.com>
 Date:   Thu Aug 12 15:33:26 2021 +0800
@@ -177,33 +197,13 @@ Date:   Thu Aug 5 18:46:18 2021 +0800
     Change-Id: I95ab0edcaac637e41b7578f1d097871bf96b6e60
     Signed-off-by: Mingshan Cheng <mingshan.cheng@amlogic.com>
 
-commit 654157ef74ae9ff3ea50b0ac32d36eebd2dafa8f
-Author: yunmin.chen <yunmin.chen@amlogic.com>
-Date:   Wed Aug 4 14:40:59 2021 +0800
+========================================
 
-    TsPlayer: CB2 Android R +S905Y4/X4 requires multi-instance playback. [3/4]
-    
-    PD#SWPL-56818
-    
-    Problem:
-    Need to switch to nontunelmode.
-    
-    Solution:
-    android R MultiDemux default nontunelmode.
-    
-    Verify:
-    AH212
-    
-    Change-Id: I55d090e18b64da77274647d3e82166e710fdab4b
-    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
+Release time: 2021-08-13-20-37
 
 ========================================
 
-Release time: 2021-08-12-21-53
-
-========================================
-
-Builder: mingshan.cheng
+Builder: yunmin.chen
 
 ========================================
 Release file:
