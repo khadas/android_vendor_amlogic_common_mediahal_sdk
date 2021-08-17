@@ -1,10 +1,31 @@
 =========RELEALSE NOTE=================
 
-Version: V3.2.40-If6fe0-f32408
+Version: V3.2.41-Ia11d5-8bd494
 
 ========================================
 
 Git commit:
+commit 8bd494d7d8902a5102b0e82b06504c6eb0f5020a
+Author: shuanglong.wang <shuanglong.wang@amlogic.com>
+Date:   Thu Aug 12 16:17:08 2021 +0800
+
+    mediahal: CB1 fast drop video when video underflow recovery [1/1]
+    
+    PD#SWPL-57147
+    
+    Problem:
+    VIDEO-UNDERFLOW-QUALITY-HEAAC-60-HEVC fail due to drop
+    
+    Solution:
+    1.fast drop video to catch up with audio when video underflow recovery
+    2.decrease vt binder invoke
+    
+    Verify:
+    805X2
+    
+    Change-Id: Ia11d599a961bce4da8901abdfa22e6a645a13aa1
+    Signed-off-by: shuanglong.wang <shuanglong.wang@amlogic.com>
+
 commit f3240894a0ed68e9f70061cc83aa30ff81111b85
 Author: yunmin.chen <yunmin.chen@amlogic.com>
 Date:   Thu Aug 12 21:01:28 2021 +0800
@@ -176,34 +197,13 @@ Date:   Tue Aug 10 11:20:23 2021 +0800
     Change-Id: I40ce814597a34b2b8eac128490cb339d653a4aeb
     Signed-off-by: shuanglong.wang <shuanglong.wang@amlogic.com>
 
-commit f4337117ae26cd0e8496e43def5af550bcb48821
-Author: Mingshan Cheng <mingshan.cheng@amlogic.com>
-Date:   Thu Aug 5 18:46:18 2021 +0800
+========================================
 
-    tsplayer: CB0 fix no audio output on androidR. [1/1]
-    
-    PD#SWPL-56965
-    
-    Problem:
-    vendor.media.dtv.force.manage.patch can not apply
-    all the playback case, we need the solution for this prop.
-    
-    Solution:
-    media_hal knows playback is dvb or iptv, pass it to audiocmdservices
-    
-    Verify:
-    s4-s905y4-androidR
-    
-    Change-Id: I95ab0edcaac637e41b7578f1d097871bf96b6e60
-    Signed-off-by: Mingshan Cheng <mingshan.cheng@amlogic.com>
+Release time: 2021-08-17-16-43
 
 ========================================
 
-Release time: 2021-08-13-20-37
-
-========================================
-
-Builder: yunmin.chen
+Builder: shuanglong.wang
 
 ========================================
 Release file:
