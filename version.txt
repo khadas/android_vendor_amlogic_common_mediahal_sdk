@@ -1,10 +1,52 @@
 =========RELEALSE NOTE=================
 
-Version: V3.2.41-Ia11d5-8bd494
+Version: V3.2.43-I83bc7-7d76c9
 
 ========================================
 
 Git commit:
+commit 7d76c9f25c6532c0efe833868302cc16f4496d4c
+Author: Mingshan Cheng <mingshan.cheng@amlogic.com>
+Date:   Wed Aug 18 15:10:09 2021 +0800
+
+    tsplayer: CB1 audio-patch will create twice when pvr seeking. [1/1]
+    
+    PD#SWPL-57713
+    
+    Problem:
+    1. audio-patch will create twice when pvr seeking.
+    2. getdelaytime will crash if is esmode.
+    
+    Solution:
+    1. do not clear the audioPatchManageMode when close decoder.
+    2. getdelaytime just return if is esmode.
+    
+    Verify:
+    SC2-androidR
+    
+    Change-Id: I83bc7d3e5ea475b4178a00fae475b292556e4897
+    Signed-off-by: Mingshan Cheng <mingshan.cheng@amlogic.com>
+
+commit 7abdb532989d44c0e15ad7c2563b9db0bd60174d
+Author: yunmin.chen <yunmin.chen@amlogic.com>
+Date:   Sat Jul 17 16:01:13 2021 +0800
+
+    mediahal: Version management [1/1]
+    
+    PD#SWPL-48769
+    
+    Problem:
+    Modify mediahal_sdk commi information
+    
+    Solution:
+    Put the sourcecode information behind the Solution
+    
+    Verify:
+    SC2_AH212
+    
+    Change-Id: I2453d95ef4e90ba1a3ca888b8a7806adadae1574
+    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
+
 commit 8bd494d7d8902a5102b0e82b06504c6eb0f5020a
 Author: shuanglong.wang <shuanglong.wang@amlogic.com>
 Date:   Thu Aug 12 16:17:08 2021 +0800
@@ -157,53 +199,13 @@ Date:   Wed Aug 11 02:26:13 2021 -0700
 
     Merge "mediahal: CF1 add set/getUpdateTimeThreshold interface [2/2]"
 
-commit a4f494fe2d4079fac8a264f947c1d1c4012a1654
-Author: jianchuan.ping <jianchuan.ping@amlogic.com>
-Date:   Mon Aug 9 17:14:42 2021 +0800
+========================================
 
-    MediaSync: CF1 Play some stream will have audio underrun. [1/1]
-    
-    PD#SWPL-55820
-    
-    Problem:
-    Some stream will underrun.
-    
-    Solution:
-    If pcr is smaller than av first, use pcr init clock
-    
-    Verify:
-    AH212
-    
-    Change-Id: Iad2e103f158711e59969cae1019b2265c12ff903
-    Signed-off-by: jianchuan.ping <jianchuan.ping@amlogic.com>
-
-commit e7349be4f403972a6c9c7774dc8ffe5e55d15622
-Author: shuanglong.wang <shuanglong.wang@amlogic.com>
-Date:   Tue Aug 10 11:20:23 2021 +0800
-
-    mediahal: CF1 add set/getUpdateTimeThreshold interface [2/2]
-    
-    PD#OTT-22257
-    
-    Problem:
-    add set/getUpdateTimeThreshold interface
-    
-    Solution:
-    add set/getUpdateTimeThreshold interface
-    
-    Verify:
-    S4D
-    
-    Change-Id: I40ce814597a34b2b8eac128490cb339d653a4aeb
-    Signed-off-by: shuanglong.wang <shuanglong.wang@amlogic.com>
+Release time: 2021-08-19-11-39
 
 ========================================
 
-Release time: 2021-08-17-16-43
-
-========================================
-
-Builder: shuanglong.wang
+Builder: drm.autobuild
 
 ========================================
 Release file:
@@ -216,13 +218,19 @@ resourcemanage.h
 TunerPassthroughBase.h
 VideoTunnelRendererBase.h
 
-Library file:
+Vendor Library file:
 libmediahal_mediasync.so
 libmediahal_passthrough.so
 libmediahal_resman.so
 libmediahal_tsplayer.so
 libmediahal_tunnelrenderer.so
 libmediahal_videodec.so
+
+System Library file:
+libmediahal_mediasync.system.so
+libmediahal_resman.system.so
+libmediahal_tsplayer.system.so
+libmediahal_videodec.system.so
 
 Example file:
 AmTsPlayerExample.cpp
