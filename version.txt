@@ -1,10 +1,96 @@
 =========RELEALSE NOTE=================
 
-Version: V3.2.43-I83bc7-7d76c9
+Version: V3.2.47-Icf1ea-911788
 
 ========================================
 
 Git commit:
+commit 911788c6ecb57617dbb3e90a0a06ca0909be748f
+Author: jianchuan.ping <jianchuan.ping@amlogic.com>
+Date:   Mon Aug 16 18:17:14 2021 +0800
+
+    MediaSync: CF1 No need control sync before alsa ready. [1/1]
+    
+    PD#SWPL-56428
+    
+    Problem:
+    Audio start change clock when audio start
+    
+    Solution:
+    Start sync control after alsa ready
+    
+    Verify:
+    AH212
+    
+    Change-Id: Icf1eab6fcbc089d0b8098b6b648792186da71569
+    Signed-off-by: jianchuan.ping <jianchuan.ping@amlogic.com>
+
+commit 289b7f5c17954c3a8f52ac40ff10c7b8e852cf67
+Author: jianchuan.ping <jianchuan.ping@amlogic.com>
+Date:   Fri Aug 20 19:51:43 2021 +0800
+
+    MediaSync: CB1 Start play will have no audio. [1/1]
+    
+    PD#SWPL-54486
+    
+    Problem:
+    PCR start before audio arrive.
+    
+    Solution:
+    Fix have audio state not update
+    
+    Verify:
+    AH212
+    
+    Change-Id: Iebc750d6b12811853f34e61c40633b35e52b4cb2
+    Signed-off-by: jianchuan.ping <jianchuan.ping@amlogic.com>
+
+commit 8bbab04518b5351e45e970ac0bd7cdf8c053ea8c
+Author: chen.chen1 <chen.chen1@amlogic.com>
+Date:   Sat Aug 14 18:55:43 2021 +0800
+
+    Mediasync: AV sync effect get worse when framecontrol func working. [1/1]
+    
+    PD#SWPL-57852
+    
+    Problem:
+    1. AV sync effect get worse when framecontrol func working;
+    2. pure video stream cannot play;
+    3. pure audio stream pvr stuck;
+    
+    Solution:
+    1. pass timeunit us instead of ns to display;
+    2. mediasync add check pure video check mechanism;
+    3. modify refclockinit logic for pure audio stream;
+    4. add Audio Latency func;
+    5. add dolby audioclock adjust interval to 1s;
+    
+    Verify:
+    verified on S905X4-AH212
+    
+    Change-Id: I4c46242be3b0644cd00a0f817d4eedbba673d11b
+    Signed-off-by: chen.chen1 <chen.chen1@amlogic.com>
+
+commit 3b7ea73f4579b91b1e9fff168455340dc9d123a0
+Author: joy.rao <joy.rao@amlogic.com>
+Date:   Mon Aug 16 13:10:11 2021 +0800
+
+    TsPlayer: CF2 use AmTsPlayer_setParams to setup secure level. [1/1]
+    
+    PD#RSP-2229
+    
+    Problem:
+    now video and audio used different api to setup secure level
+    
+    Solution:
+    use AmTsPlayer_setParams to setup audio secure level
+    
+    Verify:
+    AH212
+    
+    Change-Id: I2ff9d346a206c789cf9647323f5c077b2101ccd0
+    Signed-off-by: joy.rao <joy.rao@amlogic.com>
+
 commit 7d76c9f25c6532c0efe833868302cc16f4496d4c
 Author: Mingshan Cheng <mingshan.cheng@amlogic.com>
 Date:   Wed Aug 18 15:10:09 2021 +0800
@@ -128,80 +214,9 @@ Date:   Thu Jul 29 15:04:35 2021 +0800
     Change-Id: I3d75012611a1d17fe3a07c9e41c17a2dbf3db5ca
     Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
 
-commit df4e882fc9f77398b0a16588ad05dc97fe906b2b
-Author: chen.chen1 <chen.chen1@amlogic.com>
-Date:   Fri Aug 6 16:53:44 2021 +0800
-
-    Mediasync: CF1 support return video realtimeus to vendor. [1/1]
-    
-    PD#SWPL-54239
-    
-    Problem:
-    video framecontrol func need video realtimeus.
-    
-    Solution:
-    1.support return video realtimeus to vendor.
-    2.audio mute when stream loop and underrun.
-    
-    Verify:
-    verified on S905X4-AH212
-    
-    Change-Id: Iba3e6f0373d9224622630eeaa14c491997a14bd6
-    Signed-off-by: chen.chen1 <chen.chen1@amlogic.com>
-
-commit 1585d74fc108949c8ad3f753625679d98140e259
-Author: yang liu1 <yang.liu1@amlogic.com>
-Date:   Thu Aug 5 19:30:31 2021 +0800
-
-    MediaHal: CB2 When the driver outputs only one field, send flags to omx. [2/2]
-    
-    PD#SWPL-56360
-    
-    Problem:
-    When playing 3-channel interlaced streams, only two channels
-    can pass through the vpp module due to the decoder driver limitation,
-    which will cause the third channel to be stuck without vpp module.
-    
-    Solution:
-    1.force output only one filed.
-    2.send flag(PICTURE_FLAG_FIELD_INTERLACED) to omx.
-    
-    Verify:
-    AH212
-    
-    Change-Id: I611964df1815950ae742bb27149ea6eab77c5f59
-    Signed-off-by: yang liu1 <yang.liu1@amlogic.com>
-
-commit e4fc949eeb7b4f8649a4c0df9c5c62c5dc7e8019
-Author: Mingshan Cheng <mingshan.cheng@amlogic.com>
-Date:   Wed Aug 11 19:29:42 2021 +0800
-
-    tsplayer: CB1 value of enum is incorrect. [1/1]
-    
-    PD#SWPL-57450
-    
-    Problem:
-    value of enum audio_patch_manage_mode is incorrect.
-    
-    Solution:
-    correct value of enum audio_patch_manage_mode.
-    
-    Verify:
-    Y4-androidR
-    
-    Change-Id: Ia293d1534f2eb4a087273287da5a7e1b36cc4c71
-    Signed-off-by: Mingshan Cheng <mingshan.cheng@amlogic.com>
-
-commit c4500b2d857ba121070c39611818baeedc8ee7cd
-Merge: a4f494f e7349be
-Author: Lifeng Cao <lifeng.cao@amlogic.com>
-Date:   Wed Aug 11 02:26:13 2021 -0700
-
-    Merge "mediahal: CF1 add set/getUpdateTimeThreshold interface [2/2]"
-
 ========================================
 
-Release time: 2021-08-19-11-39
+Release time: 2021-08-20-20-51
 
 ========================================
 
