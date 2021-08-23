@@ -1,10 +1,32 @@
 =========RELEALSE NOTE=================
 
-Version: V3.2.47-Icf1ea-911788
+Version: V3.2.48-Ia98eb-5d38ef
 
 ========================================
 
 Git commit:
+commit 5d38efc57dc3355895c1bbdc457dea4659b31efd
+Author: shuanglong.wang <shuanglong.wang@amlogic.com>
+Date:   Thu Aug 19 13:40:29 2021 +0800
+
+    mediahal: CB1 update hwcsync info when video underflow recovery [1/1]
+    
+    PD#SWPL-57147
+    
+    Problem:
+    first seveval(less than 10) frame not get accurate
+    realtime when video underflow recovery
+    
+    Solution:
+    update hwcsync info when video underflow recovery,also mediasync
+    updateAnchor debug info with vendor.mediasync.debug.level
+    
+    Verify:
+    805X2
+    
+    Change-Id: Ia98ebf6db6c163d914807ad6c9eb55b925ae8be7
+    Signed-off-by: shuanglong.wang <shuanglong.wang@amlogic.com>
+
 commit 911788c6ecb57617dbb3e90a0a06ca0909be748f
 Author: jianchuan.ping <jianchuan.ping@amlogic.com>
 Date:   Mon Aug 16 18:17:14 2021 +0800
@@ -194,29 +216,9 @@ Date:   Thu Aug 12 15:33:26 2021 +0800
     Change-Id: Ifea13927e84d375a0ad9e5a8358fdd4e76e6ead0
     Signed-off-by: Mingshan Cheng <mingshan.cheng@amlogic.com>
 
-commit 344aedf9061ad6fd3e5c706c1686f6d4e1c5041f
-Author: yunmin.chen <yunmin.chen@amlogic.com>
-Date:   Thu Jul 29 15:04:35 2021 +0800
-
-    tsplayer: CF1 TsPlayer need support framecontrl func [1/2]
-    
-    PD#SWPL-56017
-    
-    Problem:
-    TsPlayer need support framecontrl func.
-    
-    Solution:
-    TsPlayer need support framecontrl func.
-    
-    Verify:
-    SC2_AH212
-    
-    Change-Id: I3d75012611a1d17fe3a07c9e41c17a2dbf3db5ca
-    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
-
 ========================================
 
-Release time: 2021-08-20-20-51
+Release time: 2021-08-23-16-33
 
 ========================================
 
