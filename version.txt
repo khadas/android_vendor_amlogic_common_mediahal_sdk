@@ -1,10 +1,31 @@
 =========RELEALSE NOTE=================
 
-Version: V3.2.48-Ia98eb-5d38ef
+Version: V3.2.49-Iba442-4a23ab
 
 ========================================
 
 Git commit:
+commit 4a23ab4d6265f58bdc64e7d6cf1e3cf733dd3a86
+Author: yunmin.chen <yunmin.chen@amlogic.com>
+Date:   Sat Aug 7 15:33:46 2021 +0800
+
+    TsPlayer: CB1 Control the speed of writing data. [1/1]
+    
+    PD#SWPL-55335
+    
+    Problem:
+    After pts discontinue, more data will be written.
+    
+    Solution:
+    After pts discontinue,
+    the video caching time must be calculated correctly.
+    
+    Verify:
+    AH212
+    
+    Change-Id: Iba4424d8160afb8c91308d1865a952a8f2e3342c
+    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
+
 commit 5d38efc57dc3355895c1bbdc457dea4659b31efd
 Author: shuanglong.wang <shuanglong.wang@amlogic.com>
 Date:   Thu Aug 19 13:40:29 2021 +0800
@@ -196,29 +217,9 @@ Date:   Thu Aug 12 21:01:28 2021 +0800
     Change-Id: If6fe0d5eca3f0cf25ca190cf3f665dcd4f99f234
     Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
 
-commit 84e7e9842d53ed3432589b2460cbc01dbf8fcffc
-Author: Mingshan Cheng <mingshan.cheng@amlogic.com>
-Date:   Thu Aug 12 15:33:26 2021 +0800
-
-    tsplayer: CB1 setparams force manage audio-patch not work. [1/1]
-    
-    PD#SWPL-57450
-    
-    Problem:
-    setparams force manage audio-patch not working.
-    
-    Solution:
-    save the value of setparams.
-    
-    Verify:
-    Y4-androidR
-    
-    Change-Id: Ifea13927e84d375a0ad9e5a8358fdd4e76e6ead0
-    Signed-off-by: Mingshan Cheng <mingshan.cheng@amlogic.com>
-
 ========================================
 
-Release time: 2021-08-23-16-33
+Release time: 2021-08-24-13-51
 
 ========================================
 
