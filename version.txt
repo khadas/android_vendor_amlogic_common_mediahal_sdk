@@ -1,10 +1,50 @@
 =========RELEALSE NOTE=================
 
-Version: V3.2.49-Iba442-4a23ab
+Version: V3.2.51-I43d54-1b05eb
 
 ========================================
 
 Git commit:
+commit 1b05eb264a5a120c8f6af703b5fb72d38e7aab88
+Author: Kai Song <kai.song@amlogic.com>
+Date:   Wed Aug 4 16:01:30 2021 +0800
+
+    videopassthrough: CF1 Add video mediasync support with PCR Master [1/1]
+    
+    PD#SWPL-56292
+    
+    Problem:
+    There is no av sync support for tuner passthrough mode in videoTunnelRender.
+    
+    Solution:
+    Add video mediasync support with PCR Master for tuner passthrough mode.
+    
+    Verify:
+    Android-R & OHM
+    
+    Change-Id: I43d548dec4c8a522f95b435463250336efb5ac9a
+    Signed-off-by: Kai Song <kai.song@amlogic.com>
+
+commit a8f272679d755920f54ce56b15ea87fb8efc5821
+Author: yunmin.chen <yunmin.chen@amlogic.com>
+Date:   Thu Aug 19 16:37:16 2021 +0800
+
+    tsplayer: CB1 android p support framecontrol function [1/1]
+    
+    PD#SWPL-57929
+    
+    Problem:
+    android p support framecontrol function
+    
+    Solution:
+    update android-p tsplayer library to support framecontrol function.
+    
+    Verify:
+    T3
+    
+    Change-Id: Iecc3d5811a2d960d644fd69289d4c1435eed887b
+    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
+
 commit 4a23ab4d6265f58bdc64e7d6cf1e3cf733dd3a86
 Author: yunmin.chen <yunmin.chen@amlogic.com>
 Date:   Sat Aug 7 15:33:46 2021 +0800
@@ -176,50 +216,9 @@ Date:   Sat Jul 17 16:01:13 2021 +0800
     Change-Id: I2453d95ef4e90ba1a3ca888b8a7806adadae1574
     Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
 
-commit 8bd494d7d8902a5102b0e82b06504c6eb0f5020a
-Author: shuanglong.wang <shuanglong.wang@amlogic.com>
-Date:   Thu Aug 12 16:17:08 2021 +0800
-
-    mediahal: CB1 fast drop video when video underflow recovery [1/1]
-    
-    PD#SWPL-57147
-    
-    Problem:
-    VIDEO-UNDERFLOW-QUALITY-HEAAC-60-HEVC fail due to drop
-    
-    Solution:
-    1.fast drop video to catch up with audio when video underflow recovery
-    2.decrease vt binder invoke
-    
-    Verify:
-    805X2
-    
-    Change-Id: Ia11d599a961bce4da8901abdfa22e6a645a13aa1
-    Signed-off-by: shuanglong.wang <shuanglong.wang@amlogic.com>
-
-commit f3240894a0ed68e9f70061cc83aa30ff81111b85
-Author: yunmin.chen <yunmin.chen@amlogic.com>
-Date:   Thu Aug 12 21:01:28 2021 +0800
-
-    tsplayer: CB1 Switch chanel,DUT can dispaly last frame of the last show [1/1]
-    
-    PD#SWPL-57115
-    
-    Problem:
-    Switch channel, the last frame is cleared by default.
-    
-    Solution:
-    Modify the initial value.
-    
-    Verify:
-    SC2_AH212
-    
-    Change-Id: If6fe0d5eca3f0cf25ca190cf3f665dcd4f99f234
-    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
-
 ========================================
 
-Release time: 2021-08-24-13-51
+Release time: 2021-08-26-16-18
 
 ========================================
 
