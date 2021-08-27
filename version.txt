@@ -1,10 +1,30 @@
 =========RELEALSE NOTE=================
 
-Version: V3.2.51-I43d54-1b05eb
+Version: V3.2.52-I347bf-ec4ad5
 
 ========================================
 
 Git commit:
+commit ec4ad5684407462d0f5e7e22e3fa014d3fb5620f
+Author: jianchuan.ping <jianchuan.ping@amlogic.com>
+Date:   Mon Aug 16 21:07:31 2021 +0800
+
+    MediaSync: CF1 Add demux PCR check. [1/1]
+    
+    PD#SWPL-57503
+    
+    Problem:
+    PCR will not correct when signal has error
+    
+    Solution:
+    Add demux pcr check
+    
+    Verify:
+    AH212
+    
+    Change-Id: I347bfa558228cebaeb030f32fd522a7b028eba71
+    Signed-off-by: jianchuan.ping <jianchuan.ping@amlogic.com>
+
 commit 1b05eb264a5a120c8f6af703b5fb72d38e7aab88
 Author: Kai Song <kai.song@amlogic.com>
 Date:   Wed Aug 4 16:01:30 2021 +0800
@@ -196,29 +216,9 @@ Date:   Wed Aug 18 15:10:09 2021 +0800
     Change-Id: I83bc7d3e5ea475b4178a00fae475b292556e4897
     Signed-off-by: Mingshan Cheng <mingshan.cheng@amlogic.com>
 
-commit 7abdb532989d44c0e15ad7c2563b9db0bd60174d
-Author: yunmin.chen <yunmin.chen@amlogic.com>
-Date:   Sat Jul 17 16:01:13 2021 +0800
-
-    mediahal: Version management [1/1]
-    
-    PD#SWPL-48769
-    
-    Problem:
-    Modify mediahal_sdk commi information
-    
-    Solution:
-    Put the sourcecode information behind the Solution
-    
-    Verify:
-    SC2_AH212
-    
-    Change-Id: I2453d95ef4e90ba1a3ca888b8a7806adadae1574
-    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
-
 ========================================
 
-Release time: 2021-08-26-16-18
+Release time: 2021-08-27-19-40
 
 ========================================
 
