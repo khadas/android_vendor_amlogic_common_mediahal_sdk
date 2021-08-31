@@ -1,10 +1,155 @@
 =========RELEALSE NOTE=================
 
-Version: V3.2.52-I347bf-ec4ad5
+Version: V3.2.59-I2add8-18fe19
 
 ========================================
 
 Git commit:
+commit 18fe19aeb49c1205a83c75e2aec3cbeeeae50005
+Author: shuanglong.wang <shuanglong.wang@amlogic.com>
+Date:   Wed Aug 25 15:45:27 2021 +0800
+
+    mediaha: CF2 optimization mediahal trace for NTS [1/1]
+    
+    PD#SWPL-55285
+    
+    Problem:
+    optimization mediahal trace
+    
+    Solution:
+    optimization mediahal trace, fix Q compile err.
+    
+    Verify:
+    905Y4
+    
+    Change-Id: I2add8ae20ab3c185c45d3262854b13c57c59c822
+    Signed-off-by: shuanglong.wang <shuanglong.wang@amlogic.com>
+
+commit 6c382f5043d211f3a5f020ffbf7d81dc478a2929
+Author: shuanglong.wang <shuanglong.wang@amlogic.com>
+Date:   Mon Aug 30 11:19:06 2021 +0800
+
+    tunnelrender: CB1 tunnel mode reset frac when audio resume playback [2/2]
+    
+    PD#SWPL-53311
+    
+    Problem:
+    pattern not check after audio underflow recovery
+    
+    Solution:
+    tunnel mode reset frac when audio resume playback
+    
+    Verify:
+    905Y4
+    
+    Change-Id: Iac21872e7da8a6fe473f63d9571a1d168fef2ea6
+    Signed-off-by: shuanglong.wang <shuanglong.wang@amlogic.com>
+
+commit b7f70c916bfd9ec0c8cce0e94d121e5cfeca05d4
+Author: jianchuan.ping <jianchuan.ping@amlogic.com>
+Date:   Wed Aug 25 18:44:42 2021 +0800
+
+    MediaSync: CF1 Need dinamic control video latency. [1/1]
+    
+    PD#SWPL-58499
+    
+    Problem:
+    Video latency will not change by display frequency
+    
+    Solution:
+    Add dinamic fix to frequency
+    
+    Verify:
+    AH212
+    
+    Change-Id: Id07dd4df3a0af91be148da094202197b892af358
+    Signed-off-by: jianchuan.ping <jianchuan.ping@amlogic.com>
+
+commit 04625511384b49e0b47370614817665455890c41
+Author: Rui Wang <rui.wang@amlogic.com>
+Date:   Fri Aug 27 13:58:44 2021 +0800
+
+    tsplayer: CB1 Send decodec first audio under non tunnel [1/1]
+    
+    PD#SWPL-56129
+    
+    Problem:
+    No audio output in Radio program.
+    
+    Solution:
+    Add send first audio msg.
+    
+    Verify:
+    Smith
+    
+    Change-Id: I828417325def154c11ec2e0dbe60ff4e6325c826
+    Signed-off-by: Rui Wang <rui.wang@amlogic.com>
+
+commit 6bebf7a13bea028f043b79c3ab489031b59c86a0
+Author: yunmin.chen <yunmin.chen@amlogic.com>
+Date:   Fri Aug 27 20:05:36 2021 +0800
+
+    tsplayer: CB1 It is abnormal after repeated setting of PCR PID  [1/1]
+    
+    PD#SWPL-58591
+    
+    Problem:
+    Apply for one more identical PCR filter from demux.
+    
+    Solution:
+    1. Add protection can not apply for the same pcr filter.
+    2. After the audio and video exit, close the pcr filter.
+    
+    Verify:
+    T3
+    
+    Change-Id: Iff78ee737006533455a90e7ddc1f1673bee4f4c5
+    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
+
+commit d7cdaea81d06ef9e4d94e34aac4c9687bb8305c3
+Author: shipeng.sun <shipeng.sun@amlogic.com>
+Date:   Wed Aug 25 11:26:23 2021 +0800
+
+    mediahal: CF2 Improve mediahal interface [1/1]
+    
+    PD#SWPL-58434
+    
+    Problem:
+    initialize and queueInputBuffer add extend flags,
+    default setting to 0
+    
+    Solution:
+    initialize and queueInputBuffer add extend flags,
+    default setting to 0
+    
+    Verify:
+    None
+    
+    Change-Id: I94d665016eecd7cd487988a1910e23c8ca977735
+    Signed-off-by: shipeng.sun <shipeng.sun@amlogic.com>
+
+commit 0729e53a2b4ca798b5dff512ebf77a89751efb69
+Author: houren.wang <houren.wang@amlogic.com>
+Date:   Wed Aug 25 20:34:55 2021 +0800
+
+    Mediahal: MediaSync: CB1 video only source playing stuck [1/1]
+    
+    PD#SWPL-57631
+    
+    Problem:
+    the second video frame comes later 300ms than first video frame,
+    ref clock is started when first frame came, so second frame will be
+    dropped.
+    
+    Solution:
+    in video only case, reset ref clock if video comes late.
+    
+    Verify:
+    AH212
+    
+    Change-Id: Ic29b55af254adf6213548d57234681bb8e2d4365
+    Signed-off-by: houren.wang <houren.wang@amlogic.com>
+
 commit ec4ad5684407462d0f5e7e22e3fa014d3fb5620f
 Author: jianchuan.ping <jianchuan.ping@amlogic.com>
 Date:   Mon Aug 16 21:07:31 2021 +0800
@@ -65,160 +210,9 @@ Date:   Thu Aug 19 16:37:16 2021 +0800
     Change-Id: Iecc3d5811a2d960d644fd69289d4c1435eed887b
     Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
 
-commit 4a23ab4d6265f58bdc64e7d6cf1e3cf733dd3a86
-Author: yunmin.chen <yunmin.chen@amlogic.com>
-Date:   Sat Aug 7 15:33:46 2021 +0800
-
-    TsPlayer: CB1 Control the speed of writing data. [1/1]
-    
-    PD#SWPL-55335
-    
-    Problem:
-    After pts discontinue, more data will be written.
-    
-    Solution:
-    After pts discontinue,
-    the video caching time must be calculated correctly.
-    
-    Verify:
-    AH212
-    
-    Change-Id: Iba4424d8160afb8c91308d1865a952a8f2e3342c
-    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
-
-commit 5d38efc57dc3355895c1bbdc457dea4659b31efd
-Author: shuanglong.wang <shuanglong.wang@amlogic.com>
-Date:   Thu Aug 19 13:40:29 2021 +0800
-
-    mediahal: CB1 update hwcsync info when video underflow recovery [1/1]
-    
-    PD#SWPL-57147
-    
-    Problem:
-    first seveval(less than 10) frame not get accurate
-    realtime when video underflow recovery
-    
-    Solution:
-    update hwcsync info when video underflow recovery,also mediasync
-    updateAnchor debug info with vendor.mediasync.debug.level
-    
-    Verify:
-    805X2
-    
-    Change-Id: Ia98ebf6db6c163d914807ad6c9eb55b925ae8be7
-    Signed-off-by: shuanglong.wang <shuanglong.wang@amlogic.com>
-
-commit 911788c6ecb57617dbb3e90a0a06ca0909be748f
-Author: jianchuan.ping <jianchuan.ping@amlogic.com>
-Date:   Mon Aug 16 18:17:14 2021 +0800
-
-    MediaSync: CF1 No need control sync before alsa ready. [1/1]
-    
-    PD#SWPL-56428
-    
-    Problem:
-    Audio start change clock when audio start
-    
-    Solution:
-    Start sync control after alsa ready
-    
-    Verify:
-    AH212
-    
-    Change-Id: Icf1eab6fcbc089d0b8098b6b648792186da71569
-    Signed-off-by: jianchuan.ping <jianchuan.ping@amlogic.com>
-
-commit 289b7f5c17954c3a8f52ac40ff10c7b8e852cf67
-Author: jianchuan.ping <jianchuan.ping@amlogic.com>
-Date:   Fri Aug 20 19:51:43 2021 +0800
-
-    MediaSync: CB1 Start play will have no audio. [1/1]
-    
-    PD#SWPL-54486
-    
-    Problem:
-    PCR start before audio arrive.
-    
-    Solution:
-    Fix have audio state not update
-    
-    Verify:
-    AH212
-    
-    Change-Id: Iebc750d6b12811853f34e61c40633b35e52b4cb2
-    Signed-off-by: jianchuan.ping <jianchuan.ping@amlogic.com>
-
-commit 8bbab04518b5351e45e970ac0bd7cdf8c053ea8c
-Author: chen.chen1 <chen.chen1@amlogic.com>
-Date:   Sat Aug 14 18:55:43 2021 +0800
-
-    Mediasync: AV sync effect get worse when framecontrol func working. [1/1]
-    
-    PD#SWPL-57852
-    
-    Problem:
-    1. AV sync effect get worse when framecontrol func working;
-    2. pure video stream cannot play;
-    3. pure audio stream pvr stuck;
-    
-    Solution:
-    1. pass timeunit us instead of ns to display;
-    2. mediasync add check pure video check mechanism;
-    3. modify refclockinit logic for pure audio stream;
-    4. add Audio Latency func;
-    5. add dolby audioclock adjust interval to 1s;
-    
-    Verify:
-    verified on S905X4-AH212
-    
-    Change-Id: I4c46242be3b0644cd00a0f817d4eedbba673d11b
-    Signed-off-by: chen.chen1 <chen.chen1@amlogic.com>
-
-commit 3b7ea73f4579b91b1e9fff168455340dc9d123a0
-Author: joy.rao <joy.rao@amlogic.com>
-Date:   Mon Aug 16 13:10:11 2021 +0800
-
-    TsPlayer: CF2 use AmTsPlayer_setParams to setup secure level. [1/1]
-    
-    PD#RSP-2229
-    
-    Problem:
-    now video and audio used different api to setup secure level
-    
-    Solution:
-    use AmTsPlayer_setParams to setup audio secure level
-    
-    Verify:
-    AH212
-    
-    Change-Id: I2ff9d346a206c789cf9647323f5c077b2101ccd0
-    Signed-off-by: joy.rao <joy.rao@amlogic.com>
-
-commit 7d76c9f25c6532c0efe833868302cc16f4496d4c
-Author: Mingshan Cheng <mingshan.cheng@amlogic.com>
-Date:   Wed Aug 18 15:10:09 2021 +0800
-
-    tsplayer: CB1 audio-patch will create twice when pvr seeking. [1/1]
-    
-    PD#SWPL-57713
-    
-    Problem:
-    1. audio-patch will create twice when pvr seeking.
-    2. getdelaytime will crash if is esmode.
-    
-    Solution:
-    1. do not clear the audioPatchManageMode when close decoder.
-    2. getdelaytime just return if is esmode.
-    
-    Verify:
-    SC2-androidR
-    
-    Change-Id: I83bc7d3e5ea475b4178a00fae475b292556e4897
-    Signed-off-by: Mingshan Cheng <mingshan.cheng@amlogic.com>
-
 ========================================
 
-Release time: 2021-08-27-19-40
+Release time: 2021-08-31-15-01
 
 ========================================
 
