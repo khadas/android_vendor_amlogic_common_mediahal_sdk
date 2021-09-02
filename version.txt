@@ -1,10 +1,53 @@
 =========RELEALSE NOTE=================
 
-Version: V3.2.59-I2add8-18fe19
+Version: V3.2.61-I033d3-2a1373
 
 ========================================
 
 Git commit:
+commit 2a1373d6fa54fe237dea413415108fbfbe9876bd
+Author: chen.chen1 <chen.chen1@amlogic.com>
+Date:   Wed Sep 1 21:05:30 2021 +0800
+
+    MediaSync: CF2 reduce some logs. [1/1]
+    
+    PD#SWPL-58019
+    
+    Problem:
+    log is too much.
+    
+    Solution:
+    reduce some logs.
+    
+    Verify:
+    verified on S905X4-AH212
+    
+    Change-Id: I033d384f236245c795b2f504d503c48c8bd6b2a5
+    Signed-off-by: chen.chen1 <chen.chen1@amlogic.com>
+
+commit 1a2c6032774cac14ccca1e6996a3918e36496fb7
+Author: chen.chen1 <chen.chen1@amlogic.com>
+Date:   Sat Aug 21 23:46:46 2021 +0800
+
+    MediaSync: CB1 some dolby streams always drop frames. [1/2]
+    
+    PD#SWPL-57519
+    
+    Problem:
+    some dolby streams always drop frames.
+    
+    Solution:
+    1.enlarge cache for these streams.
+    2.add Audio Latency func.
+    3.optimize demuxpcr invalid check.
+    4.not print log default.
+    
+    Verify:
+    verified on S905X4-AH212
+    
+    Change-Id: I6f44a282ffd9958e2e23cb69157f0a3fce43b034
+    Signed-off-by: chen.chen1 <chen.chen1@amlogic.com>
+
 commit 18fe19aeb49c1205a83c75e2aec3cbeeeae50005
 Author: shuanglong.wang <shuanglong.wang@amlogic.com>
 Date:   Wed Aug 25 15:45:27 2021 +0800
@@ -170,49 +213,9 @@ Date:   Mon Aug 16 21:07:31 2021 +0800
     Change-Id: I347bfa558228cebaeb030f32fd522a7b028eba71
     Signed-off-by: jianchuan.ping <jianchuan.ping@amlogic.com>
 
-commit 1b05eb264a5a120c8f6af703b5fb72d38e7aab88
-Author: Kai Song <kai.song@amlogic.com>
-Date:   Wed Aug 4 16:01:30 2021 +0800
-
-    videopassthrough: CF1 Add video mediasync support with PCR Master [1/1]
-    
-    PD#SWPL-56292
-    
-    Problem:
-    There is no av sync support for tuner passthrough mode in videoTunnelRender.
-    
-    Solution:
-    Add video mediasync support with PCR Master for tuner passthrough mode.
-    
-    Verify:
-    Android-R & OHM
-    
-    Change-Id: I43d548dec4c8a522f95b435463250336efb5ac9a
-    Signed-off-by: Kai Song <kai.song@amlogic.com>
-
-commit a8f272679d755920f54ce56b15ea87fb8efc5821
-Author: yunmin.chen <yunmin.chen@amlogic.com>
-Date:   Thu Aug 19 16:37:16 2021 +0800
-
-    tsplayer: CB1 android p support framecontrol function [1/1]
-    
-    PD#SWPL-57929
-    
-    Problem:
-    android p support framecontrol function
-    
-    Solution:
-    update android-p tsplayer library to support framecontrol function.
-    
-    Verify:
-    T3
-    
-    Change-Id: Iecc3d5811a2d960d644fd69289d4c1435eed887b
-    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
-
 ========================================
 
-Release time: 2021-08-31-15-01
+Release time: 2021-09-02-11-18
 
 ========================================
 
