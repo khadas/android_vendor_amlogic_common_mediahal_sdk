@@ -1,10 +1,32 @@
 =========RELEALSE NOTE=================
 
-Version: V3.2.61-I033d3-2a1373
+Version: V3.2.62-I356cb-236dff
 
 ========================================
 
 Git commit:
+commit 236dff9c683f9061fec07aec593e6aeed79a9653
+Author: Kai Song <kai.song@amlogic.com>
+Date:   Mon Aug 30 17:34:21 2021 +0800
+
+    videopassthrough: CB1 Google CBS play black screen [3/3]
+    
+    PD#SWPL-58870
+    
+    Problem:
+    1.Need register mNodifyRenderTime callback for CBS application
+    2.Need add prop to enable/disable flow control for tuner passthrough
+    
+    Solution:
+    1.Register mNodifyRenderTime callback
+    2.Add prop to enable/disable flow control
+    
+    Verify:
+    Android-R & OHM
+    
+    Change-Id: I356cbe193513eb0498ec907d3bef3767bb6d5ccb
+    Signed-off-by: Kai Song <kai.song@amlogic.com>
+
 commit 2a1373d6fa54fe237dea413415108fbfbe9876bd
 Author: chen.chen1 <chen.chen1@amlogic.com>
 Date:   Wed Sep 1 21:05:30 2021 +0800
@@ -193,29 +215,9 @@ Date:   Wed Aug 25 20:34:55 2021 +0800
     Change-Id: Ic29b55af254adf6213548d57234681bb8e2d4365
     Signed-off-by: houren.wang <houren.wang@amlogic.com>
 
-commit ec4ad5684407462d0f5e7e22e3fa014d3fb5620f
-Author: jianchuan.ping <jianchuan.ping@amlogic.com>
-Date:   Mon Aug 16 21:07:31 2021 +0800
-
-    MediaSync: CF1 Add demux PCR check. [1/1]
-    
-    PD#SWPL-57503
-    
-    Problem:
-    PCR will not correct when signal has error
-    
-    Solution:
-    Add demux pcr check
-    
-    Verify:
-    AH212
-    
-    Change-Id: I347bfa558228cebaeb030f32fd522a7b028eba71
-    Signed-off-by: jianchuan.ping <jianchuan.ping@amlogic.com>
-
 ========================================
 
-Release time: 2021-09-02-11-18
+Release time: 2021-09-03-14-22
 
 ========================================
 
