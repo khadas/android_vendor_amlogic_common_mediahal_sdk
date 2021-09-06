@@ -1,10 +1,33 @@
 =========RELEALSE NOTE=================
 
-Version: V3.2.62-I356cb-236dff
+Version: V3.2.63-I192e8-f2c6f3
 
 ========================================
 
 Git commit:
+commit f2c6f354b2cebf64bc3c349451dde8dbdd1146fa
+Author: yunmin.chen <yunmin.chen@amlogic.com>
+Date:   Fri Aug 27 17:11:58 2021 +0800
+
+    tsplayer: CB1 Memory leak [1/1]
+    
+    PD#SWPL-57961
+    
+    Problem:
+    1.Memory leak
+    2.Optimize log printing
+    
+    Solution:
+    1.If there is no surface setting,
+    do not queueVideoFrame to mediasync.
+    2.Optimize log printing
+    
+    Verify:
+    AH212
+    
+    Change-Id: I192e83d7e263e2e082e64044e672d983012121d4
+    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
+
 commit 236dff9c683f9061fec07aec593e6aeed79a9653
 Author: Kai Song <kai.song@amlogic.com>
 Date:   Mon Aug 30 17:34:21 2021 +0800
@@ -193,31 +216,9 @@ Date:   Wed Aug 25 11:26:23 2021 +0800
     Change-Id: I94d665016eecd7cd487988a1910e23c8ca977735
     Signed-off-by: shipeng.sun <shipeng.sun@amlogic.com>
 
-commit 0729e53a2b4ca798b5dff512ebf77a89751efb69
-Author: houren.wang <houren.wang@amlogic.com>
-Date:   Wed Aug 25 20:34:55 2021 +0800
-
-    Mediahal: MediaSync: CB1 video only source playing stuck [1/1]
-    
-    PD#SWPL-57631
-    
-    Problem:
-    the second video frame comes later 300ms than first video frame,
-    ref clock is started when first frame came, so second frame will be
-    dropped.
-    
-    Solution:
-    in video only case, reset ref clock if video comes late.
-    
-    Verify:
-    AH212
-    
-    Change-Id: Ic29b55af254adf6213548d57234681bb8e2d4365
-    Signed-off-by: houren.wang <houren.wang@amlogic.com>
-
 ========================================
 
-Release time: 2021-09-03-14-22
+Release time: 2021-09-06-20-36
 
 ========================================
 
