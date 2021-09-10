@@ -12,7 +12,8 @@ typedef enum {
 typedef enum {
     MEDIA_VIDEO = 0,
     MEDIA_AUDIO = 1,
-    MEDIA_OTHER = 2,
+    MEDIA_DMXPCR = 2,
+    MEDIA_OTHER = 3,
     MEDIA_TYPE_MAX = 255,
 }sync_stream_type;
 
@@ -49,6 +50,7 @@ typedef enum {
     MEDIASYNC_KEY_SOURCETYPE,
     MEDIASYNC_KEY_ALSAREADY,
     MEDIASYNC_KEY_VSYNC_INTERVAL_MS,
+    MEDIASYNC_KEY_VIDEOFRAME,
     MEDIASYNC_KEY_MAX = 255,
 } mediasync_parameter;
 
@@ -91,8 +93,8 @@ struct mediasync_video_policy {
     int32_t  param2;
 };
 
-struct mediasync_audio_format{
-    float samplerate;
+struct mediasync_audio_format {
+    int samplerate;
     int datawidth;
     int channels;
     int format;
@@ -150,6 +152,5 @@ extern mediasync_result MediaSync_VideoProcess(void* handle, int64_t vpts, int64
 
 extern mediasync_result MediaSync_reset(void* handle);
 extern void MediaSync_destroy(void* handle);
-
 
 #endif  // MEDIA_CLOCK_H_
