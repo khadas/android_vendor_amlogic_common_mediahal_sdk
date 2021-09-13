@@ -1,10 +1,30 @@
 =========RELEALSE NOTE=================
 
-Version: V3.2.70-I655a9-7f8e7e
+Version: V3.2.71-Ifc92c-b8d0f3
 
 ========================================
 
 Git commit:
+commit b8d0f35efca709b2283a02727ce900d4557d507c
+Author: jianchuan.ping <jianchuan.ping@amlogic.com>
+Date:   Mon Sep 6 20:00:05 2021 +0800
+
+    MediaSync: Not to normalize pts and pcr to 33bit. [1/1]
+    
+    PD#SWPL-57615
+    
+    Problem:
+    PCR and pts not correct when 33bit change
+    
+    Solution:
+    Not normalize ptc and pcr
+    
+    Verify:
+    AH212
+    
+    Change-Id: Ifc92c6218b6a03d5fcb45c282124eba69469d770
+    Signed-off-by: jianchuan.ping <jianchuan.ping@amlogic.com>
+
 commit 7f8e7e72ac2f78a60cb31569ec499dae15a937fb
 Author: chen.chen1 <chen.chen1@amlogic.com>
 Date:   Fri Sep 10 11:57:02 2021 +0800
@@ -196,29 +216,9 @@ Date:   Mon Aug 30 17:34:21 2021 +0800
     Change-Id: I356cbe193513eb0498ec907d3bef3767bb6d5ccb
     Signed-off-by: Kai Song <kai.song@amlogic.com>
 
-commit 2a1373d6fa54fe237dea413415108fbfbe9876bd
-Author: chen.chen1 <chen.chen1@amlogic.com>
-Date:   Wed Sep 1 21:05:30 2021 +0800
-
-    MediaSync: CF2 reduce some logs. [1/1]
-    
-    PD#SWPL-58019
-    
-    Problem:
-    log is too much.
-    
-    Solution:
-    reduce some logs.
-    
-    Verify:
-    verified on S905X4-AH212
-    
-    Change-Id: I033d384f236245c795b2f504d503c48c8bd6b2a5
-    Signed-off-by: chen.chen1 <chen.chen1@amlogic.com>
-
 ========================================
 
-Release time: 2021-09-10-20-40
+Release time: 2021-09-13-15-08
 
 ========================================
 
