@@ -100,6 +100,8 @@ struct mediasync_audio_format {
     int format;
 };
 
+
+
 typedef struct audioinfo{
     int cacheSize;
     int cacheDuration;
@@ -152,5 +154,6 @@ extern mediasync_result MediaSync_VideoProcess(void* handle, int64_t vpts, int64
 
 extern mediasync_result MediaSync_reset(void* handle);
 extern void MediaSync_destroy(void* handle);
+
 
 #endif  // MEDIA_CLOCK_H_
