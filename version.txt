@@ -1,10 +1,131 @@
 =========RELEALSE NOTE=================
 
-Version: V3.2.71-Ifc92c-b8d0f3
+Version: V3.2.77-g73eed43
 
 ========================================
 
 Git commit:
+commit 73eed43cd9177fce768c56e58603a84876fe845d
+Author: chen.chen1 <chen.chen1@amlogic.com>
+Date:   Tue Sep 14 22:33:45 2021 +0800
+
+    mediasync: CF2 consider cache when start play. [1/1]
+    
+    PD#SWPL-59743
+    
+    Problem:
+    consider cache when start play
+    
+    Solution:
+    consider cache when start play
+    
+    Verify:
+    verified on S905X4-AH212
+    
+    Change-Id: I9f0cd270d6dd4ab1a2b8e7acd376e67d730ae6a0
+    Signed-off-by: Chen Chen <chen.chen1@amlogic.com>
+
+commit 00cbd746fadc25a48a5ccd36badce0b3a1cf0cfe
+Author: yunmin.chen <yunmin.chen@amlogic.com>
+Date:   Wed Sep 15 16:26:19 2021 +0800
+
+    mediahal: CF1 Version management [1/1]
+    
+    PD#SWPL-48769
+    
+    Problem:
+    update Version management
+    
+    Solution:
+    update Version management
+    
+    Verify:
+    SC2_AH212
+    
+    Change-Id: I3c1efe96d2e623b1f028742a80caf2ba9fb272c4
+    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
+
+commit d2c2e95e362088bdc4a5fe6ff638b2eb67cb4c8b
+Author: joy.rao <joy.rao@amlogic.com>
+Date:   Mon Sep 13 18:33:28 2021 +0800
+
+    Tsplayer: query free buffer capacity for playback [1/1]
+    
+    PD#SWPL-58705
+    
+    Problem:
+    not enough buffer for playback
+    
+    Solution:
+    query free buffer capacity before playback for P
+    
+    Verify:
+    T3
+    
+    Change-Id: I2c0b20d88b621138eee3611e35adb58f0102b383
+    Signed-off-by: joy.rao <joy.rao@amlogic.com>
+
+commit e6f5b73c496959ab7d76faeee5cc465928bd93df
+Author: yunmin.chen <yunmin.chen@amlogic.com>
+Date:   Tue Aug 31 21:10:13 2021 +0800
+
+    mediahal: CF1 Version management [1/1]
+    
+    PD#SWPL-48769
+    
+    Problem:
+    update Version management
+    
+    Solution:
+    update Version management
+    
+    Verify:
+    SC2_AH212
+    
+    Change-Id: Id65ed198797ee8ca15fa55ded60b4d0b692de367
+    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
+
+commit 193fb0ef6be056506fcbcc91dd142e0847a33b4b
+Author: shipeng.sun <shipeng.sun@amlogic.com>
+Date:   Thu Sep 9 20:28:02 2021 +0800
+
+    videodec: CF1 integrate codec2 for media_hal videodec [1/1]
+    
+    PD#SWPL-52265
+    
+    Problem:
+    integrate codec2 for media_hal videodec
+    
+    Solution:
+    1 integrate codec2 for media_hal
+    2 use vdec as the secmem pool
+    
+    Verify:
+    ohm
+    
+    Change-Id: Ia92cc59b44dd3c0b6a567734f0e15728984bdaf0
+    Signed-off-by: shipeng.sun <shipeng.sun@amlogic.com>
+
+commit abc2884656dacc3bc699c7da60581bc12c1ac89d
+Author: yongchen li <yongchen.li@amlogic.com>
+Date:   Mon Sep 6 14:32:28 2021 +0800
+
+    tsplayer: CF2 TsPlayer support avs2 video type. [1/2]
+    
+    PD#TV-38846
+    
+    Problem:
+    TsPlayer not support avs2 video type.
+    
+    Solution:
+    TsPlayer support avs2 video type.
+    
+    Verify:
+    smith
+    
+    Change-Id: I014608c65364a1ec96978555849116bbdf8a6237
+    Signed-off-by: yongchen li <yongchen.li@amlogic.com>
+
 commit b8d0f35efca709b2283a02727ce900d4557d507c
 Author: jianchuan.ping <jianchuan.ping@amlogic.com>
 Date:   Mon Sep 6 20:00:05 2021 +0800
@@ -88,137 +209,9 @@ Date:   Thu Aug 26 20:36:38 2021 +0800
     Change-Id: I9bb050e0c5661fac378cad3aa59f650fcece78c5
     Signed-off-by: shengxiang.lan <shengxiang.lan@amlogic.com>
 
-commit e88eaed67aa71538646bb38ab00858e985aea700
-Author: chen.chen1 <chen.chen1@amlogic.com>
-Date:   Sat Sep 4 19:59:53 2021 +0800
-
-    Mediasync: CB1 video process optimize for dolby test. [1/3]
-    
-    PD#SWPL-58745
-    
-    Problem:
-    av latency is not well.
-    
-    Solution:
-    1.video process optimize for dolby test.
-    2.optimize demux pcr invalid check.
-    3.optimize discontinue handle.
-    
-    Verify:
-    verified on S905X4-AH212
-    
-    Change-Id: Id0dccce4d9e711dafb7e432810145060cb34ec2b
-    Signed-off-by: Chen Chen <chen.chen1@amlogic.com>
-
-commit 317e82ae9fadec83568d93cf1fef9b72381d37db
-Author: joy.rao <joy.rao@amlogic.com>
-Date:   Tue Aug 24 18:43:44 2021 +0800
-
-    tsplayer: CF2 add resman TsPlayer on androidR. [1/1]
-    
-    PD#SWPL-57101
-    
-    Problem:
-    need resman for TsPlayer on androidR
-    
-    Solution:
-    add resman for TsPlayer
-    
-    Verify:
-    T905D4
-    
-    Change-Id: I05d14aea0ee88bca269cd495b756d66836fbac06
-    Signed-off-by: joy.rao <joy.rao@amlogic.com>
-
-commit cd4b2cf693535a3de28b6f0f13ccd8e94d100a7c
-Author: Jian Wang <jian.wang@amlogic.com>
-Date:   Fri Jul 30 20:06:28 2021 +0800
-
-    Mediahal: CF0 modify for support Codec2.0 of android s [1/1]
-    
-    PD#SWPL-52262
-    
-    Problem:
-    Codec2.0 support for Android s
-    
-    Solution:
-    1. Add support av1 dv mpeg2 mjpeg
-    2. Add support av1 header
-    
-    Verify:
-    verify by ohm.
-    
-    Change-Id: I6dcaf2013f70a4a3b580329dec05935892023aaf
-    Signed-off-by: Jian Wang <jian.wang@amlogic.com>
-
-commit a1aa906cedaf7be2031d8f6f5f45ce10a93e9790
-Author: yunmin.chen <yunmin.chen@amlogic.com>
-Date:   Fri Apr 23 15:05:10 2021 +0800
-
-    tsplayer: CB1 Modification of audio and video synchronization. [1/1]
-    
-    PD#OTT-18026
-    
-    Problem:
-    audio and video synchronization index is less than ±20ms
-    
-    Solution:
-    Add the audiodelay parameter.
-    
-    Verify:
-    SC2_AH212
-    
-    Change-Id: I7cbcc82346f72b6e5d9538ca15f14810f174f868
-    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
-
-commit f2c6f354b2cebf64bc3c349451dde8dbdd1146fa
-Author: yunmin.chen <yunmin.chen@amlogic.com>
-Date:   Fri Aug 27 17:11:58 2021 +0800
-
-    tsplayer: CB1 Memory leak [1/1]
-    
-    PD#SWPL-57961
-    
-    Problem:
-    1.Memory leak
-    2.Optimize log printing
-    
-    Solution:
-    1.If there is no surface setting,
-    do not queueVideoFrame to mediasync.
-    2.Optimize log printing
-    
-    Verify:
-    AH212
-    
-    Change-Id: I192e83d7e263e2e082e64044e672d983012121d4
-    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
-
-commit 236dff9c683f9061fec07aec593e6aeed79a9653
-Author: Kai Song <kai.song@amlogic.com>
-Date:   Mon Aug 30 17:34:21 2021 +0800
-
-    videopassthrough: CB1 Google CBS play black screen [3/3]
-    
-    PD#SWPL-58870
-    
-    Problem:
-    1.Need register mNodifyRenderTime callback for CBS application
-    2.Need add prop to enable/disable flow control for tuner passthrough
-    
-    Solution:
-    1.Register mNodifyRenderTime callback
-    2.Add prop to enable/disable flow control
-    
-    Verify:
-    Android-R & OHM
-    
-    Change-Id: I356cbe193513eb0498ec907d3bef3767bb6d5ccb
-    Signed-off-by: Kai Song <kai.song@amlogic.com>
-
 ========================================
 
-Release time: 2021-09-13-15-08
+Release time: 2021-09-15-20-57
 
 ========================================
 
