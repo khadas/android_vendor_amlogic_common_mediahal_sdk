@@ -1,10 +1,55 @@
 =========RELEALSE NOTE=================
 
-Version: V3.2.80-g106b9ce
+Version: V3.2.82-g6185a33
 
 ========================================
 
 Git commit:
+commit 6185a338591ae990e9e6fd52c4cb2feb28388ea9
+Author: Jian Wang <jian.wang@amlogic.com>
+Date:   Sat Sep 18 15:13:38 2021 +0800
+
+    videodec: CF1 Modify for codec2 cts DecoderTest  [2/2]
+    
+    PD#SWPL-59697
+    
+    Problem:
+    1. Codec2 stop and flush all use reset, and when
+    reset mediahal will wait sent output buf or wait
+    resolution change, but stop do not need, it will
+    duo to codec2 can not exit sometimes.
+    2. Mpeg4 do not add csd after flush
+    
+    Solution:
+    1. Add flag to reset, and stop use nowait flag
+    2. Add mpeg2/mpeg4/mjepg to need csd
+    
+    Verify:
+    ohm
+    
+    Change-Id: Ife7244538837138d711b95949e0f3eadc05b2c79
+    Signed-off-by: Jian Wang <jian.wang@amlogic.com>
+
+commit f564c4362e26e5f7ef2bffc75040b7175c01d0a6
+Author: jianchuan.ping <jianchuan.ping@amlogic.com>
+Date:   Fri Sep 10 10:56:24 2021 +0800
+
+    Media_sync: CF1 Control video cache with audio pts. [1/1]
+    
+    PD#SWPL-58081
+    
+    Problem:
+    Audio change pcr lead to video carton.
+    
+    Solution:
+    Use audio cache control video cache, prevent change pcr
+    
+    Verify:
+    AH212
+    
+    Change-Id: Iad7b200f139025f7cbcf5d13b58f827a9a90e3f1
+    Signed-off-by: jianchuan.ping <jianchuan.ping@amlogic.com>
+
 commit 106b9ce1866e472f49e4e3a5db1456ad683da8c3
 Author: chen.chen1 <chen.chen1@amlogic.com>
 Date:   Fri Sep 17 17:13:57 2021 +0800
@@ -171,49 +216,9 @@ Date:   Thu Sep 9 20:28:02 2021 +0800
     Change-Id: Ia92cc59b44dd3c0b6a567734f0e15728984bdaf0
     Signed-off-by: shipeng.sun <shipeng.sun@amlogic.com>
 
-commit abc2884656dacc3bc699c7da60581bc12c1ac89d
-Author: yongchen li <yongchen.li@amlogic.com>
-Date:   Mon Sep 6 14:32:28 2021 +0800
-
-    tsplayer: CF2 TsPlayer support avs2 video type. [1/2]
-    
-    PD#TV-38846
-    
-    Problem:
-    TsPlayer not support avs2 video type.
-    
-    Solution:
-    TsPlayer support avs2 video type.
-    
-    Verify:
-    smith
-    
-    Change-Id: I014608c65364a1ec96978555849116bbdf8a6237
-    Signed-off-by: yongchen li <yongchen.li@amlogic.com>
-
-commit b8d0f35efca709b2283a02727ce900d4557d507c
-Author: jianchuan.ping <jianchuan.ping@amlogic.com>
-Date:   Mon Sep 6 20:00:05 2021 +0800
-
-    MediaSync: Not to normalize pts and pcr to 33bit. [1/1]
-    
-    PD#SWPL-57615
-    
-    Problem:
-    PCR and pts not correct when 33bit change
-    
-    Solution:
-    Not normalize ptc and pcr
-    
-    Verify:
-    AH212
-    
-    Change-Id: Ifc92c6218b6a03d5fcb45c282124eba69469d770
-    Signed-off-by: jianchuan.ping <jianchuan.ping@amlogic.com>
-
 ========================================
 
-Release time: 2021-09-22-13-30
+Release time: 2021-09-22-20-17
 
 ========================================
 
