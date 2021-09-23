@@ -1,10 +1,30 @@
 =========RELEALSE NOTE=================
 
-Version: V3.2.82-g6185a33
+Version: V3.2.83-gfb827b0
 
 ========================================
 
 Git commit:
+commit fb827b0cf86434b1c68398733d88fb3e8fe66fc4
+Author: chen.chen1 <chen.chen1@amlogic.com>
+Date:   Thu Sep 23 11:25:01 2021 +0800
+
+    mediasync: CB2 no need to use mAudioFramelistMutex. [2/2]
+    
+    PD#SWPL-59850
+    
+    Problem:
+    mediasync will crash when switch channel stress test.
+    
+    Solution:
+    mAudioFramelistMutex move to audiohal.
+    
+    Verify:
+    verified on S905X4-AH212
+    
+    Change-Id: If39dedd47d2fbc1d2281d2ebd34851d5477ea220
+    Signed-off-by: Chen Chen <chen.chen1@amlogic.com>
+
 commit 6185a338591ae990e9e6fd52c4cb2feb28388ea9
 Author: Jian Wang <jian.wang@amlogic.com>
 Date:   Sat Sep 18 15:13:38 2021 +0800
@@ -195,30 +215,9 @@ Date:   Tue Aug 31 21:10:13 2021 +0800
     Change-Id: Id65ed198797ee8ca15fa55ded60b4d0b692de367
     Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
 
-commit 193fb0ef6be056506fcbcc91dd142e0847a33b4b
-Author: shipeng.sun <shipeng.sun@amlogic.com>
-Date:   Thu Sep 9 20:28:02 2021 +0800
-
-    videodec: CF1 integrate codec2 for media_hal videodec [1/1]
-    
-    PD#SWPL-52265
-    
-    Problem:
-    integrate codec2 for media_hal videodec
-    
-    Solution:
-    1 integrate codec2 for media_hal
-    2 use vdec as the secmem pool
-    
-    Verify:
-    ohm
-    
-    Change-Id: Ia92cc59b44dd3c0b6a567734f0e15728984bdaf0
-    Signed-off-by: shipeng.sun <shipeng.sun@amlogic.com>
-
 ========================================
 
-Release time: 2021-09-22-20-17
+Release time: 2021-09-23-13-58
 
 ========================================
 
