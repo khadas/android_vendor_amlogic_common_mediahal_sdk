@@ -1,10 +1,50 @@
 =========RELEALSE NOTE=================
 
-Version: V3.2.83-gfb827b0
+Version: V3.2.85-g7a096b3
 
 ========================================
 
 Git commit:
+commit 7a096b32cbb7216bb1a8a31d3cb2ee345666d7e1
+Author: yunmin.chen <yunmin.chen@amlogic.com>
+Date:   Mon Aug 23 14:47:09 2021 +0800
+
+    tsplayer: CF1 update AmTsPlayerExample [1/1]
+    
+    PD#SWPL-44837
+    
+    Problem:
+    update AmTsPlayerExample
+    
+    Solution:
+    update AmTsPlayerExample
+    
+    Verify:
+    SC2_AH212
+    
+    Change-Id: I53f996812791591d83ac37b86d506502b36b7b32
+    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
+
+commit 1733e0d1b951104603a618349b539d4b03825bf4
+Author: shengxiang.lan <shengxiang.lan@amlogic.com>
+Date:   Wed Sep 22 17:41:30 2021 +0800
+
+    TsPlayer: CB1 unify GetPts interface as 90k. [1/1]
+    
+    PD#OTT-23690
+    
+    Problem:
+    The returned value of GetPts interface was changed.
+    
+    Solution:
+    Unify GetPts interface as 90k.
+    
+    Verify:
+    SC2
+    
+    Change-Id: Ic8ea62475ba18d227fcc6570a20c6161c85258a9
+    Signed-off-by: shengxiang.lan <shengxiang.lan@amlogic.com>
+
 commit fb827b0cf86434b1c68398733d88fb3e8fe66fc4
 Author: chen.chen1 <chen.chen1@amlogic.com>
 Date:   Thu Sep 23 11:25:01 2021 +0800
@@ -175,49 +215,9 @@ Date:   Wed Sep 15 16:26:19 2021 +0800
     Change-Id: I3c1efe96d2e623b1f028742a80caf2ba9fb272c4
     Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
 
-commit d2c2e95e362088bdc4a5fe6ff638b2eb67cb4c8b
-Author: joy.rao <joy.rao@amlogic.com>
-Date:   Mon Sep 13 18:33:28 2021 +0800
-
-    Tsplayer: query free buffer capacity for playback [1/1]
-    
-    PD#SWPL-58705
-    
-    Problem:
-    not enough buffer for playback
-    
-    Solution:
-    query free buffer capacity before playback for P
-    
-    Verify:
-    T3
-    
-    Change-Id: I2c0b20d88b621138eee3611e35adb58f0102b383
-    Signed-off-by: joy.rao <joy.rao@amlogic.com>
-
-commit e6f5b73c496959ab7d76faeee5cc465928bd93df
-Author: yunmin.chen <yunmin.chen@amlogic.com>
-Date:   Tue Aug 31 21:10:13 2021 +0800
-
-    mediahal: CF1 Version management [1/1]
-    
-    PD#SWPL-48769
-    
-    Problem:
-    update Version management
-    
-    Solution:
-    update Version management
-    
-    Verify:
-    SC2_AH212
-    
-    Change-Id: Id65ed198797ee8ca15fa55ded60b4d0b692de367
-    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
-
 ========================================
 
-Release time: 2021-09-23-13-58
+Release time: 2021-09-24-14-29
 
 ========================================
 
