@@ -1,10 +1,32 @@
 =========RELEALSE NOTE=================
 
-Version: V3.2.85-g7a096b3
+Version: V3.2.86-g693d6c8
 
 ========================================
 
 Git commit:
+commit 693d6c8311ec06601ce2f1e37b53ea366fc4ae41
+Author: peter wang <peter.wang@amlogic.com>
+Date:   Thu Sep 23 22:04:47 2021 +0800
+
+    MediaHal: CF1 implement android S video peek [1/2]
+    
+    PD#SWPL-48015
+    
+    Problem:
+    android S add video peek function and cts test cases bellow
+    android.media.cts.DecoderTest#testTunneledVideoPeekDefault
+    android.media.cts.DecoderTest#testTunneledVideoPeekOff
+    
+    Solution:
+    implement Android S video peek function
+    
+    Verify:
+    test on ohm
+    
+    Change-Id: I3360ebf639b9de0426f4e3446013b58dcb5933f9
+    Signed-off-by: peter wang <peter.wang@amlogic.com>
+
 commit 7a096b32cbb7216bb1a8a31d3cb2ee345666d7e1
 Author: yunmin.chen <yunmin.chen@amlogic.com>
 Date:   Mon Aug 23 14:47:09 2021 +0800
@@ -195,29 +217,9 @@ Date:   Tue Sep 14 22:33:45 2021 +0800
     Change-Id: I9f0cd270d6dd4ab1a2b8e7acd376e67d730ae6a0
     Signed-off-by: Chen Chen <chen.chen1@amlogic.com>
 
-commit 00cbd746fadc25a48a5ccd36badce0b3a1cf0cfe
-Author: yunmin.chen <yunmin.chen@amlogic.com>
-Date:   Wed Sep 15 16:26:19 2021 +0800
-
-    mediahal: CF1 Version management [1/1]
-    
-    PD#SWPL-48769
-    
-    Problem:
-    update Version management
-    
-    Solution:
-    update Version management
-    
-    Verify:
-    SC2_AH212
-    
-    Change-Id: I3c1efe96d2e623b1f028742a80caf2ba9fb272c4
-    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
-
 ========================================
 
-Release time: 2021-09-24-14-29
+Release time: 2021-09-26-21-09
 
 ========================================
 
