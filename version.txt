@@ -1,10 +1,30 @@
 =========RELEALSE NOTE=================
 
-Version: V3.2.86-g693d6c8
+Version: V3.2.87-g0d7f58a
 
 ========================================
 
 Git commit:
+commit 0d7f58a6c76e6e7ff96a06f97ae10a3791f38d37
+Author: chen.chen1 <chen.chen1@amlogic.com>
+Date:   Fri Sep 24 14:54:40 2021 +0800
+
+    mediasync: CB1 pvr play, pause, switch audio track, video freeze. [1/1]
+    
+    PD#SWPL-60076
+    
+    Problem:
+    switch audio track, no audio data comes because of data flow control.
+    
+    Solution:
+    if no audio data, use vpts to reset refclock.
+    
+    Verify:
+    verified on S905X4-AH212
+    
+    Change-Id: Ifa2c1a9e081396e51ed2c9d7b29f19515e2341d1
+    Signed-off-by: Chen Chen <chen.chen1@amlogic.com>
+
 commit 693d6c8311ec06601ce2f1e37b53ea366fc4ae41
 Author: peter wang <peter.wang@amlogic.com>
 Date:   Thu Sep 23 22:04:47 2021 +0800
@@ -197,29 +217,9 @@ Date:   Sat Jan 30 15:26:02 2021 +0800
     Change-Id: I12229288cb4052993e9e061d76e568a7b7540ff4
     Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
 
-commit 73eed43cd9177fce768c56e58603a84876fe845d
-Author: chen.chen1 <chen.chen1@amlogic.com>
-Date:   Tue Sep 14 22:33:45 2021 +0800
-
-    mediasync: CF2 consider cache when start play. [1/1]
-    
-    PD#SWPL-59743
-    
-    Problem:
-    consider cache when start play
-    
-    Solution:
-    consider cache when start play
-    
-    Verify:
-    verified on S905X4-AH212
-    
-    Change-Id: I9f0cd270d6dd4ab1a2b8e7acd376e67d730ae6a0
-    Signed-off-by: Chen Chen <chen.chen1@amlogic.com>
-
 ========================================
 
-Release time: 2021-09-26-21-09
+Release time: 2021-09-27-14-22
 
 ========================================
 
