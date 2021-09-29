@@ -42,7 +42,11 @@
 #include <gui/Surface.h>
 #include <gui/SurfaceComposerClient.h>
 #include <gui/ISurfaceComposer.h>
+
+#if ANDROID_PLATFORM_SDK_VERSION <= 30
 #include <ui/DisplayInfo.h>
+#endif
+
 using namespace android;
 #endif
 using namespace std;
@@ -252,7 +256,7 @@ static int set_osd_blank(int blank)
     const char *path2 = "/sys/class/graphics/fb0/osd_display_debug";
 #endif
 
-#if (ANDROID_PLATFORM_SDK_VERSION == 30)
+#if (ANDROID_PLATFORM_SDK_VERSION >= 30)
     const char *path2 = "/sys/kernel/debug/dri/0/vpu/blank";
 #endif
 
