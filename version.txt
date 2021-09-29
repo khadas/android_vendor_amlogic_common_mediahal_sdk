@@ -1,10 +1,139 @@
 =========RELEALSE NOTE=================
 
-Version: V3.2.87-g0d7f58a
+Version: V3.2.93-g3e1e789
 
 ========================================
 
 Git commit:
+commit 3e1e7895dceafeb050309a9afa26c150e1757201
+Author: jianchuan.ping <jianchuan.ping@amlogic.com>
+Date:   Fri Sep 24 20:49:55 2021 +0800
+
+    MediaSync: CB1 video cache can't calc correctly. [1/1]
+    
+    PD#SWPL-58081
+    
+    Problem:
+    Video cache not calc correctly when apts not get.
+    
+    Solution:
+    Enlarge default cache, update quicker if can't get correct cache.
+    
+    Verify:
+    AH212
+    
+    Change-Id: I5c0154ba0ad27c14c927c14bdace132cc4b01966
+    Signed-off-by: jianchuan.ping <jianchuan.ping@amlogic.com>
+
+commit 1461d356af6964be3d81478b81f3843daded63d2
+Author: jianchuan.ping <jianchuan.ping@amlogic.com>
+Date:   Sun Sep 26 21:12:48 2021 +0800
+
+    Media_Sync: CB1 FCC switch channel fast play. [1/1]
+    
+    PD#SWPL-58081
+    
+    Problem:
+    FCC now not out drop policy, lead to fast play.
+    
+    Solution:
+    Now will out drop policy when FCC enter play.
+    
+    Verify:
+    AH212
+    
+    Change-Id: I04f51904b698123df21821b7edbb52b66bffaeda
+    Signed-off-by: jianchuan.ping <jianchuan.ping@amlogic.com>
+
+commit 9650b6ef03691a875bf32ab9f45faa4c66324684
+Author: Lili Xu <lili.xu@amlogic.com>
+Date:   Fri Aug 6 13:17:07 2021 +0800
+
+    mediahal: CB2 Cannot get PTS in 33-bit [1/2]
+    
+    PD#SWPL-57628
+    
+    Problem:
+    Telecom Slovenia reported the PTS value in 33 bit
+    cannot be retrieved correctly
+    
+    Solution:
+    1. Modified to checkinPtsUS64, Make the transfer of 64bit us data.
+    2. getVideoPts also takes 64bit us data.
+    
+    Verify:
+    AH212
+    
+    Change-Id: I2970c154ba459b5678bdcf0034ec2c5a4aee1b4e
+    Signed-off-by: Lili Xu <Lili.Xu@amlogic.com>
+
+commit b022e421723a68979d5fbfe0f7536a884dbd9a87
+Author: jianchuan.ping <jianchuan.ping@amlogic.com>
+Date:   Thu Sep 23 13:47:29 2021 +0800
+
+    MediaSync: CB1 Audio not insert data when discontinue end. [1/1]
+    
+    PD#SWPL-59922
+    
+    Problem:
+    Audio normal output when discontinue.
+    
+    Solution:
+    When discontinue, insert audio to avoid audio underrun.
+    
+    Verify:
+    AH212
+    
+    Change-Id: I67a9578cbd3464e3f6fe6edfa908f87ec5506748
+    Signed-off-by: jianchuan.ping <jianchuan.ping@amlogic.com>
+
+commit 3e95edc9ddcac3d30062d2c565dfc2f524ce3bab
+Merge: 2fdd4c8 0d15564
+Author: Lifeng Cao <lifeng.cao@amlogic.com>
+Date:   Sun Sep 26 23:43:49 2021 -0700
+
+    Merge "mediahal: CF1 Compile on the android S platform.  [1/1]"
+
+commit 2fdd4c8c0a0613e3b106e785cb1da7fb80aebdc8
+Author: jiabin.zhu <jiabin.zhu@amlogic.com>
+Date:   Thu Sep 23 17:40:04 2021 +0800
+
+    TsPlayer: CF2 SetSPDIFProtection in tsplayer
+    
+    PD#TV-40263
+    
+    Problem:
+    add interface to call set SPIDF status to media hal
+    
+    Solution:
+    1.call media hal interface to set SPIDF status.
+    
+    Verify:
+    verified on T5D
+    
+    Change-Id: Ia81f9d9783658fb1aead758b621b52776ce0d6ca
+    Signed-off-by: jiabin.zhu <jiabin.zhu@amlogic.com>
+
+commit 0d1556493250849fc74361134d4ad5044361b45a
+Author: yunmin.chen <yunmin.chen@amlogic.com>
+Date:   Mon Sep 13 14:04:16 2021 +0800
+
+    mediahal: CF1 Compile on the android S platform.  [1/1]
+    
+    PD#SWPL-59623
+    
+    Problem:
+    Compile on the android S platform.
+    
+    Solution:
+    Compile on the android S platform.
+    
+    Verify:
+    SC2
+    
+    Change-Id: I8a101a10d333562afae0b6443937ee692e8f287e
+    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
+
 commit 0d7f58a6c76e6e7ff96a06f97ae10a3791f38d37
 Author: chen.chen1 <chen.chen1@amlogic.com>
 Date:   Fri Sep 24 14:54:40 2021 +0800
@@ -67,159 +196,9 @@ Date:   Mon Aug 23 14:47:09 2021 +0800
     Change-Id: I53f996812791591d83ac37b86d506502b36b7b32
     Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
 
-commit 1733e0d1b951104603a618349b539d4b03825bf4
-Author: shengxiang.lan <shengxiang.lan@amlogic.com>
-Date:   Wed Sep 22 17:41:30 2021 +0800
-
-    TsPlayer: CB1 unify GetPts interface as 90k. [1/1]
-    
-    PD#OTT-23690
-    
-    Problem:
-    The returned value of GetPts interface was changed.
-    
-    Solution:
-    Unify GetPts interface as 90k.
-    
-    Verify:
-    SC2
-    
-    Change-Id: Ic8ea62475ba18d227fcc6570a20c6161c85258a9
-    Signed-off-by: shengxiang.lan <shengxiang.lan@amlogic.com>
-
-commit fb827b0cf86434b1c68398733d88fb3e8fe66fc4
-Author: chen.chen1 <chen.chen1@amlogic.com>
-Date:   Thu Sep 23 11:25:01 2021 +0800
-
-    mediasync: CB2 no need to use mAudioFramelistMutex. [2/2]
-    
-    PD#SWPL-59850
-    
-    Problem:
-    mediasync will crash when switch channel stress test.
-    
-    Solution:
-    mAudioFramelistMutex move to audiohal.
-    
-    Verify:
-    verified on S905X4-AH212
-    
-    Change-Id: If39dedd47d2fbc1d2281d2ebd34851d5477ea220
-    Signed-off-by: Chen Chen <chen.chen1@amlogic.com>
-
-commit 6185a338591ae990e9e6fd52c4cb2feb28388ea9
-Author: Jian Wang <jian.wang@amlogic.com>
-Date:   Sat Sep 18 15:13:38 2021 +0800
-
-    videodec: CF1 Modify for codec2 cts DecoderTest  [2/2]
-    
-    PD#SWPL-59697
-    
-    Problem:
-    1. Codec2 stop and flush all use reset, and when
-    reset mediahal will wait sent output buf or wait
-    resolution change, but stop do not need, it will
-    duo to codec2 can not exit sometimes.
-    2. Mpeg4 do not add csd after flush
-    
-    Solution:
-    1. Add flag to reset, and stop use nowait flag
-    2. Add mpeg2/mpeg4/mjepg to need csd
-    
-    Verify:
-    ohm
-    
-    Change-Id: Ife7244538837138d711b95949e0f3eadc05b2c79
-    Signed-off-by: Jian Wang <jian.wang@amlogic.com>
-
-commit f564c4362e26e5f7ef2bffc75040b7175c01d0a6
-Author: jianchuan.ping <jianchuan.ping@amlogic.com>
-Date:   Fri Sep 10 10:56:24 2021 +0800
-
-    Media_sync: CF1 Control video cache with audio pts. [1/1]
-    
-    PD#SWPL-58081
-    
-    Problem:
-    Audio change pcr lead to video carton.
-    
-    Solution:
-    Use audio cache control video cache, prevent change pcr
-    
-    Verify:
-    AH212
-    
-    Change-Id: Iad7b200f139025f7cbcf5d13b58f827a9a90e3f1
-    Signed-off-by: jianchuan.ping <jianchuan.ping@amlogic.com>
-
-commit 106b9ce1866e472f49e4e3a5db1456ad683da8c3
-Author: chen.chen1 <chen.chen1@amlogic.com>
-Date:   Fri Sep 17 17:13:57 2021 +0800
-
-    MediaSync: CB1 adjust refclock init value for VBR stream. [1/1]
-    
-    PD#SWPL-58487
-    
-    Problem:
-    video may stuck.
-    
-    Solution:
-    1.refclock init value set need consider physical diff between dmxpcr and vpts.
-    2.remove video drop policy.
-    3.swpl-59781: refclock is always increasing when signal is disconnected,after
-    signal resume, refclock is larger than apts and vpts,so drop audio and video.
-    4.optimize pause-resume mechanism.
-    
-    Verify:
-    verified on S905X4-AH212
-    
-    Change-Id: I8a94b0eac29a60a835b0e5861808fcb94776ac75
-    Signed-off-by: chen.chen1 <chen.chen1@amlogic.com>
-
-commit e1d90f368cac290e447758d3210e1fcf7f879942
-Author: xiaoming sui <xiaoming.sui@amlogic.com>
-Date:   Thu Sep 16 19:20:10 2021 +0800
-
-    tsplayer: CF2 add interface to set looper priority [1/1]
-    
-    PD#TV-39732
-    
-    Problem:
-    Turn on the DTV directly, there will be a few seconds of freezing;
-    
-    Solution:
-    add an interface to set looper priority;
-    priority was set by property, default was not set;
-    
-    Verify:
-    T3-P
-    
-    Change-Id: I2b3082ffe28aba21c4988777712496e1f7e8ec22
-    Signed-off-by: xiaoming sui <xiaoming.sui@amlogic.com>
-
-commit e077f37468a45a4c1e7e230d59ff849ec7c371e0
-Author: yunmin.chen <yunmin.chen@amlogic.com>
-Date:   Sat Jan 30 15:26:02 2021 +0800
-
-    tsplayer: CB1 stress test,automated exit PIP [1/1]
-    
-    PD#SWPL-59437
-    
-    Problem:
-    android::AudioTrack::setVolume() crash.
-    
-    Solution:
-    AudioTrackOut::SetVolume() add a lock.
-    
-    Verify:
-    SC2_AH212
-    
-    Change-Id: I12229288cb4052993e9e061d76e568a7b7540ff4
-    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
-
 ========================================
 
-Release time: 2021-09-27-14-22
+Release time: 2021-09-29-09-53
 
 ========================================
 
