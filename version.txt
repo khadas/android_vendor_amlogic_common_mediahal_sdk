@@ -1,10 +1,53 @@
 =========RELEALSE NOTE=================
 
-Version: V3.2.93-g3e1e789
+Version: V3.2.95-g57fcba0
 
 ========================================
 
 Git commit:
+commit 57fcba0ceaa1dd8a6313ef38dfd8c62dba90180a
+Author: shipeng.sun <shipeng.sun@amlogic.com>
+Date:   Mon Sep 27 12:36:43 2021 +0800
+
+    codec2 : CF1 gts GtsExoPlayerTestCases secure case failed [1/1]
+    
+    PD#SWPL-60225
+    
+    Problem:
+    GtsExoPlayerTestCases secure test case failed
+    
+    Solution:
+    1. Test case report timestamp wrong, for secure the ouput
+    buffer'secure bit stream id is dequeued early than input,
+    codec2 won't reorder bit stream id.
+    
+    Verify:
+    ohm''
+    
+    Change-Id: I813e517d75473d86436801254de4027b3f322c53
+    Signed-off-by: shipeng.sun <shipeng.sun@amlogic.com>
+
+commit fed8304d58cf73a9267f8d3264aa99456b9c84e7
+Author: xiaoming sui <xiaoming.sui@amlogic.com>
+Date:   Wed Sep 29 17:30:30 2021 +0800
+
+    MediaSync: CB1 fix frequently drops audio issues [1/1]
+    
+    PD#SWPL-60381
+    
+    Problem:
+    long time playback for some specific streams, frequently drops audio;
+    
+    Solution:
+    1, cache  2 mQueueAudioInterval audio data;
+    2, if diff is less a half mQueueAudioInterval, then don`t drop audio;
+    
+    Verify:
+    T3-P
+    
+    Change-Id: I176f283cf64fe920899fe549f639aee5a1ee2eab
+    Signed-off-by: xiaoming sui <xiaoming.sui@amlogic.com>
+
 commit 3e1e7895dceafeb050309a9afa26c150e1757201
 Author: jianchuan.ping <jianchuan.ping@amlogic.com>
 Date:   Fri Sep 24 20:49:55 2021 +0800
@@ -154,51 +197,9 @@ Date:   Fri Sep 24 14:54:40 2021 +0800
     Change-Id: Ifa2c1a9e081396e51ed2c9d7b29f19515e2341d1
     Signed-off-by: Chen Chen <chen.chen1@amlogic.com>
 
-commit 693d6c8311ec06601ce2f1e37b53ea366fc4ae41
-Author: peter wang <peter.wang@amlogic.com>
-Date:   Thu Sep 23 22:04:47 2021 +0800
-
-    MediaHal: CF1 implement android S video peek [1/2]
-    
-    PD#SWPL-48015
-    
-    Problem:
-    android S add video peek function and cts test cases bellow
-    android.media.cts.DecoderTest#testTunneledVideoPeekDefault
-    android.media.cts.DecoderTest#testTunneledVideoPeekOff
-    
-    Solution:
-    implement Android S video peek function
-    
-    Verify:
-    test on ohm
-    
-    Change-Id: I3360ebf639b9de0426f4e3446013b58dcb5933f9
-    Signed-off-by: peter wang <peter.wang@amlogic.com>
-
-commit 7a096b32cbb7216bb1a8a31d3cb2ee345666d7e1
-Author: yunmin.chen <yunmin.chen@amlogic.com>
-Date:   Mon Aug 23 14:47:09 2021 +0800
-
-    tsplayer: CF1 update AmTsPlayerExample [1/1]
-    
-    PD#SWPL-44837
-    
-    Problem:
-    update AmTsPlayerExample
-    
-    Solution:
-    update AmTsPlayerExample
-    
-    Verify:
-    SC2_AH212
-    
-    Change-Id: I53f996812791591d83ac37b86d506502b36b7b32
-    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
-
 ========================================
 
-Release time: 2021-09-29-09-53
+Release time: 2021-10-09-10-35
 
 ========================================
 
