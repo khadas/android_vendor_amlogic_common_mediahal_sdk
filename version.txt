@@ -1,10 +1,54 @@
 =========RELEALSE NOTE=================
 
-Version: V3.2.95-g57fcba0
+Version: V3.2.97-g4dd5b48
 
 ========================================
 
 Git commit:
+commit 4dd5b48f8e7f0671b49056d4b5e49aa3ecc599ed
+Author: shuanglong.wang <shuanglong.wang@amlogic.com>
+Date:   Sun Oct 3 14:25:52 2021 +0800
+
+    mediahal: CB1 use vt interface get vsync and period [1/1]
+    
+    PD#TV-41388
+    
+    Problem:
+    when mediahal invoke interface getDisplayVsyncAndPeriod
+    to get vsync and period in libmeson_display_adapter_remote,
+    mediahal normal thread priority lead hwc binder become
+    normal priority from RT
+    
+    Solution:
+    use vt interface get vsync and period first instand of
+    binder invoke to hwc
+    
+    Verify:
+    T5D
+    
+    Change-Id: I91941bb119a729d9cf6ab7de7d9e948729d0c113
+    Signed-off-by: shuanglong.wang <shuanglong.wang@amlogic.com>
+
+commit 8be0a99c05f9746060f5a62048e1d05d306b491c
+Author: zhipeng.he <zhipeng.he@amlogic.com>
+Date:   Fri Sep 17 14:24:01 2021 +0800
+
+    tsplayer: CF2 audio format support flac. [1/1]
+    
+    PD#OTT-23023
+    
+    Problem:
+    audio format not support flac.
+    
+    Solution:
+    audio format support flac.
+    
+    Verify:
+    AP222
+    
+    Change-Id: Iffed260875b0cfa614374b9a207066d945663c0e
+    Signed-off-by: zhipeng.he <zhipeng.he@amlogic.com>
+
 commit 57fcba0ceaa1dd8a6313ef38dfd8c62dba90180a
 Author: shipeng.sun <shipeng.sun@amlogic.com>
 Date:   Mon Sep 27 12:36:43 2021 +0800
@@ -157,49 +201,9 @@ Date:   Thu Sep 23 17:40:04 2021 +0800
     Change-Id: Ia81f9d9783658fb1aead758b621b52776ce0d6ca
     Signed-off-by: jiabin.zhu <jiabin.zhu@amlogic.com>
 
-commit 0d1556493250849fc74361134d4ad5044361b45a
-Author: yunmin.chen <yunmin.chen@amlogic.com>
-Date:   Mon Sep 13 14:04:16 2021 +0800
-
-    mediahal: CF1 Compile on the android S platform.  [1/1]
-    
-    PD#SWPL-59623
-    
-    Problem:
-    Compile on the android S platform.
-    
-    Solution:
-    Compile on the android S platform.
-    
-    Verify:
-    SC2
-    
-    Change-Id: I8a101a10d333562afae0b6443937ee692e8f287e
-    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
-
-commit 0d7f58a6c76e6e7ff96a06f97ae10a3791f38d37
-Author: chen.chen1 <chen.chen1@amlogic.com>
-Date:   Fri Sep 24 14:54:40 2021 +0800
-
-    mediasync: CB1 pvr play, pause, switch audio track, video freeze. [1/1]
-    
-    PD#SWPL-60076
-    
-    Problem:
-    switch audio track, no audio data comes because of data flow control.
-    
-    Solution:
-    if no audio data, use vpts to reset refclock.
-    
-    Verify:
-    verified on S905X4-AH212
-    
-    Change-Id: Ifa2c1a9e081396e51ed2c9d7b29f19515e2341d1
-    Signed-off-by: Chen Chen <chen.chen1@amlogic.com>
-
 ========================================
 
-Release time: 2021-10-09-10-35
+Release time: 2021-10-09-14-11
 
 ========================================
 
