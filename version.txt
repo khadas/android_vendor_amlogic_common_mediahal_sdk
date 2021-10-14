@@ -1,10 +1,30 @@
 =========RELEALSE NOTE=================
 
-Version: V3.2.97-g4dd5b48
+Version: V3.2.98-ge32c138
 
 ========================================
 
 Git commit:
+commit e32c13886f9129fcb38313a7d6a0c245fdb553a3
+Author: shuanglong.wang <shuanglong.wang@amlogic.com>
+Date:   Mon Oct 11 13:21:37 2021 +0800
+
+    mediahal: CB1 add register codec2 fillvideoframe interface [2/2]
+    
+    PD#SWPL-52266
+    
+    Problem:
+    add register codec2 fillvideoframe interface
+    
+    Solution:
+    add register codec2 fillvideoframe interface
+    
+    Verify:
+    ohm
+    
+    Change-Id: I107ab7b5a55fbfc4b348153ad43118e64ecad3eb
+    Signed-off-by: shuanglong.wang <shuanglong.wang@amlogic.com>
+
 commit 4dd5b48f8e7f0671b49056d4b5e49aa3ecc599ed
 Author: shuanglong.wang <shuanglong.wang@amlogic.com>
 Date:   Sun Oct 3 14:25:52 2021 +0800
@@ -181,29 +201,9 @@ Date:   Sun Sep 26 23:43:49 2021 -0700
 
     Merge "mediahal: CF1 Compile on the android S platform.  [1/1]"
 
-commit 2fdd4c8c0a0613e3b106e785cb1da7fb80aebdc8
-Author: jiabin.zhu <jiabin.zhu@amlogic.com>
-Date:   Thu Sep 23 17:40:04 2021 +0800
-
-    TsPlayer: CF2 SetSPDIFProtection in tsplayer
-    
-    PD#TV-40263
-    
-    Problem:
-    add interface to call set SPIDF status to media hal
-    
-    Solution:
-    1.call media hal interface to set SPIDF status.
-    
-    Verify:
-    verified on T5D
-    
-    Change-Id: Ia81f9d9783658fb1aead758b621b52776ce0d6ca
-    Signed-off-by: jiabin.zhu <jiabin.zhu@amlogic.com>
-
 ========================================
 
-Release time: 2021-10-09-14-11
+Release time: 2021-10-14-11-07
 
 ========================================
 
