@@ -39,7 +39,8 @@ typedef enum {
     AM_TSPLAYER_EVENT_TYPE_AV_SYNC_DONE,     //av sync done
     AM_TSPLAYER_EVENT_TYPE_INPUT_VIDEO_BUFFER_DONE,  // input video buffer done
     AM_TSPLAYER_EVENT_TYPE_INPUT_AUDIO_BUFFER_DONE,  // input audio buffer done
-    AM_TSPLAYER_EVENT_TYPE_DECODE_FRAME_ERROR_COUNT  // The video decoder frame.error
+    AM_TSPLAYER_EVENT_TYPE_DECODE_FRAME_ERROR_COUNT,  // The video decoder frame.error
+    AM_TSPLAYER_EVENT_TYPE_DECODE_VIDEO_UNSUPPORT // Video is not supported.
 } am_tsplayer_event_type;
 
 
