@@ -1,10 +1,73 @@
 =========RELEALSE NOTE=================
 
-Version: V3.2.98-ge32c138
+Version: V3.2.101-g082913e
 
 ========================================
 
 Git commit:
+commit 082913eeac9af39b9dc48df8d6e2ebc10fadbc23
+Author: jiabin.zhu <jiabin.zhu@amlogic.com>
+Date:   Thu Sep 16 14:10:02 2021 +0800
+
+    TsPlayer: CB1 Optimize report data loss message
+    
+    PD#TV-41333
+    
+    Problem:
+    notify message when not support demux or decode video.
+    
+    Solution:
+    1.add interface to get tunnel mode pts from driver and nontunnel mode pts from
+    ptsserver
+    2.change check intervel to 1s, and check when video start.
+    3.remove the previous practice of encrypting video streams.
+    
+    Verify:
+    verified on T5D
+    
+    Change-Id: Ie811ea9396a907e52f098ac46bbe91577e7abac1
+    Signed-off-by: jiabin.zhu <jiabin.zhu@amlogic.com>
+
+commit 8b3c27e795f044494de798ce82ce1f5679099621
+Author: yunmin.chen <yunmin.chen@amlogic.com>
+Date:   Sat Oct 2 11:48:39 2021 +0800
+
+    tsplayer: CF1 report unsupport message  [1/1]
+    
+    PD#TV-39896
+    
+    Problem:
+    report unsupport message
+    
+    Solution:
+    Get the status of unsupported decoding from the video decoder.
+    
+    Verify:
+    T5D
+    
+    Change-Id: If92f71e012e06bb75b9df79aeda67685605bbf98
+    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
+
+commit 71d6b5db685b8c7ff4e74a26d426d029eb554697
+Author: peixing.mai <peixing.mai@amlogic.com>
+Date:   Fri Oct 15 05:55:34 2021 +0000
+
+    Tsplayer: CB1 when A/V PID invalid, return start decoding [1/1]
+    
+    PD#SWPL-60012
+    
+    Problem:
+    video only TS,video holds.
+    
+    Solution:
+    1, when A/V PID invalid, return start decoding
+    
+    Verify:
+    T3-P
+    
+    Change-Id: I9f6e1975e39e471bed84ef7daf95435202876a27
+    Signed-off-by: peixing.mai <peixing.mai@amlogic.com>
+
 commit e32c13886f9129fcb38313a7d6a0c245fdb553a3
 Author: shuanglong.wang <shuanglong.wang@amlogic.com>
 Date:   Mon Oct 11 13:21:37 2021 +0800
@@ -152,58 +215,9 @@ Date:   Sun Sep 26 21:12:48 2021 +0800
     Change-Id: I04f51904b698123df21821b7edbb52b66bffaeda
     Signed-off-by: jianchuan.ping <jianchuan.ping@amlogic.com>
 
-commit 9650b6ef03691a875bf32ab9f45faa4c66324684
-Author: Lili Xu <lili.xu@amlogic.com>
-Date:   Fri Aug 6 13:17:07 2021 +0800
-
-    mediahal: CB2 Cannot get PTS in 33-bit [1/2]
-    
-    PD#SWPL-57628
-    
-    Problem:
-    Telecom Slovenia reported the PTS value in 33 bit
-    cannot be retrieved correctly
-    
-    Solution:
-    1. Modified to checkinPtsUS64, Make the transfer of 64bit us data.
-    2. getVideoPts also takes 64bit us data.
-    
-    Verify:
-    AH212
-    
-    Change-Id: I2970c154ba459b5678bdcf0034ec2c5a4aee1b4e
-    Signed-off-by: Lili Xu <Lili.Xu@amlogic.com>
-
-commit b022e421723a68979d5fbfe0f7536a884dbd9a87
-Author: jianchuan.ping <jianchuan.ping@amlogic.com>
-Date:   Thu Sep 23 13:47:29 2021 +0800
-
-    MediaSync: CB1 Audio not insert data when discontinue end. [1/1]
-    
-    PD#SWPL-59922
-    
-    Problem:
-    Audio normal output when discontinue.
-    
-    Solution:
-    When discontinue, insert audio to avoid audio underrun.
-    
-    Verify:
-    AH212
-    
-    Change-Id: I67a9578cbd3464e3f6fe6edfa908f87ec5506748
-    Signed-off-by: jianchuan.ping <jianchuan.ping@amlogic.com>
-
-commit 3e95edc9ddcac3d30062d2c565dfc2f524ce3bab
-Merge: 2fdd4c8 0d15564
-Author: Lifeng Cao <lifeng.cao@amlogic.com>
-Date:   Sun Sep 26 23:43:49 2021 -0700
-
-    Merge "mediahal: CF1 Compile on the android S platform.  [1/1]"
-
 ========================================
 
-Release time: 2021-10-14-11-07
+Release time: 2021-10-15-19-22
 
 ========================================
 
