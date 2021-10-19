@@ -1,10 +1,54 @@
 =========RELEALSE NOTE=================
 
-Version: V3.2.101-g082913e
+Version: V3.2.103-gea47e17
 
 ========================================
 
 Git commit:
+commit ea47e17117c66ccd0d8dd0e1abfe94b86f0c5772
+Author: yunmin.chen <yunmin.chen@amlogic.com>
+Date:   Tue Aug 3 16:48:21 2021 +0800
+
+    tsplayer: CB1 SC2 TunelMode TsPlayer fail to start playback [1/1]
+    
+    PD#OTT-20027
+    
+    Problem:
+    TsPlayer fail to start playback
+    if startAudioDecoding first before startVideoDecoding
+    
+    Solution:
+    SC2 does not send kWhatStart message
+    when startaudio to prevent getting invalid buffer address
+    to video decoder.
+    
+    Verify:
+    ohm
+    
+    Change-Id: Ic42d46b5db497dc06f38f74007b1969c32677250
+    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
+
+commit a60381b8ae6307047a4d0cbde8927b9e4511c74a
+Author: yunmin.chen <yunmin.chen@amlogic.com>
+Date:   Mon Sep 27 16:06:32 2021 +0800
+
+    tsplayer: CB1 There is no audio output probabilistically.  [1/1]
+    
+    PD#SWPL-60374
+    
+    Problem:
+    The audio buffer is overwritten.
+    
+    Solution:
+    Modify the flow control at the beginning of playback to
+    control the speed of writing ts data.
+    
+    Verify:
+    SC2
+    
+    Change-Id: I3536874deea462a7d0d2565284320c1c672df433
+    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
+
 commit 082913eeac9af39b9dc48df8d6e2ebc10fadbc23
 Author: jiabin.zhu <jiabin.zhu@amlogic.com>
 Date:   Thu Sep 16 14:10:02 2021 +0800
@@ -175,49 +219,9 @@ Date:   Wed Sep 29 17:30:30 2021 +0800
     Change-Id: I176f283cf64fe920899fe549f639aee5a1ee2eab
     Signed-off-by: xiaoming sui <xiaoming.sui@amlogic.com>
 
-commit 3e1e7895dceafeb050309a9afa26c150e1757201
-Author: jianchuan.ping <jianchuan.ping@amlogic.com>
-Date:   Fri Sep 24 20:49:55 2021 +0800
-
-    MediaSync: CB1 video cache can't calc correctly. [1/1]
-    
-    PD#SWPL-58081
-    
-    Problem:
-    Video cache not calc correctly when apts not get.
-    
-    Solution:
-    Enlarge default cache, update quicker if can't get correct cache.
-    
-    Verify:
-    AH212
-    
-    Change-Id: I5c0154ba0ad27c14c927c14bdace132cc4b01966
-    Signed-off-by: jianchuan.ping <jianchuan.ping@amlogic.com>
-
-commit 1461d356af6964be3d81478b81f3843daded63d2
-Author: jianchuan.ping <jianchuan.ping@amlogic.com>
-Date:   Sun Sep 26 21:12:48 2021 +0800
-
-    Media_Sync: CB1 FCC switch channel fast play. [1/1]
-    
-    PD#SWPL-58081
-    
-    Problem:
-    FCC now not out drop policy, lead to fast play.
-    
-    Solution:
-    Now will out drop policy when FCC enter play.
-    
-    Verify:
-    AH212
-    
-    Change-Id: I04f51904b698123df21821b7edbb52b66bffaeda
-    Signed-off-by: jianchuan.ping <jianchuan.ping@amlogic.com>
-
 ========================================
 
-Release time: 2021-10-15-19-22
+Release time: 2021-10-19-11-21
 
 ========================================
 
