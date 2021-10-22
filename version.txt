@@ -1,10 +1,32 @@
 =========RELEALSE NOTE=================
 
-Version: V3.2.104-g4baf8d5
+Version: V3.2.105-g3fcec6b
 
 ========================================
 
 Git commit:
+commit 3fcec6b28deaef90362bd4bc3bea7cde0ac0ffdc
+Author: peter wang <peter.wang@amlogic.com>
+Date:   Wed Oct 20 19:18:55 2021 +0800
+
+    MediaHal: CB1 fix crash testing MediaV2 AV1 case [1/1]
+    
+    PD#SWPL-60239
+    
+    Problem:
+    crash testing bellow cts case in CtsMediaTestCases module:
+    android.mediav2.cts.AdaptivePlaybackTest#
+    testAdaptivePlayback[0(c2.amlogic.av1.decoder_video/av01)]
+    
+    Solution:
+    change aml_es_bytes_left type to int from uint
+    
+    Verify:
+    test on ohm
+    
+    Change-Id: I916c817400d686c8028b4964b1488fbd7d2bca82
+    Signed-off-by: peter wang <peter.wang@amlogic.com>
+
 commit 4baf8d5c2978c38b163368d46d5486f516584ce9
 Author: chen.chen1 <chen.chen1@amlogic.com>
 Date:   Wed Oct 20 15:04:06 2021 +0800
@@ -198,31 +220,9 @@ Date:   Fri Sep 17 14:24:01 2021 +0800
     Change-Id: Iffed260875b0cfa614374b9a207066d945663c0e
     Signed-off-by: zhipeng.he <zhipeng.he@amlogic.com>
 
-commit 57fcba0ceaa1dd8a6313ef38dfd8c62dba90180a
-Author: shipeng.sun <shipeng.sun@amlogic.com>
-Date:   Mon Sep 27 12:36:43 2021 +0800
-
-    codec2 : CF1 gts GtsExoPlayerTestCases secure case failed [1/1]
-    
-    PD#SWPL-60225
-    
-    Problem:
-    GtsExoPlayerTestCases secure test case failed
-    
-    Solution:
-    1. Test case report timestamp wrong, for secure the ouput
-    buffer'secure bit stream id is dequeued early than input,
-    codec2 won't reorder bit stream id.
-    
-    Verify:
-    ohm''
-    
-    Change-Id: I813e517d75473d86436801254de4027b3f322c53
-    Signed-off-by: shipeng.sun <shipeng.sun@amlogic.com>
-
 ========================================
 
-Release time: 2021-10-21-14-20
+Release time: 2021-10-22-13-40
 
 ========================================
 
