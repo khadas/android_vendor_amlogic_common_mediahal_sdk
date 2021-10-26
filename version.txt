@@ -1,10 +1,30 @@
 =========RELEALSE NOTE=================
 
-Version: V3.2.105-g3fcec6b
+Version: V3.2.106-g4545352
 
 ========================================
 
 Git commit:
+commit 4545352b88ed7e9b13c137fa57d9a3a846cbdd0c
+Author: jianchuan.ping <jianchuan.ping@amlogic.com>
+Date:   Wed Sep 29 20:48:33 2021 +0800
+
+    Media_sync: CF1 Handle video late when playing. [1/1]
+    
+    PD#SWPL-60546
+    
+    Problem:
+    Video late will lead to drop frame and not show.
+    
+    Solution:
+    Video fast play, audio slow play wait sync
+    
+    Verify:
+    AH212
+    
+    Change-Id: I53f4ac339c617e8000449726532d24b43b37c3b7
+    Signed-off-by: jianchuan.ping <jianchuan.ping@amlogic.com>
+
 commit 3fcec6b28deaef90362bd4bc3bea7cde0ac0ffdc
 Author: peter wang <peter.wang@amlogic.com>
 Date:   Wed Oct 20 19:18:55 2021 +0800
@@ -200,29 +220,9 @@ Date:   Sun Oct 3 14:25:52 2021 +0800
     Change-Id: I91941bb119a729d9cf6ab7de7d9e948729d0c113
     Signed-off-by: shuanglong.wang <shuanglong.wang@amlogic.com>
 
-commit 8be0a99c05f9746060f5a62048e1d05d306b491c
-Author: zhipeng.he <zhipeng.he@amlogic.com>
-Date:   Fri Sep 17 14:24:01 2021 +0800
-
-    tsplayer: CF2 audio format support flac. [1/1]
-    
-    PD#OTT-23023
-    
-    Problem:
-    audio format not support flac.
-    
-    Solution:
-    audio format support flac.
-    
-    Verify:
-    AP222
-    
-    Change-Id: Iffed260875b0cfa614374b9a207066d945663c0e
-    Signed-off-by: zhipeng.he <zhipeng.he@amlogic.com>
-
 ========================================
 
-Release time: 2021-10-22-13-40
+Release time: 2021-10-26-13-33
 
 ========================================
 
