@@ -1,10 +1,51 @@
 =========RELEALSE NOTE=================
 
-Version: V3.2.106-g4545352
+Version: V3.2.108-g7ca54f0
 
 ========================================
 
 Git commit:
+commit 7ca54f07094a451ae5ab21bea04db7ae29304161
+Author: yibo.wu <yibo.wu@amlogic.com>
+Date:   Wed Oct 13 02:57:31 2021 +0000
+
+    MediaSync: CF1 Slowsync function implement [1/1]
+    
+    PD#SWPL-57026
+    
+    Problem:
+    Some UHD stream beginning audio data is few than video data,
+    this will lead avsync block a while in player start time.
+    
+    Solution:
+    Add slowsync function
+    
+    Verify:
+    AH212
+    
+    Change-Id: I99174393d5b09749a026cec183f6add9e05a127f
+    Signed-off-by: yibo.wu <yibo.wu@amlogic.com>
+
+commit 82a870c766b9b549219c38a8b3efaaf37197aad3
+Author: chen.chen1 <chen.chen1@amlogic.com>
+Date:   Fri Oct 22 18:10:53 2021 +0800
+
+    MediaSync: CB1 refclock init need consider demuxpcr when audio not come. [1/1]
+    
+    PD#SWPL-62432
+    
+    Problem:
+    the av sync effect need better in special stream.
+    
+    Solution:
+    refclock init need consider demuxpcr when audio not come in discontinue case
+    
+    Verify:
+    verified on S905X4-AH212
+    
+    Change-Id: I80d20bb518cb8ea0d4a23667204ee16f07c895b6
+    Signed-off-by: chen.chen1 <chen.chen1@amlogic.com>
+
 commit 4545352b88ed7e9b13c137fa57d9a3a846cbdd0c
 Author: jianchuan.ping <jianchuan.ping@amlogic.com>
 Date:   Wed Sep 29 20:48:33 2021 +0800
@@ -176,53 +217,9 @@ Date:   Fri Oct 15 05:55:34 2021 +0000
     Change-Id: I9f6e1975e39e471bed84ef7daf95435202876a27
     Signed-off-by: peixing.mai <peixing.mai@amlogic.com>
 
-commit e32c13886f9129fcb38313a7d6a0c245fdb553a3
-Author: shuanglong.wang <shuanglong.wang@amlogic.com>
-Date:   Mon Oct 11 13:21:37 2021 +0800
-
-    mediahal: CB1 add register codec2 fillvideoframe interface [2/2]
-    
-    PD#SWPL-52266
-    
-    Problem:
-    add register codec2 fillvideoframe interface
-    
-    Solution:
-    add register codec2 fillvideoframe interface
-    
-    Verify:
-    ohm
-    
-    Change-Id: I107ab7b5a55fbfc4b348153ad43118e64ecad3eb
-    Signed-off-by: shuanglong.wang <shuanglong.wang@amlogic.com>
-
-commit 4dd5b48f8e7f0671b49056d4b5e49aa3ecc599ed
-Author: shuanglong.wang <shuanglong.wang@amlogic.com>
-Date:   Sun Oct 3 14:25:52 2021 +0800
-
-    mediahal: CB1 use vt interface get vsync and period [1/1]
-    
-    PD#TV-41388
-    
-    Problem:
-    when mediahal invoke interface getDisplayVsyncAndPeriod
-    to get vsync and period in libmeson_display_adapter_remote,
-    mediahal normal thread priority lead hwc binder become
-    normal priority from RT
-    
-    Solution:
-    use vt interface get vsync and period first instand of
-    binder invoke to hwc
-    
-    Verify:
-    T5D
-    
-    Change-Id: I91941bb119a729d9cf6ab7de7d9e948729d0c113
-    Signed-off-by: shuanglong.wang <shuanglong.wang@amlogic.com>
-
 ========================================
 
-Release time: 2021-10-26-13-33
+Release time: 2021-10-27-14-01
 
 ========================================
 
