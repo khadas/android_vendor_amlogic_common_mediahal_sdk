@@ -1,10 +1,32 @@
 =========RELEALSE NOTE=================
 
-Version: V3.2.108-g7ca54f0
+Version: V3.2.109-g2ea6f58
 
 ========================================
 
 Git commit:
+commit 2ea6f587f60c35c8ff88554e9ff98163b7fb772a
+Author: chen.chen1 <chen.chen1@amlogic.com>
+Date:   Thu Oct 28 20:05:16 2021 +0800
+
+    MediaSync: CB2 video-only stream no need to consider discontinue. [1/1]
+    
+    PD#SWPL-62865
+    
+    Problem:
+    reduce redundant code .
+    
+    Solution:
+    1.video-only stream no need to consider discontinue;
+    2.add audio freerun prop to help debug;
+    3.add video freerun prop to help debug;
+    
+    Verify:
+    verified on S905X4-AH212
+    
+    Change-Id: If04ae42ef20a5b30123dd71c77334ffd81f5db2a
+    Signed-off-by: chen.chen1 <chen.chen1@amlogic.com>
+
 commit 7ca54f07094a451ae5ab21bea04db7ae29304161
 Author: yibo.wu <yibo.wu@amlogic.com>
 Date:   Wed Oct 13 02:57:31 2021 +0000
@@ -197,29 +219,9 @@ Date:   Sat Oct 2 11:48:39 2021 +0800
     Change-Id: If92f71e012e06bb75b9df79aeda67685605bbf98
     Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
 
-commit 71d6b5db685b8c7ff4e74a26d426d029eb554697
-Author: peixing.mai <peixing.mai@amlogic.com>
-Date:   Fri Oct 15 05:55:34 2021 +0000
-
-    Tsplayer: CB1 when A/V PID invalid, return start decoding [1/1]
-    
-    PD#SWPL-60012
-    
-    Problem:
-    video only TS,video holds.
-    
-    Solution:
-    1, when A/V PID invalid, return start decoding
-    
-    Verify:
-    T3-P
-    
-    Change-Id: I9f6e1975e39e471bed84ef7daf95435202876a27
-    Signed-off-by: peixing.mai <peixing.mai@amlogic.com>
-
 ========================================
 
-Release time: 2021-10-27-14-01
+Release time: 2021-10-28-20-32
 
 ========================================
 
