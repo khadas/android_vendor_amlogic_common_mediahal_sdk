@@ -1,10 +1,33 @@
 =========RELEALSE NOTE=================
 
-Version: V3.2.109-g2ea6f58
+Version: V3.2.110-g2676a02
 
 ========================================
 
 Git commit:
+commit 2676a028f6681beba8a24deb8bbef4a75efcebcd
+Author: Kai Song <kai.song@amlogic.com>
+Date:   Thu Oct 28 12:38:59 2021 +0800
+
+    videopassthrough: CB2 Fix video passthrough crash with CBS [1/1]
+    
+    PD#SWPL-62166
+    PD#SWPL-62615
+    
+    Problem:
+    1.video passthrough crash with CBS playback
+    2.No need to dlopen libmediahal_tunnelrenderer.
+    
+    Solution:
+    1.Fix video passthrough crash in EsDataHandler
+    2.Adjust tunnel renderer for passthrough mode.
+    
+    Verify:
+    Android-R OHM
+    
+    Change-Id: I2c1916dc55e1d36ce2b2294221516780ab8d66bf
+    Signed-off-by: Kai Song <kai.song@amlogic.com>
+
 commit 2ea6f587f60c35c8ff88554e9ff98163b7fb772a
 Author: chen.chen1 <chen.chen1@amlogic.com>
 Date:   Thu Oct 28 20:05:16 2021 +0800
@@ -199,29 +222,9 @@ Date:   Thu Sep 16 14:10:02 2021 +0800
     Change-Id: Ie811ea9396a907e52f098ac46bbe91577e7abac1
     Signed-off-by: jiabin.zhu <jiabin.zhu@amlogic.com>
 
-commit 8b3c27e795f044494de798ce82ce1f5679099621
-Author: yunmin.chen <yunmin.chen@amlogic.com>
-Date:   Sat Oct 2 11:48:39 2021 +0800
-
-    tsplayer: CF1 report unsupport message  [1/1]
-    
-    PD#TV-39896
-    
-    Problem:
-    report unsupport message
-    
-    Solution:
-    Get the status of unsupported decoding from the video decoder.
-    
-    Verify:
-    T5D
-    
-    Change-Id: If92f71e012e06bb75b9df79aeda67685605bbf98
-    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
-
 ========================================
 
-Release time: 2021-10-28-20-32
+Release time: 2021-10-29-16-14
 
 ========================================
 
