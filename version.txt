@@ -1,10 +1,51 @@
 =========RELEALSE NOTE=================
 
-Version: V3.2.110-g2676a02
+Version: V3.2.112-g498e373
 
 ========================================
 
 Git commit:
+commit 498e37313d3cf3584af00eab32ab73e5f1fcd0a4
+Author: jianchuan.ping <jianchuan.ping@amlogic.com>
+Date:   Wed Oct 20 14:04:01 2021 +0800
+
+    TsPlayer: CB1 add prop can set cache time. [1/1]
+    
+    PD#SWPL-60604
+    
+    Problem:
+    FCC switch cahannel carton.
+    
+    Solution:
+    Can set FCC cache time.
+    
+    Verify:
+    AH212
+    
+    Change-Id: I9c115b165668c28caed444dd49b2ecb538c01c96
+    Signed-off-by: jianchuan.ping <jianchuan.ping@amlogic.com>
+
+commit 3fd0043b5a1f0f4ccba08a1c92c11bb2d7683329
+Author: Yani Shi <yani.shi@amlogic.com>
+Date:   Mon Oct 25 09:00:18 2021 +0000
+
+    MediaSync: CB1 slow starting audio with zapping among audio channels. [2/2]
+    
+    PD#SWPL-59481
+    
+    Problem:
+    slow starting audio with zapping among audio channels.
+    
+    Solution:
+    send hasvideo to mediasync,fixed the audio waiting for the video
+    too long time in mediasync when audio only channel
+    
+    Verify:
+    verified on S905X4-AH212
+    
+    Change-Id: Id645d2395abd7e07f59972dbda86e424cf391cf4
+    Signed-off-by: Yani Shi <yani.shi@amlogic.com>
+
 commit 2676a028f6681beba8a24deb8bbef4a75efcebcd
 Author: Kai Song <kai.song@amlogic.com>
 Date:   Thu Oct 28 12:38:59 2021 +0800
@@ -178,53 +219,9 @@ Date:   Tue Aug 3 16:48:21 2021 +0800
     Change-Id: Ic42d46b5db497dc06f38f74007b1969c32677250
     Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
 
-commit a60381b8ae6307047a4d0cbde8927b9e4511c74a
-Author: yunmin.chen <yunmin.chen@amlogic.com>
-Date:   Mon Sep 27 16:06:32 2021 +0800
-
-    tsplayer: CB1 There is no audio output probabilistically.  [1/1]
-    
-    PD#SWPL-60374
-    
-    Problem:
-    The audio buffer is overwritten.
-    
-    Solution:
-    Modify the flow control at the beginning of playback to
-    control the speed of writing ts data.
-    
-    Verify:
-    SC2
-    
-    Change-Id: I3536874deea462a7d0d2565284320c1c672df433
-    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
-
-commit 082913eeac9af39b9dc48df8d6e2ebc10fadbc23
-Author: jiabin.zhu <jiabin.zhu@amlogic.com>
-Date:   Thu Sep 16 14:10:02 2021 +0800
-
-    TsPlayer: CB1 Optimize report data loss message
-    
-    PD#TV-41333
-    
-    Problem:
-    notify message when not support demux or decode video.
-    
-    Solution:
-    1.add interface to get tunnel mode pts from driver and nontunnel mode pts from
-    ptsserver
-    2.change check intervel to 1s, and check when video start.
-    3.remove the previous practice of encrypting video streams.
-    
-    Verify:
-    verified on T5D
-    
-    Change-Id: Ie811ea9396a907e52f098ac46bbe91577e7abac1
-    Signed-off-by: jiabin.zhu <jiabin.zhu@amlogic.com>
-
 ========================================
 
-Release time: 2021-10-29-16-14
+Release time: 2021-11-02-14-31
 
 ========================================
 
