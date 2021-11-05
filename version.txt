@@ -1,10 +1,96 @@
 =========RELEALSE NOTE=================
 
-Version: V3.2.112-g498e373
+Version: V3.2.116-ga236af2
 
 ========================================
 
 Git commit:
+commit a236af2129b7e35f87dc076c43943e87c034d9bc
+Author: Jian Wang <jian.wang@amlogic.com>
+Date:   Wed Nov 3 11:43:38 2021 +0800
+
+    Videodec: CB1 fix eos nodify error [1/1]
+    
+    PD#SWPL-63444
+    
+    Problem:
+    When change resolution will update last
+    flag and resolution event at same time,
+    but some times first get last flag and
+     then get resolution event, this time
+    use last flag to use flush done duo to
+    codec2 get flush done early.
+    
+    Solution:
+    When get last flag, also get resolution event
+    at same time.
+    
+    Verify:
+    test on Ohm.
+    
+    Change-Id: I5614b0cf71cb1fbe65a13c13eb47a0fefea66bf0
+    Signed-off-by: Jian Wang <jian.wang@amlogic.com>
+
+commit e9d09fe47c0148b48b0942a98982a55ebad90321
+Author: shipeng.sun <shipeng.sun@amlogic.com>
+Date:   Tue Nov 2 16:30:43 2021 +0800
+
+    codec2: CF2 avoid call merge csd data when stream no csd [1/1]
+    
+    PD#SWPL-63271
+    
+    Problem:
+    avoid call merge csd data when stream no csd
+    
+    Solution:
+    avoid call merge csd data when stream no csd.
+    
+    Verify:
+    ohm
+    
+    Change-Id: Iabc2f541e058b5a13bc89d90f32ec3159e2efc58
+    Signed-off-by: shipeng.sun <shipeng.sun@amlogic.com>
+
+commit 0ac398efc052be5667c97019920c4c8c3bc709b1
+Author: jianchuan.ping <jianchuan.ping@amlogic.com>
+Date:   Fri Oct 8 15:11:03 2021 +0800
+
+    Media_Sync: CB1 PIP switch channel will not sync. [1/1]
+    
+    PD#SWPL-60746
+    
+    Problem:
+    PIP start have no apts info lead to not check demux error.
+    
+    Solution:
+    Update audio pts info when queue audio.
+    
+    Verify:
+    AH212
+    
+    Change-Id: I5ef01b655014462d7f6507463252a9036b55c75c
+    Signed-off-by: jianchuan.ping <jianchuan.ping@amlogic.com>
+
+commit 0d6f1b25ca51ffe604e99469f1d8cc7bcacf609d
+Author: yunmin.chen <yunmin.chen@amlogic.com>
+Date:   Wed Sep 29 13:14:31 2021 +0800
+
+    tsplayer: CF1 Add Amtsplayer documentation  [1/1]
+    
+    PD#SWPL-48769
+    
+    Problem:
+    Add Amtsplayer documentation
+    
+    Solution:
+    Add Amtsplayer documentation
+    
+    Verify:
+    SC2
+    
+    Change-Id: Ifdeeff078a59d2c6d5eda5b8fb7e5e9c708668dd
+    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
+
 commit 498e37313d3cf3584af00eab32ab73e5f1fcd0a4
 Author: jianchuan.ping <jianchuan.ping@amlogic.com>
 Date:   Wed Oct 20 14:04:01 2021 +0800
@@ -132,96 +218,9 @@ Date:   Fri Oct 22 18:10:53 2021 +0800
     Change-Id: I80d20bb518cb8ea0d4a23667204ee16f07c895b6
     Signed-off-by: chen.chen1 <chen.chen1@amlogic.com>
 
-commit 4545352b88ed7e9b13c137fa57d9a3a846cbdd0c
-Author: jianchuan.ping <jianchuan.ping@amlogic.com>
-Date:   Wed Sep 29 20:48:33 2021 +0800
-
-    Media_sync: CF1 Handle video late when playing. [1/1]
-    
-    PD#SWPL-60546
-    
-    Problem:
-    Video late will lead to drop frame and not show.
-    
-    Solution:
-    Video fast play, audio slow play wait sync
-    
-    Verify:
-    AH212
-    
-    Change-Id: I53f4ac339c617e8000449726532d24b43b37c3b7
-    Signed-off-by: jianchuan.ping <jianchuan.ping@amlogic.com>
-
-commit 3fcec6b28deaef90362bd4bc3bea7cde0ac0ffdc
-Author: peter wang <peter.wang@amlogic.com>
-Date:   Wed Oct 20 19:18:55 2021 +0800
-
-    MediaHal: CB1 fix crash testing MediaV2 AV1 case [1/1]
-    
-    PD#SWPL-60239
-    
-    Problem:
-    crash testing bellow cts case in CtsMediaTestCases module:
-    android.mediav2.cts.AdaptivePlaybackTest#
-    testAdaptivePlayback[0(c2.amlogic.av1.decoder_video/av01)]
-    
-    Solution:
-    change aml_es_bytes_left type to int from uint
-    
-    Verify:
-    test on ohm
-    
-    Change-Id: I916c817400d686c8028b4964b1488fbd7d2bca82
-    Signed-off-by: peter wang <peter.wang@amlogic.com>
-
-commit 4baf8d5c2978c38b163368d46d5486f516584ce9
-Author: chen.chen1 <chen.chen1@amlogic.com>
-Date:   Wed Oct 20 15:04:06 2021 +0800
-
-    MediaSync: CB1 Refclock init pts wrongly. [1/1]
-    
-    PD#SWPL-61763
-    
-    Problem:
-    video drop frame when startting play.
-    
-    Solution:
-    1.RefClock need us min(firstapts, firstvpts) init pts
-    when sourceclock is AudioClock or VideoClock.
-    2.add first queuein apts/vpts log.
-    
-    Verify:
-    verified on S905X4-AH212
-    
-    Change-Id: I410e6cca4a4bcd140a072b413c2fc304fbe69776
-    Signed-off-by: chen.chen1 <chen.chen1@amlogic.com>
-
-commit ea47e17117c66ccd0d8dd0e1abfe94b86f0c5772
-Author: yunmin.chen <yunmin.chen@amlogic.com>
-Date:   Tue Aug 3 16:48:21 2021 +0800
-
-    tsplayer: CB1 SC2 TunelMode TsPlayer fail to start playback [1/1]
-    
-    PD#OTT-20027
-    
-    Problem:
-    TsPlayer fail to start playback
-    if startAudioDecoding first before startVideoDecoding
-    
-    Solution:
-    SC2 does not send kWhatStart message
-    when startaudio to prevent getting invalid buffer address
-    to video decoder.
-    
-    Verify:
-    ohm
-    
-    Change-Id: Ic42d46b5db497dc06f38f74007b1969c32677250
-    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
-
 ========================================
 
-Release time: 2021-11-02-14-31
+Release time: 2021-11-05-10-07
 
 ========================================
 
