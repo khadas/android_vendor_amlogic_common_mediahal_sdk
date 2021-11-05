@@ -1,10 +1,30 @@
 =========RELEALSE NOTE=================
 
-Version: V3.2.116-ga236af2
+Version: V3.2.117-g125d3d1
 
 ========================================
 
 Git commit:
+commit 125d3d1baf7324d660f637acb21d6f602c93a1b5
+Author: jiabin.zhu <jiabin.zhu@amlogic.com>
+Date:   Thu Nov 4 11:20:55 2021 +0800
+
+    TsPlayer: CB1 support ogg file [1/1]
+    
+    PD#OTT-24949
+    
+    Problem:
+    1.need to support ogg audio fmt
+    
+    Solution:
+    1.need to support ogg audio fmt
+    
+    Verify:
+    verified on Y4 & sc2
+    
+    Change-Id: Ie9fe21916ca264f70ffed6ec541ecd63921b3b33
+    Signed-off-by: jiabin.zhu <jiabin.zhu@amlogic.com>
+
 commit a236af2129b7e35f87dc076c43943e87c034d9bc
 Author: Jian Wang <jian.wang@amlogic.com>
 Date:   Wed Nov 3 11:43:38 2021 +0800
@@ -198,29 +218,9 @@ Date:   Wed Oct 13 02:57:31 2021 +0000
     Change-Id: I99174393d5b09749a026cec183f6add9e05a127f
     Signed-off-by: yibo.wu <yibo.wu@amlogic.com>
 
-commit 82a870c766b9b549219c38a8b3efaaf37197aad3
-Author: chen.chen1 <chen.chen1@amlogic.com>
-Date:   Fri Oct 22 18:10:53 2021 +0800
-
-    MediaSync: CB1 refclock init need consider demuxpcr when audio not come. [1/1]
-    
-    PD#SWPL-62432
-    
-    Problem:
-    the av sync effect need better in special stream.
-    
-    Solution:
-    refclock init need consider demuxpcr when audio not come in discontinue case
-    
-    Verify:
-    verified on S905X4-AH212
-    
-    Change-Id: I80d20bb518cb8ea0d4a23667204ee16f07c895b6
-    Signed-off-by: chen.chen1 <chen.chen1@amlogic.com>
-
 ========================================
 
-Release time: 2021-11-05-10-07
+Release time: 2021-11-05-17-11
 
 ========================================
 
