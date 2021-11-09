@@ -1,10 +1,74 @@
 =========RELEALSE NOTE=================
 
-Version: V3.2.117-g125d3d1
+Version: V3.2.120-g694957c
 
 ========================================
 
 Git commit:
+commit 694957c19cb67b5197328034f235dd697769ebf0
+Author: Kai Song <kai.song@amlogic.com>
+Date:   Thu Nov 4 19:55:34 2021 +0800
+
+    MediaHal: CB1 Fix videoTunnelRenderer and PtsServ crash [1/2]
+    
+    PD#SWPL-63607
+    PD#SWPL-61730
+    
+    Problem:
+    videoTunnelRenderer will crash when destory as mVsyncFrac and
+    mdispAdapter are not inited
+    libmediahal_videodec crash when CheckoutPtsOffset
+    
+    Solution:
+    Init mVsyncFrac and mdispAdapter with NULL value
+    Set mPtsOffsetLink and node to NULL after free operation
+    
+    Verify:
+    Android-R OHM
+    
+    Change-Id: If3ea58bcf98e6849f6a98afde37c023770cd302e
+    Signed-off-by: Kai Song <kai.song@amlogic.com>
+
+commit edb75ffbdf8bda7cc1ae1fd2fc0a0d0bae99d6e6
+Author: shengxiang.lan <shengxiang.lan@amlogic.com>
+Date:   Thu Nov 4 17:52:54 2021 +0800
+
+    TsPlayer: CB1 Play radio the progress bar abnormally after pause. [1/1]
+    
+    PD#TV-42006
+    
+    Problem:
+    Get the audio delay time wrong.
+    
+    Solution:
+    Change the api of geting audio delay time.
+    
+    Verify:
+    T5D
+    
+    Change-Id: Ifa67404cd84037d992b2a9033613459d3e356651
+    Signed-off-by: shengxiang.lan <shengxiang.lan@amlogic.com>
+
+commit c7dd92d61324d8517a163337176ff39e201dfb69
+Author: shengxiang.lan <shengxiang.lan@amlogic.com>
+Date:   Wed Nov 3 19:29:43 2021 +0800
+
+    TsPlayer: CB1 Won't send first frame when channel lock dialog. [1/1]
+    
+    PD#TV-42606
+    
+    Problem:
+    tsplayer still send first frame event after PauseVideoDecoding.
+    
+    Solution:
+    tsplayer won't send first frame after PauseVideoDecoding.
+    
+    Verify:
+    T5D
+    
+    Change-Id: I08f9976b049ba11afbffb20f15f3c5ef214593ef
+    Signed-off-by: shengxiang.lan <shengxiang.lan@amlogic.com>
+
 commit 125d3d1baf7324d660f637acb21d6f602c93a1b5
 Author: jiabin.zhu <jiabin.zhu@amlogic.com>
 Date:   Thu Nov 4 11:20:55 2021 +0800
@@ -152,75 +216,9 @@ Date:   Mon Oct 25 09:00:18 2021 +0000
     Change-Id: Id645d2395abd7e07f59972dbda86e424cf391cf4
     Signed-off-by: Yani Shi <yani.shi@amlogic.com>
 
-commit 2676a028f6681beba8a24deb8bbef4a75efcebcd
-Author: Kai Song <kai.song@amlogic.com>
-Date:   Thu Oct 28 12:38:59 2021 +0800
-
-    videopassthrough: CB2 Fix video passthrough crash with CBS [1/1]
-    
-    PD#SWPL-62166
-    PD#SWPL-62615
-    
-    Problem:
-    1.video passthrough crash with CBS playback
-    2.No need to dlopen libmediahal_tunnelrenderer.
-    
-    Solution:
-    1.Fix video passthrough crash in EsDataHandler
-    2.Adjust tunnel renderer for passthrough mode.
-    
-    Verify:
-    Android-R OHM
-    
-    Change-Id: I2c1916dc55e1d36ce2b2294221516780ab8d66bf
-    Signed-off-by: Kai Song <kai.song@amlogic.com>
-
-commit 2ea6f587f60c35c8ff88554e9ff98163b7fb772a
-Author: chen.chen1 <chen.chen1@amlogic.com>
-Date:   Thu Oct 28 20:05:16 2021 +0800
-
-    MediaSync: CB2 video-only stream no need to consider discontinue. [1/1]
-    
-    PD#SWPL-62865
-    
-    Problem:
-    reduce redundant code .
-    
-    Solution:
-    1.video-only stream no need to consider discontinue;
-    2.add audio freerun prop to help debug;
-    3.add video freerun prop to help debug;
-    
-    Verify:
-    verified on S905X4-AH212
-    
-    Change-Id: If04ae42ef20a5b30123dd71c77334ffd81f5db2a
-    Signed-off-by: chen.chen1 <chen.chen1@amlogic.com>
-
-commit 7ca54f07094a451ae5ab21bea04db7ae29304161
-Author: yibo.wu <yibo.wu@amlogic.com>
-Date:   Wed Oct 13 02:57:31 2021 +0000
-
-    MediaSync: CF1 Slowsync function implement [1/1]
-    
-    PD#SWPL-57026
-    
-    Problem:
-    Some UHD stream beginning audio data is few than video data,
-    this will lead avsync block a while in player start time.
-    
-    Solution:
-    Add slowsync function
-    
-    Verify:
-    AH212
-    
-    Change-Id: I99174393d5b09749a026cec183f6add9e05a127f
-    Signed-off-by: yibo.wu <yibo.wu@amlogic.com>
-
 ========================================
 
-Release time: 2021-11-05-17-11
+Release time: 2021-11-09-20-00
 
 ========================================
 
