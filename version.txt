@@ -1,10 +1,31 @@
 =========RELEALSE NOTE=================
 
-Version: V3.2.120-g694957c
+Version: V3.2.121-gb84abfb
 
 ========================================
 
 Git commit:
+commit b84abfbdc56a09806a9cbd8a14665a14c889e14f
+Author: fengchen.shen <fengchen.shen@amlogic.com>
+Date:   Fri Oct 29 06:53:15 2021 +0000
+
+    tsplayer: CB1 avoid tsplayer start/stop two times [1/1]
+    
+    PD#SWPL-59496
+    
+    Problem:
+    Sometimes tsplayer start/stop two times.
+    
+    Solution:
+    1. use aLock/vLock to avoid tsplayer start/stop two times at the same time.
+    2. If tsplayer start/stop already,return OK.
+    
+    Verify:
+    S905X4
+    
+    Change-Id: I302067afe72eb6c3b0d9f3c84805d0911e7b6a32
+    Signed-off-by: fengchen.shen <fengchen.shen@amlogic.com>
+
 commit 694957c19cb67b5197328034f235dd697769ebf0
 Author: Kai Song <kai.song@amlogic.com>
 Date:   Thu Nov 4 19:55:34 2021 +0800
@@ -195,30 +216,9 @@ Date:   Wed Oct 20 14:04:01 2021 +0800
     Change-Id: I9c115b165668c28caed444dd49b2ecb538c01c96
     Signed-off-by: jianchuan.ping <jianchuan.ping@amlogic.com>
 
-commit 3fd0043b5a1f0f4ccba08a1c92c11bb2d7683329
-Author: Yani Shi <yani.shi@amlogic.com>
-Date:   Mon Oct 25 09:00:18 2021 +0000
-
-    MediaSync: CB1 slow starting audio with zapping among audio channels. [2/2]
-    
-    PD#SWPL-59481
-    
-    Problem:
-    slow starting audio with zapping among audio channels.
-    
-    Solution:
-    send hasvideo to mediasync,fixed the audio waiting for the video
-    too long time in mediasync when audio only channel
-    
-    Verify:
-    verified on S905X4-AH212
-    
-    Change-Id: Id645d2395abd7e07f59972dbda86e424cf391cf4
-    Signed-off-by: Yani Shi <yani.shi@amlogic.com>
-
 ========================================
 
-Release time: 2021-11-09-20-00
+Release time: 2021-11-11-10-56
 
 ========================================
 
