@@ -1,10 +1,35 @@
 =========RELEALSE NOTE=================
 
-Version: V3.2.121-gb84abfb
+Version: V3.2.122-g8c0d669
 
 ========================================
 
 Git commit:
+commit 8c0d66960e9131a14eefe0e4ea1339495091effe
+Author: peter wang <peter.wang@amlogic.com>
+Date:   Mon Nov 8 20:32:49 2021 +0800
+
+    MediaHal: CB1 fix AdaptivePlaybackTest 1 hevc case fail [1/1]
+    
+    PD#SWPL-63852
+    
+    Problem:
+    bellow cts case failed in CtsMediaV2TestCases module:
+    android.mediav2.cts.AdaptivePlaybackTest#
+    testAdaptivePlayback[3(c2.amlogic.hevc.decoder_video/hevc)]
+    android.mediav2.cts.CodecDecoderSurfaceTest#
+    testFlushNative[10(c2.amlogic.hevc.decoder_video/hevc)]
+    
+    Solution:
+    do not set need_clear_csd_ to false to ensure the new csd can pass to decoder
+    enlarge MAX_CSD_LEN to 5k for larger csd frames
+    
+    Verify:
+    test on ohm
+    
+    Change-Id: Id2aa4c422e9bef6f460cccbd5232eb1514723587
+    Signed-off-by: peter wang <peter.wang@amlogic.com>
+
 commit b84abfbdc56a09806a9cbd8a14665a14c889e14f
 Author: fengchen.shen <fengchen.shen@amlogic.com>
 Date:   Fri Oct 29 06:53:15 2021 +0000
@@ -196,29 +221,9 @@ Date:   Wed Sep 29 13:14:31 2021 +0800
     Change-Id: Ifdeeff078a59d2c6d5eda5b8fb7e5e9c708668dd
     Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
 
-commit 498e37313d3cf3584af00eab32ab73e5f1fcd0a4
-Author: jianchuan.ping <jianchuan.ping@amlogic.com>
-Date:   Wed Oct 20 14:04:01 2021 +0800
-
-    TsPlayer: CB1 add prop can set cache time. [1/1]
-    
-    PD#SWPL-60604
-    
-    Problem:
-    FCC switch cahannel carton.
-    
-    Solution:
-    Can set FCC cache time.
-    
-    Verify:
-    AH212
-    
-    Change-Id: I9c115b165668c28caed444dd49b2ecb538c01c96
-    Signed-off-by: jianchuan.ping <jianchuan.ping@amlogic.com>
-
 ========================================
 
-Release time: 2021-11-11-10-56
+Release time: 2021-11-12-14-02
 
 ========================================
 
