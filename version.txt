@@ -1,10 +1,51 @@
 =========RELEALSE NOTE=================
 
-Version: V3.2.122-g8c0d669
+Version: V3.2.124-gcdba5f7
 
 ========================================
 
 Git commit:
+commit cdba5f7d7ee9bda24418e0e688542c56c637924c
+Author: lingrong.wu <lingrong.wu@amlogic.com>
+Date:   Mon Nov 15 15:44:58 2021 +0800
+
+    tsplayer: CB1 Video freeze when stress test by FCC [1/1]
+    
+    PD#SWPL-63431
+    
+    Problem:
+    Dead lock in onInputBufferDone if size larger than
+    kMaxEsBufSize in AmCodecVDA::decode
+    
+    Solution:
+    get mLock only when decode type is VIDEO_DECODER_FRAMEMODE
+    
+    Verify:
+    ohm_mxl258c
+    
+    Change-Id: Ie41a99f84f2ccf99d5ec2d825e2fc5ed3bdb653e
+    Signed-off-by: lingrong.wu@amlogic.com
+
+commit fab102f0b2a51c98cdad5d06b5a372541765bcba
+Author: jiabin.zhu <jiabin.zhu@amlogic.com>
+Date:   Tue Nov 9 10:38:38 2021 +0800
+
+    TsPlayer: CB1 support mjpeg file [1/1]
+    
+    PD#OTT-24931
+    
+    Problem:
+    1.need to support mjpeg video fmt
+    
+    Solution:
+    1.need to support mjpeg video fmt
+    
+    Verify:
+    verified on sc2
+    
+    Change-Id: Ic03db4024131dd52eb05a1562d35731d3521e0d2
+    Signed-off-by: jiabin.zhu <jiabin.zhu@amlogic.com>
+
 commit 8c0d66960e9131a14eefe0e4ea1339495091effe
 Author: peter wang <peter.wang@amlogic.com>
 Date:   Mon Nov 8 20:32:49 2021 +0800
@@ -181,49 +222,9 @@ Date:   Tue Nov 2 16:30:43 2021 +0800
     Change-Id: Iabc2f541e058b5a13bc89d90f32ec3159e2efc58
     Signed-off-by: shipeng.sun <shipeng.sun@amlogic.com>
 
-commit 0ac398efc052be5667c97019920c4c8c3bc709b1
-Author: jianchuan.ping <jianchuan.ping@amlogic.com>
-Date:   Fri Oct 8 15:11:03 2021 +0800
-
-    Media_Sync: CB1 PIP switch channel will not sync. [1/1]
-    
-    PD#SWPL-60746
-    
-    Problem:
-    PIP start have no apts info lead to not check demux error.
-    
-    Solution:
-    Update audio pts info when queue audio.
-    
-    Verify:
-    AH212
-    
-    Change-Id: I5ef01b655014462d7f6507463252a9036b55c75c
-    Signed-off-by: jianchuan.ping <jianchuan.ping@amlogic.com>
-
-commit 0d6f1b25ca51ffe604e99469f1d8cc7bcacf609d
-Author: yunmin.chen <yunmin.chen@amlogic.com>
-Date:   Wed Sep 29 13:14:31 2021 +0800
-
-    tsplayer: CF1 Add Amtsplayer documentation  [1/1]
-    
-    PD#SWPL-48769
-    
-    Problem:
-    Add Amtsplayer documentation
-    
-    Solution:
-    Add Amtsplayer documentation
-    
-    Verify:
-    SC2
-    
-    Change-Id: Ifdeeff078a59d2c6d5eda5b8fb7e5e9c708668dd
-    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
-
 ========================================
 
-Release time: 2021-11-12-14-02
+Release time: 2021-11-16-15-03
 
 ========================================
 
