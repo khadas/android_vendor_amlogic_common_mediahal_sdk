@@ -1,10 +1,72 @@
 =========RELEALSE NOTE=================
 
-Version: V3.2.124-gcdba5f7
+Version: V3.2.127-g98d5165
 
 ========================================
 
 Git commit:
+commit 98d516542c7fff3c5dabea108175689283fff2f6
+Author: yibo.wu <yibo.wu@amlogic.com>
+Date:   Sat Oct 9 02:43:17 2021 +0000
+
+    MediaSync: CB2 pcm playback is not smooth at end [2/2]
+    
+    PD#SWPL-58637
+    
+    Problem:
+    The test stream is mute frame at the beginning.
+    there is noise when loopback the stream.
+    
+    Solution:
+    return discontinue insert case to audiohal
+    
+    Verify:
+    AH212-S905x4
+    
+    Change-Id: Ic66f27e0314c78c2d6b5dd2cac1357bb180d3c51
+    Signed-off-by: yibo.wu <yibo.wu@amlogic.com>
+
+commit 970dfc5fcc1e9c0a038086a4cb718c037f716de2
+Author: Mingshan Cheng <mingshan.cheng@amlogic.com>
+Date:   Wed Nov 10 15:56:44 2021 +0800
+
+    tsplayer: CB1 fix compile error on AndroidS [1/1]
+    
+    PD#SWPL-64477
+    
+    Problem:
+    Compile error on AndroidS
+    
+    Solution:
+    include fcntl.h in AmAudioHalWrapper.cpp
+    
+    Verify:
+    SC2
+    
+    Change-Id: I211df1b5191f5287666e2b51190c115605fff33c
+    Signed-off-by: Mingshan Cheng <mingshan.cheng@amlogic.com>
+
+commit 5b39e632af539bda94ca6800a2efc4735205acff
+Author: Yani Shi <yani.shi@amlogic.com>
+Date:   Mon Nov 15 08:21:17 2021 +0000
+
+    Media_sync: CB2 Add case in checkStreamPtsValid and queueAudioFrame. [1/1]
+    
+    PD#SWPL-63348
+    
+    Problem:
+    switch channel by FCC,do timeshift,video is freeze.
+    
+    Solution:
+    1.add audio only case in queueAudioFrame
+    2.add a/v only and a/v late case in checkStreamPtsValid
+    
+    Verify:
+    AH212
+    
+    Change-Id: I0ae761d01f87093108c7099ad42d3cac08e1396e
+    Signed-off-by: Yani Shi <yani.shi@amlogic.com>
+
 commit cdba5f7d7ee9bda24418e0e688542c56c637924c
 Author: lingrong.wu <lingrong.wu@amlogic.com>
 Date:   Mon Nov 15 15:44:58 2021 +0800
@@ -156,75 +218,9 @@ Date:   Wed Nov 3 19:29:43 2021 +0800
     Change-Id: I08f9976b049ba11afbffb20f15f3c5ef214593ef
     Signed-off-by: shengxiang.lan <shengxiang.lan@amlogic.com>
 
-commit 125d3d1baf7324d660f637acb21d6f602c93a1b5
-Author: jiabin.zhu <jiabin.zhu@amlogic.com>
-Date:   Thu Nov 4 11:20:55 2021 +0800
-
-    TsPlayer: CB1 support ogg file [1/1]
-    
-    PD#OTT-24949
-    
-    Problem:
-    1.need to support ogg audio fmt
-    
-    Solution:
-    1.need to support ogg audio fmt
-    
-    Verify:
-    verified on Y4 & sc2
-    
-    Change-Id: Ie9fe21916ca264f70ffed6ec541ecd63921b3b33
-    Signed-off-by: jiabin.zhu <jiabin.zhu@amlogic.com>
-
-commit a236af2129b7e35f87dc076c43943e87c034d9bc
-Author: Jian Wang <jian.wang@amlogic.com>
-Date:   Wed Nov 3 11:43:38 2021 +0800
-
-    Videodec: CB1 fix eos nodify error [1/1]
-    
-    PD#SWPL-63444
-    
-    Problem:
-    When change resolution will update last
-    flag and resolution event at same time,
-    but some times first get last flag and
-     then get resolution event, this time
-    use last flag to use flush done duo to
-    codec2 get flush done early.
-    
-    Solution:
-    When get last flag, also get resolution event
-    at same time.
-    
-    Verify:
-    test on Ohm.
-    
-    Change-Id: I5614b0cf71cb1fbe65a13c13eb47a0fefea66bf0
-    Signed-off-by: Jian Wang <jian.wang@amlogic.com>
-
-commit e9d09fe47c0148b48b0942a98982a55ebad90321
-Author: shipeng.sun <shipeng.sun@amlogic.com>
-Date:   Tue Nov 2 16:30:43 2021 +0800
-
-    codec2: CF2 avoid call merge csd data when stream no csd [1/1]
-    
-    PD#SWPL-63271
-    
-    Problem:
-    avoid call merge csd data when stream no csd
-    
-    Solution:
-    avoid call merge csd data when stream no csd.
-    
-    Verify:
-    ohm
-    
-    Change-Id: Iabc2f541e058b5a13bc89d90f32ec3159e2efc58
-    Signed-off-by: shipeng.sun <shipeng.sun@amlogic.com>
-
 ========================================
 
-Release time: 2021-11-16-15-03
+Release time: 2021-11-17-19-12
 
 ========================================
 
