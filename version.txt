@@ -1,10 +1,30 @@
 =========RELEALSE NOTE=================
 
-Version: V3.2.127-g98d5165
+Version: V3.2.128-gf7c8887
 
 ========================================
 
 Git commit:
+commit f7c8887cb0dde4455a6516143c26426b75f3f2b7
+Author: jianchuan.ping <jianchuan.ping@amlogic.com>
+Date:   Thu Oct 28 10:45:34 2021 +0800
+
+    Media_Sync: CF1 Add frame control to media_sync [1/1]
+    
+    PD#SWPL-60545
+    
+    Problem:
+    Need add frame control to media sync.
+    
+    Solution:
+    Add frame control to media sync.
+    
+    Verify:
+    AH212
+    
+    Change-Id: I23c7a27136c0fbe07cf44332296c252aa6a234ad
+    Signed-off-by: jianchuan.ping <jianchuan.ping@amlogic.com>
+
 commit 98d516542c7fff3c5dabea108175689283fff2f6
 Author: yibo.wu <yibo.wu@amlogic.com>
 Date:   Sat Oct 9 02:43:17 2021 +0000
@@ -198,29 +218,9 @@ Date:   Thu Nov 4 17:52:54 2021 +0800
     Change-Id: Ifa67404cd84037d992b2a9033613459d3e356651
     Signed-off-by: shengxiang.lan <shengxiang.lan@amlogic.com>
 
-commit c7dd92d61324d8517a163337176ff39e201dfb69
-Author: shengxiang.lan <shengxiang.lan@amlogic.com>
-Date:   Wed Nov 3 19:29:43 2021 +0800
-
-    TsPlayer: CB1 Won't send first frame when channel lock dialog. [1/1]
-    
-    PD#TV-42606
-    
-    Problem:
-    tsplayer still send first frame event after PauseVideoDecoding.
-    
-    Solution:
-    tsplayer won't send first frame after PauseVideoDecoding.
-    
-    Verify:
-    T5D
-    
-    Change-Id: I08f9976b049ba11afbffb20f15f3c5ef214593ef
-    Signed-off-by: shengxiang.lan <shengxiang.lan@amlogic.com>
-
 ========================================
 
-Release time: 2021-11-17-19-12
+Release time: 2021-11-18-18-48
 
 ========================================
 
