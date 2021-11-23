@@ -1,10 +1,30 @@
 =========RELEALSE NOTE=================
 
-Version: V3.2.128-gf7c8887
+Version: V3.2.129-g9d95e35
 
 ========================================
 
 Git commit:
+commit 9d95e350a5844572b0560a41f7e5fe6167c59f2f
+Author: chen.chen1 <chen.chen1@amlogic.com>
+Date:   Tue Nov 23 10:59:05 2021 +0800
+
+    mediasync: CB1 video is not smooth. [1/1]
+    
+    PD#SWPL-65085
+    
+    Problem:
+    RefClock init wrongly because of choosing wrong start strategy
+    
+    Solution:
+    get the right start strategy before initing RefClock.
+    
+    Verify:
+    verified on S905X4-AH212
+    
+    Change-Id: Ie2b684bf3f755995a0f282582eaf975777af48a0
+    Signed-off-by: chen.chen1 <chen.chen1@amlogic.com>
+
 commit f7c8887cb0dde4455a6516143c26426b75f3f2b7
 Author: jianchuan.ping <jianchuan.ping@amlogic.com>
 Date:   Thu Oct 28 10:45:34 2021 +0800
@@ -198,29 +218,9 @@ Date:   Thu Nov 4 19:55:34 2021 +0800
     Change-Id: If3ea58bcf98e6849f6a98afde37c023770cd302e
     Signed-off-by: Kai Song <kai.song@amlogic.com>
 
-commit edb75ffbdf8bda7cc1ae1fd2fc0a0d0bae99d6e6
-Author: shengxiang.lan <shengxiang.lan@amlogic.com>
-Date:   Thu Nov 4 17:52:54 2021 +0800
-
-    TsPlayer: CB1 Play radio the progress bar abnormally after pause. [1/1]
-    
-    PD#TV-42006
-    
-    Problem:
-    Get the audio delay time wrong.
-    
-    Solution:
-    Change the api of geting audio delay time.
-    
-    Verify:
-    T5D
-    
-    Change-Id: Ifa67404cd84037d992b2a9033613459d3e356651
-    Signed-off-by: shengxiang.lan <shengxiang.lan@amlogic.com>
-
 ========================================
 
-Release time: 2021-11-18-18-48
+Release time: 2021-11-23-13-56
 
 ========================================
 
