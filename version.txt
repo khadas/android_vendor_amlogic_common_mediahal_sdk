@@ -1,10 +1,30 @@
 =========RELEALSE NOTE=================
 
-Version: V3.2.129-g9d95e35
+Version: V3.2.130-g78559a8
 
 ========================================
 
 Git commit:
+commit 78559a83a90320213653c4d97007850c381d7fca
+Author: fengchen.shen <fengchen.shen@amlogic.com>
+Date:   Fri Nov 19 06:14:57 2021 +0000
+
+    MediaHal: CB1 Fix playback rate(-2x -> 1.2x) avsync issue [1/1]
+    
+    PD#SWPL-63691
+    
+    Problem:
+    Playback rate will be invalid after flushing.
+    
+    Solution:
+    Store playback rate in TsPlayer and set to Rendor when flush done.
+    
+    Verify:
+    S905X4
+    
+    Change-Id: I796d35c58848e84b5ce479d5c85d6bcafaab56da
+    Signed-off-by: fengchen.shen <fengchen.shen@amlogic.com>
+
 commit 9d95e350a5844572b0560a41f7e5fe6167c59f2f
 Author: chen.chen1 <chen.chen1@amlogic.com>
 Date:   Tue Nov 23 10:59:05 2021 +0800
@@ -194,33 +214,9 @@ Date:   Fri Oct 29 06:53:15 2021 +0000
     Change-Id: I302067afe72eb6c3b0d9f3c84805d0911e7b6a32
     Signed-off-by: fengchen.shen <fengchen.shen@amlogic.com>
 
-commit 694957c19cb67b5197328034f235dd697769ebf0
-Author: Kai Song <kai.song@amlogic.com>
-Date:   Thu Nov 4 19:55:34 2021 +0800
-
-    MediaHal: CB1 Fix videoTunnelRenderer and PtsServ crash [1/2]
-    
-    PD#SWPL-63607
-    PD#SWPL-61730
-    
-    Problem:
-    videoTunnelRenderer will crash when destory as mVsyncFrac and
-    mdispAdapter are not inited
-    libmediahal_videodec crash when CheckoutPtsOffset
-    
-    Solution:
-    Init mVsyncFrac and mdispAdapter with NULL value
-    Set mPtsOffsetLink and node to NULL after free operation
-    
-    Verify:
-    Android-R OHM
-    
-    Change-Id: If3ea58bcf98e6849f6a98afde37c023770cd302e
-    Signed-off-by: Kai Song <kai.song@amlogic.com>
-
 ========================================
 
-Release time: 2021-11-23-13-56
+Release time: 2021-11-25-10-59
 
 ========================================
 
