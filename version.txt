@@ -1,10 +1,72 @@
 =========RELEALSE NOTE=================
 
-Version: V3.2.136-g35cf91e
+Version: V3.2.139-g7d924e8
 
 ========================================
 
 Git commit:
+commit 7d924e8f657144a1a1ee14ec415fcc71d20794a0
+Author: liang.hou <liang.hou@amlogic.com>
+Date:   Tue Nov 23 09:23:02 2021 +0000
+
+    mediahal: CF1 Calculate duration and set it to decoder [2/2]
+    
+    PD#SWPL-63542
+    
+    Problem:
+    Memc is no work because framerate is no set.
+    
+    Solution:
+    Calculate in OMX from pts.
+    
+    Verify:
+    Android R
+    
+    Change-Id: I350dda024cd1d7b1d73b327a2387c49e2b24debc
+    Signed-off-by: liang.hou <liang.hou@amlogic.com>
+
+commit 2ef539c7504d1826324f21e818f7e8d1cb4b4eeb
+Author: chen.chen1 <chen.chen1@amlogic.com>
+Date:   Mon Nov 29 14:26:12 2021 +0800
+
+    MediaSync:video fastforward when playing video-only streams. [1/1]
+    
+    PD#SWPL-65532
+    
+    Problem:
+    the threshold is small in case of handling vpts jump in video-only streams.
+    
+    Solution:
+    enlarge the threshold
+    
+    Verify:
+    verified on S905X4-AH212
+    
+    Change-Id: Idbbef7371e202e7e9e5cc0e097911954e0881556
+    Signed-off-by: chen.chen1 <chen.chen1@amlogic.com>
+
+commit 5323f678fef322c6436d1a303e5bbcc37b5c11fd
+Author: shipeng.sun <shipeng.sun@amlogic.com>
+Date:   Thu Nov 25 11:52:17 2021 +0800
+
+    videodec: CB2 resolution change event maybe discard [1/1]
+    
+    PD#SWPL-58047
+    
+    Problem:
+    gts.DashStreamingTest#h264AdaptiveWithSeeking random failed
+    vda report:
+    "Got EPIPE. Last output buffer was already dequeued
+    
+    Solution:
+    1. avoid resolution change event be discard in vda
+    
+    Verify:
+    AH212
+    
+    Change-Id: I02aec9fc72007561ec4f44da0ce030ab224c3a6e
+    Signed-off-by: shipeng.sun <shipeng.sun@amlogic.com>
+
 commit 35cf91e13b9c88aee644aa6f05e5c8947f0986ef
 Author: Yani Shi <yani.shi@amlogic.com>
 Date:   Mon Nov 15 02:45:04 2021 +0000
@@ -147,69 +209,9 @@ Date:   Mon Nov 8 16:54:19 2021 +0800
     Change-Id: I1d8835250018033609a028d066e0a7caca9a5ad2
     Signed-off-by: Kai Song <kai.song@amlogic.com>
 
-commit 78559a83a90320213653c4d97007850c381d7fca
-Author: fengchen.shen <fengchen.shen@amlogic.com>
-Date:   Fri Nov 19 06:14:57 2021 +0000
-
-    MediaHal: CB1 Fix playback rate(-2x -> 1.2x) avsync issue [1/1]
-    
-    PD#SWPL-63691
-    
-    Problem:
-    Playback rate will be invalid after flushing.
-    
-    Solution:
-    Store playback rate in TsPlayer and set to Rendor when flush done.
-    
-    Verify:
-    S905X4
-    
-    Change-Id: I796d35c58848e84b5ce479d5c85d6bcafaab56da
-    Signed-off-by: fengchen.shen <fengchen.shen@amlogic.com>
-
-commit 9d95e350a5844572b0560a41f7e5fe6167c59f2f
-Author: chen.chen1 <chen.chen1@amlogic.com>
-Date:   Tue Nov 23 10:59:05 2021 +0800
-
-    mediasync: CB1 video is not smooth. [1/1]
-    
-    PD#SWPL-65085
-    
-    Problem:
-    RefClock init wrongly because of choosing wrong start strategy
-    
-    Solution:
-    get the right start strategy before initing RefClock.
-    
-    Verify:
-    verified on S905X4-AH212
-    
-    Change-Id: Ie2b684bf3f755995a0f282582eaf975777af48a0
-    Signed-off-by: chen.chen1 <chen.chen1@amlogic.com>
-
-commit f7c8887cb0dde4455a6516143c26426b75f3f2b7
-Author: jianchuan.ping <jianchuan.ping@amlogic.com>
-Date:   Thu Oct 28 10:45:34 2021 +0800
-
-    Media_Sync: CF1 Add frame control to media_sync [1/1]
-    
-    PD#SWPL-60545
-    
-    Problem:
-    Need add frame control to media sync.
-    
-    Solution:
-    Add frame control to media sync.
-    
-    Verify:
-    AH212
-    
-    Change-Id: I23c7a27136c0fbe07cf44332296c252aa6a234ad
-    Signed-off-by: jianchuan.ping <jianchuan.ping@amlogic.com>
-
 ========================================
 
-Release time: 2021-11-29-11-08
+Release time: 2021-11-29-16-47
 
 ========================================
 
