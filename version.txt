@@ -1,10 +1,152 @@
 =========RELEALSE NOTE=================
 
-Version: V3.2.130-g78559a8
+Version: V3.2.136-g35cf91e
 
 ========================================
 
 Git commit:
+commit 35cf91e13b9c88aee644aa6f05e5c8947f0986ef
+Author: Yani Shi <yani.shi@amlogic.com>
+Date:   Mon Nov 15 02:45:04 2021 +0000
+
+    Media_sync: CF1 Under pcr master ref clock refer demux pcr implement. [1/2]
+    
+    PD#SWPL-59708
+    
+    Problem:
+    When PCR_CLOCK scenes,Under pcr master ref clock refer
+    demux pcr function implement
+    
+    Solution:
+    use slope adjust the playback
+    
+    Verify:
+    verified on S905X4-AH212
+    
+    Change-Id: Ie3200be4dc151cb6af5b5ff132319e7d877a75d2
+    Signed-off-by: Yani Shi <yani.shi@amlogic.com>
+
+commit cc7d2b6a54c5cce348acded824a33f07b12ffc98
+Merge: 193a517 f6f4057
+Author: Zhi Zhou <zhi.zhou@amlogic.com>
+Date:   Fri Nov 26 05:04:40 2021 -0800
+
+    Merge "videoTunnelRenderer: CF1 Support passthrough pip playback [1/1]"
+
+commit 193a517c53ca146b29be4a78f305b5260f81c541
+Author: peter wang <peter.wang@amlogic.com>
+Date:   Fri Nov 26 18:19:48 2021 +0800
+
+    MediaHal: CB1 fix videodec compile error [1/1]
+    
+    PD#SWPL-63692
+    
+    Problem:
+    MediaHal videodec compile error
+    
+    Solution:
+    add a new parameter as use_flags for needAddHead
+    
+    Verify:
+    test on ohm
+    
+    Change-Id: I3d6f10d6cb5c801f61eb580a6cd4b9ffb8be5b66
+    Signed-off-by: peter wang <peter.wang@amlogic.com>
+
+commit 44ade161242ca32cd28fac62e6c37d9292dd09e1
+Author: Jian Wang <jian.wang@amlogic.com>
+Date:   Thu Nov 25 14:21:56 2021 +0800
+
+    Videodec: CB1 fix cts one frame case error [1/1]
+    
+    PD#SWPL-65439
+    
+    Problem:
+    Some spec cts case have 1 frame and donot
+    output c2 will 3s timeout error
+    
+    Solution:
+    Modify flush done timeout from 4s to
+    2.5s, return flush done before c2 timeout
+    
+    Verify:
+    Ohm
+    
+    Change-Id: Ic84b222035b53c0ac5b51148c6c8885f89177202
+    Signed-off-by: Jian Wang <jian.wang@amlogic.com>
+
+commit 100637d82ca3f4777049d83cc97ce80fece6a6d7
+Author: peter wang <peter.wang@amlogic.com>
+Date:   Mon Nov 22 10:56:37 2021 +0800
+
+    MediaHal: CB1 fix mpeg2 1field case no output from decoder [1/1]
+    
+    PD#SWPL-63692
+    
+    Problem:
+    Decoder can't output while testing bellow cts case in CtsMediaV2TestCases module
+    android.mediav2.cts.CodecDecoderSurfaceTest#
+    testSimpleDecodeToSurface[14(c2.amlogic.mpeg2.decoder_video/mpeg2)]
+    
+    Solution:
+    add mpeg2 start code at each tail of input buffer
+    
+    Verify:
+    test on ohm
+    
+    Change-Id: I76bd7311b96b7e5239b96652f2dcfdc9660234c9
+    Signed-off-by: peter wang <peter.wang@amlogic.com>
+
+commit 153674d77baa8ef910605a03ed903d6d6594f567
+Author: jiacheng.du <jiacheng.du@amlogic.com>
+Date:   Wed Nov 24 14:12:47 2021 +0800
+
+    tsplayer: CF1 add get first pts function [1/1]
+    
+    PD#SWPL-65314
+    
+    Problem:
+    need get first av pts
+    
+    Solution:
+    add get first pts function
+    
+    Verify:
+    ohm
+    
+    Change-Id: I17068f54d7a699697d8da4d9930c0561e2d94253
+    Signed-off-by: jiacheng.du <jiacheng.du@amlogic.com>
+
+commit f6f4057e8efe4482aaa0536b481fae67d4fcfc6a
+Author: Kai Song <kai.song@amlogic.com>
+Date:   Mon Nov 8 16:54:19 2021 +0800
+
+    videoTunnelRenderer: CF1 Support passthrough pip playback [1/1]
+    
+    PD#SWPL-62130
+    PD#SWPL-64572
+    
+    Problem:
+    1.videoTunnelRenderer not support alloc tunnel id for
+    passthrough pip playback
+    2.vpts jump back exception
+    3.Update HWCVsyncInfo for video passthrough
+    4.VideoTunnelRenderer needs to add the video frame size
+    parameter for onVideoSyncQueueVideoFrame api
+    
+    Solution:
+    1.videoTunnelRenderer adds support for passthrough pip playback
+    2.Input the correct vpts to mediasync VideoProcess
+    3.Get the real vsync timestamp and period to update
+    the HWCVsyncInfo
+    4.Input the real video frame size when queueVideoFrame
+    
+    Verify:
+    Android-R OHM
+    
+    Change-Id: I1d8835250018033609a028d066e0a7caca9a5ad2
+    Signed-off-by: Kai Song <kai.song@amlogic.com>
+
 commit 78559a83a90320213653c4d97007850c381d7fca
 Author: fengchen.shen <fengchen.shen@amlogic.com>
 Date:   Fri Nov 19 06:14:57 2021 +0000
@@ -65,158 +207,9 @@ Date:   Thu Oct 28 10:45:34 2021 +0800
     Change-Id: I23c7a27136c0fbe07cf44332296c252aa6a234ad
     Signed-off-by: jianchuan.ping <jianchuan.ping@amlogic.com>
 
-commit 98d516542c7fff3c5dabea108175689283fff2f6
-Author: yibo.wu <yibo.wu@amlogic.com>
-Date:   Sat Oct 9 02:43:17 2021 +0000
-
-    MediaSync: CB2 pcm playback is not smooth at end [2/2]
-    
-    PD#SWPL-58637
-    
-    Problem:
-    The test stream is mute frame at the beginning.
-    there is noise when loopback the stream.
-    
-    Solution:
-    return discontinue insert case to audiohal
-    
-    Verify:
-    AH212-S905x4
-    
-    Change-Id: Ic66f27e0314c78c2d6b5dd2cac1357bb180d3c51
-    Signed-off-by: yibo.wu <yibo.wu@amlogic.com>
-
-commit 970dfc5fcc1e9c0a038086a4cb718c037f716de2
-Author: Mingshan Cheng <mingshan.cheng@amlogic.com>
-Date:   Wed Nov 10 15:56:44 2021 +0800
-
-    tsplayer: CB1 fix compile error on AndroidS [1/1]
-    
-    PD#SWPL-64477
-    
-    Problem:
-    Compile error on AndroidS
-    
-    Solution:
-    include fcntl.h in AmAudioHalWrapper.cpp
-    
-    Verify:
-    SC2
-    
-    Change-Id: I211df1b5191f5287666e2b51190c115605fff33c
-    Signed-off-by: Mingshan Cheng <mingshan.cheng@amlogic.com>
-
-commit 5b39e632af539bda94ca6800a2efc4735205acff
-Author: Yani Shi <yani.shi@amlogic.com>
-Date:   Mon Nov 15 08:21:17 2021 +0000
-
-    Media_sync: CB2 Add case in checkStreamPtsValid and queueAudioFrame. [1/1]
-    
-    PD#SWPL-63348
-    
-    Problem:
-    switch channel by FCC,do timeshift,video is freeze.
-    
-    Solution:
-    1.add audio only case in queueAudioFrame
-    2.add a/v only and a/v late case in checkStreamPtsValid
-    
-    Verify:
-    AH212
-    
-    Change-Id: I0ae761d01f87093108c7099ad42d3cac08e1396e
-    Signed-off-by: Yani Shi <yani.shi@amlogic.com>
-
-commit cdba5f7d7ee9bda24418e0e688542c56c637924c
-Author: lingrong.wu <lingrong.wu@amlogic.com>
-Date:   Mon Nov 15 15:44:58 2021 +0800
-
-    tsplayer: CB1 Video freeze when stress test by FCC [1/1]
-    
-    PD#SWPL-63431
-    
-    Problem:
-    Dead lock in onInputBufferDone if size larger than
-    kMaxEsBufSize in AmCodecVDA::decode
-    
-    Solution:
-    get mLock only when decode type is VIDEO_DECODER_FRAMEMODE
-    
-    Verify:
-    ohm_mxl258c
-    
-    Change-Id: Ie41a99f84f2ccf99d5ec2d825e2fc5ed3bdb653e
-    Signed-off-by: lingrong.wu@amlogic.com
-
-commit fab102f0b2a51c98cdad5d06b5a372541765bcba
-Author: jiabin.zhu <jiabin.zhu@amlogic.com>
-Date:   Tue Nov 9 10:38:38 2021 +0800
-
-    TsPlayer: CB1 support mjpeg file [1/1]
-    
-    PD#OTT-24931
-    
-    Problem:
-    1.need to support mjpeg video fmt
-    
-    Solution:
-    1.need to support mjpeg video fmt
-    
-    Verify:
-    verified on sc2
-    
-    Change-Id: Ic03db4024131dd52eb05a1562d35731d3521e0d2
-    Signed-off-by: jiabin.zhu <jiabin.zhu@amlogic.com>
-
-commit 8c0d66960e9131a14eefe0e4ea1339495091effe
-Author: peter wang <peter.wang@amlogic.com>
-Date:   Mon Nov 8 20:32:49 2021 +0800
-
-    MediaHal: CB1 fix AdaptivePlaybackTest 1 hevc case fail [1/1]
-    
-    PD#SWPL-63852
-    
-    Problem:
-    bellow cts case failed in CtsMediaV2TestCases module:
-    android.mediav2.cts.AdaptivePlaybackTest#
-    testAdaptivePlayback[3(c2.amlogic.hevc.decoder_video/hevc)]
-    android.mediav2.cts.CodecDecoderSurfaceTest#
-    testFlushNative[10(c2.amlogic.hevc.decoder_video/hevc)]
-    
-    Solution:
-    do not set need_clear_csd_ to false to ensure the new csd can pass to decoder
-    enlarge MAX_CSD_LEN to 5k for larger csd frames
-    
-    Verify:
-    test on ohm
-    
-    Change-Id: Id2aa4c422e9bef6f460cccbd5232eb1514723587
-    Signed-off-by: peter wang <peter.wang@amlogic.com>
-
-commit b84abfbdc56a09806a9cbd8a14665a14c889e14f
-Author: fengchen.shen <fengchen.shen@amlogic.com>
-Date:   Fri Oct 29 06:53:15 2021 +0000
-
-    tsplayer: CB1 avoid tsplayer start/stop two times [1/1]
-    
-    PD#SWPL-59496
-    
-    Problem:
-    Sometimes tsplayer start/stop two times.
-    
-    Solution:
-    1. use aLock/vLock to avoid tsplayer start/stop two times at the same time.
-    2. If tsplayer start/stop already,return OK.
-    
-    Verify:
-    S905X4
-    
-    Change-Id: I302067afe72eb6c3b0d9f3c84805d0911e7b6a32
-    Signed-off-by: fengchen.shen <fengchen.shen@amlogic.com>
-
 ========================================
 
-Release time: 2021-11-25-10-59
+Release time: 2021-11-29-11-08
 
 ========================================
 

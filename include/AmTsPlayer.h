@@ -491,6 +491,7 @@ am_tsplayer_result  AmTsPlayer_getCurrentTime(am_tsplayer_handle Hadl, int64_t *
  *\return:       The AmTsPlayer result.
  */
 am_tsplayer_result  AmTsPlayer_getPts(am_tsplayer_handle Hadl, am_tsplayer_stream_type StrType, uint64_t *pts);
+
 /**
  *\brief:        Set the tsync mode for specified AmTsPlayer instance.
  *\inparam:      AmTsPlayer handle.
@@ -843,12 +844,22 @@ am_tsplayer_result AmTsPlayer_getState(am_tsplayer_handle Hadl,am_tsplayer_state
  *\return:       The AmTsPlayer result.
  */
 am_tsplayer_result  AmTsPlayer_startSub(am_tsplayer_handle Hadl);
+
 /**
  *\brief:        Stop subtitle for specified AmTsPlayer instance .
  *\inparam:      AmTsPlayer handle.
  *\return:       The AmTsPlayer result.
  */
 am_tsplayer_result  AmTsPlayer_stopSub(am_tsplayer_handle Hadl);
+
+/**
+ *\brief:        Get the first pts of specified AmTsPlayer instance.
+ *\inparam:      AmTsPlayer handle.
+ *\inparam:      stream type.
+ *\outparam:     pts.
+ *\return:       The AmTsPlayer result.
+ */
+am_tsplayer_result  AmTsPlayer_getFirstPts(am_tsplayer_handle Hadl, am_tsplayer_stream_type StrType, uint64_t *pts);
 
 #ifdef __cplusplus
 }
