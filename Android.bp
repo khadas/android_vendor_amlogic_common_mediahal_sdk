@@ -56,7 +56,15 @@ cc_prebuilt_library_shared {
     none: true,
     },
 
-    srcs: ["lib/vendor/libmediahal_videodec.so"],
+    arch: {
+        arm: {
+            srcs: ["lib/vendor/libmediahal_videodec.so"],
+        },
+        arm64: {
+            srcs: ["lib64/vendor/libmediahal_videodec.so"],
+        },
+    },
+
     check_elf_files: false,
 }
 
@@ -71,7 +79,7 @@ cc_prebuilt_library_shared {
             srcs: ["lib/system/libmediahal_videodec.system.so"],
         },
         arm64: {
-            enabled: false,
+            srcs: ["lib64/system/libmediahal_videodec.system.so"],
         },
         x86: {
             enabled: false,
@@ -95,7 +103,7 @@ cc_prebuilt_library_shared {
             srcs: ["lib/vendor/libmediahal_tsplayer.so"],
         },
         arm64: {
-            enabled: false,
+            srcs: ["lib64/vendor/libmediahal_tsplayer.so"],
         },
         x86: {
             enabled: false,
@@ -119,7 +127,7 @@ cc_prebuilt_library_shared {
             srcs: ["lib/system/libmediahal_tsplayer.system.so"],
         },
         arm64: {
-            enabled: false,
+            srcs: ["lib64/system/libmediahal_tsplayer.system.so"],
         },
         x86: {
             enabled: false,
@@ -143,18 +151,32 @@ cc_prebuilt_library_shared {
     export_header_lib_headers: [
         "libmediahal_headers",
     ],
-    srcs: ["lib/vendor/libmediahal_mediasync.so"],
+    arch: {
+        arm: {
+            srcs: ["lib/vendor/libmediahal_mediasync.so"],
+        },
+        arm64: {
+            srcs: ["lib64/vendor/libmediahal_mediasync.so"],
+        },
+    },
     check_elf_files: false,
 }
 
 cc_prebuilt_library_shared {
     name: "libmediahal_mediasync.system",
     defaults: ["mediahalvercheck_defaults"],
-    compile_multilib: "32",
+    compile_multilib: "both",
     strip: {
         none: true,
     },
-   srcs: ["lib/system/libmediahal_mediasync.system.so"],
+    arch: {
+        arm: {
+            srcs: ["lib/system/libmediahal_mediasync.system.so"],
+        },
+        arm64: {
+            srcs: ["lib64/system/libmediahal_mediasync.system.so"],
+        },
+    },
    check_elf_files: false,
 }
 
@@ -162,7 +184,7 @@ cc_prebuilt_library_shared {
     name: "libmediahal_tunnelrenderer",
     defaults: ["mediahal_sdk_go_defaults"],
     vendor: true,
-    compile_multilib: "32",
+    compile_multilib: "both",
     strip: {
     none: true,
     },
@@ -171,7 +193,7 @@ cc_prebuilt_library_shared {
             srcs: ["lib/vendor/libmediahal_tunnelrenderer.so"],
         },
         arm64: {
-            enabled: false,
+            srcs: ["lib64/vendor/libmediahal_tunnelrenderer.so"],
         },
         x86: {
             enabled: false,
@@ -211,14 +233,14 @@ cc_prebuilt_library_shared {
 cc_prebuilt_library_shared {
     name: "libmediahal_resman",
     vendor: true,
-    compile_multilib: "32",
+    compile_multilib: "both",
 
     arch: {
         arm: {
             srcs: ["lib/vendor/libmediahal_resman.so"],
         },
         arm64: {
-            enabled: false,
+            srcs: ["lib64/vendor/libmediahal_resman.so"],
         },
         x86: {
             enabled: false,
@@ -234,14 +256,14 @@ cc_prebuilt_library_shared {
 cc_prebuilt_library_shared {
     name: "libmediahal_resman.system",
     defaults: ["mediahalvercheck_defaults"],
-    compile_multilib: "32",
+    compile_multilib: "both",
 
     arch: {
         arm: {
             srcs: ["lib/system/libmediahal_resman.system.so"],
         },
         arm64: {
-            enabled: false,
+            srcs: ["lib64/system/libmediahal_resman.system.so"],
         },
         x86: {
             enabled: false,
@@ -263,7 +285,7 @@ cc_prebuilt_binary {
             srcs: ["bin/vesplayer"],
         },
         arm64: {
-            enabled: false,
+            srcs: ["bin64/vesplayer"],
         },
         x86: {
             enabled: false,
@@ -284,7 +306,7 @@ cc_prebuilt_binary {
             srcs: ["bin/EsVideoDecPlayer"],
         },
         arm64: {
-            enabled: false,
+            srcs: ["bin64/EsVideoDecPlayer"],
         },
         x86: {
             enabled: false,
