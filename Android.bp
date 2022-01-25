@@ -64,7 +64,6 @@ cc_prebuilt_library_shared {
             srcs: ["lib64/vendor/libmediahal_videodec.so"],
         },
     },
-
     check_elf_files: false,
 }
 
@@ -209,7 +208,7 @@ cc_prebuilt_library_shared {
     name: "libmediahal_passthrough",
     defaults: ["mediahal_sdk_go_defaults","mediahalvercheck_mediahal_passthrough_defaults"],
     vendor: true,
-    compile_multilib: "32",
+    compile_multilib: "both",
     strip: {
         none: true,
     },
@@ -218,7 +217,7 @@ cc_prebuilt_library_shared {
             srcs: ["lib/vendor/libmediahal_passthrough.so"],
         },
         arm64: {
-            enabled: false,
+            srcs: ["lib64/vendor/libmediahal_passthrough.so"],
         },
         x86: {
             enabled: false,
@@ -285,7 +284,7 @@ cc_prebuilt_binary {
             srcs: ["bin/vesplayer"],
         },
         arm64: {
-            srcs: ["bin64/vesplayer"],
+            enabled: false,
         },
         x86: {
             enabled: false,
@@ -306,7 +305,7 @@ cc_prebuilt_binary {
             srcs: ["bin/EsVideoDecPlayer"],
         },
         arm64: {
-            srcs: ["bin64/EsVideoDecPlayer"],
+            enabled: false,
         },
         x86: {
             enabled: false,

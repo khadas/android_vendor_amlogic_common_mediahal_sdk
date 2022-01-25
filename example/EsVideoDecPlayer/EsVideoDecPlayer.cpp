@@ -613,17 +613,17 @@ void VideoDecPlayerExample::onOutputFormatChanged(uint32_t requestedNumOfBuffers
     }
 #endif
 
-    printf("onOutputFormatChanged out timeUs %lld\n", getTimeUsFromStart());
+    printf("onOutputFormatChanged out timeUs %lld\n",(long long)getTimeUsFromStart());
 }
 
 
 void VideoDecPlayerExample::onOutputBufferDone(int32_t pictureBufferId, int64_t bitstreamId,
                                                uint32_t width, uint32_t height) {
     printf("onOutputBufferDone this %p, pictureBufferId %d, bitstreamId %lld, mInputWork.size %d, In %d, Out %d\n",
-                        this, pictureBufferId, bitstreamId, mInputWork.size(), mInputDoneCount, mOutputDoneCount);
+                        this, pictureBufferId,(long long)bitstreamId,(int)mInputWork.size(), mInputDoneCount, mOutputDoneCount);
     std::lock_guard<std::mutex> lock(mOutputLock);
     int64_t timestamp = mInputWork[bitstreamId];
-    printf("onOutputBufferDone this %p, timestamp %lld, width %d, height %d\n",this, timestamp, width, height);
+    printf("onOutputBufferDone this %p, timestamp %lld, width %d, height %d\n",this,(long long)timestamp, width, height);
 
     mDisplayWork.push({bitstreamId, timestamp, pictureBufferId, width, height});
     mInputWork.erase(bitstreamId);
