@@ -56,14 +56,7 @@ cc_prebuilt_library_shared {
     none: true,
     },
 
-    arch: {
-        arm: {
-            srcs: ["lib/vendor/libmediahal_videodec.so"],
-        },
-        arm64: {
-            srcs: ["lib64/vendor/libmediahal_videodec.so"],
-        },
-    },
+    srcs: ["lib/vendor/libmediahal_videodec.so"],
     check_elf_files: false,
 }
 
@@ -78,7 +71,7 @@ cc_prebuilt_library_shared {
             srcs: ["lib/system/libmediahal_videodec.system.so"],
         },
         arm64: {
-            srcs: ["lib64/system/libmediahal_videodec.system.so"],
+            enabled: false,
         },
         x86: {
             enabled: false,
@@ -102,7 +95,7 @@ cc_prebuilt_library_shared {
             srcs: ["lib/vendor/libmediahal_tsplayer.so"],
         },
         arm64: {
-            srcs: ["lib64/vendor/libmediahal_tsplayer.so"],
+            enabled: false,
         },
         x86: {
             enabled: false,
@@ -126,7 +119,7 @@ cc_prebuilt_library_shared {
             srcs: ["lib/system/libmediahal_tsplayer.system.so"],
         },
         arm64: {
-            srcs: ["lib64/system/libmediahal_tsplayer.system.so"],
+            enabled: false,
         },
         x86: {
             enabled: false,
@@ -150,32 +143,18 @@ cc_prebuilt_library_shared {
     export_header_lib_headers: [
         "libmediahal_headers",
     ],
-    arch: {
-        arm: {
-            srcs: ["lib/vendor/libmediahal_mediasync.so"],
-        },
-        arm64: {
-            srcs: ["lib64/vendor/libmediahal_mediasync.so"],
-        },
-    },
+    srcs: ["lib/vendor/libmediahal_mediasync.so"],
     check_elf_files: false,
 }
 
 cc_prebuilt_library_shared {
     name: "libmediahal_mediasync.system",
     defaults: ["mediahalvercheck_defaults"],
-    compile_multilib: "both",
+    compile_multilib: "32",
     strip: {
         none: true,
     },
-    arch: {
-        arm: {
-            srcs: ["lib/system/libmediahal_mediasync.system.so"],
-        },
-        arm64: {
-            srcs: ["lib64/system/libmediahal_mediasync.system.so"],
-        },
-    },
+   srcs: ["lib/system/libmediahal_mediasync.system.so"],
    check_elf_files: false,
 }
 
@@ -183,7 +162,7 @@ cc_prebuilt_library_shared {
     name: "libmediahal_tunnelrenderer",
     defaults: ["mediahal_sdk_go_defaults"],
     vendor: true,
-    compile_multilib: "both",
+    compile_multilib: "32",
     strip: {
     none: true,
     },
@@ -192,7 +171,7 @@ cc_prebuilt_library_shared {
             srcs: ["lib/vendor/libmediahal_tunnelrenderer.so"],
         },
         arm64: {
-            srcs: ["lib64/vendor/libmediahal_tunnelrenderer.so"],
+            enabled: false,
         },
         x86: {
             enabled: false,
@@ -208,7 +187,7 @@ cc_prebuilt_library_shared {
     name: "libmediahal_passthrough",
     defaults: ["mediahal_sdk_go_defaults","mediahalvercheck_mediahal_passthrough_defaults"],
     vendor: true,
-    compile_multilib: "both",
+    compile_multilib: "32",
     strip: {
         none: true,
     },
@@ -217,7 +196,7 @@ cc_prebuilt_library_shared {
             srcs: ["lib/vendor/libmediahal_passthrough.so"],
         },
         arm64: {
-            srcs: ["lib64/vendor/libmediahal_passthrough.so"],
+            enabled: false,
         },
         x86: {
             enabled: false,
@@ -232,14 +211,14 @@ cc_prebuilt_library_shared {
 cc_prebuilt_library_shared {
     name: "libmediahal_resman",
     vendor: true,
-    compile_multilib: "both",
+    compile_multilib: "32",
 
     arch: {
         arm: {
             srcs: ["lib/vendor/libmediahal_resman.so"],
         },
         arm64: {
-            srcs: ["lib64/vendor/libmediahal_resman.so"],
+            enabled: false,
         },
         x86: {
             enabled: false,
@@ -255,14 +234,14 @@ cc_prebuilt_library_shared {
 cc_prebuilt_library_shared {
     name: "libmediahal_resman.system",
     defaults: ["mediahalvercheck_defaults"],
-    compile_multilib: "both",
+    compile_multilib: "32",
 
     arch: {
         arm: {
             srcs: ["lib/system/libmediahal_resman.system.so"],
         },
         arm64: {
-            srcs: ["lib64/system/libmediahal_resman.system.so"],
+            enabled: false,
         },
         x86: {
             enabled: false,
