@@ -31,7 +31,7 @@
 #include <ctype.h>
 #include <unistd.h>
 #include <getopt.h>
-#include <inttypes.h>
+
 #include "AmVideoDecBase.h"
 
 #define READ_SIZE (512 * 1024)
@@ -370,8 +370,8 @@ void vesplayer::onOutputFormatChanged(uint32_t requestedNumOfBuffers,
 
 void vesplayer::onOutputBufferDone(int32_t pictureBufferId, int64_t bitstreamId,
                 uint32_t width, uint32_t height) {
-    printf("%s pictureBufferId:%d bitstreamId:%" PRId64 " width:%d height:%d\n", __func__,
-        pictureBufferId, bitstreamId, width, height);
+    printf("%s pictureBufferId:%d bitstreamId:%lld width:%d height:%d\n", __func__,
+        pictureBufferId,(long long)bitstreamId, width, height);
 }
 void vesplayer::onInputBufferDone(int32_t bitstream_buffer_id) {
     //printf("%s bitstream_buffer_id:%d\n", __func__,
