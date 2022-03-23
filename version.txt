@@ -1,17 +1,17 @@
 =========RELEALSE NOTE=================
 
-Version: V3.2.190-g7cf506d
+Version: V3.2.213-g4a61db8
 
 ========================================
 
 Git commit:
-commit 7cf506d1b065eab12cdbc9bfcab9fde59994d7a7
+commit 4a61db8c8b8acf5cd047c081c7c1be1b98007401
 Author: yunmin.chen <yunmin.chen@amlogic.com>
-Date:   Tue Jan 25 16:08:09 2022 +0800
+Date:   Fri Mar 18 20:10:15 2022 +0800
 
     mediahal: CF1 Compile the 64 bit library.  [1/1]
     
-    PD#SWPL-70993
+    PD#SWPL-75480
     
     Problem:
     Compile the 64 bit library.
@@ -22,204 +22,207 @@ Date:   Tue Jan 25 16:08:09 2022 +0800
     Verify:
     SC2
     
-    Change-Id: Ieb66a8737d4c2493584f373e23ee28de3ffca8fa
+    Change-Id: I929c5f837321db890022f02446c112665f8f9954
     Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
 
-commit 6ca0aba39e86b4d2928ea1b4c4b4920d502a2bb3
-Author: chen.chen1 <chen.chen1@amlogic.com>
-Date:   Wed Jan 19 21:13:26 2022 +0800
-
-    MediaSync: CB2 AV sometimes stuck when trickplay change to normal play. [1/1]
-    
-    PD#SWPL-69219
-    
-    Problem:
-    update refclock fail when resume play, because audio may not do reset
-    when CMD_STOP,due to CMD_CLOSE excute first.
-    
-    Solution:
-    do reset after bindinstance success.
-    
-    Verify:
-    verified on S905X4-AH212
-    
-    Change-Id: Ib15a61b13c56b1d6f0f7e1a5d454a8def7ec7464
-    Signed-off-by: chen.chen1 <chen.chen1@amlogic.com>
-
-commit 66545f7051fdf64881a6c121a72d4c1a6e6af3fb
+commit 74dce10ccf37cb71aa4bc0e660de58368af9b86b
 Author: yunmin.chen <yunmin.chen@amlogic.com>
-Date:   Wed Nov 17 20:30:22 2021 +0800
+Date:   Tue Mar 15 00:44:38 2022 +0800
 
-    tsplayer: CF1 fix video block when surface visibleRegion is 0 [3/3]
+    tsplayer: CB1 Fix 2 crashes. [1/1]
     
-    PD#SWPL-63382
+    PD#SWPL-68730
     
     Problem:
-    when surface visibleRegion is 0, will can not set layer to hwc,
-    so videotunnel consumer would not exist, video will block.
+    1.TsPlayer::onEvent() crash.
+    2.AmVideoDec::notifyFlushDone() crash.
     
     Solution:
-    1.add support for cancel buffer
-    2.return -ENOTCONN when dequeu buffer and no conumser
-    3.when get -ENOTCONN, call cancel buffer one times, and
-    call dequeue buffer api again, ensure buffer can recyle
-    normaly
+    1.No callback Event function is set to tsplayer.
+    Before throwing the event,
+    determine whether the callback function is empty.
+    2.tsplayer is set to the callback class of AmVideoDec,
+    and it deletes when the playback completely exits.
     
     Verify:
-    ohm
+    SC2
     
-    Change-Id: I629914badfd4a7ea6ebed1ad27bef7bcdb2f80c5
+    Change-Id: I924e780861ebce9f62bfce7114803583ddb1c85d
     Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
 
-commit e7e9fe2996064533d37e3347eefea89608d23837
-Author: jiabin.zhu <jiabin.zhu@amlogic.com>
-Date:   Mon Jan 17 21:24:08 2022 +0800
+commit 04d5c6937cc537f798204ef17b07e4f9e9084b37
+Author: yunmin.chen <yunmin.chen@amlogic.com>
+Date:   Sun Mar 6 20:56:08 2022 +0800
 
-    TsPlayer: CF1 Frame info not right after switch by fcc. [1/1]
+    mediahal: CB1 Organize the license of the code  [1/1]
     
-    PD#SWPL-69453
+    PD#SWPL-71384
     
     Problem:
-    video info not right after switch cache mode to normal mode.
+    Organize the license of the code.
     
     Solution:
-    Reset video info after switch by fcc.
+    Organize the license of the code.
     
     Verify:
-    verified on S905X4-AH212
+    SC2
     
-    Change-Id: I3b929fd066ca4757df4ca7ef50ee61c699bcbbfe
-    Signed-off-by: jiabin.zhu <jiabin.zhu@amlogic.com>
+    Change-Id: Iea87a9a887de88b297821a1d6a7e401686498555
+    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
 
-commit 7a08efd2724d7c07d521fc739bf82585f753d8fd
-Author: zhipeng.he <zhipeng.he@amlogic.com>
-Date:   Wed Jan 19 10:53:27 2022 +0800
-
-    tsplayer: CB2 send dataloss not need wait avsync. [1/1]
-    
-    PD#TV-46739
-    
-    Problem:
-    dataloss not sent in time.
-    
-    Solution:
-    send dataloss not need wait avsync.
-    
-    Verify:
-    T950D4_AM301
-    
-    Change-Id: Ica30fe684e4f88e07493cc9a006f3b4451f53b5d
-    Signed-off-by: zhipeng.he <zhipeng.he@amlogic.com>
-
-commit a45911057c251a94d403f28957e0d97d89501c5f
+commit 0fb07e3dbc7d8fd5eca4744340128cd5ccae99bd
 Author: yang liu1 <yang.liu1@amlogic.com>
-Date:   Tue Jan 11 10:25:29 2022 +0800
+Date:   Wed Mar 9 15:08:31 2022 +0800
 
-    videodec: CB1 fix the hevc/avc stream head error. [1/1]
+    videodec: CF0 support omx v2 on T7 andorid p. [2/3]
     
-    PD#SWPL-64899
+    PD#SWPL-71581
     
     Problem:
-    avc and hevc stream head bytes data is all 0.
+    support omx v2 on T7 andorid p
     
     Solution:
-    check the head of avc/hevc stream.
+    support omx v2 on T7 on andorid p
     
     Verify:
-    ohm
+    T7
     
-    Change-Id: Id4a95020c85e193be91c12cdd1fbad73ff11fcbe
+    Change-Id: Ibd2281470736c2cbcc7ae15a88835bcf174613b2
     Signed-off-by: yang liu1 <yang.liu1@amlogic.com>
 
-commit 8cd8bc49411dc4fb2fceb318a8ff6b02b124af1a
-Author: kuan.hu <kuan.hu@amlogic.com>
-Date:   Fri Dec 10 13:08:19 2021 +0800
+commit 99e4f40d8c00faead4ca5cd37dfb4001c595f41f
+Author: chen.chen1 <chen.chen1@amlogic.com>
+Date:   Tue Feb 22 16:42:38 2022 +0800
 
-    videodec: CF1 add avs2 support [3/4]
+    mediasync: CB1 mediasync optimization part-1 . [1/2]
     
-    PD#SWPL-60206
+    PD#SWPL-72953
     
     Problem:
-    Lack of avS2 format support.
+    some special streams may have stuck during playback.
     
     Solution:
-    add avs2 format support.
+    1. startpts set need to consider demux pcr in Startplay and streamloop cases;
+    2. solve audio cache and video cache calculate not correctly sometimes;
+    3. optimize video drop strategy;
+    
+    Verify:
+    verified on S905X4-AH212
+    
+    Change-Id: Ifd5c425077056bb4de8189887c234acd51ef5345
+    Signed-off-by: chen.chen1 <chen.chen1@amlogic.com>
+
+commit c6588e2cba9e6c098e0f7ccd6b52e73db292ee35
+Author: yunmin.chen <yunmin.chen@amlogic.com>
+Date:   Fri Mar 11 14:09:13 2022 +0800
+
+    mediasync: CB1 MediaSync_create() blocks.  [1/1]
+    
+    PD#TV-50509
+    
+    Problem:
+    The platform has no mediasync driver.
+    
+    Solution:
+    Determine whether the platform has a mediasync driver,
+    if not, do not try to open, and return directly to failure.
+    
+    Verify:
+    SC2
+    
+    Change-Id: I38e6f859c2d9de51632da67426c3223c3de62213
+    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
+
+commit e88511cf5f83bea8c4ee1a5757a062d35fadb4bd
+Author: yunmin.chen <yunmin.chen@amlogic.com>
+Date:   Fri Mar 11 13:23:16 2022 +0800
+
+    tsplayer: CB1 VideoTunnelDisplay::Disconnect() crash [1/1]
+    
+    PD#SWPL-74597
+    
+    Problem:
+    From libvideotunnel.so dlsym meson_vt_cancel_buffer function fails.
+    
+    Solution:
+    Finally dlsym meson_vt_cancel_buffer,
+    this function is not needed if it fails.
+    
+    Verify:
+    SC2
+    
+    Change-Id: I9f90dbb377ac5bd0b3cb18c50f7847ef70a9a766
+    Signed-off-by: yunmin.chen <yunmin.chen@amlogic.com>
+
+commit 26fd4247d6d1665a0d038d424e8985415331bf6a
+Author: zhewen.luo <zhewen.luo@amlogic.com>
+Date:   Wed Mar 9 11:05:12 2022 +0800
+
+    tsplayer: CB1 support dts audio format [1/1]
+    
+    PD#SWPL-73975
+    
+    Problem:
+    not support dts to stuck video
+    
+    Solution:
+    Map the corresponding DTS type
     
     Verify:
     ohm
     
-    Change-Id: Iae249b6c148da7e1c71a2ad9b117c3c573c2fbdf
-    Signed-off-by: kuan.hu <kuan.hu@amlogic.com>
+    Change-Id: Ia240f4d39427c7dbcaafdd213ad6ef9cdf9b83c1
+    Signed-off-by: zhewen.luo <zhewen.luo@amlogic.com>
 
-commit 161780826dcfc265184c46561c0d2cee7767fc7d
-Author: chen.chen1 <chen.chen1@amlogic.com>
-Date:   Mon Jan 17 15:00:07 2022 +0800
+commit 4dcbe0025081f548cfed3910c911416432f34d19
+Author: jianchuan.ping <jianchuan.ping@amlogic.com>
+Date:   Wed Mar 9 22:04:56 2022 +0800
 
-    MediaSync: CF1 AV always stuck. [1/2]
+    TsPlayer: CB0 Clear media_sync id not correctly. [1/1]
     
-    PD#SWPL-70527
+    PD#SWPL-74115
     
     Problem:
-    AV always stuck after some operations, unplug and plug RF for example.
+    Alloc two mediasync after video reset
     
     Solution:
-    Mediasync add reset instance function when
-    A/V mediasync project are both released.
+    Not clear mediasync id when audio is still exit
     
     Verify:
-    verified on S905X4-AH212
+    AP222
     
-    Change-Id: I6833f58daa24405b620c154d848afbbe3219bfe8
-    Signed-off-by: chen.chen1 <chen.chen1@amlogic.com>
+    Change-Id: I932778dfb0e2b5b64761a96d361a9f4fa89b38bb
+    Signed-off-by: jianchuan.ping <jianchuan.ping@amlogic.com>
 
-commit 3a473521e86347913d2201f24384ecdf61ba54ec
-Author: Yani Shi <yani.shi@amlogic.com>
-Date:   Wed Jan 12 23:24:25 2022 +0800
+commit 6e05eee63ca70628261c1bc2ec68084698ffa51d
+Author: wenli.xu <wenli.xu@amlogic.com>
+Date:   Thu Jan 13 22:34:59 2022 +0800
 
-    Media_sync: CB1 Add startthershold when audio reset refclock. [1/1]
+    meida_hal: CF1 add common report info [1/1]
     
-    PD#RSP-2964
+    PD#SWPL-56884
     
     Problem:
-    In PCRCLOCK sence,it not add the startthershold when
-    audio reset refclock,cause the video underrun
+    Add common report info,include the modify of tr135,izzi project
     
     Solution:
-    Set start threshold to avoid the video underrun
+    1.implement the interface of AmTsPlayer_getAudioStat/AmTsPlayer_getAudioInfo
+    2.add and implement some event
+    3.AmTsPlayer_getState converts the decoded info into JSON format
     
     Verify:
-    verified on S905X4-AH212
+    S905x4
     
-    Change-Id: Id265f4d704ecd8d5ea08a999810cab6ca2f00b94
-    Signed-off-by: Yani Shi <yani.shi@amlogic.com>
-
-commit f4c79ae214e555fbaf814ab539982999d386a673
-Author: guoqiang.zhao <guoqiang.zhao@amlogic.com>
-Date:   Thu Jan 6 11:29:07 2022 +0800
-
-    videodec: CB1 fix seed to end error [1/1]
-    
-    PD#SWPL-63279
-    
-    Problem:
-    amplayer won't repeat to play after seek directly to the end.
-    
-    Solution:
-    csd data don't need to count towards total_input_frame_count.
-    
-    Verify:
-    Ohm
-    
-    Change-Id: Ie32c50044021158b9f01ecaf757f4a266e097abd
-    Signed-off-by: guoqiang.zhao <guoqiang.zhao@amlogic.com>
+    Change-Id: Idcc1dc4bb4435bf379ebfc9a1059c17f2a947b95
+    Signed-off-by: wenli.xu <wenli.xu@amlogic.com>
 
 ========================================
 
-Release time: 2022-01-25-16-57
+Release time: 2022-03-23-14-09
 
 ========================================
 
-Builder: yunmin.chen
+Builder: drm.autobuild
 
 ========================================
 Release file:
@@ -228,9 +231,9 @@ Header file:
 AmTsPlayer.h
 AmVideoDecBase.h
 MediaSyncInterface.h
+resourcemanage.h
 TunerPassthroughBase.h
 VideoTunnelRendererBase.h
-resourcemanage.h
 
 Vendor Library file:
 libmediahal_mediasync.so
@@ -249,8 +252,6 @@ libmediahal_videodec.system.so
 Example file:
 AmTsPlayerExample.cpp
 Android.bp
-androidversion.go
-systemlib.go
 
 Binary  file:
 AmTsPlayerExample
@@ -258,7 +259,6 @@ AmTsPlayerExampleSystem
 AmTsPlayerTest
 EsVideoDecPlayer
 EsVideoDecPlayerTest
-getmmversion.sh
 vesplayer
 
 ========================================

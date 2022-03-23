@@ -61,7 +61,7 @@ cc_prebuilt_library_shared {
             srcs: ["lib/vendor/libmediahal_videodec.so"],
         },
         arm64: {
-            srcs: ["lib64/vendor/libmediahal_videodec.so"],
+            srcs: ["arm64/vendor/libmediahal_videodec.so"],
         },
     },
     check_elf_files: false,
@@ -78,7 +78,7 @@ cc_prebuilt_library_shared {
             srcs: ["lib/system/libmediahal_videodec.system.so"],
         },
         arm64: {
-            srcs: ["lib64/system/libmediahal_videodec.system.so"],
+            srcs: ["arm64/system/libmediahal_videodec.system.so"],
         },
         x86: {
             enabled: false,
@@ -102,7 +102,7 @@ cc_prebuilt_library_shared {
             srcs: ["lib/vendor/libmediahal_tsplayer.so"],
         },
         arm64: {
-            srcs: ["lib64/vendor/libmediahal_tsplayer.so"],
+            srcs: ["arm64/vendor/libmediahal_tsplayer.so"],
         },
         x86: {
             enabled: false,
@@ -126,7 +126,7 @@ cc_prebuilt_library_shared {
             srcs: ["lib/system/libmediahal_tsplayer.system.so"],
         },
         arm64: {
-            srcs: ["lib64/system/libmediahal_tsplayer.system.so"],
+            srcs: ["arm64/system/libmediahal_tsplayer.system.so"],
         },
         x86: {
             enabled: false,
@@ -155,7 +155,7 @@ cc_prebuilt_library_shared {
             srcs: ["lib/vendor/libmediahal_mediasync.so"],
         },
         arm64: {
-            srcs: ["lib64/vendor/libmediahal_mediasync.so"],
+            srcs: ["arm64/vendor/libmediahal_mediasync.so"],
         },
     },
     check_elf_files: false,
@@ -173,7 +173,7 @@ cc_prebuilt_library_shared {
             srcs: ["lib/system/libmediahal_mediasync.system.so"],
         },
         arm64: {
-            srcs: ["lib64/system/libmediahal_mediasync.system.so"],
+            srcs: ["arm64/system/libmediahal_mediasync.system.so"],
         },
     },
    check_elf_files: false,
@@ -192,7 +192,7 @@ cc_prebuilt_library_shared {
             srcs: ["lib/vendor/libmediahal_tunnelrenderer.so"],
         },
         arm64: {
-            srcs: ["lib64/vendor/libmediahal_tunnelrenderer.so"],
+            srcs: ["arm64/vendor/libmediahal_tunnelrenderer.so"],
         },
         x86: {
             enabled: false,
@@ -217,7 +217,7 @@ cc_prebuilt_library_shared {
             srcs: ["lib/vendor/libmediahal_passthrough.so"],
         },
         arm64: {
-            srcs: ["lib64/vendor/libmediahal_passthrough.so"],
+            srcs: ["arm64/vendor/libmediahal_passthrough.so"],
         },
         x86: {
             enabled: false,
@@ -239,7 +239,7 @@ cc_prebuilt_library_shared {
             srcs: ["lib/vendor/libmediahal_resman.so"],
         },
         arm64: {
-            srcs: ["lib64/vendor/libmediahal_resman.so"],
+            srcs: ["arm64/vendor/libmediahal_resman.so"],
         },
         x86: {
             enabled: false,
@@ -262,7 +262,7 @@ cc_prebuilt_library_shared {
             srcs: ["lib/system/libmediahal_resman.system.so"],
         },
         arm64: {
-            srcs: ["lib64/system/libmediahal_resman.system.so"],
+            srcs: ["arm64/system/libmediahal_resman.system.so"],
         },
         x86: {
             enabled: false,
